@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+      <!--<service id="form.user_registration" class="CBook\AppBundle\Form\RegistrationFormType">
+        <argument>%fos_user.model.user.class%</argument>
+        <tag name="form.type" alias="form_registration"/>
+      </service>
+      <service id="form.user_profile" class="CBook\AppBundle\Form\ProfileFormType">
+        <argument>%fos_user.model.user.class%</argument>
+        <tag name="form.type" alias="form_user_profile"/>
+      </service>-->
+
+        <service id="form.blog" class="AppBundle\Form\BlogType">
+          <tag  name="form.type" alias="app_blog"/>
+        </service>
+        <service id="form.post" class="AppBundle\Form\PostType">
+            <tag  name="form.type" alias="app_post"/>
+        </service>
+        <service id="form.blog" class="AppBundle\Form\ProfileType">
+            <tag  name="form.type" alias="app_profile"/>
+        </service>
+    </services>
+</container>

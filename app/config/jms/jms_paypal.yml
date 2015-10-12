@@ -1,0 +1,5 @@
+jms_payment_paypal:
+    username: username
+    password: api_password
+    signature: api_signature
+    debug: true # when true, connect to PayPal sandbox; uses kernel debug value when not specified

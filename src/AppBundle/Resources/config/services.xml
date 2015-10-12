@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="tml.blog" class="AppBundle\Services\Blog">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+        </service>
+        <service id="tml.post" class="AppBundle\Services\Post">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+        </service>
+        <service id="tml.profile" class="AppBundle\Services\Profile">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+        </service>
+        <service id="tml.transfer" class="AppBundle\Services\Transfer">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+        </service>
+    </services>
+
+</container>
