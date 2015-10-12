@@ -1,0 +1,35 @@
+{
+  "name": "TML4You",
+  "version": "1.0",
+  "authors": ["pedro <xeroz.pglez@gmail.com>"],
+  "keywords": ["AngularJS", "dashboard", "admin", "OROCRM", "responsive", "route", "web", "app", "widgets"],
+  "description": "",
+  "license": "MIT",
+  "private": true,
+  "homepage": "http://tml4youinternational.com/",
+  "ignore": ["**/.*","node_modules","bower_components","test/*","tests/*","src/*", "docs/*"],
+  "dependencies": {
+
+    "jquery": "latest",
+    "jquery-ui": "latest",
+    "fastclick": "latest",
+
+    "bootstrap-material-design": "latest",
+    "components-modernizr": "latest",
+    "moment": "latest",
+    "select2": "~4.0.0",
+    "select2-bootstrap-css": "~1.4.6",
+    "perfect-scrollbar": "~0.6.1",
+    "sweetalert": "~0.4.2",
+
+    "animate.css": "latest",
+    "font-awesome": "latest",
+    "themify-icons": "latest",
+    "bootstrap": "latest",
+    "switchery":"latest"
+  },
+  "resolutions": {
+    "jquery": "2.1.4",
+    "select2": "4.0.0"
+  }
+}
