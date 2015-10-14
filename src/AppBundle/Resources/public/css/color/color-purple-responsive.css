@@ -1,0 +1,8 @@
+@media (max-width: 979px){
+	header .vc_menu  div.vc_primary-menu ul li a:hover{
+		background-color:#d5217e;	
+	}
+	header .vc_menu div.vc_primary-menu > ul{
+		border-top-color: #d5217e;
+	}	
+}

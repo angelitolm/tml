@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'bebas_neueregular';
+    src: url('../fonts/bebasneue-webfont.svg#bebas_neueregular') format('svg');
+    src: url('../fonts/bebasneue-webfont.eot'),
+		 url('../fonts/bebasneue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/bebasneue-webfont.woff') format('woff'),
+         url('../fonts/bebasneue-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    src: url('../fonts/opensans-regular-webfont.eot'),
+		 url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),	
+         url('../fonts/opensans-regular-webfont.woff') format('woff'),
+         url('../fonts/opensans-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
+    src: url('../fonts/opensans-semibold-webfont.eot'),
+		 url('../fonts/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-semibold-webfont.woff') format('woff'),
+         url('../fonts/opensans-semibold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+  src: url('../fonts/fontawesome-webfont.eot?v=4.0.3'), 
+  	   url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), 
+	   url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), 
+	   url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype') ;
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+	font-family:'Glyphicons Halflings';
+	src:url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+	src:url('../fonts/glyphicons-halflings-regular.eot'), 
+		url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/glyphicons-halflings-regular.woff') format('woff'),
+		url('../fonts/glyphicons-halflings-regular.ttf') format('truetype');
+}

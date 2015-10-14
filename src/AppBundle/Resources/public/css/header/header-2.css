@@ -1,0 +1,42 @@
+/* CSS Document */
+
+.header-2 .vc_secondary-menu{
+	
+}
+.header-2 .logo{
+	top: -40px;
+}
+.header-2{
+	border-top:none;
+}
+.header-2 .vc_menu-bg{
+	height:113px;
+}
+.header-2 .vc_secondary-menu-wrapper{
+	background:#111111;	
+}
+.header-2 .vc_sub-menu-bg {
+	top:73px;
+	left:-50%;
+}
+.header-2 .vc_contact-top{
+	margin-left:155px;
+}
+.header-2 .vc_contact-top h5{
+	color:#888;
+	font-family:'opensans_regular',arial;
+	font-size:13px;
+	margin-top:9px;
+}
+body.sticky-menu-active .header-2{
+	border-top:8px solid #111;
+}
+body.sticky-menu-active .header-2 .logo{
+	top:0;
+}
+body.sticky-menu-active .header-2 .vc_menu-bg{
+	height:73px;
+}
+body.sticky-menu-active .header-2 .vc_menu-bg .element-1{
+	display:none;
+}

@@ -1,0 +1,28 @@
+@media (max-width: 320px){
+
+}
+@media (max-width: 480px){
+
+}
+@media (max-width: 991px){	
+	.vc_secondary-menu-wrapper{
+		background:none;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {	
+	.header-3 .vc_sub-menu-bg, .header-4 .vc_sub-menu-bg{
+		left:auto;
+		right:650px;
+	}
+	.header-1 .vc_sub-menu-bg{
+		left:auto;
+		right:680px;		
+	}
+	.header-2 .vc_sub-menu-bg{
+		left:auto;
+		right:560px;
+	}
+}
+
+
+

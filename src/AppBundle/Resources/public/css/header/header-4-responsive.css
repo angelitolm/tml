@@ -1,0 +1,10 @@
+/* CSS Document */
+@media (max-width: 991px) {
+	.header-4 .vc_menu .vc_primary-menu:before{
+		margin: 0 38px 0 0;
+		float:right;
+	}
+	.header-4 .logo a img{
+		height:auto;
+	}
+}
