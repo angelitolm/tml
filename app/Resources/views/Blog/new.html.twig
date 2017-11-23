@@ -1,0 +1,38 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'blog.new'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'blog.new'|trans({},'backend') }}{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{{ path('app_admin_blog_details') }}">{{ 'blog.details'|trans({},'backend') }}</a></li>
+    <li class="active">{{ 'blog.new'|trans({},'backend') }}</li>
+{% endblock %}
+
+{% form_theme form with ':form:fields-material.html.twig' %}
+{% block page_body %}
+    <div class="row">
+        <div class="col-md-8">
+            {% embed ":embed:form-horizontal.html.twig" %}
+                {% block form_action%}
+                    {{ path('app_admin_blog_new') }}
+                {% endblock form_action %}
+                {% block form_attr %}enctype="multipart/form-data"{% endblock form_attr %}
+                {% block form_buttons %}
+                    <div class="mgbt-xs-0 text-right">
+                        <div class="col-xs-12">
+                            <button class="btn vd_btn vd_bg-green vd_white" type="submit" name="new_edit"><i class="fa fa-fw fa-edit"></i> {{ 'create.and.edit'|trans({},'resources') }}</button>
+                            <button class="btn vd_btn vd_bg-green vd_white" type="submit" name="new_list"><i class="fa fa-fw fa-list"></i> {{ 'create.and.list'|trans({},'resources') }}</button>
+
+                            <a class="btn vd_btn vd_white vd_bg-black" href="{{ path('app_admin_blog_details') }}"><i class="fa fa-fw fa-times-circle"></i> {{ 'cancel'|trans({},'resources') }}</a>
+                        </div>
+                        <div class="col-xs-12">
+                            <span class="help-inline text-info">
+                              {{ 'the.field.marqued.are.required'|trans({},'resources') }}
+                            </span>
+                        </div>
+                    </div>
+                {% endblock form_buttons %}
+            {% endembed %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+.vc_sub-menu-bg{
+	left:auto;
+	right:800px;
+    position: absolute;
+    top: 0;
+    width: 1920px;
+    z-index: -1;	
+	background:none;
+    border-top: 35px solid #1D2023;
+    border-right: 90px solid transparent;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    height: 0;
+    line-height: 56px;
+    padding: 10px;
+    text-decoration: none;	
+}
+
+.vc_menu .vc_primary-menu > ul > li > a, .vc_menu .vc_primary-menu > ul > li{
+	border-right:none;
+}
+.vc_menu .vc_primary-menu > ul > li:hover > a{
+	background:none;
+	color:#EEE;
+}
+.header-2 .vc_sub-menu-bg,.header-3 .vc_sub-menu-bg {
+	top:50px;
+}
+.header-4 .vc_sub-menu-bg{
+	top:-20px;
+}
+.header-1 .vc_sub-menu-bg,.header-3 .vc_sub-menu-bg, .header-4 .vc_sub-menu-bg{
+	left:auto;
+	right:800px;
+}
+.header-2 .vc_sub-menu-bg{
+	left:auto;
+	right:750px;
+}

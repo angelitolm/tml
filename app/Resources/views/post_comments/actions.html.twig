@@ -1,0 +1,7 @@
+<div class="btn-group drop">
+    <a class="btn btn-sm btn-primary" href="{{ path('app_admin_post_comments_details',{'id':id}) }}"><i class="fa fa-eye"></i> {{ 'posts.comments.details'|trans({},'backend') }}</a>
+    <button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><a href="{{ path('app_admin_post_comments_delete',{'id':id}) }}"><i class="fa fa-trash-o"></i> {{ 'delete'|trans({},'resources') }}</a></li>
+    </ul>
+</div>

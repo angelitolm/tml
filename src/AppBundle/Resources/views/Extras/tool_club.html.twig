@@ -1,0 +1,28 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Mass&oacute; #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+
+{% block banner_title %}
+    <h1>Herramienta <span class="vc_main-color">Acceso y Gesti&oacute;n de Membres&iacute;s en el Club</span></h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">Acceso y Gesti&oacute;n de Membres&iacute;s en el Club</li>
+    </ul>
+{% endblock %}
+
+
+{% block content %}
+    <div class="col-md-12" style="margin-bottom: 35px">
+        <p>
+
+            Esta es otra de las herramientas estrat&eacute;gicas de TML. La misma te permitir&aacute; comenzar a desarrollar tu
+            negocio desde un perfil internacional, dot&aacute;ndote de categor&iacute;as y niveles para tu desarrollo y despliegue
+            integro en redes de mercado. Adem&aacute;s a trav&eacute;s de ella podr&aacute;s comenzar a escoger los afiliados que formaran
+            parte de tu l&iacute;nea descendiente, los cuales ser&aacute;n tu columna vertebral en el M&oacute;dulo de Negocio. Esta
+            herramienta es la clave del &eacute;xito en nuestro sistema, todo depender&aacute; de c&oacute;mo te dispongas a sacar de ella el
+            mejor beneficio para tu productividad.
+        </p>
+    </div>
+{% endblock %}

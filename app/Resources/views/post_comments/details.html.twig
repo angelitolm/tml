@@ -1,0 +1,48 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'posts.comments.details'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'posts.comments.details'|trans({},'backend') }}{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{{ path('app_admin_blog_details') }}">{{ 'blog.details'|trans({},'backend') }}</a></li>
+    <li><a href="{{ path('app_admin_post_list') }}">{{ 'posts.list'|trans({},'backend') }}</a></li>
+    <li><a href="{{ path('app_admin_post_comments_list',{'post':postComment.post.id}) }}">{{ 'posts.comments.list'|trans({},'backend') }}</a></li>
+    <li class="active">{{ 'posts.comments.details'|trans({},'backend') }}</li>
+{% endblock %}
+
+{% block page_menu %}
+    <a class="btn btn-danger" href="{{ path('app_admin_post_comments_delete',{'id':postComment.id}) }}">
+        <i class="fa fa-trash"></i> {{ 'posts.comments.delete'|trans({},'backend') }}
+    </a>
+{% endblock page_menu %}
+
+{% block page_body %}
+    <div class="row">
+        <div class="col-xs-12">
+            {% embed ':embed:panel-left.html.twig' %}
+                {% block box_content %}
+                    <table class="table table-striped">
+                        <tbody>
+                        <tr>
+                            <th>{{ 'post.comments.title'|trans({},'backend') }}</th>
+                            <td>{{ postComment.title }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'post.comments.author'|trans({},'backend') }}</th>
+                            <td>{{ postComment.name }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'post.comments.created'|trans({},'backend') }}</th>
+                            <td>{{ postComment.created|date('Y-m-d H:i') }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ 'post.comments.message'|trans({},'backend') }}</th>
+                            <td>{{ postComment.message }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                {% endblock box_content %}
+            {% endembed %}
+        </div>
+    </div>
+{% endblock %}

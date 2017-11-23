@@ -1,0 +1,1312 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'dashboard'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'dashboard'|trans({},'backend') }}{% endblock %}
+
+{% block page_body %}
+    <div style="background: #F9F9F9;">
+        <!-- BEGIN DASHBOARD STATS 1-->
+        <div class="row widget-row">
+            <div class="col-md-3">
+                <!-- BEGIN WIDGET THUMB -->
+                <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                    <h4 class="widget-thumb-heading">{{ 'bonus.pts' | trans({}, 'backend') }}</h4>
+
+                    <div class="widget-thumb-wrap">
+                        <i class="widget-thumb-icon bg-green fa fa-money"></i>
+
+                        <div class="widget-thumb-body">
+                            <span class="widget-thumb-subtitle">{{ 'credit.pendient' | trans({}, 'backend') }}</span>
+                        <span class="widget-thumb-body-stat" data-counter="counterup"
+                              data-value="{{ get_bono(app.user)|number_format(2,'.',',') }}">0</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET THUMB -->
+            </div>
+            <div class="col-md-3">
+                <!-- BEGIN WIDGET THUMB -->
+                <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                    <h4 class="widget-thumb-heading">{{ 'credit.pts' | trans({}, 'backend') }}</h4>
+
+                    <div class="widget-thumb-wrap">
+                        <i class="widget-thumb-icon bg-red fa fa-usd"></i>
+
+                        <div class="widget-thumb-body">
+                            <span class="widget-thumb-subtitle">{{ 'credit.disponible' | trans({}, 'backend') }}</span>
+                        <span class="widget-thumb-body-stat" data-counter="counterup"
+                              data-value="{{ app.user.getActiveProfile.credit|number_format(2,'.',',') }}">0</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET THUMB -->
+            </div>
+
+            <div class="col-md-3">
+                <!-- BEGIN WIDGET THUMB -->
+                <div class="dashboard-stat2 widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                    <h4 class="widget-thumb-heading">{{ 'members.affiliate' | trans({}, 'backend') }}</h4>
+
+                    <div class="widget-thumb-wrap">
+                        <i class="widget-thumb-icon bg-purple icon-user-following"></i>
+
+                        <div class="widget-thumb-body">
+                            <div class="progress-info">
+                                <div class="progress">
+                                    {% set cantmemberdescuent = app.user.getActiveProfile.getChildrenMembers|length %}
+                                    {#{% set cantmemberdescuent = app.user.getActiveProfile.getChildrenMembersMonth|length  %}#}
+                                    <span style="width: {{ cantmemberdescuent }}%;"
+                                          class="progress-bar progress-bar-success purple-sharp">
+					<span class="sr-only">{{ cantmemberdescuent }}% progress</span>
+					</span>
+                                </div>
+                                <div class="status">
+                                    <div class="status-title" style="text-transform: none">
+                                        {{ 'affiliate.width.descuent' | trans({}, 'backend') }}
+                                    </div>
+                                    <div class="status-number">
+                                        {{ cantmemberdescuent }}%
+                                    </div>
+                                    <br><br>
+
+                                    <div class="status-title" style="font-size: 18px">
+                                        {{ 'total' | trans({}, 'backend') }}:
+                                    <span style="display: inline-block; font-size: 18px" class="widget-thumb-body-stat"
+                                          data-counter="counterup"
+                                          data-value="{{ app.user.getActiveProfile.getChildrenMembers|length }}">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET THUMB -->
+            </div>
+            <div class="col-md-3">
+
+                <!-- BEGIN WIDGET THUMB -->
+                <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 bordered">
+                    <h4 class="widget-thumb-heading">{{ 'members.guests' | trans({}, 'backend') }}</h4>
+
+                    <div class="widget-thumb-wrap" style="overflow: visible">
+                        <i class="widget-thumb-icon bg-blue icon-user"></i>
+
+                        <div class="widget-thumb-body" style="overflow: visible">
+                            <span class="widget-thumb-subtitle">{{ limitGuest }} {{ 'month' | trans({}, 'backend') }}</span>
+                                <span class="widget-thumb-body-stat" data-counter="counterup"
+                                      data-value="{{ app.user.getActiveProfile.getGuestChildrenMembers|length }}"
+                                      style="display: inline-block">0</span>
+
+                            <div class="btn-group-vertical" style="float: right; z-index: 1000 !important;">
+                                <div class="btn-group">
+                                    <button id="btnGroupVerticalDrop1" type="button"
+                                            class="btn btn-default dropdown-toggle"
+                                            data-toggle="dropdown" aria-expanded="false">
+                                        {{ 'c.guests' | trans({}, 'backend') }} <i class="fa fa-angle-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="btnGroupVerticalDrop1"
+                                        style="z-index: 1001 !important;">
+                                        {% for code_guest in app.user.getGuestCode %}
+                                            <li>
+                                                <a href="javascript:;">
+                                                    {{ code_guest.code }} <span class="badge badge-success"><i
+                                                                class="icon-check"></i> </span>
+                                                </a>
+                                            </li>
+                                        {% else %}
+                                            <li>
+                                                <a href="javascript:;">
+                                            {{ 'dont.code' }} </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET THUMB -->
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <!-- END DASHBOARD STATS 1-->
+
+        <div class="row widget-row">
+
+            <div class="col-md-6 margin-bottom-20">
+                {% if latestNews is not empty %}
+                    <!-- BEGIN WIDGET MAP -->
+                    <div class="widget-map" style="min-height: 306px; border: 1px solid #e7ecf1 !important">
+                        <!--<div id="mapplic" class="widget-map-mapplic"></div>-->
+                        <div class="widget-bg-color-white widget-tab" style="min-height: 366px">
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#tab_1_1" data-toggle="tab"> Noticias TML </a>
+                                </li>
+                                {#<li>#}
+                                {#<a href="#tab_1_2" data-toggle="tab"> MLM </a>#}
+                                {#</li>#}
+                                {#<li>#}
+                                {#<a href="#tab_1_3" data-toggle="tab"> Marketing </a>#}
+                                {#</li>#}
+                                {#<li>#}
+                                {#<a href="#tab_1_4" data-toggle="tab"> Others </a>#}
+                                {#</li>#}
+                            </ul>
+                            <div class="tab-content scroller" style="height: 306px;" data-always-visible="1"
+                                 data-handle-color="#D7DCE2">
+                                <div class="tab-pane fade active in" id="tab_1_1">
+                                    <div class="widget-news margin-bottom-20">
+                                        {% for news in latestNews %}
+                                            {% set url = news.image is not empty ? constant('IMAGES_UPLOAD_DIR',news)~news.image : 'backend/img/photos/news-blur.jpg' %}
+                                            <img class="widget-news-left-elem" src="{{ asset(url) }}"
+                                                 alt="">
+
+                                            <div class="widget-news-right-body">
+                                                <h3 class="widget-news-right-body-title"><a
+                                                            href="{{ path('news',{'id':news.id}) }}">{{ news.title }}</a>
+                                                    <span class="label label-default"> {{ news.created|date('Y-m-d H:i') }} </span>
+                                                </h3>
+
+                                                <p>{{ news.body|striptags|slice(0,150) }}</p>
+                                            </div><br>
+                                        {% else %}
+                                            <h2>{{ 'dont.have.news' | trans({}, 'backend') }}</h2>
+                                        {% endfor %}
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="widget-map-body text-uppercase text-center">
+                            <div class="widget-sparkline-chart">
+                                <div id="widget_sparkline_bar"></div>
+                                <span class="widget-sparkline-title">
+                                    <div data-filter=".identity"
+                                         class="cbp-filter-item btn btn-circle btn-icon-only green uppercase tooltips"
+                                         data-original-title="Sugerir una categor&iacute;a">
+                                        <i class="icon-bulb"></i>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="widget-sparkline-chart">
+                                <div id="widget_sparkline_bar2"></div>
+                            <span class="widget-sparkline-title">
+                                <div data-filter=".identity"
+                                     class="cbp-filter-item btn btn-circle btn-icon-only btn-warning uppercase tooltips"
+                                     data-original-title="Categor&iacute;a favorita">
+                                    <i class="icon-star"></i>
+                                </div>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                <!-- END WIDGET MAP -->
+            </div>
+
+
+            <div class="col-md-3 col-sm-6 col-xs-12 margin-bottom-20">
+                <div class="portlet light bordered" style="background: none repeat scroll 0% 0% #475E98;">
+                    <div class="portlet-title">
+                        <div class="caption caption-md font-white">
+                            <i class="fa fa-university font-white"></i>
+                            <span class="caption-subject theme-font bold uppercase">{{ 'courses.tml' | trans({}, 'backend') }}</span>
+                        </div>
+
+                        <div class="actions">
+                            {% if app.user.hasRole('ROLE_BASIC') %}
+                                <a class="btn btn-circle btn-icon-only btn-default tooltips"
+                                   href="{{ path('courses_basics') }}"
+                                   data-original-title="{{ 'see.courses' | trans({}, 'backend') }}">
+                                    <i class="icon-link"></i>
+                                </a>
+                            {% elseif app.user.hasRole('ROLE_SUPERIOR') %}
+                                <a class="btn btn-circle btn-icon-only btn-default tooltips"
+                                   href="{{ path('courses_superior') }}"
+                                   data-original-title="{{ 'see.courses' | trans({}, 'backend') }}">
+                                    <i class="icon-link"></i>
+                                </a>
+                            {% elseif app.user.hasRole('ROLE_PROFESSIONAL') %}
+                                <a class="btn btn-circle btn-icon-only btn-default tooltips"
+                                   href="{{ path('courses_professionals') }}"
+                                   data-original-title="{{ 'see.courses' | trans({}, 'backend') }}">
+                                    <i class="icon-link"></i>
+                                </a>
+                            {% else %}
+                                <a class="btn btn-circle btn-icon-only btn-default tooltips" href=""
+                                   data-original-title="{{ 'not.courses' | trans({}, 'backend') }}">
+                                    <i class="icon-link"></i>
+                                </a>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    <div class="portlet-body">
+                        <!-- BEGIN WIDGET GRADIENT -->
+                        <div class="clearfix"></div>
+                        <div id="carousel-example-generic-v1" class="carousel slide widget-carousel"
+                             data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic-v1" data-slide-to="0"
+                                    class="circle active"></li>
+                                <li data-target="#carousel-example-generic-v1" data-slide-to="1"
+                                    class="circle"></li>
+                                <li data-target="#carousel-example-generic-v1" data-slide-to="2"
+                                    class="circle"></li>
+                                {#<li data-target="#carousel-example-generic-v1" data-slide-to="3"#}
+                                {#class="circle"></li>#}
+                            </ol>
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <div class="widget-gradient"
+                                         style="background: url({{ asset('backend-metronic/img/curso-comition.png') }}); background-size: cover">
+                                        <div class="widget-gradient-body">
+                                            <h3 class="widget-gradient-title">{#Curso de iniciacion TML#}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="widget-gradient"
+                                         style="background: url({{ asset('backend-metronic/img/curso-social.png') }}); background-size: cover">
+                                        <div class="widget-gradient-body">
+                                            <h3 class="widget-gradient-title">{#&iquest;C&oacute;mo socializar?#}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="widget-gradient"
+                                         style="background: url({{ asset('backend-metronic/img/curso-blog.png') }}); background-size: cover">
+                                        <div class="widget-gradient-body">
+                                            <h3 class="widget-gradient-title">{#&iquest;C&oacute;mo socializar?#}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                {#<div class="item">#}
+                                {#<div class="widget-gradient"#}
+                                {#style="background: url({{ asset('backend-metronic/img/curso4.png') }}); background-size: cover">#}
+                                {#<div class="widget-gradient-body">#}
+                                {#<h3 class="widget-gradient-title">&#123;&#35;&iquest;C&oacute;mo socializar?&#35;&#125;</h3>#}
+                                {#</div>#}
+                                {#</div>#}
+                                {#</div>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET GRADIENT -->
+            </div>
+
+
+            <div class="col-md-3 col-sm-6 col-xs-12 margin-bottom-20">
+                <div class="portlet light bordered" style="background: none repeat scroll 0% 0% #55ACEE;">
+                    <div class="portlet-title">
+                        <div class="caption caption-md font-white">
+                            <i class="icon-shield font-white"></i>
+                            <span class="caption-subject theme-font bold uppercase">{{ 'garanties' | trans({}, 'backend') }}</span>
+                        </div>
+
+                        <div class="actions">
+                            <a class="btn btn-circle btn-icon-only btn-default tooltips" href="{{ path('guaranties') }}"
+                               data-original-title="{{ 'see.garanties' | trans({}, 'backend') }}">
+                                <i class="icon-link"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="portlet-body">
+                        <!-- BEGIN WIDGET WRAP IMAGE -->
+                        <div id="carousel-example-generic-v2" class="carousel slide widget-carousel"
+                             data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators carousel-indicators-red">
+                                <li data-target="#carousel-example-generic-v2" data-slide-to="0"
+                                    class="circle active"></li>
+                                <li data-target="#carousel-example-generic-v2" data-slide-to="1"
+                                    class="circle"></li>
+                                <li data-target="#carousel-example-generic-v2" data-slide-to="2"
+                                    class="circle"></li>
+                            </ol>
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <div class="widget-wrap-img widget-bg-color-white">
+                                        <h3 class="widget-wrap-img-title" style="text-align: center">Garant&iacute;a
+                                            Extendida por 90 d&iacute;as </h3>
+
+                                        {#<div class="actions" style="text-align: center">#}
+                                        {#<a class="btn btn-circle btn-icon-only red tooltips" href="javascript:"#}
+                                        {#data-original-title="Descargar &eacute;ste Curso">#}
+                                        {#<i class="icon-cloud-download"></i>#}
+                                        {#</a>#}
+                                        {#</div>#}
+
+                                        <img class="widget-wrap-img-element img-responsive"
+                                             src="{{ asset('backend-metronic/img/guarantie4.png') }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="widget-wrap-img widget-bg-color-white">
+                                        <h3 class="widget-wrap-img-title" style="text-align: center">Garant&iacute;a
+                                            Completa por 365 d&iacute;as</h3>
+
+                                        {#<div class="actions" style="text-align: center">#}
+                                        {#<a class="btn btn-circle btn-icon-only red tooltips" href="javascript:;"#}
+                                        {#data-original-title="Descargar &eacute;ste Curso">#}
+                                        {#<i class="icon-cloud-download"></i>#}
+                                        {#</a>#}
+                                        {#</div>#}
+
+                                        <img class="widget-wrap-img-element img-responsive"
+                                             src="{{ asset('backend-metronic/img/guarantie4.png') }}" alt="">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="widget-wrap-img widget-bg-color-white">
+                                        <h3 class="widget-wrap-img-title" style="text-align: center">Garant&iacute;a de
+                                            proceso de pago por PayPal por 10 d&iacute;as</h3>
+
+                                        {#<div class="actions" style="text-align: center">#}
+                                        {#<a class="btn btn-circle btn-icon-only red tooltips" href="javascript:;"#}
+                                        {#data-original-title="Descargar &eacute;ste Curso">#}
+                                        {#<i class="icon-cloud-download"></i>#}
+                                        {#</a>#}
+                                        {#</div>#}
+
+                                        <img class="widget-wrap-img-element img-responsive"
+                                             src="{{ asset('backend-metronic/img/guarantie100.png') }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET WRAP IMAGE -->
+            </div>
+
+
+        </div>
+
+
+        <div class="row widget-bg-color-white no-space margin-bottom-20" style="border: 1px solid #e7ecf1!important">
+            <div class="col-md-3 col-sm-6 no-space">
+                <!-- BEGIN WIDGET SUBSCRIBE -->
+                <div class="widget-subscribe widget-subscribe-quote widget-bg-color-purple">
+                    <h2 class="widget-subscribe-title widget-title-color-purple-dark text-uppercase">{{ 'up.of' | trans({}, 'backend') }}
+                        <br/>
+                        {{ 'level' | trans({}, 'backend') }}</h2>
+
+                    <p class="widget-subscribe-subtitle widget-title-color-purple-light">{{ 'to.that.you.obtain' | trans({}, 'backend') }}
+                        <a class="widget-subscribe-subtitle-link">{{ 'best.benefits' | trans({}, 'backend') }}</a></p>
+                </div>
+                <!-- END WIDGET SUBSCRIBE -->
+            </div>
+            <div class="col-md-3 col-sm-6 no-space">
+                <!-- BEGIN WIDGET SUBSCRIBE -->
+                <div class="widget-subscribe">
+                    <span class="widget-subscribe-no">1</span>
+
+                    <h2 class="widget-subscribe-title widget-title-color-gray-dark text-uppercase">{{ 'member' | trans({}, 'backend') }}
+                        <br/> {{ 'basic' | trans({}, 'backend') }}
+                    </h2>
+
+                    <p class="widget-subscribe-subtitle widget-title-color-dark-light">{{ 'you get $2.00 for each new basic member' | trans({}, 'backend') }}
+                        <a class="widget-subscribe-subtitle-link"
+                        ></a></p>
+                </div>
+                <!-- END WIDGET SUBSCRIBE -->
+            </div>
+            <div class="col-md-3 col-sm-6 no-space">
+                <!-- BEGIN WIDGET SUBSCRIBE -->
+                <div class="widget-subscribe widget-subscribe-border">
+                    <span class="widget-subscribe-no">2</span>
+
+                    <h2 class="widget-subscribe-title widget-title-color-gray-dark text-uppercase">{{ 'member' | trans({}, 'backend') }}
+                        <br/> {{ 'superior' | trans({}, 'backend') }}
+                    </h2>
+
+                    <p class="widget-subscribe-subtitle widget-title-color-dark-light">{{ 'you get $4.00 for each new superior member' | trans({}, 'backend') }}
+                        <a
+                                class="widget-subscribe-subtitle-link" href="#"></a></p>
+                </div>
+                <!-- END WIDGET SUBSCRIBE -->
+            </div>
+            <div class="col-md-3 col-sm-6 no-space">
+                <!-- BEGIN WIDGET SUBSCRIBE -->
+                <div class="widget-subscribe widget-subscribe-border-top">
+                    <span class="widget-subscribe-no">3</span>
+
+                    <h2 class="widget-subscribe-title widget-title-color-gray-dark text-uppercase">{{ 'member' | trans({}, 'backend') }}
+                        <br/> {{ 'professional' | trans({}, 'backend') }}
+                    </h2>
+
+                    <p class="widget-subscribe-subtitle widget-title-color-dark-light">{{ 'you get $10.00 for each new professional member' | trans({}, 'backend') }}
+                        <a class="widget-subscribe-subtitle-link"
+                           href="#"></a></p>
+                </div>
+                <!-- END WIDGET SUBSCRIBE -->
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12 margin-bottom-20">
+                <!-- BEGIN PORTLET-->
+                <div class="profile-sidebar">
+                    {% set patrocinador = 'TML-Patrocinador' %}
+                    <!-- PORTLET MAIN -->
+                    <div class="portlet light profile-sidebar-portlet bordered">
+                        <!-- SIDEBAR USERPIC -->
+                        <div class="profile-userpic">
+                            {% if app.user.getActiveProfile.sponsor == null %}
+                                <img class="img-responsive" alt="personal image"
+                                     src="{{ asset('bundles/app/images/about/logo-about.jpg') }}"/>
+                            {% elseif app.user.getActiveProfile.sponsor.user.picture is not empty %}
+                                {% set url = constant('IMAGES_UPLOAD_DIR',app.user.getActiveProfile.sponsor.user)~app.user.getActiveProfile.sponsor.user.picture %}
+                                <img class="img-responsive" style="height: 149px; width: 149px" alt="personal image"
+                                     src="{{ asset(url) }}"/>
+                            {% endif %}
+                            {#<img src="../assets/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">#}
+                        </div>
+                        <!-- END SIDEBAR USERPIC -->
+                        <!-- SIDEBAR USER TITLE -->
+                        <div class="profile-usertitle">
+                            <div class="profile-usertitle-name">
+                                {% if app.user.getActiveProfile.sponsor == null %}
+                                    <a href="">{{ patrocinador }}</a>
+                                {% else %}
+                                    <a href="">{{ app.user.getActiveProfile.sponsor.user }}</a>
+                                {% endif %}
+                            </div>
+                            <div class="profile-usertitle-job">
+                                {% if app.user.getActiveProfile.sponsor == null %}
+                                    CEO
+                                {% elseif app.user.getActiveProfile.sponsor.user.hasRole('ROLE_PROFESSIONAL') %}
+                                    PROFESIONAL
+                                {% elseif app.user.getActiveProfile.sponsor.user.hasRole('ROLE_SUPERIOR') %}
+                                    SUPERIOR
+                                {% else %}
+                                    BASICO
+                                {% endif %}
+                            </div>
+                        </div>
+                        <!-- END SIDEBAR USER TITLE -->
+                        <!-- SIDEBAR BUTTONS -->
+                        {% if app.user.getActiveProfile.sponsor is not empty %}
+                            <div class="profile-userbuttons">
+                                <form method="post" action="{{ path('app_admin_social_message_publish') }}">
+                                    {% if app.user.userHasFollow(app.user.getActiveProfile.sponsor.user.id) %}
+                                        <button type="button" class="btn btn-circle green btn-sm"
+                                                onclick="javascript:sponsorFollow('{{ app.user.getActiveProfile.sponsor.user.username }}', 0)">{{ 'unfollow'|trans({},'backend') }}</button>
+                                    {% else %}
+                                        <button type="button" class="btn btn-circle green btn-sm"
+                                                onclick="javascript:sponsorFollow('{{ app.user.getActiveProfile.sponsor.user.username }}', 1)">{{ 'follow'|trans({},'backend') }}</button>
+                                    {% endif %}
+                                    <button type="button" class="btn btn-circle red btn-sm" data-toggle="modal"
+                                            data-target="#messageSponsorModal">{{ 'message'|trans({},'backend') }}</button>
+                                </form>
+                            </div>
+                        {% endif %}
+                        <!-- END SIDEBAR BUTTONS -->
+                        <!-- SIDEBAR MENU -->
+                        <div class="profile-usermenu">
+                            <ul class="nav">
+                                <li class="active">
+                                    <a>
+                                        {{ 'code.member' | trans({}, 'backend') }}:
+                                    <span class="badge badge-success">
+                                        {% if app.user.getActiveProfile.sponsor is empty %}
+                                            TML
+                                        {% else %}
+                                            {{ app.user.getActiveProfile.sponsor.user.code }}
+                                        {% endif %}
+                                    </span>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <a>
+                                        {{ 'sponsor.email' | trans({}, 'backend') }}: <span class="badge badge-success"
+                                                                                            style="text-transform: none">
+                                        {% if app.user.getActiveProfile.sponsor == null %}
+                                            info@tml4you.com
+                                        {% else %}
+                                            {{ app.user.getActiveProfile.sponsor.user.email }}
+                                        {% endif %}
+                                    </span>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <a style="width: 50.2%; float: left">
+                                        {{ 'affiliates' | trans({}, 'backend') }}: <span class="badge badge-success">
+                                        {% if app.user.getActiveProfile.sponsor == null %}
+                                            0
+                                        {% else %}
+                                            {{ app.user.getActiveProfile.sponsor.getChildrenMembers|length }}
+                                        {% endif %}
+                                    </span>
+                                    </a>
+                                    <a style="border-left: 0; width: 51%; float: left">
+                                        {{ 'guests' | trans({}, 'backend') }}: <span class="badge badge-success">
+                                        {% if app.user.getActiveProfile.sponsor == null %}
+                                            0
+                                        {% else %}
+                                            {{ app.user.getActiveProfile.sponsor.getGuestChildrenMembers|length }}
+                                        {% endif %}
+                                    </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END MENU -->
+                    </div>
+                    <!-- END PORTLET MAIN -->
+                    <!-- PORTLET MAIN -->
+
+                    <!-- END PORTLET MAIN -->
+                </div>
+                <!-- END PORTLET-->
+
+                <div class="profile-content">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <!-- BEGIN WIDGET TAB -->
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-heart font-green"></i>
+                                        <span class="caption-subject font-green bold uppercase">{{ 'status.memberships' | trans({}, 'backend') }}</span>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-pin"></i>
+                                        </a>
+                                        {#<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">#}
+                                        {#<i class="icon-wrench"></i>#}
+                                        {#</a>#}
+                                        {#<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">#}
+                                        {#<i class="icon-trash"></i>#}
+                                        {#</a>#}
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="table-scrollable">
+                                        <table class="table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th> {{ 'membership' | trans({}, 'backend') }}</th>
+                                                <th> {{ 'value' | trans({}, 'backend') }}</th>
+                                                <th> {{ 'start' | trans({}, 'backend') }}</th>
+                                                <th> {{ 'end' | trans({}, 'backend') }}</th>
+                                                <th> {{ 'status' | trans({}, 'backend') }}</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% if app.user.hasRole('ROLE_BASIC') %}
+                                                <tr style="color: #32C5D2">
+                                                    <td> {{ membership }}</td>
+                                                    <td> ${{ price|number_format(2,'.',',') }}</td>
+                                                    <td> {{ app.user.created.format('Y-m-d') }}</td>
+                                                    <td> {{ endMembership.format('Y-m-d') }}</td>
+                                                    <td>
+                                                        <span class="label label-sm label-success"> {{ 'active' | trans({}, 'backend') }} </span>
+                                                    </td>
+                                                </tr>
+                                                <tr style="color: #A1AFBB;">
+                                                    <td> Superior</td>
+                                                    <td> $30.00</td>
+                                                    <td> ---</td>
+                                                    <td> ---</td>
+                                                    <td>
+                                                        <span class="label label-sm label-danger"> {{ 'locked' | trans({}, 'backend') }} </span>
+                                                    </td>
+                                                </tr>
+                                                <tr style="color: #A1AFBB;">
+                                                    <td> Profesional</td>
+                                                    <td> $250.00</td>
+                                                    <td> ---</td>
+                                                    <td> ---</td>
+                                                    <td>
+                                                        <span class="label label-sm label-danger"> {{ 'locked' | trans({}, 'backend') }} </span>
+                                                    </td>
+                                                </tr>
+                                            {% elseif app.user.hasRole('ROLE_SUPERIOR') %}
+                                                <tr style="color: #A1AFBB;">
+                                                    <td> Basic</td>
+                                                    <td> $15.00</td>
+                                                    <td> ---</td>
+                                                    <td> ---</td>
+                                                    <td>
+                                                        <span class="label label-sm label-danger"> {{ 'locked' | trans({}, 'backend') }} </span>
+                                                    </td>
+                                                </tr>
+                                                <tr style="color: #32C5D2">
+                                                    <td> {{ membership }}</td>
+                                                    <td> ${{ price|number_format(2,'.',',') }}</td>
+                                                    <td> {{ app.user.created.format('Y-m-d') }}</td>
+                                                    <td> {{ endMembership.format('Y-m-d') }}</td>
+                                                    <td>
+                                                        <span class="label label-sm label-success"> {{ 'active' | trans({}, 'backend') }} </span>
+                                                    </td>
+                                                </tr>
+                                                <tr style="color: #A1AFBB;">
+                                                    <td> Profesional</td>
+                                                    <td> $250.00</td>
+                                                    <td> ---</td>
+                                                    <td> ---</td>
+                                                    <td>
+                                                        <span class="label label-sm label-danger"> {{ 'locked' | trans({}, 'backend') }} </span>
+                                                    </td>
+                                                </tr>
+                                            {% else %}
+                                                <tr style="color: #A1AFBB;">
+                                                    <td> Basic</td>
+                                                    <td> $15.00</td>
+                                                    <td> ---</td>
+                                                    <td> ---</td>
+                                                    <td>
+                                                        <span class="label label-sm label-danger"> {{ 'locked' | trans({}, 'backend') }} </span>
+                                                    </td>
+                                                </tr>
+                                                <tr style="color: #A1AFBB;">
+                                                    <td> Superior</td>
+                                                    <td> $30.00</td>
+                                                    <td> ---</td>
+                                                    <td> ---</td>
+                                                    <td>
+                                                        <span class="label label-sm label-danger"> {{ 'locked' | trans({}, 'backend') }} </span>
+                                                    </td>
+                                                </tr>
+                                                <tr style="color: #32C5D2">
+                                                    <td> {{ membership }}</td>
+                                                    <td> ${{ price|number_format(2,'.',',') }}</td>
+                                                    <td> {{ app.user.created.format('Y-m-d') }}</td>
+                                                    <td> {{ endMembership.format('Y-m-d') }}</td>
+                                                    <td>
+                                                        <span class="label label-sm label-success"> {{ 'active' | trans({}, 'backend') }} </span>
+                                                    </td>
+                                                </tr>
+                                            {% endif %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END WIDGET TAB -->
+
+                            <div style="text-align: center">
+                        <span class="label label-sm label-success">
+							Todos los miembros de TML4you, pueden disfrutar de los beneficios de su &uacute;ltima membres&iacute;a activa.
+                        </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <!-- BEGIN WIDGET PROGRESS -->
+                            <div class="widget-progress">
+                                <div class="widget-progress-element widget-bg-color-red  margin-bottom-25">
+                                    <div class="actions">
+                                        <a style="float: right" class="btn btn-circle btn-icon-only btn-default"
+                                           href="#info-devolution" data-toggle="modal">
+                                            <i class="icon-info"></i>
+                                        </a>
+                                    </div>
+                                    <br><br>
+
+                            <span class="widget-progress-title">Devoluci&oacute;n <span
+                                        class="pull-right">{#56%#}</span></span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar widget-bg-color-white" role="progressbar"
+                                             aria-valuenow="100"
+                                             aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <button style="float: right" type="button" data-loading-text="Loading..."
+                                            class="demo-loading-btn btn btn-default"
+                                            onclick="javascript:requestDevolution()"> {{ 'solisite.devolution'|trans({},'backend') }}
+                                    </button>
+                                </div>
+
+                                <div class="widget-progress-element widget-bg-color-blue margin-bottom-25">
+                                    <div class="actions">
+                                        <a style="float: right" class="btn btn-circle btn-icon-only btn-default"
+                                           href="#info-comition" data-toggle="modal">
+                                            <i class="icon-info"></i>
+                                        </a>
+                                    </div>
+                                    <br><br>
+                        <span class="widget-progress-title">Mis comisiones <span
+                                    class="pull-right">{#77%#}</span></span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar widget-bg-color-white" role="progressbar"
+                                             aria-valuenow="100"
+                                             aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                        </div>
+                                    </div>
+                                    <br>
+
+                            <span style="font-size: 1.5em; color: #fff;">USD $<span class="widget-thumb-body-stat"
+                                                                                    data-counter="counterup"
+                                                                                    data-value="{{ app.user.getActiveProfile.credit|number_format(2,'.',',') }}">0</span></span>
+                                    <button style="float: right" type="button" class="btn btn-default"
+                                            onclick="javascript:modalCobrar()">{{ 'pay' | trans({}, 'backend') }}</button>
+                                </div>
+
+                            </div>
+                            <!-- END WIDGET PROGRESS -->
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                <!-- BEGIN PORTLET-->
+                <div class="portlet light tasks-widget bordered">
+                    <div class="portlet-title">
+                        <div class="caption caption-md font-red-sunglo">
+                            <i class="icon-share font-blue"></i>
+                            <span class="caption-subject theme-font bold uppercase"
+                                  style="color: #3FC9D5">TML4you Social</span>
+                            <!--<span class="caption-helper">Mini Red TML4you</span>-->
+                        </div>
+                        <div class="actions">
+                            <div class="btn-group btn-group-devided" data-toggle="buttons">
+
+                                <label class="btn btn-transparent grey-salsa btn-circle btn-sm active">
+                                    <input type="radio" name="options" class="toggle" id="option1">TML4you</label>
+
+                                {#<label class="btn btn-transparent grey-salsa btn-circle btn-sm">#}
+                                {#<input type="radio" name="options" class="toggle" id="option2">Equipo</label>#}
+
+                                {#<label class="btn btn-transparent grey-salsa btn-circle btn-sm">#}
+                                {#<input type="radio" name="options" class="toggle" id="option3">Amigos</label>#}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+
+                        <div class="scroller" style="height: 350px;" data-always-visible="1" data-rail-visible1="0"
+                             data-handle-color="#D7DCE2" id="social-message">
+
+                        </div>
+                        {% if app.user.hasRole('ROLE_SUPERIOR') or app.user.hasRole('ROLE_PROFESSIONAL') %}
+                            <div class="chat-form">
+                                <form method="post" action="{{ path('app_admin_social_message_publish') }}"
+                                      id="social-message-form">
+                                    <div class="input-cont">
+                                        <input class="form-control" placeholder="Type a message here..." type="text"
+                                               name="message">
+                                    </div>
+                                    <div class="btn-cont">
+                                        <span class="arrow"> </span>
+                                        <button type="submit" class="btn blue icn-only">
+                                            <i class="fa fa-check icon-white"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        {% else %}
+                            <div class="alert alert-warning"><i class="icon-info"></i> Solo los Miembros Superiores y
+                                Profesionales,
+                                pueden publicar...
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+                <!-- END PORTLET-->
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption caption-md font-blue">
+                            <i class="icon-speech font-blue"></i>
+                            <span class="caption-subject theme-font bold uppercase">{{ 'testimonials' | trans({}, 'backend') }}</span>
+                        </div>
+
+                    </div>
+                    <div class="portlet-body">
+                        <!--<div class="chat-form">-->
+                        <!--<div class="input-cont">-->
+
+
+                        <form method="post" action="{{ path('app_admin_dashboard_testimonial') }}"
+                              id="testimonial-form">
+                            <div class="form-group form-md-line-input">
+
+                                <div class="control">
+                                    <textarea class="form-control" name="testimonies" required rows="5"
+                                              placeholder="Quierio dejar mi testimonio sobre TML4you"></textarea>
+                                    <label for="form_control_1"></label>
+                                </div>
+
+                            </div>
+                            <button style="text-align: right" type="submit" class="btn btn-success">
+                                <i class="fa fa-upload"></i> {{ 'send' | trans({}, 'backend') }}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {#<div class="col-md-4">#}
+            {#<!-- BEGIN WIDGET BLOG -->#}
+            {#<div class="widget-blog text-center margin-bottom-20 clearfix"#}
+            {#style="height: 442px; padding-top: 120px; background-image: url('');">#}
+            {#<div class="widget-blog-heading text-uppercase">#}
+            {#<h3 class="widget-blog-title">San Francisco</h3>#}
+            {#<span class="widget-blog-subtitle">At dawn</span>#}
+            {#</div>#}
+            {#<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod#}
+            {#tincidunt#}
+            {#ut laoreet dolore magna aliquam erat volutpat commodo consequat.#}
+            {#</p>#}
+            {#<br/>#}
+            {#<a class="btn btn-danger text-uppercase" href="">Read More</a>#}
+            {#</div>#}
+            {#<!-- END WIDGET BLOG -->#}
+            {#</div>#}
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="devolutionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    {#<div class="modal-header vd_bg-blue vd_white">#}
+                    {#<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>#}
+                    {#</div>#}
+                    <div class="modal-body padT10">
+                        <form class="form-horizontal" method="post"
+                              action="{{ path('app_admin_transfer_cobrar_comision') }}" id="requestCobrar">
+                            <div class="form-group">
+
+                                <label class="col-sm-4 control-label">{{ 'paypal_account_email'|trans({},'backend') }}</label>
+
+                                <div class="col-sm-7 controls">
+                                    <input class="input-border-btm" type="text" name="account" required="required">
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <label class="col-sm-4 control-label">{{ 'deposit_amount'|trans({},'backend') }}</label>
+
+                                <div class="col-sm-7 controls">
+                                    <input class="input-border-btm" type="number" name="amount" required="required"
+                                           min="0">
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer background-login">
+                        <button type="button" class="btn vd_btn vd_bg-grey"
+                                data-dismiss="modal">{{ 'close'|trans({},'resources') }}</button>
+                        <button type="button" class="btn vd_btn vd_bg-green"
+                                onclick="javascript:requestCobrar()">{{ 'cobrar'|trans({},'resources') }}</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+        {#Modal of Info Devolution#}
+        <div class="modal fade" id="info-devolution" tabindex="-1" role="basic" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">{{ 'info.devolution' | trans({}, 'backend') }}</h4>
+                    </div>
+                    <div class="tab-content scroller" style="height: 400px;" data-always-visible="1"
+                         data-handle-color="#D7DCE2">
+                        <div class="modal-body">
+                            <h2>DESCUBRIENDO LAS GARANTIAS DEL NEGOCIO MAS PERFECTO PARA MI.</h2><br><br>
+
+                            <h4>1- &iquest;QUE BENEFICIOS DE GARANTIA Y SATIFACCION RECIBO POR MI DINERO?</h4>
+
+                            <p>Satisfacci&oacute;n completa o devoluci&oacute;n del costo en (a)10dias con la compra de
+                                su
+                                membres&iacute;as
+                                b&aacute;sica
+                                (b) 20 d&iacute;as con la posterior compra de la membres&iacute;a superior (c) 30 d&iacute;as
+                                con la tercer
+                                compra de
+                                la membres&iacute;a Profesional, Mas recibe todo lo ganado cuando ha cumplido con todos
+                                los
+                                requisitos
+                                del negocio.
+                            </p>
+
+                            <h4>2- &iquest;QUE BENEFICIO EXTRA DE GARANTIA Y SATISFACCION PUEDO RECIBIR POR MI DINERO SI
+                                ME
+                                GUSTO Y
+                                QUIERO SEGUIR PROBANDO Y GANANDO DINERO?</h4>
+
+                            <p>Satisfacci&oacute;n completa o devoluci&oacute;n del costo de su &uacute;ltima membres&iacute;a
+                                actual y activa por un
+                                periodo de (90)d&iacute;as posterior a la compra original si cumple con los requisitos
+                                siguientes
+                                (a)
+                                haber ganado en el &uacute;ltimo mes un total de ganancias menores al costo de su
+                                ultima,
+                                actual y
+                                activa membres&iacute;a (b)haber mantenido actualizado su panel de control y blog de su
+                                membres&iacute;a
+                                ultima, actual y activa (c) haber cumplido con todas las reglas de negocio y no tener
+                                ninguna
+                                queja de los patrocinados personalmente por usted.
+                            </p>
+
+                            <h4>3- &iquest;QUE BENEFICIOS DE GARANTIA Y SATISFACCION PUEDO RECIBIR SI QUIERO COMPRAR MAS
+                                PRODUCTOS Y SERVICIOS PARA CONTINUAR GANANDO MAS DINERO?</h4>
+
+                            <p>Garantizamos todos los beneficios por igual en todas las membres&iacute;as adquiridas por
+                                primera
+                                vez en la vida del miembro y manteniendo el poder de las membres&iacute;as adquiridas
+                                anteriormente
+                                bajo su informaci&oacute;n legal y siendo mayor de edad.
+                            </p>
+
+                            <h4>4- &iquest;QUE BENEFICIO EXTRA DE GARANTIA Y SATISFACCION PUEDO RECIBIR SI PASO LOS 12
+                                MESES
+                                DE
+                                LA MEMBRECIA Y NO LOGRE UN TOTAL DE GANANCIAS POR ENCIMA DE MI COSTO?</h4>
+
+                            <p>Garantizamos su reembolso del costo pagado por su membres&iacute;a y agregamos una
+                                recompensa
+                                de
+                                agradecimiento administrativo a su lugar de pago original antes de (15dias) despu&eacute;s
+                                de
+                                vencida su membres&iacute;a, si usted ha cumplido con todos los requisitos de nuestro
+                                negocio.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn dark btn-outline"
+                                data-dismiss="modal">{{ 'close' | trans({}, 'backend') }}</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        {#Modal of Info Comitions#}
+        <div class="modal fade" id="info-comition" tabindex="-1" role="basic" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">{{ 'info.comition' | trans({}, 'backend') }}</h4>
+                    </div>
+                    <div class="tab-content scroller" style="height: 400px;" data-always-visible="1"
+                         data-handle-color="#D7DCE2">
+                        <div class="modal-body">
+                            <h2>Condiciones de pago TML / PayPal, para membres&iacute;as.</h2><br>
+
+                            <h3>TML-Transfer</h3>
+                            <ul style="list-style: none">
+                                <li><i class="icon-check"></i> Usted debe saber que la &uacute;nica persona autorizada
+                                    para
+                                    tomar la decisi&oacute;n del pago es el due&ntilde;o
+                                    original de la membres&iacute;a y cualquier reclamaci&oacute;n de irregularidad del
+                                    pago, ser&aacute; suspendida
+                                    la transacci&oacute;n.
+                                </li>
+                                <li><i class="icon-check"></i> Usted debe saber que este pago puede tener gastos extras
+                                    administrativas.
+                                </li>
+                                <li><i class="icon-check"></i> Usted debe saber que TML4you Inc. puede aplicar gastos
+                                    administrativos a su cuenta de cr&eacute;dito del miembro.
+                                </li>
+                                <li><i class="icon-check"></i> Usted debe saber que no se procesara su transacci&oacute;n
+                                    si
+                                    sus fondos-cr&eacute;ditos no est&aacute;n listos o no cubren el monto de su
+                                    transacci&oacute;n.
+                                </li>
+                                <li><i class="icon-check"></i> Usted debe saber que su Garant&iacute;a de miembro solo
+                                    cubre
+                                    el gasto de su membres&iacute;a y puede que tenga cargos de procesamiento si es
+                                    solicitada.
+                                </li>
+                                <li><i class="icon-check"></i> USTED ENTIENDE QUE SI REALIZA ESTA TRANSACCION ES PORQUE
+                                    ESTA DE ACUERDO CON ESTOS TERMINOS AQUI Y EN TODO EL SITIO.
+                                </li>
+                            </ul>
+
+                            <h3>PayPal</h3>
+                            <ul style="list-style: none">
+                                <li><i class="icon-check"></i> Usted debe saber que la &uacute;nica persona autorizada
+                                    para
+                                    tomar la decisi&oacute;n del pago es el due&ntilde;o original de la membres&iacute;a
+                                    y
+                                    cualquier reclamaci&oacute;n de irregularidad del pago, ser&aacute; suspendida la
+                                    transacci&oacute;n.
+                                </li>
+                                <li><i class="icon-check"></i> Usted debe saber que este pago tiene gastos extras por
+                                    parte
+                                    del procesador.
+                                </li>
+                                <li><i class="icon-check"></i> Usted debe saber que TML4you Inc. puede no pagar los
+                                    gastos
+                                    del procesador.
+                                </li>
+                                <li><i class="icon-check"></i> Usted es responsable por todos los gastos extras despu&eacute;s
+                                    del costo de su membres&iacute;a adquirida y tml4you Inc. puede deducirlos de sus cr&eacute;ditos
+                                    de miembro.
+                                </li>
+                                <li><i class="icon-check"></i> Usted debe saber que su Garant&iacute;a de miembro solo
+                                    cubre
+                                    el costo de su membres&iacute;a &uacute;ltima pagada y se deducir&aacute;n los
+                                    cargos de
+                                    procesamiento si es solicitada.
+                                </li>
+                                <li><i class="icon-check"></i> USTED ENTIENDE QUE SI REALIZA ESTA TRANSACCION ES PORQUE
+                                    ESTA
+                                    DE ACUERDO CON ESTOS TERMINOS AQUI Y EN TODO EL SITIO.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn dark btn-outline"
+                                data-dismiss="modal">{{ 'close' | trans({}, 'backend') }}</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="messageSponsorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body padT10">
+                        <form class="form-horizontal" method="post"
+                              action="{{ path('app_admin_user_sponsor_message') }}" id="messageSponsor">
+                            {#<input type="hidden" name="sponsor" value="{{ app.user.activeProfile.sponsor.id }}">#}
+                            {#<input type="hidden" name="user" value="{{ app.user.activeProfile.id }}">#}
+                            <div class="form-group" style="margin: 0px;">
+                                <label class="control-label">{{ 'sponsor.message'|trans({},'backend') }}</label>
+                                <textarea class="form-control" name="message" required="required"></textarea>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer background-login">
+                        <button type="button" class="btn black"
+                                data-dismiss="modal">{{ 'close'|trans({},'resources') }}</button>
+                        <button type="button" class="btn green"
+                                onclick="javascript:requestMessage()">{{ 'send'|trans({},'resources') }}</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+    </div>
+{% endblock page_body %}
+
+    {% block page_script %}
+        <script type="text/javascript" src="{{ asset('backend/js/jquery-form.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('backend/plugins/jquery.knob/jquery.knob.js') }}"></script>
+
+        <script type="text/javascript" src="{{ asset('backend/plugins/bootbox/bootbox.min.js') }}"></script>
+        <script type="text/javascript">
+            function requestDevolution() {
+                bootbox.prompt("{{ 'insert.your_paypal.account_email'|trans({},'backend') }}", function (result) {
+                    if (result != null) {
+                        $.ajax({
+                            method: 'POST',
+                            url: '{{ path('app_admin_membership_cancel_membership') }}',
+                            data: {account: result},
+                            dataType: 'json',
+                            success: function (response) {
+                                if (response.success) {
+                                    notification_success('Solicitud recibida', response.message);
+                                } else {
+                                    notification_error('Solicitud recibida', response.message);
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+
+            function modalCobrar() {
+                $("#devolutionModal").modal('show');
+            }
+
+            function requestCobrar() {
+                if ($('#requestCobrar').valid()) {
+                    $("#requestCobrar").submit();
+                }
+            }
+
+            function loadSocialMessage() {
+                $.get('{{ path('app_admin_social_message_latest') }}', function (response) {
+                    $("#social-message").html(response);
+                });
+            }
+
+            function incrementLike(message, action) {
+                $.post('{{ path('app_admin_social_message_increment_like') }}', {
+                    message: message,
+                    action: action
+                }, function () {
+                    loadSocialMessage();
+                });
+            }
+
+            function follow(username, action) {
+                $.post('{{ path('app_admin_user_follow') }}', {username: username, action: action}, function () {
+                    loadSocialMessage();
+                });
+            }
+
+            function sponsorFollow(username, action) {
+                $.post('{{ path('app_admin_user_follow') }}', {
+                    username: username,
+                    action: action
+                }, function (response) {
+                    if (response.success) {
+                        document.location.href = document.location.href;
+                    }
+                });
+            }
+
+            function requestMessage() {
+                if ($('#messageSponsor').valid()) {
+                    $("#messageSponsor").submit();
+                }
+            }
+        </script>
+    {% endblock %}
+
+    {% block javascripts_document_ready %}
+        {#<script type="text/javascript">#}
+        jQuery(".knob").knob();
+        $('#testimonial-form').ajaxForm({
+        dataType: 'json',
+        resetForm: true,
+        success: function(response) {
+        if(response.success) {
+        notification_success('Testimonio guardado', 'Su testimonio se ha publicado, gracias por su contribucion.');
+        } else {
+        notification_error('Error', 'Ha ocurrido un error que nos imposibilita publicar su testimonio');
+        }
+        },
+        error: function() {
+        notification_error('Error', 'Ha ocurrido un error que nos imposibilita publicar su testimonio');
+        }
+        });
+
+        {% if latestNews is not empty %}
+            $(".vd_news-widget .vd_carousel").carouFredSel({
+            prev:{
+            button : function() {
+            return $(this).parent().parent().children('.vd_carousel-control').children('a:first-child')
+            }
+            },
+            next:{
+            button : function() {
+            return $(this).parent().parent().children('.vd_carousel-control').children('a:last-child')
+            }
+            },
+            scroll: {
+            fx: "crossfade",
+            onBefore: function(){
+            var target = "#front-1-clients";
+            $(target).css("transition","all .5s ease-in-out 0s");
+            if ($(target).hasClass("vd_bg-soft-yellow")){
+            $(target).removeClass("vd_bg-soft-yellow");
+            $(target).addClass("vd_bg-soft-red");
+            } else
+            if ($(target).hasClass("vd_bg-soft-red")){
+            $(target).removeClass("vd_bg-soft-red");
+            $(target).addClass("vd_bg-soft-blue");
+            } else
+            if ($(target).hasClass("vd_bg-soft-blue")){
+            $(target).removeClass("vd_bg-soft-blue");
+            $(target).addClass("vd_bg-soft-green");
+            } else
+            if ($(target).hasClass("vd_bg-soft-green")){
+            $(target).removeClass("vd_bg-soft-green");
+            $(target).addClass("vd_bg-soft-yellow");
+            }
+            }
+            },
+            width: "auto",
+            height: "responsive",
+            responsive: true,
+            auto:3000
+            });
+        {% endif %}
+
+        $('#requestCobrar').ajaxForm({
+        dataType: 'json',
+        success: function(response) {
+        $("#devolutionModal").modal('hide');
+        if(response.success) {
+        notification_success('Solicitud recibida', response.message);
+        } else {
+        notification_error('Solicitud recibida', response.message);
+        }
+        },
+        error: function(){
+        $("#devolutionModal").modal('hide');
+        }
+        });
+        loadSocialMessage();
+        setInterval(loadSocialMessage, 300000);
+
+        $("#social-message-form").ajaxForm({
+        dataType: 'json',
+        resetForm: true,
+        success: function(response){
+        if(response.success) {
+        loadSocialMessage();
+        }
+        }
+        });
+
+        $('#messageSponsor').ajaxForm({
+        dataType: 'json',
+        resetForm: true,
+        success: function(response){
+        if(response.success) {
+        notification_success('', response.message);
+        } else {
+        notification_error('', response.message);
+        }
+        $("#messageSponsorModal").modal('hide');
+        }
+        });
+    {% endblock %}

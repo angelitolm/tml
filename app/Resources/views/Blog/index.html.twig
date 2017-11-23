@@ -1,0 +1,622 @@
+{% extends '::admin.html.twig' %}
+
+{% block title %}
+    {% if title is not defined %}
+        Su Blog no ha sido creado a&uacute;n...
+    {% else %}
+        {{ 'blog.title%name%' | trans({'%name%':blog.user.name},'blog') }}
+    {% endif %}
+{% endblock %}
+
+{% block page_style %}
+    {% if blog.picture is not defined %}
+        <img src="{{ asset('backend/img/logo_dashboard.png') }}">
+    {% elseif blog.picture is not empty %}
+        {% set img_url = constant('IMAGES_UPLOAD_DIR',blog)~blog.picture %}
+        <style type="text/css">
+            #front-1-banner {
+                background-image: url("{{ asset(img_url) }}");
+            }
+        </style>
+    {% endif %}
+
+    <style type="text/css">
+        a.vd_btn > i {
+            font-size: 28px;
+            margin-left: -18px;
+            color: #fff;
+        }
+
+        body {
+            font-size: 14px;
+            background: #F1F3FA
+        }
+    </style>
+{% endblock page_style %}
+
+{% block body_tag %}
+
+{% endblock body_tag %}
+
+{% block header_tag %}
+    <header class="page-header">
+        <nav class="navbar mega-menu" role="navigation">
+            <div class="container-fluid">
+                <div class="clearfix navbar-fixed-top">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target=".navbar-responsive-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                            <span class="toggle-icon">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </span>
+                    </button>
+                    <!-- End Toggle Button -->
+                    <!-- BEGIN LOGO -->
+                    <a id="index" class="page-logo" href="{{ path('app_front_blog',{'username':user.username}) }}">
+                        {% if blog.picture is not defined %}
+                            <img src="{{ asset('backend/img/logo_dashboard.png') }}">
+                        {% elseif blog.picture is not empty %}
+                            {% set img_url = constant('IMAGES_UPLOAD_DIR',blog)~blog.picture %}
+                            <img src="{{ asset(img_url) }}"/>
+                        {% endif %}
+                    </a>
+                    <!-- END LOGO -->
+                    <!-- BEGIN TOPBAR ACTIONS -->
+                    <div class="topbar-actions">
+                        <!--BEGIN CODE USER-->
+                        <div class="btn-group-img btn-group">
+                            <div class="portlet-body util-btn-margin-bottom-5">
+                                <a href="http://www.facebook.com" data-original-title="facebook"
+                                   class="social-icon facebook"> </a>
+                                <a href="http://www.googleplus.com" data-original-title="Goole Plus"
+                                   class="social-icon googleplus"> </a>
+                                <a href="http://www.linkedin.com" data-original-title="linkedin"
+                                   class="social-icon linkedin"> </a>
+                                <a href="http://www.pintrest.com" data-original-title="pintrest"
+                                   class="social-icon pintrest"> </a>
+                                <a href="http://www.twitter.com" data-original-title="twitter"
+                                   class="social-icon twitter"> </a>
+                                <a href="http://www.instagram.com" data-original-title="instagram"
+                                   class="social-icon instagram"> </a>
+                            </div>
+                        </div>
+                        <!--END CODE USER-->
+                        <!-- END GROUP INFORMATION -->
+
+                    </div>
+                    <!-- END TOPBAR ACTIONS -->
+                </div>
+            </div>
+            <!--/container-->
+        </nav>
+    </header>
+{% endblock %}
+
+{% block section_tag %}
+    <div class="page-content-wrapper">
+    <div class="page-content" style="background: #F1F3FA">
+                    <!-- BEGIN PAGE TITLE-->
+
+                    <h3 class="page-title" style="margin-bottom: 55px; margin-top: -5px">
+                    {{ blog.title }} |
+                        <small> {{ blog.slogan }}</small>
+                    </h3>
+                    <!-- END PAGE TITLE-->
+
+                    <!-- END PAGE HEADER-->
+                    <div class="blog-page blog-content-1">
+                        <div class="row">
+                            <div class="col-lg-6">
+                            {% for post in blog.posts %}
+                                <div class="blog-post-lg bordered blog-container" style="background: #fff">
+                                    <div class="">
+                                        <a href="{{ path('app_post_details',{'id':post.id}) }}">
+                                            {% set url = post.picture is not empty ? constant('IMAGES_UPLOAD_DIR',post)~post.picture : 'backend/img/photos/news-blur.jpg' %}
+                                            <img class="img-responsive" alt="" src="{{ asset(url) }}">
+                                        </a>
+                                    </div>
+                                    <div class="blog-post-content">
+                                        <h2 class="blog-title blog-post-title">
+                                            <a href="{{ path('app_post_details',{'id':post.id}) }}">{{ post.title}}</a>
+                                        </h2>
+                                        <p class="blog-post-desc"> {{ post.description | slice(0,255) }}... </p>
+                                        <div class="blog-post-foot">
+
+                                            <div class="blog-post-meta">
+                                                <i class="icon-user font-blue"></i>
+                                                <a href="javascript:;">{{ user }}</a>
+                                            </div>
+                                            <div class="blog-post-meta">
+                                                <i class="icon-calendar font-blue"></i>
+                                                <a href="javascript:;">{{ post.created|date('d F Y') }}</a>
+                                            </div>
+                                            <div class="blog-post-meta">
+                                                <i class="icon-bubble font-blue"></i>
+                                                <a href="javascript:;">{{ post.comments|length }} Comments</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% else %}
+                    <h2>No hay publicaciones a&uacute;n</h2>
+                                {% endfor %}
+
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="blog-quote bordered blog-container">
+                                            <div class="blog-quote-label bg-green-jungle">
+                                                <h3>Datos Personales</h3> </div>
+                                            <div class="blog-quote-avatar">
+                                                <a href="javascript:;">
+                         {% if user.picture == null %}
+                             <img class="user-pic" alt="" src="{{ asset('backend-metronic/img/avatars/avatar.jpg') }}"/>
+                         {% elseif user.picture is not empty %}
+                         {% set url = constant('IMAGES_UPLOAD_DIR',user)~user.picture %}
+                             <img alt="personal image" src="{{ asset(url) }}" />
+                         {% endif %}
+                                                </a>
+                                            </div>
+                                            <div class="blog-quote-author">
+                                                <h3 class="blog-title blog-quote-title">
+                                                    <a href="javascript:;">{{ user.name }}</a>
+                                                </h3>
+                                                <p class="blog-quote-desc">
+                                                {% if user.getActiveProfile == "ROLE_PROFESSIONAL" %}
+                                            PROFESIONAL
+                                            {% elseif user.getActiveProfile == "ROLE_SUPERIOR" %}
+                                            SUPERIOR
+                                            {% elseif user.getActiveProfile == "ROLE_BASIC" %}
+                                            BASICO
+                                            {% endif %}
+</p><br>
+<div class="row">
+    <div class="col-md-6" style="margin-bottom: 10px">
+    C&oacute;digo: <span class="badge badge-success">{{ user.code }}
+</span>
+</div>
+
+<div class="col-md-6">
+&nbsp;
+</div>
+
+<div class="col-md-12" style="text-align: left; margin-left: 20px; margin-bottom: 10px">
+
+Correo: <span class="badge badge-success" style="text-transform: none">{{ user.email }}
+</span>
+</div>
+
+<div class="col-md-6" style="margin-left: -5px">
+
+Afiliados: <span class="badge badge-success">{{ user.getActiveProfile.getChildrenMembers|length }}
+</span>
+</div>
+<div class="col-md-6" style="margin-bottom: 10px">
+
+Invitados: <span class="badge badge-success">{{ user.getActiveProfile.getGuestChildrenMembers|length }}
+</span>
+</div>
+</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="portlet light">
+                    <div class="portlet-title">
+                        <div class="caption caption-md font-blue">
+                            <i class="fa fa-university font-blue"></i>
+                            <span class="caption-subject theme-font bold uppercase">{{ 'courses.tml' | trans({}, 'backend') }}</span>
+                        </div>
+
+                    </div>
+                    <div class="portlet-body">
+                        <!-- BEGIN WIDGET GRADIENT -->
+                        <div class="clearfix"></div>
+                        <div id="carousel-example-generic-v1" class="carousel slide widget-carousel"
+                             data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic-v1" data-slide-to="0"
+                                    class="circle active"></li>
+                                <li data-target="#carousel-example-generic-v1" data-slide-to="1"
+                                    class="circle"></li>
+                                <li data-target="#carousel-example-generic-v1" data-slide-to="2"
+                                    class="circle"></li>
+                                <li data-target="#carousel-example-generic-v1" data-slide-to="3"
+                                    class="circle"></li>
+                            </ol>
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <div class="widget-gradient"
+                                         style="background: url({{ asset('backend-metronic/img/curso1.png') }}); background-size: cover">
+                                        <div class="widget-gradient-body">
+                                            <h3 class="widget-gradient-title">{#Curso de iniciacion TML#}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="widget-gradient"
+                                         style="background: url({{ asset('backend-metronic/img/curso2.png') }}); background-size: cover">
+                                        <div class="widget-gradient-body">
+                                            <h3 class="widget-gradient-title">{#�C�mo socializar?#}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="widget-gradient"
+                                         style="background: url({{ asset('backend-metronic/img/curso3.png') }}); background-size: cover">
+                                        <div class="widget-gradient-body">
+                                            <h3 class="widget-gradient-title">{#�C�mo socializar?#}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="widget-gradient"
+                                         style="background: url({{ asset('backend-metronic/img/curso4.png') }}); background-size: cover">
+                                        <div class="widget-gradient-body">
+                                            <h3 class="widget-gradient-title">{#�C�mo socializar?#}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        {#<div class="blog-banner blog-container" style="background-image:url(../assets/pages/img/background/7.jpg);">#}
+                                            {#<h2 class="blog-title blog-banner-title">#}
+                                                {#<a href="javascript:;">Metronic Latest Features</a>#}
+                                            {#</h2>#}
+                                        {#</div>#}
+
+                                        <div class="portlet light">
+                    <div class="portlet-title">
+                        <div class="caption caption-md font-blue">
+                            <i class="icon-book-open font-blue"></i>
+                            <span class="caption-subject theme-font bold uppercase">{{ 'news.tml' | trans({}, 'backend') }}</span>
+                        </div>
+
+                    </div>
+                    <div class="portlet-body">
+                        <!-- BEGIN WIDGET WRAP IMAGE -->
+                        <div id="carousel-example-generic-v2" class="carousel slide widget-carousel"
+                             data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators carousel-indicators-red">
+                                <li data-target="#carousel-example-generic-v2" data-slide-to="0"
+                                    class="circle active"></li>
+                                <li data-target="#carousel-example-generic-v2" data-slide-to="1"
+                                    class="circle"></li>
+                                    <li data-target="#carousel-example-generic-v2" data-slide-to="2"
+                                    class="circle"></li>
+                            </ol>
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                            {% for news in latestNews %}
+                                <div class="item active">
+                                    <div class="widget-wrap-img widget-bg-color-white">
+                                        <a href="{{ path('news',{'id':news.id}) }}"><h3 class="widget-wrap-img-title">{{ news.title }}</h3></a>
+                                        {#<a href="{{ path('news',{'id':news.id}) }}"> <i class="fa fa-link"> </i> Leer m&aacute;s</a>#}
+
+                                        {% set url = news.image is not empty ? constant('IMAGES_UPLOAD_DIR',news)~news.image : 'backend/img/photos/news-blur.jpg' %}
+                                            <img class="widget-wrap-img-element img-responsive" src="{{ asset(url) }}" alt="">
+                                    </div>
+                                </div>
+                                {% else %}
+                                <h2>No hay noticias</h2>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="portlet light">
+                                    <div class="portlet-title">
+                        <div class="caption caption-md font-blue">
+                            <i class="icon-envelope-letter font-blue"></i>
+                            <span class="caption-subject theme-font bold uppercase">Contacto</span>
+                        </div>
+
+                    </div>
+
+                                            <div class="portlet-body">
+
+                  <div id="contact-form-result">
+                    <div id="success" class="alert alert-success hidden">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="icon-cross"></i></button>
+                      We have <strong>successfully</strong> received your Message and will get Back to you as soon as possible.</div>
+                    <div id="error" class="alert alert-danger hidden">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="icon-cross"></i></button>
+                    </div>
+                    <div id="empty" class="alert alert-danger hidden">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="icon-cross"></i></button>
+                      Please <strong>Fill up</strong> all the Fields and Try Again.</div>
+                    <div id="unexpected" class="alert alert-danger hidden">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="icon-cross"></i></button>
+                      An <strong>unexpected error</strong> occured. Please Try Again later.</div>
+                    </div>
+                  <form role="form" action="{{ path('app_front_blog_contact_new',{'username':blog.user.username}) }}" id="contact-form-widget" class="form-horizontal" method="post">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <label class="control-label vd_white">Name</label>
+                        <div class="controls">
+                          <input id="contact-form-name" name="contact-form-name" type="text" required placeholder="" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <label class="control-label vd_white">Email</label>
+                        <div class="controls">
+                          <input id="contact-form-email" name="contact-form-email"  type="email" required placeholder=""  class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <label class="control-label vd_white">Message</label>
+                        <div class="controls">
+                          <textarea id="contact-form-message" name="contact-form-message" rows="4" required  class="form-control"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                      <br>
+                        <button style="float: right" class="btn green" id="contact-form-submit" name="contact-form-submit" type="submit"><i class="append-icon fa fa-envelope"></i>SEND MESSAGE</button>
+                      </div>
+                    </div>
+                  </form>
+                                            </div>
+
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</div>
+</div>
+
+<!-- Footer Start -->
+  <footer class="footer-2"  id="footer">
+    <div class="vd_bottom vd_bg-dark-green pd-20">
+        <div class="container">
+            <div class="row">
+              <div class=" col-xs-12">
+              	<div class="portlet-body util-btn-margin-bottom-5" style="text-align: center; margin-bottom: 15px">
+                                <a href="http://www.facebook.com" data-original-title="facebook" class="social-icon facebook"> </a>
+                                <a href="http://www.googleplus.com" data-original-title="Goole Plus"
+                                   class="social-icon googleplus"> </a>
+                                <a href="http://www.linkedin.com" data-original-title="linkedin" class="social-icon linkedin"> </a>
+                                <a href="http://www.pintrest.com" data-original-title="pintrest" class="social-icon pintrest"> </a>
+                                <a href="http://www.twitter.com" data-original-title="twitter" class="social-icon twitter"> </a>
+                                <a href="http://www.instagram.com" data-original-title="instagram"
+                                   class="social-icon instagram"> </a>
+                            </div>
+                <div class="copyright text-center">
+                            Copyright &copy;{{ 'now'|date('Y') }} {{ site_name }} {{ 'all_right_reserved'|trans({},'backend') }}
+                        </div>
+              </div>
+            </div><!-- row -->
+        </div><!-- container -->
+    </div>
+  </footer>
+<!-- Footer END -->
+
+</div>
+<!-- .vc_body END  -->
+<a id="back-top" href="#" data-action="backtop" class="vd_back-top visible"> <i class="fa  fa-angle-up"> </i> </a>
+
+<!--
+<a class="back-top" href="#" id="back-top"> <i class="icon-chevron-up icon-white"> </i> </a> -->
+{% endblock %}
+
+{% block footer_tag %}{% endblock %}
+
+{% block body_end_before_js %}
+    <a id="back-top" href="#" data-action="backtop" class="vd_back-top visible"> <i class="fa  fa-angle-up"> </i> </a>
+{% endblock %}
+
+{% block page_script %}
+    <script type="text/javascript" src="{{ asset('backend/js/jquery-form.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backend/plugins/stellar/jquery.stellar.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backend/plugins/waypoints/waypoints.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backend/plugins/jquery-easing/jquery.easing.1.3.js') }}"></script>
+{% endblock page_script %}
+
+{% block javascripts_document_ready %}
+    {#<script type="text/javascript">#}
+    {#    $(document).ready(function() {
+            "use strict";#}
+
+    $('#contact-form-widget').ajaxForm({
+    dataType: 'json',
+    resetForm: true,
+    success: function(response) {
+    if(response.success) {
+    $("#contact-form-result div").addClass('hidden');
+    $("#contact-form-result #success").removeClass('hidden');
+    } else {
+    $("#contact-form-result div").addClass('hidden');
+    $("#contact-form-result #error").removeClass('hidden');
+    $("#contact-form-result #error").append(data.message);
+    }
+    },
+    error: function() {
+    $("#contact-form-result div").addClass('hidden');
+    $("#contact-form-result #unexpected").removeClass('hidden');
+    }
+    });
+    /* var options = {
+    type: "POST",
+    url: $("#contact-form-widget").attr('action'),
+    dataType: "json",
+    success: function(data) {
+    if (data.response == "success") {
+    $("#contact-form-result div").addClass('hidden');
+    $("#contact-form-result #success").removeClass('hidden');
+    } else if (data.response == "error") {
+    $("#contact-form-result div").addClass('hidden');
+    $("#contact-form-result #error").removeClass('hidden');
+    $("#contact-form-result #error").append(data.message);
+    } else if (data.response == "empty") {
+    $("#contact-form-result div").addClass('hidden');
+    $("#contact-form-result #empty").removeClass('hidden');
+    } else if (data.response == "unexpected") {
+    $("#contact-form-result div").addClass('hidden');
+    $("#contact-form-result #unexpected").removeClass('hidden');
+    }
+    $("#contact-form-widget").find('#contact-form-submit #spin').remove();
+    $("#contact-form-widget").find('#contact-form-submit').removeClass('disabled').removeAttr('disabled').blur();
+
+    $("#contact-form-widget").fadeOut(500, function(){
+    $('#contact-form-result').fadeIn(500);
+    });
+    },
+    error: function() {
+    $("#contact-form-result div").addClass('hidden');
+    $("#contact-form-result #unexpected").removeClass('hidden');
+    }
+    };
+
+    $("#contact-form-widget").validate({
+    submitHandler: function(form) {
+    $(form).find('#contact-form-submit').prepend('<i id="spin"
+                                                     class="fa fa-spinner fa-spin mgr-10"></i>').addClass('disabled').attr('disabled');
+    $(form).ajaxSubmit(options);
+    },
+    success: function(form){
+    }
+    });*/
+
+
+    /*var slide = $('.slide-waypoint');*/
+
+    //Setup waypoints plugin
+    /*slide.waypoint(function(direction) {
+    // alert('Direction example triggered scrolling ' + direction);
+    //cache the variable of the data-waypoint attribute associated with each slide
+    var dataslide = $(this).attr('data-waypoint');
+
+
+    //If the user scrolls up change the navigation link that has the same data-waypoint attribute as the slide to active and
+    //remove the active class from the previous navigation link
+    /!* if (direction === 'down') {
+    resetActive();
+    $('.vc_primary-menu ul li a[data-waypoint="' + dataslide + '"]').parent().addClass('active');
+    }
+    else {
+    resetActive();
+    $('.vc_primary-menu ul li a[data-waypoint="' + dataslide + '"]').parent().prev().addClass('active');
+    }
+    *!/
+
+    },{offset:0});*/
+
+
+    //Create a function that will be passed a slide number and then will scroll to that slide using jquerys animate. The
+    Jquery
+    //easing plugin is also used, so we passed in the easing method of 'easeInOutQuint' which is available throught the
+    plugin.
+    /*function goToByScroll(dataslide) {
+    if (dataslide=="home"){
+    $('html,body').animate({scrollTop:0},1500, 'easeInOutQuint');
+    } else {
+    $('html,body').animate({
+    scrollTop: $('.slide-waypoint[data-waypoint="' + dataslide + '"]').offset().top
+    }, 1500, 'easeInOutQuint');
+    }
+    }*/
+
+
+    /*$('.vd_top-menu-wrapper .horizontal-menu .nav > li > a[data-waypoint]').click(function (e) {
+    e.preventDefault();
+
+    var dataslide = $(this).attr('data-waypoint');
+    goToByScroll(dataslide);
+    });*/
+    /*$("#front-1-banner .icon-banner, #front-1-banner .word-header, #front-1-banner .word-subheader, .vd_visitor-counter,
+    .visitor-word, .feature-1, .feature-2, .feature-3, .vd_gallery .gallery-item").css("opacity",0);
+
+    $("#front-1-banner").waypoint(function () {
+
+    $('#front-1-banner .word-header').delay(0).queue(function () {
+    $('#front-1-banner .word-header').removeClass("hidden").addClass("animated fadeInDownBig");
+    });
+    $('#front-1-banner .word-subheader').delay(300).queue(function () {
+    $('#front-1-banner .word-subheader').removeClass("hidden").addClass("animated fadeInDownBig");
+    });
+
+    $('#front-1-banner .icon-1').delay(2000).queue(function () {
+    $('#front-1-banner .icon-1').removeClass("hidden").addClass("animated rollIn");
+    });
+    $('#front-1-banner .word-1').delay(2300).queue(function () {
+    $('#front-1-banner .word-1').removeClass("hidden").addClass("animated rollIn");
+    });
+
+    $("#front-1-banner .icon-2").delay(1500).queue(function () {
+    $('#front-1-banner .icon-2').removeClass("hidden").addClass("animated fadeInDown");
+    });
+    $("#front-1-banner .word-2").delay(1700).queue(function () {
+    $('#front-1-banner .word-2').removeClass("hidden").addClass("animated fadeInDown");
+    });
+
+    $("#front-1-banner .icon-3").delay(2500).queue(function () {
+    $('#front-1-banner .icon-3').removeClass("hidden").addClass("animated fadeInRight");
+    });
+    $("#front-1-banner .word-3").delay(2700).queue(function () {
+    $('#front-1-banner .word-3').removeClass("hidden").addClass("animated fadeInRight");
+    });
+    $("#front-1-banner .icon-4").delay(3500).queue(function () {
+    $('#front-1-banner .icon-4').removeClass("hidden").addClass("animated rotateIn");
+    });
+
+
+    }, { offset: 600 });
+
+    $(".vd_visitor-counter").waypoint(function () {
+    $(".vd_visitor-counter").queue(function () {
+    $('.vd_visitor-counter').addClass("animated fadeInUp");
+    });
+    $(".visitor-word").delay(300).queue(function () {
+    $('.visitor-word').addClass("animated fadeInUp");
+    });
+    $(".visitor-word").delay(300).queue(function () {
+    $('.visitor-word').addClass("animated fadeInUp");
+    });
+    $(".feature-1").delay(1000).queue(function () {
+    $('.feature-1').addClass("animated fadeInRightBig");
+    });
+    $(".feature-2").delay(1200).queue(function () {
+    $('.feature-2').addClass("animated fadeInRightBig");
+    });
+    $(".feature-3").delay(1400).queue(function () {
+    $('.feature-3').addClass("animated fadeInRightBig");
+    });
+
+    }, { offset: 600 });*/
+
+    $(".vd_gallery").waypoint(function () {
+    $(".vd_gallery .gallery-1").queue(function () {
+    $('.vd_gallery .gallery-1').addClass("animated fadeInUp");
+    });
+    $(".vd_gallery .gallery-2").delay(200).queue(function () {
+    $('.vd_gallery .gallery-2').addClass("animated fadeInUp");
+    });
+    $(".vd_gallery .gallery-3").delay(400).queue(function () {
+    $('.vd_gallery .gallery-3').addClass("animated fadeInUp");
+    });
+    }, { offset: 600 });
+
+
+    {#});#}
+    {#</script>#}
+{% endblock javascripts_document_ready %}

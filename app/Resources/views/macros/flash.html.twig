@@ -1,0 +1,49 @@
+{% macro flash(type, message, icon, close, use_raw, class, domain) %}
+  <div class="alert alert-{{ type|default('success') }} {{ class|default('') }} {% if close|default(true) %}alert-dismissable{% endif %} marB30">
+    {% set close = close|default(true) %}
+    {% if close is same as(true) %}
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    {% endif %}
+    {% set icon = icon|default('') %}
+    {% if icon is empty %}
+      {% if type == 'success' %}{% set icon = 'check-circle ' %}{% endif %}
+      {% if type == 'danger' %}{% set icon = 'exclamation-circle ' %}{% endif %}
+      {% if type == 'info' %}{% set icon = 'info-circle ' %}{% endif %}
+      {% if type == 'warning' %}{% set icon = 'exclamation-triangle ' %}{% endif %}
+    {% endif %}
+    <span class="vd_alert-icon"><span class="fa-fw fa fa-{{ icon }}"></span></span>
+    {% if use_raw|default(false) %}
+      {{ message|trans({}, domain|default('messages'))|raw }}
+    {% else %}
+      {{ message|trans({}, domain|default('messages')) }}
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% macro advanced_flash(type, heading, message, icon, close_tag, use_raw, class, domain) %}
+  <div class="alert alert-{{ type|default('success') }} {{ class|default('') }} {% if close_tag|default(true) %}alert-dismissable{% endif %} marB30">
+    {% set close_tag = close_tag|default(true) %}
+    {% if close_tag %}
+      {% if close_tag is same as(true) %}
+        {% set close_tag = 'a' %}
+      {% endif %}
+      <{{ close_tag }} class="close" data-dismiss="alert" aria-hidden="true" {% if close_tag == 'a' %}href="#"{% elseif close_tag =='button' %}type="button"{% endif %}>&times;</{{ close_tag }}>
+    {% endif %}
+    {% if heading|default(false) %}
+      <h4 class="alert-heading">{{ heading }}</h4>
+    {% endif %}
+    {% set icon = icon|default('') %}
+    {% if icon is empty %}
+      {% if type == 'success' %}{% set icon = 'check-circle ' %}{% endif %}
+      {% if type == 'danger' %}{% set icon = 'exclamation-circle ' %}{% endif %}
+      {% if type == 'info' %}{% set icon = 'info-circle ' %}{% endif %}
+      {% if type == 'warning' %}{% set icon = 'exclamation-triangle ' %}{% endif %}
+    {% endif %}
+    <span class="vd_alert-icon"><span class="fa-fw fa fa-{{ icon }}"></span></span>
+    {% if use_raw|default(false) %}
+      {{ message|trans({}, domain|default('messages'))|raw }}
+    {% else %}
+      {{ message|trans({}, domain|default('messages')) }}
+    {% endif %}
+  </div>
+{% endmacro %}

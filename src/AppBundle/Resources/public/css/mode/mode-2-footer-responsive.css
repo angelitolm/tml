@@ -1,0 +1,24 @@
+@media (max-width: 320px){
+	.vc_footer-links .vc_footer-line{
+		margin-left:-1960px;
+	}
+}
+@media (max-width: 480px){
+	.vc_footer-links .vc_footer-line{
+		margin-left:-1860px;
+	}
+
+}
+@media (max-width: 991px){	
+	.vc_footer-links .vc_footer-line{
+		margin-left:-1760px;
+	}	
+}
+@media (min-width: 992px) and (max-width: 1199px) {	
+	.vc_footer-links .vc_footer-line{
+		margin-left:-1460px;
+	}
+}
+
+
+

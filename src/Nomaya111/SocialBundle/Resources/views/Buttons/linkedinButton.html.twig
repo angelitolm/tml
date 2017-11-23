@@ -1,0 +1,18 @@
+{% if url is not defined or url == null %}
+    {% set url = app.request.uri %}
+{% endif %}
+
+{#{% spaceless %}#}
+
+{#<script src="//platform.linkedin.com/in.js" type="text/javascript">#}
+  {#lang: {{ locale }}#}
+{#</script>#}
+
+ {#<script type="IN/Share" data-url="{{ url }}" data-counter="{{ counter }}"></script>#}
+{#{% endspaceless %}#}
+
+{% spaceless %}
+    <a href="//linkedin.com/tml4you" data-pin-do="buttonBookmark"  data-pin-color="red"><img src="{{ asset('bundles/nomayasocial/images/default/linkedin.png') }}" /></a>
+    <!-- Please call pinit.js only once per page -->
+    <script type="text/javascript" async src="//platform.linkedin.com/in.js"></script>
+{% endspaceless %}

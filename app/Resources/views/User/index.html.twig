@@ -1,0 +1,38 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'users.list'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'users.list'|trans({},'backend') }}{% endblock %}
+
+{% import ':macros:dataTables.html.twig' as datatable %}
+
+{% block page_style %}{{ datatable.css() }}{% endblock page_style %}
+{% block page_script %}{{ datatable.js() }}{% endblock page_script %}
+{% block javascripts_document_ready %}
+    {{ datatable.ajax_component(path('app_admin_user_datatable')) }}
+{% endblock %}
+
+{% block breadcrumb %}
+    <li class="active">{{ 'users.list'|trans({},'backend') }}</li>
+{% endblock %}
+
+{#{% block page_menu %}
+    <a class="btn btn-success" href="{{ path('app_admin_courses_new') }}">
+        <i class="fa fa-plus"></i> {{ 'courses.new'|trans({},'backend') }}
+    </a>
+{% endblock page_menu %}#}
+
+{% block page_body %}
+    <div class="row">
+        <div class="col-xs-12">
+            {% embed ":embed:datatable.html.twig" %}
+                {% block table_head %}
+                    <th data-type="string" data-data="name" data-name="name">{{ 'user.name'|trans({},'backend') }}</th>
+                    <th data-type="string" data-data="username" data-name="username" data-orderable="false">{{ 'user.username'|trans({},'backend') }}</th>
+                    <th data-type="string" data-data="email" data-name="email" data-orderable="false">{{ 'user.email'|trans({},'backend') }}</th>
+                    <th data-type="string" data-data="role" data-name="role" data-orderable="false">{{ 'user.role'|trans({},'backend') }}</th>
+                    <th data-type="html" data-data="status" data-name="status" data-orderable="false">{{ 'user.enabled'|trans({},'backend') }}</th>
+                {% endblock table_head %}
+            {% endembed %}
+        </div>
+    </div>
+{% endblock %}

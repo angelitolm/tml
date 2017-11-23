@@ -1,0 +1,398 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Massó #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+
+
+
+{% block banner_title %}
+    <h1>Club <span class="vc_main-color">TML Internacional</span></h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">Club TML Internacional</li>
+    </ul>
+{% endblock %}
+
+
+{% block content %}
+    <div class="vc_career" style="margin-bottom: 35px">
+        <div class="wrapper">
+            <div class="container">
+                <div class="row block">
+                    <div class="col-md-9">
+                        <h3>&Eacute;ste es el lugar donde los grandes soñadores se preparan para triunfar.</h3>
+
+                        <p>Aquí usted obtiene lo máximo de socialización TML-Internacional y gana:<br><br>
+                            -	Su panel de control totalmente internacionalizado.<br>
+                            -	Su blog profesional y actualizado con TML.<br>
+                            -	su actualización de perfil profesional de negocio.<br>
+                            -	Galería de información privada TML.<br>
+                            -	Sus bonos de implementación y recompensas.<br>
+                            -	Intercambios de conocimientos con otros miembros.<br>
+                            -	Garantías dinámicas TML.<br>
+                            -	Respeto, transparencia, flexibilidad y legalidad.<br>
+                            -	Respeto a sus propósitos de éxito con buena fe.<br>
+                            -	Mucho más le espera aquí.<br>
+                            <br/><br/></p>
+
+                        <h2>La informaci&oacute;n del Club, solo est&aacute; disponible para los miembros...</h2>
+
+                        {#<div id="vc_accordion-widget" class="panel-group">#}
+                            {#<div class="panel panel-default">#}
+                                {#<div class="panel-heading">#}
+                                    {#<a href="#collapseOne" data-parent="#vc_accordion-widget" data-toggle="collapse"#}
+                                       {#class="accordion-toggle">#}
+                                        {#<h4 class="panel-title">#}
+                                            {#<i class="fa fa-fw fa-laptop"></i> Head Developer#}
+                                        {#</h4>#}
+
+                                        {#<span class="subtitle"><span class="item">Location: <strong>North#}
+                                                    {#Carolina</strong></span><span#}
+                                                    {#class="item"> Division: <strong>IT</strong></span></span>#}
+                                    {#</a>#}
+
+                                {#</div>#}
+                                {#<div class="panel-collapse collapse" id="collapseOne">#}
+                                    {#<div class="panel-body">#}
+                                        {#<div class="row">#}
+                                            {#<div class="col-md-6">#}
+                                                {#<p class="vc_black"><strong>Description:</strong></p>#}
+
+                                                {#<p> Ut sit amet dignissim libero. Integer scelerisque, eros interdum#}
+                                                    {#suscipit rhoncus, mauris felis eleifend libero, a adipiscing arcu#}
+                                                    {#sapien eu nisi. Proin vehicula lacus non lacus lobortis ultricies.#}
+                                                    {#Nulla dui metus, viverra in sodales a, rutrum sed metus. Cras#}
+                                                    {#blandit vehicula ligula et fringilla. Suspendisse convallis rutrum#}
+                                                    {#arcu nec rutrum. Pellentesque sed felis ante. Pellentesque habitant#}
+                                                    {#morbi tristique senectus et netus et malesuada fames ac turpis#}
+                                                    {#egestas.<br/>#}
+                                                    {#<br/>#}
+                                                    {#Nulla dui metus, viverra in sodales a, rutrum sed metus. Cras#}
+                                                    {#blandit vehicula ligula et fringilla. Suspendisse convallis rutrum#}
+                                                    {#arcu nec rutrum. Pellentesque sed felis ante. Pellentesque habitant#}
+                                                    {#morbi tristique senectus et netus et malesuada fames ac turpis#}
+                                                    {#egestas.<br/>#}
+                                                    {#<br/>#}
+                                                {#</p>#}
+
+                                                {#<p><a class="vc_btn" href="#">Apply Now</a></p>#}
+                                            {#</div>#}
+                                            {#<div class="col-md-6">#}
+                                                {#<p class="vc_black"><strong>Qualifications:</strong></p>#}
+                                                {#<ul class="vc_li">#}
+                                                    {#<li>nim pariatur cliche reprehenderit</li>#}
+                                                    {#<li>enim eiusmod high</li>#}
+                                                    {#<li>Wolf moon officia aute cliche reprehenderit</li>#}
+                                                    {#<li>Quinoa nesciunt laborum eiusmod</li>#}
+                                                    {#<li>nim pariatur cliche reprehenderit</li>#}
+                                                    {#<li>enim eiusmod high life accusamus</li>#}
+                                                    {#<li>3 wolf moon</li>#}
+                                                    {#<li>Quinoa nesciunt laborum eiusmod high life accusamus</li>#}
+                                                    {#<li>enim eiusmod high life accusamus</li>#}
+                                                    {#<li>3 wolf moon officia</li>#}
+                                                    {#<li>Quinoa nesciunt laborum eiusmod</li>#}
+                                                {#</ul>#}
+                                            {#</div>#}
+                                        {#</div>#}
+                                    {#</div>#}
+                                {#</div>#}
+                            {#</div>#}
+                            {#<div class="panel panel-default">#}
+                                {#<div class="panel-heading">#}
+                                    {#<a href="#collapseTwo" data-parent="#vc_accordion-widget" data-toggle="collapse"#}
+                                       {#class="accordion-toggle"><h4 class="panel-title">#}
+                                            {#<i class="fa fa-fw fa-puzzle-piece"></i> Creative Director#}
+                                        {#</h4>#}
+                        {#<span class="subtitle">#}
+                            {#<span class="item">Location: <strong>Las Vegas</strong></span>#}
+                            {#<span class="item">Division: <strong>Creative Team</strong></span>#}
+                        {#</span>#}
+                                    {#</a>#}
+
+                                {#</div>#}
+                                {#<div class="panel-collapse collapse" id="collapseTwo">#}
+                                    {#<div class="panel-body">#}
+                                        {#<div class="row">#}
+                                            {#<div class="col-md-6">#}
+                                                {#<p class="vc_black"><strong>Description:</strong></p>#}
+
+                                                {#<p> Ut sit amet dignissim libero. Integer scelerisque, eros interdum#}
+                                                    {#suscipit rhoncus, mauris felis eleifend libero, a adipiscing arcu#}
+                                                    {#sapien eu nisi. Proin vehicula lacus non lacus lobortis ultricies.#}
+                                                    {#Nulla dui metus, viverra in sodales a, rutrum sed metus. Cras#}
+                                                    {#blandit vehicula ligula et fringilla. Suspendisse convallis rutrum#}
+                                                    {#arcu nec rutrum. Pellentesque sed felis ante. Pellentesque habitant#}
+                                                    {#morbi tristique senectus et netus et malesuada fames ac turpis#}
+                                                    {#egestas.<br/>#}
+                                                    {#<br/>#}
+                                                    {#Nulla dui metus, viverra in sodales a, rutrum sed metus. Cras#}
+                                                    {#blandit vehicula ligula et fringilla. Suspendisse convallis rutrum#}
+                                                    {#arcu nec rutrum. Pellentesque sed felis ante. Pellentesque habitant#}
+                                                    {#morbi tristique senectus et netus et malesuada fames ac turpis#}
+                                                    {#egestas.<br/>#}
+                                                    {#<br/>#}
+                                                {#</p>#}
+
+                                                {#<p><a class="vc_btn" href="#">Apply Now</a></p>#}
+                                            {#</div>#}
+                                            {#<div class="col-md-6">#}
+                                                {#<p class="vc_black"><strong>Qualifications:</strong></p>#}
+                                                {#<ul class="vc_li">#}
+                                                    {#<li>nim pariatur cliche reprehenderit</li>#}
+                                                    {#<li>enim eiusmod high</li>#}
+                                                    {#<li>Wolf moon officia aute cliche reprehenderit</li>#}
+                                                    {#<li>Quinoa nesciunt laborum eiusmod</li>#}
+                                                    {#<li>nim pariatur cliche reprehenderit</li>#}
+                                                    {#<li>enim eiusmod high life accusamus</li>#}
+                                                    {#<li>3 wolf moon</li>#}
+                                                    {#<li>Quinoa nesciunt laborum eiusmod high life accusamus</li>#}
+                                                    {#<li>enim eiusmod high life accusamus</li>#}
+                                                    {#<li>3 wolf moon officia</li>#}
+                                                    {#<li>Quinoa nesciunt laborum eiusmod</li>#}
+                                                {#</ul>#}
+                                            {#</div>#}
+                                        {#</div>#}
+                                    {#</div>#}
+                                {#</div>#}
+                            {#</div>#}
+                            {#<div class="panel panel-default">#}
+                                {#<div class="panel-heading">#}
+                                    {#<a href="#collapseThree" data-parent="#vc_accordion-widget" data-toggle="collapse"#}
+                                       {#class="accordion-toggle">#}
+                                        {#<h4 class="panel-title">#}
+                                            {#<i class="fa fa-fw fa-print"></i> Administrator#}
+                                        {#</h4>#}
+
+                    {#<span class="subtitle">#}
+                    	{#<span class="item">Location: <strong>Las Vegas</strong></span>#}
+                        {#<span class="item">Division: <strong>Operator</strong></span>#}
+                    {#</span>#}
+                                    {#</a>#}
+                                {#</div>#}
+                                {#<div class="panel-collapse collapse" id="collapseThree">#}
+                                    {#<div class="panel-body">#}
+                                        {#<div class="row">#}
+                                            {#<div class="col-md-6">#}
+                                                {#<p class="vc_black"><strong>Description:</strong></p>#}
+
+                                                {#<p> Ut sit amet dignissim libero. Integer scelerisque, eros interdum#}
+                                                    {#suscipit rhoncus, mauris felis eleifend libero, a adipiscing arcu#}
+                                                    {#sapien eu nisi. Proin vehicula lacus non lacus lobortis ultricies.#}
+                                                    {#Nulla dui metus, viverra in sodales a, rutrum sed metus. Cras#}
+                                                    {#blandit vehicula ligula et fringilla. Suspendisse convallis rutrum#}
+                                                    {#arcu nec rutrum. Pellentesque sed felis ante. Pellentesque habitant#}
+                                                    {#morbi tristique senectus et netus et malesuada fames ac turpis#}
+                                                    {#egestas.<br/>#}
+                                                    {#<br/>#}
+                                                    {#Nulla dui metus, viverra in sodales a, rutrum sed metus. Cras#}
+                                                    {#blandit vehicula ligula et fringilla. Suspendisse convallis rutrum#}
+                                                    {#arcu nec rutrum. Pellentesque sed felis ante. Pellentesque habitant#}
+                                                    {#morbi tristique senectus et netus et malesuada fames ac turpis#}
+                                                    {#egestas.<br/>#}
+                                                    {#<br/>#}
+                                                {#</p>#}
+
+                                                {#<p><a class="vc_btn" href="#">Apply Now</a></p>#}
+                                            {#</div>#}
+                                            {#<div class="col-md-6">#}
+                                                {#<p class="vc_black"><strong>Qualifications:</strong></p>#}
+                                                {#<ul class="vc_li">#}
+                                                    {#<li>nim pariatur cliche reprehenderit</li>#}
+                                                    {#<li>enim eiusmod high</li>#}
+                                                    {#<li>Wolf moon officia aute cliche reprehenderit</li>#}
+                                                    {#<li>Quinoa nesciunt laborum eiusmod</li>#}
+                                                    {#<li>nim pariatur cliche reprehenderit</li>#}
+                                                    {#<li>enim eiusmod high life accusamus</li>#}
+                                                    {#<li>3 wolf moon</li>#}
+                                                    {#<li>Quinoa nesciunt laborum eiusmod high life accusamus</li>#}
+                                                    {#<li>enim eiusmod high life accusamus</li>#}
+                                                    {#<li>3 wolf moon officia</li>#}
+                                                    {#<li>Quinoa nesciunt laborum eiusmod</li>#}
+                                                {#</ul>#}
+                                            {#</div>#}
+                                        {#</div>#}
+                                    {#</div>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                    </div>
+                    <!-- .col-md-9 -->
+                    <div class="col-md-3 sidebar">
+                        {#<div id="vc_links-widget" class="sidebar-widget widget block">#}
+                            {#<div class="vc_links-widget">#}
+                                {#<h3>Categories</h3>#}
+
+                                {#<div class="content">#}
+                                    {#<ul class="vc_li">#}
+                                        {#<li><a href="#">Drupal</a></li>#}
+                                        {#<li><a href="#">Wordpress</a></li>#}
+                                        {#<li><a href="#">HTML</a></li>#}
+                                        {#<li><a href="#">CSS</a></li>#}
+                                        {#<li><a href="#">Web Design</a></li>#}
+                                    {#</ul>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                        <div id="vc_latest-portfolio-widget" class="sidebar-widget widget block">
+                            <div class="vc_portfolio-widget">
+                                <h3 class="pull-left">
+                                    Noticias <span class="vc_main-color"> TML </span>
+                                </h3>
+
+                                <div class="vc_carousel-control">
+                                    <a href="#"> <i class="fa fa-chevron-left"> </i> </a> <a href="#"> <i
+                                                class="fa fa-chevron-right"> </i> </a>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="vc_carousel-wrap">
+                                    <div class="vc_carousel clearfix">
+                                        {% for new in news %}
+                                        <div class="vc_carousel-column">
+                                            <div class="vc_anim vc_anim-slide"><a href="portfolio-single-project.html"
+                                                                                  class="vc_preview">
+                                                    {% set url = new.image is not empty ? constant('IMAGES_UPLOAD_DIR',new)~new.image : 'backend/img/photos/news-blur.jpg' %}
+                                                    <img
+                                                            alt="example image"
+                                                            src="{{ asset(url) }}"/>
+                                                </a>
+
+                                                <div class="vc_hover">
+                                                    <div class="hover-wrapper">
+                                                        <div class="text-wrapper">
+                                                            <h4> {{ new.title }} </h4>
+                                                        </div>
+                                                        <div class="icon-wrapper">
+                                                            <ul>
+
+                                                                <li class="vc_icon"><a data-rel="prettyPhoto[portfolio]"
+                                                                                       href="{{ asset(url) }}">
+                                                                        <i
+                                                                                class="fa fa-search-plus"> </i> </a>
+                                                                </li>
+                                                                <li class="vc_icon"><a
+                                                                            href="{{ path('news',{'id':new.id}) }}"> <i
+                                                                                class="fa fa-link"> </i> </a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                        {#<div class="vc_carousel-column">#}
+                                            {#<div class="vc_anim vc_anim-slide"><a href="portfolio-single-project.html"#}
+                                                                                  {#class="vc_preview"> <img#}
+                                                            {#alt="example image"#}
+                                                            {#src="{{ asset('bundles/app/images/portfolio/02.jpg') }}"/>#}
+                                                {#</a>#}
+
+                                                {#<div class="vc_hover">#}
+                                                    {#<div class="hover-wrapper">#}
+                                                        {#<div class="text-wrapper">#}
+                                                            {#<h4> Example 2 </h4>#}
+                                                        {#</div>#}
+                                                        {#<div class="icon-wrapper">#}
+                                                            {#<ul>#}
+                                                                {#<li class="vc_icon"><a data-rel="prettyPhoto[portfolio]"#}
+                                                                                       {#href="{{ asset('bundles/app/images/portfolio/02.jpg') }}">#}
+                                                                        {#<i#}
+                                                                                {#class="fa fa-search-plus"> </i> </a>#}
+                                                                {#</li>#}
+                                                                {#<li class="vc_icon"><a#}
+                                                                            {#href="portfolio-single-project.html"> <i#}
+                                                                                {#class="fa fa-link"> </i> </a></li>#}
+                                                            {#</ul>#}
+                                                        {#</div>#}
+                                                    {#</div>#}
+                                                {#</div>#}
+                                            {#</div>#}
+                                        {#</div>#}
+                                        {#<div class="vc_carousel-column">#}
+                                            {#<div class="vc_anim vc_anim-slide"><a href="portfolio-single-project.html"#}
+                                                                                  {#class="vc_preview"> <img#}
+                                                            {#alt="example image"#}
+                                                            {#src="{{ asset('bundles/app/images/portfolio/03.jpg') }}"/>#}
+                                                {#</a>#}
+
+                                                {#<div class="vc_hover">#}
+                                                    {#<div class="hover-wrapper">#}
+                                                        {#<div class="text-wrapper">#}
+                                                            {#<h4> Example 3 </h4>#}
+                                                        {#</div>#}
+                                                        {#<div class="icon-wrapper">#}
+                                                            {#<ul>#}
+                                                                {#<li class="vc_icon"><a data-rel="prettyPhoto[portfolio]"#}
+                                                                                       {#href="{{ asset('bundles/app/images/portfolio/03.jpg') }}">#}
+                                                                        {#<i#}
+                                                                                {#class="fa fa-search-plus"> </i> </a>#}
+                                                                {#</li>#}
+                                                                {#<li class="vc_icon"><a#}
+                                                                            {#href="portfolio-single-project.html"> <i#}
+                                                                                {#class="fa fa-link"> </i> </a></li>#}
+                                                            {#</ul>#}
+                                                        {#</div>#}
+                                                    {#</div>#}
+                                                {#</div>#}
+                                            {#</div>#}
+                                        {#</div>#}
+                                        {#<div class="vc_carousel-column">#}
+                                            {#<div class="vc_anim vc_anim-slide"><a href="portfolio-single-project.html"#}
+                                                                                  {#class="vc_preview"> <img#}
+                                                            {#alt="example image"#}
+                                                            {#src="{{ asset('bundles/app/images/portfolio/04.jpg') }}"/>#}
+                                                {#</a>#}
+
+                                                {#<div class="vc_hover">#}
+                                                    {#<div class="hover-wrapper">#}
+                                                        {#<div class="text-wrapper">#}
+                                                            {#<h4> Example 4 </h4>#}
+                                                        {#</div>#}
+                                                        {#<div class="icon-wrapper">#}
+                                                            {#<ul>#}
+                                                                {#<li class="vc_icon"><a data-rel="prettyPhoto[portfolio]"#}
+                                                                                       {#href="{{ asset('bundles/app/images/portfolio/04.jpg') }}">#}
+                                                                        {#<i#}
+                                                                                {#class="fa fa-search-plus"> </i> </a>#}
+                                                                {#</li>#}
+                                                                {#<li class="vc_icon"><a#}
+                                                                            {#href="portfolio-single-project.html"> <i#}
+                                                                                {#class="fa fa-link"> </i> </a></li>#}
+                                                            {#</ul>#}
+                                                        {#</div>#}
+                                                    {#</div>#}
+                                                {#</div>#}
+                                            {#</div>#}
+                                        {#</div>#}
+                                    </div>
+                                    <!--vc_carousel -->
+                                </div>
+                                <!-- vc_carousel-wrap -->
+                                <div class="clearfix"></div>
+                            </div>
+                            <!-- vc_portfolio-widget -->
+                        </div>
+
+
+                    </div>
+                    <!-- .sidebar .col-md-3-->
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- wrapper -->
+    </div>
+    <!-- block -->
+
+    {#<div class="vc_separator"></div>#}
+{% endblock %}
+
+{% block another1javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/app/js/jquery.stellar.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/app/js/waypoints.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/app/js/jquery.easing.1.3.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/app/js/specific/one-page-parallax.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/app/js/specific/portfolio.js') }}"></script>
+{% endblock %}
+

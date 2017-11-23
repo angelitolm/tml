@@ -1,0 +1,12 @@
+{% extends ":embed:panel.html.twig" %}
+
+{% block box_content %}
+    <form class="form-horizontal" method="post" role="form" action="{% block form_action %}#{% endblock form_action %}" {% block form_attr %}{% endblock form_attr %}>
+      {% block form_content %}
+        {{ form_widget(form) }}
+      {% endblock form_content %}
+      <div class="form-actions margin-top-10">
+          {% block form_buttons %}{% endblock form_buttons %}
+      </div>
+    </form>
+{% endblock box_content %}

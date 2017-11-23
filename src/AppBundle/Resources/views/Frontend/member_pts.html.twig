@@ -1,0 +1,61 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Massó #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+{% import ':macros:dataTables.html.twig' as datatable %}
+{% block stylesheets %}
+    {{ datatable.css() }}
+    <style type="text/css">
+        .table > tbody > tr > td {
+            border-top: none;
+            padding: 0;
+        }
+    </style>
+{% endblock %}
+{% block javascripts %}
+    {{ datatable.js() }}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            jQuery('#clients-datatable').dataTable({
+                "processing": true,
+                "deferRender": true,
+                "serverSide": true,
+                "ajax": "{{ path('app_front_clients_datatable') }}",
+                "searching": true,
+                "lengthMenu": [ 30, 50, 75, 100 ],
+                "paging": true,
+                "columns":[{type:"html",title:"Miembros",data:"row","orderable": false}]
+            });
+        });
+    </script>
+{% endblock %}
+
+
+{% block banner_title %}
+    <h1>Conoce a nuestros <span class="vc_main-color">Miembros PTS</span></h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">Conoce a nuestros Miembros PTS</li>
+    </ul>
+{% endblock %}
+
+
+{% block sub_banner %}
+
+{% endblock %}
+
+
+{% block content %}
+    <div class="col-md-12 marB35">
+        <table class="table" id="clients-datatable">
+            <thead class="hide">
+                <tr></tr>
+            </thead>
+        </table>
+    </div>
+{% endblock %}
+
+
+{% block another1javascripts %}{% endblock %}
+

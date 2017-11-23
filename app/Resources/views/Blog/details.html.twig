@@ -1,0 +1,91 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'blog.details'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'blog.details'|trans({},'backend') }}{% endblock %}
+
+{% block breadcrumb %}
+    <li class="active">{{ 'blog.details'|trans({},'backend') }}</li>
+{% endblock %}
+
+{% block page_menu %}
+    {#{% if app.user.blog is null %}#}
+        {#<a href="{{ path('app_admin_blog_new') }}" class="btn vd_btn vd_bg-grey vd_white">#}
+            {#<i class="fa fa-plus"></i> {{ 'blog.new'|trans({},'backend') }}#}
+        {#</a>#}
+    {#{% else %}#}
+        {#<a href="{{ path('app_front_blog',{'username':app.user.username}) }}" class="btn vd_btn vd_bg-grey vd_white" target="_blank">#}
+            {#<i class="fa fa-share"></i> {{ 'blog.preview'|trans({},'backend') }}#}
+        {#</a>#}
+        {#<a href="{{ path('app_admin_blog_edit') }}" class="btn vd_btn vd_bg-grey vd_white">#}
+            {#<i class="fa fa-edit"></i> {{ 'blog.edit'|trans({},'backend') }}#}
+        {#</a>#}
+    {#{% endif %}#}
+{% endblock page_menu %}
+
+{% block page_body %}
+    {% if app.user.blog is null %}
+        {% from ':macros:flash.html.twig' import advanced_flash %}
+        {{ advanced_flash('warning','blog.not_defined'|trans({},'backend'),'blog.not_defined_description'|trans({},'backend'),'',0) }}
+    {% else %}
+        {% set blog = app.user.blog %}
+        <div class="row">
+            <div class="col-xs-12">
+                {% embed ':embed:panel-left.html.twig' %}
+                    {% block box_tools %}
+                        {% if app.user.blog is null %}
+                            <a href="{{ path('app_admin_blog_new') }}" class="btn btn-info">
+                                <i class="fa fa-plus"></i> {{ 'blog.new'|trans({},'backend') }}
+                            </a>
+                        {% else %}
+                            <a href="{{ path('app_front_blog',{'username':app.user.username}) }}" class="btn btn-info" target="_blank">
+                                <i class="fa fa-share"></i> {{ 'blog.preview'|trans({},'backend') }}
+                            </a>
+                            <a href="{{ path('app_admin_blog_edit') }}" class="btn btn-primary">
+                                <i class="fa fa-edit"></i> {{ 'blog.edit'|trans({},'backend') }}
+                            </a>
+                        {% endif %}
+                    {% endblock box_tools %}
+                    {% block box_content %}
+                        <table class="table table-striped">
+                            <tbody>
+                            <tr>
+                                <th>{{ 'blog.title'|trans({},'backend') }}</th>
+                                <td>{{ blog.title }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'blog.subtitle'|trans({},'backend') }}</th>
+                                <td>{{ blog.subtitle }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'blog.slogan'|trans({},'backend') }}</th>
+                                <td>{{ blog.slogan }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'blog.about'|trans({},'backend') }}</th>
+                                <td>{{ blog.about }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'blog.created'|trans({},'backend') }}</th>
+                                <td>{{ blog.created|date('Y-m-d H:i') }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'blog.updated'|trans({},'backend') }}</th>
+                                <td>{{ blog.updated|date('Y-m-d H:i') }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'blog.picture'|trans({},'backend') }}</th>
+                                <td>
+                                    {% if blog.picture is not empty %}
+                                        {% set img_url = constant('IMAGES_UPLOAD_DIR',blog)~blog.picture %}
+                                        <img alt="Blog Image" src="{{ asset(img_url) }}" class="img-responsive">
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    {% endblock box_content %}
+                {% endembed %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock page_body %}

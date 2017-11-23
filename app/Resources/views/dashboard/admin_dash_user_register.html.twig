@@ -1,0 +1,91 @@
+<div class="row number-stats margin-bottom-30">
+    <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="stat-left">
+            {#<div class="stat-chart">
+                <div id="sparkline_bar"></div>
+            </div>#}
+            <div class="stat-number">
+                <div class="title">
+                    {{ 'total.users' | trans({}, 'backend') }}
+                </div>
+                <div class="number">
+                    {{ clients|length }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="stat-right">
+            {#<div class="stat-chart">
+                <div id="sparkline_bar2"></div>
+            </div>#}
+            <div class="stat-number">
+                <div class="title">
+                    {{ 'total.guest' | trans({}, 'backend') }}
+                </div>
+                <div class="number">
+                    {{ guests|length }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="table-scrollable table-scrollable-borderless">
+    <div class="scroller" style="height: 200px;"
+         data-always-visible="1"
+         data-handle-color="#D7DCE2">
+        <table class="table table-hover table-light">
+            <thead>
+            <tr class="uppercase">
+                <th>{{ 'name'|trans({},'backend') }}</th>
+                <th>{{ 'email'|trans({},'backend') }}</th>
+                <th>{{ 'user.role'|trans({},'backend') }}</th>
+                <th>{{ 'credit'|trans({},'backend') }}</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for client in clients %}
+                {% set profile = client.activeProfile %}
+                <tr>
+                    <td>{{ client.name }}</td>
+                    <td>{{ client.email }}</td>
+                    <td>
+                        {% if profile.type is same as(3) %}
+                            {{ 'professional'|trans({},'backend') }}
+                        {% elseif profile.type is same as(2) %}
+                            {{ 'superior'|trans({},'backend') }}
+                        {% elseif profile.type is same as(1) %}
+                            {{ 'basic'|trans({},'backend') }}
+                        {% else %}
+                            {{ 'guests'|trans({},'backend') }}
+                        {% endif %}
+                    </td>
+                    <td>{{ profile.credit|number_format }}</td>
+                </tr>
+            {% endfor %}
+            {% for client in guests %}
+                {% set profile = client.activeProfile %}
+                <tr>
+                    <td>{{ client.name }}</td>
+                    <td>{{ client.email }}</td>
+                    <td>
+                        {% if profile.type is same as(3) %}
+                            {{ 'professional'|trans({},'backend') }}
+                        {% elseif profile.type is same as(2) %}
+                            {{ 'superior'|trans({},'backend') }}
+                        {% elseif profile.type is same as(1) %}
+                            {{ 'basic'|trans({},'backend') }}
+                        {% else %}
+                            {{ 'guests'|trans({},'backend') }}
+                        {% endif %}
+                    </td>
+                    <td>{{ profile.credit|number_format }}</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="form.user_registration" class="AppBundle\Form\RegistrationFormType">
+        <argument>%fos_user.model.user.class%</argument>
+        <tag name="form.type" alias="app_user_registration"/>
+        </service>
+        <service id="form.user_profile" class="AppBundle\Form\ProfileFormType">
+          <argument>%fos_user.model.user.class%</argument>
+          <tag name="form.type" alias="app_user_profile"/>
+        </service>
+        <service id="form.change_password" class="AppBundle\Form\ChangePasswordType">
+            <argument>%fos_user.model.user.class%</argument>
+            <tag name="form.type" alias="app_user_change_password"/>
+        </service>
+
+        <service id="form.blog" class="AppBundle\Form\BlogType">
+          <tag  name="form.type" alias="app_blog"/>
+        </service>
+        <service id="form.post" class="AppBundle\Form\PostType">
+            <tag  name="form.type" alias="app_post"/>
+        </service>
+        <service id="form.news" class="AppBundle\Form\NewsType">
+            <tag  name="form.type" alias="app_news"/>
+        </service>
+        <service id="form.news_category" class="AppBundle\Form\NewsCategoryType">
+            <tag  name="form.type" alias="app_news_category"/>
+        </service>
+        <service id="form.configuration" class="AppBundle\Form\ConfigurationType">
+            <tag  name="form.type" alias="app_configuration"/>
+        </service>
+        <service id="form.profile" class="AppBundle\Form\ProfileType">
+            <tag  name="form.type" alias="app_profile"/>
+        </service>
+        <service id="form.course" class="AppBundle\Form\CourseType">
+            <tag  name="form.type" alias="app_course"/>
+        </service>
+        <service id="form.post_comment" class="AppBundle\Form\PostCommentType">
+            <tag  name="form.type" alias="app_post_comment"/>
+        </service>
+        <service id="form.comember" class="AppBundle\Form\ComemberType">
+            <tag  name="form.type" alias="app_comember"/>
+        </service>
+    </services>
+</container>

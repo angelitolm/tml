@@ -1,0 +1,1195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2017-01-27T22:39:34Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="93e8b364cf66fc34ba188a93eab10c410da874f9" resname="Is required you create first a Blog">
+        <source>Is required you create first a Blog</source>
+        <target>Is required you create first a Blog</target>
+        <jms:reference-file line="28">AppBundle/Controller/PostController.php</jms:reference-file>
+        <jms:reference-file line="73">AppBundle/Controller/PostController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c36e346fad4a5097e0e9b2daec1ddfc729d475d4" resname="account.seting">
+        <source>account.seting</source>
+        <target>account.seting</target>
+        <jms:reference-file line="55">views/Profile/edit_content.html.twig</jms:reference-file>
+        <jms:reference-file line="55">views/Profile/other_content.html.twig</jms:reference-file>
+        <jms:reference-file line="55">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2bb6b986c5d6fb26dd9dd1054b545ce022371b0c" resname="active">
+        <source>active</source>
+        <target>active</target>
+        <jms:reference-file line="486">views/dashboard/index.html.twig</jms:reference-file>
+        <jms:reference-file line="523">views/dashboard/index.html.twig</jms:reference-file>
+        <jms:reference-file line="560">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c662180230cad14787d4ab7e77aa08681ce783fa" resname="address">
+        <source>address</source>
+        <target>address</target>
+        <jms:reference-file line="142">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="61482a315aa18426d62abafde6238438d5ddb310" resname="affiliates">
+        <source>affiliates</source>
+        <target>affiliates</target>
+        <jms:reference-file line="81">views/Profile/edit_content.html.twig</jms:reference-file>
+        <jms:reference-file line="81">views/Profile/other_content.html.twig</jms:reference-file>
+        <jms:reference-file line="81">views/Profile/show_content.html.twig</jms:reference-file>
+        <jms:reference-file line="188">views/Profile/show_content.html.twig</jms:reference-file>
+        <jms:reference-file line="415">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="652b73faf74922dd57993763a7de39ccff69fd11" resname="all_right_reserved">
+        <source>all_right_reserved</source>
+        <target>All Right Reserved </target>
+        <jms:reference-file line="405">views/Blog/index.html.twig</jms:reference-file>
+        <jms:reference-file line="316">views/Blog/index_old.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a3ad4efc51c73e19ee0572044e7a317ac6081bbc" resname="app.transfer.buy_membership_msg">
+        <source>app.transfer.buy_membership_msg</source>
+        <target>app.transfer.buy_membership_msg</target>
+        <jms:reference-file line="91">AppBundle/Listeners/Membership.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="61a7508ed1b04e9ada836fcd14d4d8ef5687c7dd" resname="basic">
+        <source>basic</source>
+        <target>basic</target>
+        <jms:reference-file line="33">views/Profile/edit_content.html.twig</jms:reference-file>
+        <jms:reference-file line="33">views/Profile/other_content.html.twig</jms:reference-file>
+        <jms:reference-file line="33">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="47a4626527429c0fe142288b3af8e72e23f6e8d6" resname="biografy">
+        <source>biografy</source>
+        <target>biografy</target>
+        <jms:reference-file line="163">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="169254c45fa4ed7ea11c00541ffb17b0cde39625" resname="blog">
+        <source>blog</source>
+        <target>Blog</target>
+        <jms:reference-file line="92">Resources/views/admin_menu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2188a4d966cceb00904a68dcae7af1faf0fea628" resname="blog.about">
+        <source>blog.about</source>
+        <target>blog.about</target>
+        <jms:reference-file line="58">views/Blog/details.html.twig</jms:reference-file>
+        <jms:reference-file line="35">AppBundle/Form/BlogType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b3a7c5103aca668e233967590b04e6f89b70b077" resname="blog.created">
+        <source>blog.created</source>
+        <target>blog.created</target>
+        <jms:reference-file line="62">views/Blog/details.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="155d7d1ca73365ce5c534a90728f31c9a8792010" resname="blog.details">
+        <source>blog.details</source>
+        <target>blog.details</target>
+        <jms:reference-file line="97">Resources/views/admin_menu.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Blog/details.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Blog/details.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/Blog/details.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/Blog/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/Blog/new.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/Post/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/Post/list.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/Post/new.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/post_comments/details.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/post_comments/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="27a94bff87aceca69c682ea42b66bcf21094d151" resname="blog.edit">
+        <source>blog.edit</source>
+        <target state="new">blog.edit</target>
+        <jms:reference-file line="20">views/Blog/details.html.twig</jms:reference-file>
+        <jms:reference-file line="39">views/Blog/details.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Blog/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Blog/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/Blog/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="62510e8d58e198e798274a2895e6c1cbe9310315" resname="blog.new">
+        <source>blog.new</source>
+        <target state="new">blog.new</target>
+        <jms:reference-file line="13">views/Blog/details.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Blog/new.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Blog/new.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/Blog/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ed7a4a9319e3735e332f055709a5b5deb9909a72" resname="blog.not_defined">
+        <source>blog.not_defined</source>
+        <target state="new">blog.not_defined</target>
+        <jms:reference-file line="28">views/Blog/details.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="de85bfe20846931a011beaab369923054ee7c959" resname="blog.not_defined_description">
+        <source>blog.not_defined_description</source>
+        <target state="new">blog.not_defined_description</target>
+        <jms:reference-file line="28">views/Blog/details.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="487f529e0114d11c9525cd1614969c8e95c479b7" resname="blog.picture">
+        <source>blog.picture</source>
+        <target state="new">blog.picture</target>
+        <jms:reference-file line="70">views/Blog/details.html.twig</jms:reference-file>
+        <jms:reference-file line="28">AppBundle/Form/BlogType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="79576aa554439ad2fe16006e5beebd566841f733" resname="blog.preview">
+        <source>blog.preview</source>
+        <target state="new">blog.preview</target>
+        <jms:reference-file line="17">views/Blog/details.html.twig</jms:reference-file>
+        <jms:reference-file line="36">views/Blog/details.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f54243c11493ca418cede343b4f5353f3f1d52f5" resname="blog.slogan">
+        <source>blog.slogan</source>
+        <target state="new">blog.slogan</target>
+        <jms:reference-file line="54">views/Blog/details.html.twig</jms:reference-file>
+        <jms:reference-file line="25">AppBundle/Form/BlogType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="be083877effa1ab5c3dc7550644e978bc4dc9c28" resname="blog.subtitle">
+        <source>blog.subtitle</source>
+        <target state="new">blog.subtitle</target>
+        <jms:reference-file line="50">views/Blog/details.html.twig</jms:reference-file>
+        <jms:reference-file line="22">AppBundle/Form/BlogType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d92e9bbda06c89573170ab7e8745994cc2155c1e" resname="blog.title">
+        <source>blog.title</source>
+        <target state="new">blog.title</target>
+        <jms:reference-file line="46">views/Blog/details.html.twig</jms:reference-file>
+        <jms:reference-file line="19">AppBundle/Form/BlogType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7c882d9b59557f4f4f1c22d15213dcdcb433fa23" resname="blog.updated">
+        <source>blog.updated</source>
+        <target state="new">blog.updated</target>
+        <jms:reference-file line="66">views/Blog/details.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="57da3dfbbb4a4cded2643aaa996c8288636ecfdc" resname="bonus">
+        <source>bonus</source>
+        <target state="new">bonus</target>
+        <jms:reference-file line="294">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9f5a30d9cb29707a5d82c678e68ef7687d9254aa" resname="bonus.pts">
+        <source>bonus.pts</source>
+        <target state="new">bonus.pts</target>
+        <jms:reference-file line="13">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a066f070178f3141e15cefc6b79ae88e65b68383" resname="buy">
+        <source>buy</source>
+        <target state="new">buy</target>
+        <jms:reference-file line="432">views/membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="38fa5c1d0644c100d933a4282890866312393378" resname="buy.memebership">
+        <source>buy.memebership</source>
+        <target state="new">buy.memebership</target>
+        <jms:reference-file line="100">views/membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="187">views/membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="272">views/membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4fd0653c4f2aef3b19a3c145bbdc5f4740715a09" resname="cancel">
+        <source>cancel</source>
+        <target state="new">cancel</target>
+        <jms:reference-file line="431">views/membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="046860158bbffb5d884f01d04ddc2155430cde4d" resname="certified">
+        <source>certified</source>
+        <target state="new">certified</target>
+        <jms:reference-file line="128">Resources/views/admin_menu.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/dashboard/certified.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/dashboard/certified.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2789282f3530f0171c6c1d27f3ec08dc5de10baf" resname="change_password.index">
+        <source>change_password.index</source>
+        <target state="new">change_password.index</target>
+        <jms:reference-file line="3">views/ChangePassword/changePassword.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/ChangePassword/changePassword.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/ChangePassword/changePassword.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="da38860cb875cb64092e402d80d9fe29c4865b18" resname="close">
+        <source>close</source>
+        <target state="new">close</target>
+        <jms:reference-file line="863">views/dashboard/index.html.twig</jms:reference-file>
+        <jms:reference-file line="939">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2198d73a161f64db1ae2d04d030c082746923f9b" resname="code.member">
+        <source>code.member</source>
+        <target state="new">code.member</target>
+        <jms:reference-file line="42">Resources/views/admin.html.twig</jms:reference-file>
+        <jms:reference-file line="44">Resources/views/admin.html.twig</jms:reference-file>
+        <jms:reference-file line="391">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="548f54044d9d40a51387f21bd23c1905e71ddcae" resname="code.provide.not_valid">
+        <source>code.provide.not_valid</source>
+        <target state="new">code.provide.not_valid</target>
+        <jms:reference-file line="54">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a49bb875babf8bb2f09ea3f537dadd267211f20a" resname="code.provide.user_not_have_membership_valid_for_validate">
+        <source>code.provide.user_not_have_membership_valid_for_validate</source>
+        <target state="new">code.provide.user_not_have_membership_valid_for_validate</target>
+        <jms:reference-file line="60">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="92a13d4edf62705be232b7b8976de52771759570" resname="comitions">
+        <source>comitions</source>
+        <target state="new">comitions</target>
+        <jms:reference-file line="308">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dd5af19446175897df9995f2c394c82aa80fd04b" resname="comments.list">
+        <source>comments.list</source>
+        <target state="new">comments.list</target>
+        <jms:reference-file line="8">views/Post/actions.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0652e436f42d75f5672a8bd9ae2f398a55115d51" resname="configuration">
+        <source>configuration</source>
+        <target state="new">configuration</target>
+        <jms:reference-file line="62">Resources/views/admin_menu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4490d9f685255ee0327125618b2122ebd328012c" resname="configuration.description">
+        <source>configuration.description</source>
+        <target state="new">configuration.description</target>
+        <jms:reference-file line="24">views/Configuration/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="220576422d24d3b78edd573fab0b9fc0196cf457" resname="configuration.edit">
+        <source>configuration.edit</source>
+        <target state="new">configuration.edit</target>
+        <jms:reference-file line="2">views/Configuration/actions.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Configuration/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Configuration/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/Configuration/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bbaebb2367cb3d737639220fb72085ef496e3402" resname="configuration.field">
+        <source>configuration.field</source>
+        <target state="new">configuration.field</target>
+        <jms:reference-file line="23">views/Configuration/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="50229419781b6f38cbcd67bb7d0d554c44816ff1" resname="configuration.list">
+        <source>configuration.list</source>
+        <target state="new">configuration.list</target>
+        <jms:reference-file line="7">views/Configuration/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Configuration/index.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Configuration/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b69c085c8b144b5856a49cf57c77a058457162e5" resname="configuration.value">
+        <source>configuration.value</source>
+        <target state="new">configuration.value</target>
+        <jms:reference-file line="25">views/Configuration/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e25d331eb8ba2a82761df98b6a16249776912c92" resname="course.description">
+        <source>course.description</source>
+        <target state="new">course.description</target>
+        <jms:reference-file line="19">views/Course/list.html.twig</jms:reference-file>
+        <jms:reference-file line="28">AppBundle/Form/CourseType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b72cc7ad5d41d089ee0ff8f319127e7190c9da0e" resname="course.file">
+        <source>course.file</source>
+        <target state="new">course.file</target>
+        <jms:reference-file line="20">views/Course/list.html.twig</jms:reference-file>
+        <jms:reference-file line="24">AppBundle/Form/CourseType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="22a0afb2d70cea1973f75c0118ac54ef1736b1f2" resname="course.image">
+        <source>course.image</source>
+        <target state="new">course.image</target>
+        <jms:reference-file line="26">AppBundle/Form/CourseType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="603e8646ca5387cd525c6d3ed711d975e119fe47" resname="course.name">
+        <source>course.name</source>
+        <target state="new">course.name</target>
+        <jms:reference-file line="18">views/Course/list.html.twig</jms:reference-file>
+        <jms:reference-file line="19">AppBundle/Form/CourseType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="097f7151bba6de07c2749866f98ae76a7b15a172" resname="course.type">
+        <source>course.type</source>
+        <target state="new">course.type</target>
+        <jms:reference-file line="22">AppBundle/Form/CourseType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="87222c0a37029aaa9e9ef1915ed9f6e7b35e9dc0" resname="courses">
+        <source>courses</source>
+        <target state="new">courses</target>
+        <jms:reference-file line="55">Resources/views/admin_menu.html.twig</jms:reference-file>
+        <jms:reference-file line="151">views/dashboard/course_basic.html.twig</jms:reference-file>
+        <jms:reference-file line="187">views/dashboard/course_basic1.html.twig</jms:reference-file>
+        <jms:reference-file line="201">views/dashboard/course_professional.html.twig</jms:reference-file>
+        <jms:reference-file line="188">views/dashboard/course_superior.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="87c485deda631aaf6aafc5862e6665cf3858203e" resname="courses.basics">
+        <source>courses.basics</source>
+        <target state="new">courses.basics</target>
+        <jms:reference-file line="16">views/dashboard/course_basic.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/dashboard/course_basic1.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1abb368cb5cf7438adb8c7d0cb90eb9c7bc81821" resname="courses.description">
+        <source>courses.description</source>
+        <target state="new">courses.description</target>
+        <jms:reference-file line="32">views/Course/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f04ab0834846574ceb20112fcadf383d91899bff" resname="courses.edit">
+        <source>courses.edit</source>
+        <target state="new">courses.edit</target>
+        <jms:reference-file line="2">views/Course/actions.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Course/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Course/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/Course/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="60a381111daa12ba2b36c3cc64a2e35a352e71f6" resname="courses.field">
+        <source>courses.field</source>
+        <target state="new">courses.field</target>
+        <jms:reference-file line="30">views/Course/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5074b9ab6a556e8569af6d7165df0e5a48422e9d" resname="courses.list">
+        <source>courses.list</source>
+        <target state="new">courses.list</target>
+        <jms:reference-file line="7">views/Course/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Course/index.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Course/index.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/Course/index.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Course/list.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Course/list.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/Course/list.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/Course/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7090f810fd2ca97a945ef890465a568e713ceb8d" resname="courses.membership">
+        <source>courses.membership</source>
+        <target state="new">courses.membership</target>
+        <jms:reference-file line="31">views/Course/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b7bc2fe2b9345977ca2a5a704d82fd10152b2b60" resname="courses.name">
+        <source>courses.name</source>
+        <target state="new">courses.name</target>
+        <jms:reference-file line="29">views/Course/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3b3643d5bd906362574ce42514515b543deb1325" resname="courses.new">
+        <source>courses.new</source>
+        <target state="new">courses.new</target>
+        <jms:reference-file line="20">views/Course/index.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Course/new.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Course/new.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/Course/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2da73f791374a8b35b87b89f04f600805ed9781b" resname="courses.professionals">
+        <source>courses.professionals</source>
+        <target state="new">courses.professionals</target>
+        <jms:reference-file line="17">views/dashboard/course_professional.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4473d2bd1073bca56a387c320142ae73e52d5f95" resname="courses.superior">
+        <source>courses.superior</source>
+        <target state="new">courses.superior</target>
+        <jms:reference-file line="16">views/dashboard/course_superior.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="caf737ad917f11ee77173381000f67aa647e82d1" resname="courses.tml">
+        <source>courses.tml</source>
+        <target state="new">courses.tml</target>
+        <jms:reference-file line="212">views/Blog/index.html.twig</jms:reference-file>
+        <jms:reference-file line="163">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a660cbadf674419a04e41ceea29e1a43469865b8" resname="credit.disponible">
+        <source>credit.disponible</source>
+        <target state="new">credit.disponible</target>
+        <jms:reference-file line="36">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="576aab8438e8fb7d038147504bfc177410746984" resname="credit.pendient">
+        <source>credit.pendient</source>
+        <target state="new">credit.pendient</target>
+        <jms:reference-file line="19">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="95bca18fd59ec23fef113ce2b3ea644a0113b386" resname="credit.pts">
+        <source>credit.pts</source>
+        <target state="new">credit.pts</target>
+        <jms:reference-file line="30">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f90453ec712ce4505cc425e7e881e1d58ea274c3" resname="dashboard">
+        <source>dashboard</source>
+        <target state="new">dashboard</target>
+        <jms:reference-file line="5">Resources/views/admin_menu.html.twig</jms:reference-file>
+        <jms:reference-file line="69">Resources/views/admin_menu.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/dashboard/admin.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/dashboard/admin.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/dashboard/course_basic.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/dashboard/course_basic.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/dashboard/course_basic1.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/dashboard/course_basic1.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/dashboard/course_professional.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/dashboard/course_professional.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/dashboard/course_superior.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/dashboard/course_superior.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/dashboard/guaranties.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/dashboard/guaranties.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/dashboard/index.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/dashboard/index.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/dashboard/terms.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/dashboard/terms.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d6e2037f153b6c648ba13e94ffea465ca9b8f366" resname="deposit_amount">
+        <source>deposit_amount</source>
+        <target state="new">deposit_amount</target>
+        <jms:reference-file line="772">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="049080155277dd6bd9887b1d89829a9b8c378b89" resname="dni">
+        <source>dni</source>
+        <target state="new">dni</target>
+        <jms:reference-file line="156">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="848f69a0b4d15c03a0cee554fd61f63b462d0cfc" resname="dont.have.news">
+        <source>dont.have.news</source>
+        <target state="new">dont.have.news</target>
+        <jms:reference-file line="121">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a88b7dcd1a9e3e17770bbaa6d7515b31a2d7e85d" resname="email">
+        <source>email</source>
+        <target state="new">email</target>
+        <jms:reference-file line="135">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7a92f3d26362d6557d5701de77a63a01df61e57f" resname="end">
+        <source>end</source>
+        <target state="new">end</target>
+        <jms:reference-file line="474">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f11787905476e0348cb4a6cf83aaf167129b730f" resname="form.value">
+        <source>form.value</source>
+        <target state="new">form.value</target>
+        <jms:reference-file line="18">AppBundle/Form/ConfigurationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a2daca6a49bbcc2b66818d3f9b14db1a8550df6f" resname="garanties">
+        <source>garanties</source>
+        <target state="new">garanties</target>
+        <jms:reference-file line="257">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="841fef9b2e6189b3d2a952958202977d03fd75cd" resname="guaranties">
+        <source>guaranties</source>
+        <target state="new">guaranties</target>
+        <jms:reference-file line="120">views/Profile/other_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f8122851dbc0a94f62e4439f94d68e158d1030b6" resname="guests">
+        <source>guests</source>
+        <target state="new">guests</target>
+        <jms:reference-file line="89">views/Profile/edit_content.html.twig</jms:reference-file>
+        <jms:reference-file line="89">views/Profile/other_content.html.twig</jms:reference-file>
+        <jms:reference-file line="89">views/Profile/show_content.html.twig</jms:reference-file>
+        <jms:reference-file line="204">views/Profile/show_content.html.twig</jms:reference-file>
+        <jms:reference-file line="424">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e83249bd3ba79932e16fb1fb5100dafade9954c2" resname="home">
+        <source>home</source>
+        <target state="new">home</target>
+        <jms:reference-file line="177">Resources/views/admin.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="08a5564a79b3d56562ff091aa4077e9abd0cdc3e" resname="inbox">
+        <source>inbox</source>
+        <target state="new">inbox</target>
+        <jms:reference-file line="77">Resources/views/admin_menu.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/dashboard/inbox.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/dashboard/inbox.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cdf0c7314620a829132db400d40ba8d8cd8cb57f" resname="infinit">
+        <source>infinit</source>
+        <target state="new">infinit</target>
+        <jms:reference-file line="53">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f684c22608dbc4d38663cc9698b546a6ab5793b3" resname="info.comition">
+        <source>info.comition</source>
+        <target state="new">info.comition</target>
+        <jms:reference-file line="877">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="299870068f52d13c4f50edc5c6c78ecb1a6f197f" resname="info.devolution">
+        <source>info.devolution</source>
+        <target state="new">info.devolution</target>
+        <jms:reference-file line="800">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="96a7f96d5c47311505e83dea1a46b78a5a4ef2cc" resname="insert.your_paypal.account_email">
+        <source>insert.your_paypal.account_email</source>
+        <target state="new">insert.your_paypal.account_email</target>
+        <jms:reference-file line="955">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e11523c5ff23fc1600aca2d8ee5adb542c5ce4b3" resname="language">
+        <source>language</source>
+        <target state="new">language</target>
+        <jms:reference-file line="50">Resources/views/admin.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c4eb7d7fea3c62a8db7078eb05a68993b456c503" resname="like">
+        <source>like</source>
+        <target state="new">like</target>
+        <jms:reference-file line="18">views/SocialMessage/latest.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="adec79fd87d04960046628531c4a56b714d160d8" resname="locked">
+        <source>locked</source>
+        <target state="new">locked</target>
+        <jms:reference-file line="495">views/dashboard/index.html.twig</jms:reference-file>
+        <jms:reference-file line="504">views/dashboard/index.html.twig</jms:reference-file>
+        <jms:reference-file line="514">views/dashboard/index.html.twig</jms:reference-file>
+        <jms:reference-file line="532">views/dashboard/index.html.twig</jms:reference-file>
+        <jms:reference-file line="542">views/dashboard/index.html.twig</jms:reference-file>
+        <jms:reference-file line="551">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="78180c6cb1714e31fb8597266834dc0f6adcc58c" resname="log_out">
+        <source>log_out</source>
+        <target state="new">log_out</target>
+        <jms:reference-file line="144">Resources/views/admin.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1d6e1cf70ec6f9ab28d3ea4b27a49a77654d370e" resname="mail">
+        <source>mail</source>
+        <target state="new">mail</target>
+        <jms:reference-file line="224">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0b6c6ffc5e506464f4a2aa69f3f50caa15210e90" resname="member.basic">
+        <source>member.basic</source>
+        <target state="new">member.basic</target>
+        <jms:reference-file line="24">views/membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6ddb733db49d306c5da93c0f573550d5ba2119f5" resname="member.professional">
+        <source>member.professional</source>
+        <target state="new">member.professional</target>
+        <jms:reference-file line="197">views/membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fb0c28754e0f06a4726b83ea48bc0bcd5294d8f2" resname="member.superior">
+        <source>member.superior</source>
+        <target state="new">member.superior</target>
+        <jms:reference-file line="112">views/membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f13eb5859f13791aed242ee640ef3a762df6317b" resname="members">
+        <source>members</source>
+        <target state="new">members</target>
+        <jms:reference-file line="221">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b569b8dafb8ce8dcef57137532d092ece1c73d83" resname="members.affiliate">
+        <source>members.affiliate</source>
+        <target state="new">members.affiliate</target>
+        <jms:reference-file line="47">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6cd941c1d3a27eb60cc052ab49d836e756a74914" resname="members.guests">
+        <source>members.guests</source>
+        <target state="new">members.guests</target>
+        <jms:reference-file line="64">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="99ef7e9bc5027ed4d6250b3f33657d6d5b28c8e6" resname="membership">
+        <source>membership</source>
+        <target state="new">membership</target>
+        <jms:reference-file line="227">views/Profile/show_content.html.twig</jms:reference-file>
+        <jms:reference-file line="471">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="165918ffb95406a15322df30c0d2f280b5f1f486" resname="membership.offerts">
+        <source>membership.offerts</source>
+        <target state="new">membership.offerts</target>
+        <jms:reference-file line="3">views/membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="435e1a962d6a2ab001247b1faa8fb654e8a15896" resname="membership_can_not_cancel_because_your_comition_is_over_membership_cost">
+        <source>membership_can_not_cancel_because_your_comition_is_over_membership_cost</source>
+        <target state="new">membership_can_not_cancel_because_your_comition_is_over_membership_cost</target>
+        <jms:reference-file line="222">AppBundle/Controller/MembershipController.php</jms:reference-file>
+        <jms:reference-file line="228">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e5b533ab6cc2589f92bc2d781e040302845c9dd3" resname="membership_devolution_request_has_recived">
+        <source>membership_devolution_request_has_recived</source>
+        <target state="new">membership_devolution_request_has_recived</target>
+        <jms:reference-file line="248">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bcc574b4548bef25a355a6e3035e86a73608fd34" resname="memebership">
+        <source>memebership</source>
+        <target state="new">memebership</target>
+        <jms:reference-file line="84">Resources/views/admin_menu.html.twig</jms:reference-file>
+        <jms:reference-file line="147">Resources/views/admin_menu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4938f61cca6acbd7a820ae31cbe461e1de3bf2ff" resname="method_paypal_description">
+        <source>method_paypal_description</source>
+        <target state="new">method_paypal_description</target>
+        <jms:reference-file line="415">views/membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a99fdc5802c8c2256bcd9bf98be0d3ae43de3434" resname="method_tml_transfer_description">
+        <source>method_tml_transfer_description</source>
+        <target state="new">method_tml_transfer_description</target>
+        <jms:reference-file line="425">views/membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="021710fa7866431c1dacaa6cd31eeeb47dce64b6" resname="month">
+        <source>month</source>
+        <target state="new">month</target>
+        <jms:reference-file line="70">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e7c95b4c28243c79cd41d964c2c889a4d29d25da" resname="more">
+        <source>more</source>
+        <target state="new">more</target>
+        <jms:reference-file line="115">Resources/views/admin_menu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5ca96000a602743ba9eece6943210bc0f1978466" resname="my.finance">
+        <source>my.finance</source>
+        <target state="new">my.finance</target>
+        <jms:reference-file line="283">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dfd3b11d3916e5903567cc80d2b5b22769f93196" resname="my.staff">
+        <source>my.staff</source>
+        <target state="new">my.staff</target>
+        <jms:reference-file line="71">views/Profile/edit_content.html.twig</jms:reference-file>
+        <jms:reference-file line="71">views/Profile/other_content.html.twig</jms:reference-file>
+        <jms:reference-file line="71">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1537f9b2c661e2f49a17fac6cc95be5f2a7b9f2d" resname="my.team">
+        <source>my.team</source>
+        <target state="new">my.team</target>
+        <jms:reference-file line="174">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b7523156d977db20f65591cbe1752ccc726011a2" resname="my_messages">
+        <source>my_messages</source>
+        <target state="new">my_messages</target>
+        <jms:reference-file line="126">Resources/views/admin.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fa0865068f73c03a2913b8f62b2f3652cd200f46" resname="my_profile">
+        <source>my_profile</source>
+        <target state="new">my_profile</target>
+        <jms:reference-file line="104">Resources/views/admin.html.twig</jms:reference-file>
+        <jms:reference-file line="117">Resources/views/admin.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d87b952ba6ec9a5af073d4641a619515beda29e0" resname="new_post">
+        <source>new_post</source>
+        <target state="new">new_post</target>
+        <jms:reference-file line="84">Resources/views/admin.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3c6bdcddc94f64bf77deb306aae490a90a6fc300" resname="news">
+        <source>news</source>
+        <target state="new">news</target>
+        <jms:reference-file line="21">Resources/views/admin_menu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="08406aa67f8f0f923c8e41495b81816a4ae7311b" resname="news.body">
+        <source>news.body</source>
+        <target state="new">news.body</target>
+        <jms:reference-file line="32">AppBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="34d8cf3f6840e2e4e7c683af7c27236ff3187786" resname="news.categories">
+        <source>news.categories</source>
+        <target state="new">news.categories</target>
+        <jms:reference-file line="39">Resources/views/admin_menu.html.twig</jms:reference-file>
+        <jms:reference-file line="30">views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="22">AppBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3de0d9b3bf6da2286df358182e2ecbef4db8a20d" resname="news.category">
+        <source>news.category</source>
+        <target state="new">news.category</target>
+        <jms:reference-file line="18">AppBundle/Form/NewsCategoryType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="94eca987429f5cd9e445307f6b0558da5f7c1a6a" resname="news.created">
+        <source>news.created</source>
+        <target state="new">news.created</target>
+        <jms:reference-file line="31">views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="30">views/NewsCategory/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ebdb3926dd8cf77d4458af7abf88ee3ef6477f79" resname="news.edit">
+        <source>news.edit</source>
+        <target state="new">news.edit</target>
+        <jms:reference-file line="2">views/News/actions.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/News/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/News/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/News/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="09c756f9997fd6a261239067c796791cfa49596c" resname="news.list">
+        <source>news.list</source>
+        <target state="new">news.list</target>
+        <jms:reference-file line="30">Resources/views/admin_menu.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/Configuration/index.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/News/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/News/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="92fd072cce4c26a10be3bc2e95a45faf07c12df0" resname="news.new">
+        <source>news.new</source>
+        <target state="new">news.new</target>
+        <jms:reference-file line="26">Resources/views/admin_menu.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/News/new.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/News/new.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/News/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fd6e4d800a03e891e438b494da7608cbd520ba19" resname="news.picture">
+        <source>news.picture</source>
+        <target state="new">news.picture</target>
+        <jms:reference-file line="25">AppBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c42f538e7ecca34a11fd1eaac6815536364fc46c" resname="news.title">
+        <source>news.title</source>
+        <target state="new">news.title</target>
+        <jms:reference-file line="29">views/News/index.html.twig</jms:reference-file>
+        <jms:reference-file line="19">AppBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="beee1b6bbd6a20ca92815e480707bbb442fc0e58" resname="news.tml">
+        <source>news.tml</source>
+        <target state="new">news.tml</target>
+        <jms:reference-file line="284">views/Blog/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ea085822b8509b7d87eb08132464bfcafd6ef605" resname="news_category.edit">
+        <source>news_category.edit</source>
+        <target state="new">news_category.edit</target>
+        <jms:reference-file line="2">views/NewsCategory/actions.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/NewsCategory/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/NewsCategory/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/NewsCategory/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="12f4b5f55332c21e02ba014503806e002f7be61c" resname="news_category.list">
+        <source>news_category.list</source>
+        <target state="new">news_category.list</target>
+        <jms:reference-file line="7">views/NewsCategory/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/NewsCategory/index.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/NewsCategory/index.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/NewsCategory/index.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/NewsCategory/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d026795c26abd92814dff1bafb5c5db2c868c9da" resname="news_category.new">
+        <source>news_category.new</source>
+        <target state="new">news_category.new</target>
+        <jms:reference-file line="35">Resources/views/admin_menu.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/NewsCategory/new.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/NewsCategory/new.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/NewsCategory/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f50a77acab5e0e177c8c93866118a971002ecc3f" resname="news_cateogry.category">
+        <source>news_cateogry.category</source>
+        <target state="new">news_cateogry.category</target>
+        <jms:reference-file line="29">views/NewsCategory/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1b60d2ed7158736cbc1353d72a6dc44a6772147f" resname="notifications">
+        <source>notifications</source>
+        <target state="new">notifications</target>
+        <jms:reference-file line="3">views/dashboard/message_unread.html.twig</jms:reference-file>
+        <jms:reference-file line="9">views/dashboard/message_unread.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="11119f5f9c9fe1b087b1418970eda12dfd6362b3" resname="others">
+        <source>others</source>
+        <target state="new">others</target>
+        <jms:reference-file line="60">views/Profile/edit_content.html.twig</jms:reference-file>
+        <jms:reference-file line="60">views/Profile/other_content.html.twig</jms:reference-file>
+        <jms:reference-file line="110">views/Profile/other_content.html.twig</jms:reference-file>
+        <jms:reference-file line="60">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fed758b7a842befdf49b6ed6ad47249f81f1bbb1" resname="overview">
+        <source>overview</source>
+        <target state="new">overview</target>
+        <jms:reference-file line="50">views/Profile/edit_content.html.twig</jms:reference-file>
+        <jms:reference-file line="50">views/Profile/other_content.html.twig</jms:reference-file>
+        <jms:reference-file line="50">views/Profile/show_content.html.twig</jms:reference-file>
+        <jms:reference-file line="118">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3be9b6388375c75054a2108eec7306f828dd96fe" resname="partner.code">
+        <source>partner.code</source>
+        <target state="new">partner.code</target>
+        <jms:reference-file line="403">views/membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bfc95e50f828f0aecd632c939fd45c1bf5272127" resname="pay">
+        <source>pay</source>
+        <target state="new">pay</target>
+        <jms:reference-file line="624">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="700aafeacfa1b8cac30eabee3c2fd656dbae9aff" resname="pay_comision_request_has_received">
+        <source>pay_comision_request_has_received</source>
+        <target state="new">pay_comision_request_has_received</target>
+        <jms:reference-file line="67">AppBundle/Controller/TransferController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4301a10947c7013016738bcb8502eda26d624421" resname="pay_using_paypal">
+        <source>pay_using_paypal</source>
+        <target state="new">pay_using_paypal</target>
+        <jms:reference-file line="412">views/membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4671fdaf7dbe4f13af4b59aa77d3e1f929ac02dc" resname="pay_using_tml_transfer">
+        <source>pay_using_tml_transfer</source>
+        <target state="new">pay_using_tml_transfer</target>
+        <jms:reference-file line="422">views/membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3747ea310f21faa02a73ca69e9623129a625959c" resname="paypal_account_email">
+        <source>paypal_account_email</source>
+        <target state="new">paypal_account_email</target>
+        <jms:reference-file line="764">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5fef8f36dc1d5ab0611e4b9f305651dd02ba92c7" resname="paypal_account_required_for_devolution">
+        <source>paypal_account_required_for_devolution</source>
+        <target state="new">paypal_account_required_for_devolution</target>
+        <jms:reference-file line="210">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f6be6ca910984ef05a237a180d464ceb8847c14a" resname="phone">
+        <source>phone</source>
+        <target state="new">phone</target>
+        <jms:reference-file line="149">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0f70aaa7c1bcbe6ac969cc1042edb6f1d3542e9c" resname="plan.buy.successfully">
+        <source>plan.buy.successfully</source>
+        <target state="new">plan.buy.successfully</target>
+        <jms:reference-file line="175">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a256bb88b5b1cc10be3a93a122734476eb423e19" resname="post.comments.author">
+        <source>post.comments.author</source>
+        <target state="new">post.comments.author</target>
+        <jms:reference-file line="31">views/post_comments/details.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="49f784674b1cc8138382e79ff0200fa637e7bd17" resname="post.comments.created">
+        <source>post.comments.created</source>
+        <target state="new">post.comments.created</target>
+        <jms:reference-file line="35">views/post_comments/details.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1bf704035e00e072c81891b4255f452abd84225b" resname="post.comments.message">
+        <source>post.comments.message</source>
+        <target state="new">post.comments.message</target>
+        <jms:reference-file line="39">views/post_comments/details.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2dbd3c1fe6085da8082f321ec2bb1226ebdec763" resname="post.comments.title">
+        <source>post.comments.title</source>
+        <target state="new">post.comments.title</target>
+        <jms:reference-file line="27">views/post_comments/details.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="47b05092d6967b47dca8726a9fd2a4f926fbc5ad" resname="posts.comment.list">
+        <source>posts.comment.list</source>
+        <target state="new">posts.comment.list</target>
+        <jms:reference-file line="17">views/post_comments/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e7128ba016448cbe006280f0136827a5e91132bd" resname="posts.comments">
+        <source>posts.comments</source>
+        <target state="new">posts.comments</target>
+        <jms:reference-file line="31">views/Post/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d1408f944a9ce6b46eb69b0f3e9b20cf8b1c4938" resname="posts.comments.author">
+        <source>posts.comments.author</source>
+        <target state="new">posts.comments.author</target>
+        <jms:reference-file line="26">views/post_comments/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="df2739d076009cf9c3c56a7585b100e5ee695fcc" resname="posts.comments.created">
+        <source>posts.comments.created</source>
+        <target state="new">posts.comments.created</target>
+        <jms:reference-file line="27">views/post_comments/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="73fa75755fbeb5f94fb02ecf9906d452da153cf9" resname="posts.comments.delete">
+        <source>posts.comments.delete</source>
+        <target state="new">posts.comments.delete</target>
+        <jms:reference-file line="15">views/post_comments/details.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e1deb3fa71ea138c43b4f5564c8fd95c287446eb" resname="posts.comments.details">
+        <source>posts.comments.details</source>
+        <target state="new">posts.comments.details</target>
+        <jms:reference-file line="2">views/post_comments/actions.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/post_comments/details.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/post_comments/details.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/post_comments/details.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="906f70bb1680bbdbdd5a918c08544babdc9a130c" resname="posts.comments.list">
+        <source>posts.comments.list</source>
+        <target state="new">posts.comments.list</target>
+        <jms:reference-file line="9">views/post_comments/details.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/post_comments/index.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/post_comments/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6fa07a6f25f08b7f61668cba11f2575f96c7c4fb" resname="posts.comments.title">
+        <source>posts.comments.title</source>
+        <target state="new">posts.comments.title</target>
+        <jms:reference-file line="25">views/post_comments/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ae5bff6bb2278ed7039b57e9f4875e8b60a31ae2" resname="posts.created">
+        <source>posts.created</source>
+        <target state="new">posts.created</target>
+        <jms:reference-file line="32">views/Post/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f46a7d4f3225fb2cda73cbc6a3b0bac13ed26b03" resname="posts.description">
+        <source>posts.description</source>
+        <target state="new">posts.description</target>
+        <jms:reference-file line="29">AppBundle/Form/PostType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4b1429dac3ddd0637676d61e40f23eae32263a72" resname="posts.edit">
+        <source>posts.edit</source>
+        <target state="new">posts.edit</target>
+        <jms:reference-file line="2">views/Post/actions.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Post/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Post/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="9">views/Post/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e7821c065ade917ffea19de66b987d97b435ee34" resname="posts.list">
+        <source>posts.list</source>
+        <target state="new">posts.list</target>
+        <jms:reference-file line="102">Resources/views/admin_menu.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/Post/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Post/list.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Post/list.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/Post/list.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/Post/new.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/post_comments/details.html.twig</jms:reference-file>
+        <jms:reference-file line="16">views/post_comments/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6197d1d8c7ae7652063ab1baf92f15751d691f88" resname="posts.new">
+        <source>posts.new</source>
+        <target state="new">posts.new</target>
+        <jms:reference-file line="107">Resources/views/admin_menu.html.twig</jms:reference-file>
+        <jms:reference-file line="21">views/Post/list.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Post/new.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Post/new.html.twig</jms:reference-file>
+        <jms:reference-file line="9">views/Post/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e48184619a72a6f5a9d4e9eb496f8d40291b4793" resname="posts.picture">
+        <source>posts.picture</source>
+        <target state="new">posts.picture</target>
+        <jms:reference-file line="22">AppBundle/Form/PostType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9857fbbdc9638682cc1d1f74038df6c8704a7138" resname="posts.title">
+        <source>posts.title</source>
+        <target state="new">posts.title</target>
+        <jms:reference-file line="30">views/Post/list.html.twig</jms:reference-file>
+        <jms:reference-file line="19">AppBundle/Form/PostType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="96ed5c5789b174a01557791c8e936673ae4d973f" resname="privacy">
+        <source>privacy</source>
+        <target state="new">privacy</target>
+        <jms:reference-file line="117">views/Profile/other_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c81788750ba66397287398acf8528833a4285fe7" resname="privacy.police">
+        <source>privacy.police</source>
+        <target state="new">privacy.police</target>
+        <jms:reference-file line="209">Resources/views/admin.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="18342d1b3da732537b73fc2e7f7da69f5304e17a" resname="professional">
+        <source>professional</source>
+        <target state="new">professional</target>
+        <jms:reference-file line="29">views/Profile/edit_content.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/Profile/other_content.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5e2fb0c2c59448e1dec5df0f70ec85fcad1ca7b6" resname="publish">
+        <source>publish</source>
+        <target state="new">publish</target>
+        <jms:reference-file line="79">Resources/views/admin.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0b7ec688eeb9119f72f32b5b0f62681af8cde1a4" resname="reports">
+        <source>reports</source>
+        <target state="new">reports</target>
+        <jms:reference-file line="121">Resources/views/admin_menu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bbcbffbd3ed3551a19e9f6a93e1507dfb15da6cc" resname="save_success">
+        <source>save_success</source>
+        <target state="new">save_success</target>
+        <jms:reference-file line="64">AppBundle/Controller/BlogController.php</jms:reference-file>
+        <jms:reference-file line="93">AppBundle/Controller/BlogController.php</jms:reference-file>
+        <jms:reference-file line="71">AppBundle/Controller/ConfigurationController.php</jms:reference-file>
+        <jms:reference-file line="86">AppBundle/Controller/CourseController.php</jms:reference-file>
+        <jms:reference-file line="137">AppBundle/Controller/CourseController.php</jms:reference-file>
+        <jms:reference-file line="69">AppBundle/Controller/NewsCategoryController.php</jms:reference-file>
+        <jms:reference-file line="93">AppBundle/Controller/NewsCategoryController.php</jms:reference-file>
+        <jms:reference-file line="78">AppBundle/Controller/NewsController.php</jms:reference-file>
+        <jms:reference-file line="116">AppBundle/Controller/NewsController.php</jms:reference-file>
+        <jms:reference-file line="91">AppBundle/Controller/PostController.php</jms:reference-file>
+        <jms:reference-file line="129">AppBundle/Controller/PostController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6c8f9b5938be0df1e76a9fca5b054cd63673b90c" resname="see.courses">
+        <source>see.courses</source>
+        <target state="new">see.courses</target>
+        <jms:reference-file line="169">views/dashboard/index.html.twig</jms:reference-file>
+        <jms:reference-file line="175">views/dashboard/index.html.twig</jms:reference-file>
+        <jms:reference-file line="181">views/dashboard/index.html.twig</jms:reference-file>
+        <jms:reference-file line="187">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2cc87a0dc8ff3b50819fd6f6a2e09c5514d02fc7" resname="see.garanties">
+        <source>see.garanties</source>
+        <target state="new">see.garanties</target>
+        <jms:reference-file line="262">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="37ed539c0cef13959abd980bebf30f4922f606e3" resname="send">
+        <source>send</source>
+        <target state="new">send</target>
+        <jms:reference-file line="726">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="68b661e55fbfc7089541c61dd985412c374f75c6" resname="solisite.devolution">
+        <source>solisite.devolution</source>
+        <target state="new">solisite.devolution</target>
+        <jms:reference-file line="597">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6930bd71f66e0198be69038558a018dfca37d6c8" resname="sponsor.email">
+        <source>sponsor.email</source>
+        <target state="new">sponsor.email</target>
+        <jms:reference-file line="403">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2b020927d3c6eb407223a1baa3d6ce3597a3f88d" resname="start">
+        <source>start</source>
+        <target state="new">start</target>
+        <jms:reference-file line="473">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="48a3661d846478fa991a825ebd10b78671444b5b" resname="status">
+        <source>status</source>
+        <target state="new">status</target>
+        <jms:reference-file line="475">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fcad475c195e9b43e2864891ce040a7e4471d85a" resname="status.memberships">
+        <source>status.memberships</source>
+        <target state="new">status.memberships</target>
+        <jms:reference-file line="452">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="063dcf21f72d017b876807627f0c3b480a3f9ce2" resname="superior">
+        <source>superior</source>
+        <target state="new">superior</target>
+        <jms:reference-file line="31">views/Profile/edit_content.html.twig</jms:reference-file>
+        <jms:reference-file line="31">views/Profile/other_content.html.twig</jms:reference-file>
+        <jms:reference-file line="31">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ce620d6749880d79c700eb0ae2a56646f3a59bc5" resname="terms">
+        <source>terms</source>
+        <target state="new">terms</target>
+        <jms:reference-file line="114">views/Profile/other_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1ea66e2b1bfa239ac53a354401afe3de3bd3e597" resname="terms.conditions">
+        <source>terms.conditions</source>
+        <target state="new">terms.conditions</target>
+        <jms:reference-file line="209">Resources/views/admin.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5b5b3d429e20c9e597f307d5e8a32c783a47bed1" resname="testimonials">
+        <source>testimonials</source>
+        <target state="new">testimonials</target>
+        <jms:reference-file line="705">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="635f27c0d45da86713e2f0753956c88b5a8fbc33" resname="the_account_and_amount_is_required">
+        <source>the_account_and_amount_is_required</source>
+        <target state="new">the_account_and_amount_is_required</target>
+        <jms:reference-file line="36">AppBundle/Controller/TransferController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e96d29c823e926044b1eccd3b0a1b0df612677a8" resname="the_amount_defined_is_not_valid_greather_than_the_user_credit">
+        <source>the_amount_defined_is_not_valid_greather_than_the_user_credit</source>
+        <target state="new">the_amount_defined_is_not_valid_greather_than_the_user_credit</target>
+        <jms:reference-file line="38">AppBundle/Controller/TransferController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c2829b9f67e441c102a948705bab7fc04d53cfc6" resname="tml.method_selected.not_valid.not_credit">
+        <source>tml.method_selected.not_valid.not_credit</source>
+        <target state="new">tml.method_selected.not_valid.not_credit</target>
+        <jms:reference-file line="72">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8c2f5233c62f12d4504d3f467ad8dec78069c73b" resname="transaction.can.not.verified">
+        <source>transaction.can.not.verified</source>
+        <target state="new">transaction.can.not.verified</target>
+        <jms:reference-file line="178">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a297f9497402e1ff8a0adcae6b9334cf0d614af5" resname="transaction.canceled">
+        <source>transaction.canceled</source>
+        <target state="new">transaction.canceled</target>
+        <jms:reference-file line="198">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1c9867cdab3bce610698b969e8d00ad0eff158f3" resname="transaction.completed">
+        <source>transaction.completed</source>
+        <target state="new">transaction.completed</target>
+        <jms:reference-file line="174">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6fc15b8a57779029eb612b63bfaa7864cab2b793" resname="transfer.amount">
+        <source>transfer.amount</source>
+        <target state="new">transfer.amount</target>
+        <jms:reference-file line="21">views/transfer/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="66c5480aa5bc891743533a2737b33b2bbdd1badd" resname="transfer.date">
+        <source>transfer.date</source>
+        <target state="new">transfer.date</target>
+        <jms:reference-file line="23">views/transfer/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6f96373804e06a720b6af34e4c6d0e7bd157c32d" resname="transfer.description">
+        <source>transfer.description</source>
+        <target state="new">transfer.description</target>
+        <jms:reference-file line="20">views/transfer/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="420f7b57cad95f715d0b7da71f913f5bba8e250f" resname="transfer.list">
+        <source>transfer.list</source>
+        <target state="new">transfer.list</target>
+        <jms:reference-file line="4">views/transfer/index.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/transfer/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a600732eaf1f2b0f261ad6cbcc951d641af69d5b" resname="transfer.type">
+        <source>transfer.type</source>
+        <target state="new">transfer.type</target>
+        <jms:reference-file line="22">views/transfer/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="31c20e73fa29248cc7bf440ac9d720ff6d88fd3e" resname="translations">
+        <source>translations</source>
+        <target state="new">translations</target>
+        <jms:reference-file line="48">Resources/views/admin_menu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="66a9ba1898d455f3bd08ab62c1166a05b899f09e" resname="trasnfer.list">
+        <source>trasnfer.list</source>
+        <target state="new">trasnfer.list</target>
+        <jms:reference-file line="3">views/transfer/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="20afd5b376ab9ffb3cfe083496345d7e9d11d9f5" resname="user.email">
+        <source>user.email</source>
+        <target state="new">user.email</target>
+        <jms:reference-file line="31">views/User/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8377b2516ed4c658297caaad0fc246ab7085395a" resname="user.name">
+        <source>user.name</source>
+        <target state="new">user.name</target>
+        <jms:reference-file line="29">views/User/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f0a4bf06e8b699eb5eac4265f418c67594986fb6" resname="user.profile">
+        <source>user.profile</source>
+        <target state="new">user.profile</target>
+        <jms:reference-file line="7">views/ChangePassword/changePassword.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/Profile/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Profile/show.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Profile/show.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/Profile/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1b7d43b96db80ea1a9a30483b8c5ba6e75be7c19" resname="user.profile_edit">
+        <source>user.profile_edit</source>
+        <target state="new">user.profile_edit</target>
+        <jms:reference-file line="3">views/Profile/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Profile/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/Profile/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d6bb1584d59e00292e19dee351f441ba7567c457" resname="user.profile_other">
+        <source>user.profile_other</source>
+        <target state="new">user.profile_other</target>
+        <jms:reference-file line="3">views/Profile/other.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Profile/other.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/Profile/other.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a1f62f12edb66638d884415f5685cdf2a2cc75b9" resname="user.role">
+        <source>user.role</source>
+        <target state="new">user.role</target>
+        <jms:reference-file line="32">views/User/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9b9b24bd6df7ab902863c3560dab082512bceee1" resname="user.username">
+        <source>user.username</source>
+        <target state="new">user.username</target>
+        <jms:reference-file line="30">views/User/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b5b6fb3a225c49399d75b2059d63c568ddf298a0" resname="user_message.body">
+        <source>user_message.body</source>
+        <target state="new">user_message.body</target>
+        <jms:reference-file line="20">views/blog_contact/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b425f6fe565121e7feb7f5c2a67817a67101b450" resname="user_message.details">
+        <source>user_message.details</source>
+        <target state="new">user_message.details</target>
+        <jms:reference-file line="2">views/blog_contact/actions.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/blog_contact/details.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/blog_contact/details.html.twig</jms:reference-file>
+        <jms:reference-file line="8">views/blog_contact/details.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="79ce9f0ccf9d97159027721258b159d89b0718ec" resname="user_message.from">
+        <source>user_message.from</source>
+        <target state="new">user_message.from</target>
+        <jms:reference-file line="25">views/blog_contact/details.html.twig</jms:reference-file>
+        <jms:reference-file line="19">views/blog_contact/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e696914e6869a17e4cde076d2fd2b3b524ff3e6d" resname="user_message.list">
+        <source>user_message.list</source>
+        <target state="new">user_message.list</target>
+        <jms:reference-file line="7">views/blog_contact/details.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/blog_contact/index.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/blog_contact/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="249ba36000029bbe97499c03db5a9001f6b734ec" resname="username">
+        <source>username</source>
+        <target state="new">username</target>
+        <jms:reference-file line="128">views/Profile/show_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5b7dcd14a4faa2cdd54cf6eb8d4bc35da31914a1" resname="users">
+        <source>users</source>
+        <target state="new">users</target>
+        <jms:reference-file line="13">Resources/views/admin_menu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="152c4429a61403f793f4af03ea0dec01dd2095cd" resname="users.list">
+        <source>users.list</source>
+        <target state="new">users.list</target>
+        <jms:reference-file line="3">views/User/index.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/User/index.html.twig</jms:reference-file>
+        <jms:reference-file line="15">views/User/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f32b67c7e26342af42efabc674d441dca0a281c5" resname="value">
+        <source>value</source>
+        <target state="new">value</target>
+        <jms:reference-file line="472">views/dashboard/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="73f5c962d88fc533caaa0a04d78c0d7bd6ee1914" resname="view_all">
+        <source>view_all</source>
+        <target state="new">view_all</target>
+        <jms:reference-file line="10">views/dashboard/message_unread.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ced3846f4cc295c5e20bea811f511f328a8d5672" resname="welcome_mesage">
+        <source>welcome_mesage</source>
+        <target state="new">welcome_mesage</target>
+        <jms:reference-file line="105">Resources/views/admin.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

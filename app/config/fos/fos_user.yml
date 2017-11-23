@@ -1,0 +1,20 @@
+# FOSUser bundle confguration
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: no-reply@tml4you.com
+        sender_name: No-Reply
+    registration:
+        form:
+            type: app_user_registration
+    profile:
+        form:
+            type: app_user_profile
+    change_password:
+        form:
+            type: app_user_change_password
+    service:
+        mailer: fos_user.mailer.twig_swift
+        user_manager: app.user_manager

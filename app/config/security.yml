@@ -1,0 +1,37 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
+    encoders:
+        FOS\UserBundle\Model\UserInterface: sha512
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
+                check_path: fos_user_security_check
+                login_path: fos_user_security_login
+                remember_me: true
+            logout:
+                path: fos_user_security_logout
+                target: /%locale%
+            anonymous:    true
+
+    access_control:
+        - { path: ^/(%routes.locales%)/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(%routes.locales%)/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(%routes.locales%)/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(%routes.locales%)/admin/, roles: [ROLE_CLIENT, ROLE_ADMIN] }

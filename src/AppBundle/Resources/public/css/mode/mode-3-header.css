@@ -1,0 +1,45 @@
+header .vc_sub-menu-bg{
+	background:none;
+}
+header .vc_primary-menu-wrapper{
+	background :#F7F7F7;
+	box-shadow: 0 1px 0 #FFF inset;
+	border-bottom:1px solid #F6F6F6;
+}
+header{
+	border-top-color:#E5E5E5; 
+}
+.vc_menu .vc_primary-menu > ul > li > a{
+	color:#666;
+	font-size:14px;
+	text-transform:capitalize;
+}
+
+.vc_menu .vc_primary-menu > ul > li.active, .vc_menu .vc_primary-menu > ul > li:hover, .vc_menu .vc_primary-menu > ul > li.active:hover{
+	border-top:#2CA9DF solid 2px;
+}
+
+.vc_menu .vc_primary-menu > ul > li:hover{
+	border-top-color:#CCC;
+}
+
+.vc_menu .vc_primary-menu > ul > li:hover > a, .vc_menu .vc_primary-menu > ul > li.active > a{
+	margin-top:-2px;
+	background:none;
+}
+.vc_menu .vc_primary-menu > ul > li:hover > a,  .vc_menu .vc_primary-menu > ul > li > a:hover{
+	color: #555;	
+}
+.header-1 .vc_secondary-menu-wrapper, .header-4 .vc_secondary-menu-wrapper{
+	background:url(../../img/shadow-1.png) no-repeat center top;
+}
+.header-2 .vc_secondary-menu-wrapper, .header-3 .vc_secondary-menu-wrapper{
+	background: #E5E5E5;
+}
+body.sticky-menu-active .header-2, body.sticky-menu-active .header-3, body.sticky-menu-active .header-4{
+	border-top-color: #E5E5E5;
+}
+
+.vc_menu .vc_primary-menu > ul > li > a, .vc_menu .vc_primary-menu > ul > li{
+	border-right:none;
+}

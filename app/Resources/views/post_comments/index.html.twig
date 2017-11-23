@@ -1,0 +1,32 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'posts.comments.list'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'posts.comments.list'|trans({},'backend') }}{% endblock %}
+
+{% import ':macros:dataTables.html.twig' as datatable %}
+
+{% block page_style %}{{ datatable.css() }}{% endblock page_style %}
+{% block page_script %}{{ datatable.js() }}{% endblock page_script %}
+{% block javascripts_document_ready %}
+    {{ datatable.ajax_component(path('app_admin_post_comments_datatable',{'post':post})) }}
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{{ path('app_admin_blog_details') }}">{{ 'blog.details'|trans({},'backend') }}</a></li>
+    <li><a href="{{ path('app_admin_post_list') }}">{{ 'posts.list'|trans({},'backend') }}</a></li>
+    <li class="active">{{ 'posts.comment.list'|trans({},'backend') }}</li>
+{% endblock %}
+
+{% block page_body %}
+    <div class="row">
+        <div class="col-xs-12">
+            {% embed ":embed:datatable.html.twig" %}
+                {% block table_head %}
+                    <th data-type="string" data-data="title" data-name="title">{{ 'posts.comments.title'|trans({},'backend') }}</th>
+                    <th data-type="string" data-data="author" data-name="author" data-orderable="false">{{ 'posts.comments.author'|trans({},'backend') }}</th>
+                    <th data-type="string" data-data="created" data-name="created" data-orderable="false">{{ 'posts.comments.created'|trans({},'backend') }}</th>
+                {% endblock table_head %}
+            {% endembed %}
+        </div>
+    </div>
+{% endblock %}

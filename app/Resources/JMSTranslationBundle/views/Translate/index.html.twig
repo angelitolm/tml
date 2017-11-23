@@ -1,0 +1,139 @@
+{% extends "JMSTranslationBundle::base.html.twig" %}
+
+{% block title %}Translation View{% endblock title %}
+
+{% block page_script %}
+    {{ parent() }}
+    
+    <script language="javascript" type="text/javascript">
+        jQuery(document).ready(function() {
+            var updateMessagePath = {{ path("jms_translation_update_message", {"config": selectedConfig, "domain": selectedDomain, "locale": selectedLocale})|json_encode|raw }};
+        
+            jQuery('#config select').change(function() {
+                //jQuery(this).parent("div.form-group").parent("form").submit();
+              jQuery(this).parents('form').submit();
+            });
+            
+            {% if isWriteable is sameas(true) %}
+            jQuery('textarea')
+                .blur(function() {
+                    var self = this;
+                    jQuery.ajax(updateMessagePath + '?id=' + encodeURIComponent(jQuery(this).data('id')), {
+                        type: 'POST',
+                        headers: {'X-HTTP-METHOD-OVERRIDE': 'PUT'},
+                        data: {'_method': 'PUT', 'message': jQuery(this).val()},
+                        error: function() {
+                            jQuery(self).parent().prepend('<div class="alert alert-danger">Translation could not be saved</div>');
+                        },
+                        success: function() {
+                            jQuery(self).parent().prepend('<div class="alert alert-success">Translation was saved.</div>');
+                        },
+                        complete: function() {
+                            var parent = jQuery(self).parent();
+                            jQuery(self).data('timeoutId', setTimeout(function() {
+                                jQuery(self).data('timeoutId', undefined);
+                                parent.children('.alert-message').fadeOut(300, function() { jQuery(this).remove(); });
+                            }, 10000));
+                        }
+                    });
+                })
+                .focus(function() {
+                    this.select();
+                    
+                    var timeoutId = jQuery(this).data('timeoutId');
+                    if (timeoutId) {
+                        clearTimeout(timeoutId);
+                        jQuery(this).data('timeoutId', undefined);
+                    }
+                    
+                    jQuery(this).parent().children('.alert').remove();
+                })
+            ;
+            {% endif %}
+        });
+    </script>
+{% endblock %}
+
+{#{% block main_buttons %}
+  <a href="{{ path('admin_clear_cache_translation') }}" class="btn btn-danger">
+    <span class="fa fa-trash"></span>&nbsp;{{ 'button.clear_trans_cache'|trans }}
+  </a>
+{% endblock main_buttons %}#}
+
+{% block page_body %}
+
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="row">
+        <form id="config" action="{{ path("jms_translation_index") }}" method="get" class="" role="form">
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <label>{{ 'config_name_trans'|trans }}</label>
+              <select name="config" class="form-control">
+                {% for config in configs %}
+                  <option value="{{ config }}"{% if config == selectedConfig %} selected="selected"{% endif %}>{{ config }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <label>{{ 'domain_name_trans'|trans }}</label>
+              <select name="domain" class="form-control">
+                {% for domain in domains %}
+                  <option value="{{ domain }}"{% if domain == selectedDomain %} selected="selected"{% endif %}>{{ domain }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <label>{{ 'locale_name_trans'|trans }}</label>
+              <select name="locale" class="form-control">
+                {% for locale in locales %}
+                  <option value="{{ locale }}"{% if locale == selectedLocale %} selected="selected"{% endif %}>{{ locale }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    {% if isWriteable is sameas(false) %}
+      <div class="col-md-12 col-lg-12">
+        <div class="alert alert-danger">
+          The translation file "<strong>{{ file }}</strong>" is not writable.
+        </div>
+      </div>
+    {% endif %}
+
+    {% if "xliff" != format %}
+      <div class="col-md-12 col-lg-12">
+        <div class="alert alert-danger">
+          Due to limitations of the different loaders/dumpers, some features are unfortunately limited to the XLIFF format.
+          <br /><br />
+          However, you can easily convert your existing translation files to the XLIFF format by running:<br />
+          <code>php app/console translation:extract {{ selectedLocale }} --config={{ selectedConfig }} --output-format=xliff</code>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="col-md-12 col-lg-12">
+      <h2>Available Messages</h2>
+
+      {% if newMessages is not empty %}
+        <h3>New Messages</h3>
+        {% include "JMSTranslationBundle:Translate:messages.html.twig" with {"messages": newMessages} %}
+      {% endif %}
+
+      {% if existingMessages is not empty %}
+        <h3>Existing Messages</h3>
+        {% include "JMSTranslationBundle:Translate:messages.html.twig" with {"messages": existingMessages} %}
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}

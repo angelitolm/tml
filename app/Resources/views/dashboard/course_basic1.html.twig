@@ -1,0 +1,216 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'dashboard'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'dashboard'|trans({},'backend') }}{% endblock page_title %}
+
+{% block page_body %}
+    <div class="page-content">
+
+        <div class="row">
+            <div class="col-md-8 bordered">
+                <!-- BEGIN PORTLET-->
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-edit font-dark"></i>
+                            <span class="caption-subject font-dark bold uppercase">{{ 'courses.basics' | trans({}, 'backend') }}</span>
+                        </div>
+
+                    </div>
+                    <div class="portlet-body">
+                        <div class="blog-page blog-content-1">
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="blog-post-sm blog-container">
+                                        <div class="blog-img-thumb">
+                                            <a href="javascript:;"><img
+                                                        src="{{ asset('backend-metronic/img/curso1.png') }}"></a>
+                                        </div>
+                                        <div class="blog-post-content">
+                                            <h2 class="blog-title blog-post-title">
+                                                <a href="javascript:;">Curso B&aacute;sico</a>
+                                            </h2>
+
+
+                                            <img class="img-responsive"
+                                                 src="{{ asset('backend-metronic/img/curso1basic.png') }}"/>
+
+                                            <h3>BIENVENIDO(A)
+                                            </h3>
+
+                                            <p>SALUDOS PARA USTED Y AGRACIAS POR SU CONFIANZA Y RESPETO , HACEMOS TODOS
+                                                LOS ESFUERZOS PARA BRINDAR LO MEJOR DE NUESTROS TALENTOS TRABAJANDO EN
+                                                EQUIPOS DE APOYO.
+                                                ESPERAMOS QUE SU EXPERIENCIA CON EL PROGRAMA SEA DEL AGRADO Y BENEFICIO
+                                                SUYO.
+                                            </p>
+
+                                            <h3>TEMAS DEL CURSO-BASICO</h3>
+
+                                            <ul>
+                                                <li>AMIGO-TML</li>
+                                                <li>INVITACION BASICA PATROCINADA</li>
+                                                <li>MIEMNBRO -BASICO</li>
+                                                <li>MIEMBRO- BASICO PTS</li>
+                                                <li>ACTUALIZACIONES TML</li>
+
+                                            </ul>
+
+                                            <h3>AMIGO-TML</h3>
+
+                                            <p>USTED ES EL EMBAJADOR INDEPENDIENTE DE TML4YOU Y ES RESPONSIBLE POR
+                                                BRINDAR APOYO Y SEGUIMIENTO A TODAS LAS PERSONAS QUE USTED ESTABLESCA
+                                                UNA AMISTAD PERSONAL CON RESPETO, FLEXIBILIDAD Y BUENA FE.<br>
+
+                                                USTED ES LIBRE PARA IMPLEMENTAR SU PROPIA FORMA DE DESARROLLO PARA
+                                                CAUTIVAR LA ATENCION DE TODO SU ENTORNO CON TRANSPARENCIA Y RESPETO
+                                                HACIA TODOS.<br>
+
+                                                USTED TIENE QUE DAR EL EJEMPLO PROPIO DE EXITO Y TRANSPARENCIA HACIA LOS
+                                                DEMAS CON RESPETO Y SENTIDO COMUN.<br>
+
+                                                USTED DEBE CUIDAR POR LA ETICA Y COMPORTAMIENTO DE OTROS MIEMBROS TML Y
+                                                SI NOTA ALGUNA CONDUCTA INCORRECTA, ENTONCES DEBE COMUNICARLO DE
+                                                IGMEDIATO AL CORREO info@tml4youinternational.com.
+                                            </p>
+
+                                            <h3>ACTUALIZACIONES</h3>
+
+                                            <p>LAS ACTUALIZACIONES SE REALIZAN CONSTANTEMENTE EN TODO EL SISTEMA
+                                                TML4YOU.COM AL MENOS UNA POR MES, como parte de nuestras estrategias de
+                                                desarrollo personalizado entre los miembros.<br>
+
+                                                CEO-PRESIDENCIALES son los equipos que formulas las noticias, documentos
+                                                de propagandas y otros materiales informativos de TML4you.<br>
+
+                                                SU OPINION ES ESCUCHADA Y AGRADECIDA POR TML4YOU, siempre que su
+                                                objetivo ayude a crecer nuestra basa de conocimientos pr&aacute;cticos y
+                                                sencillos de comunicaci&oacute;n con otros nuevos interesados en el
+                                                negocio
+                                                independiente tml4you.
+                                            </p>
+
+                                            <h3>PTS-B&aacute;sico</h3>
+
+                                            <p>PTS, es nuestro curso estrella de instrucciones y manejo de todos
+                                                nuestros recursos en tml4you.<br>
+
+                                                PTS, es la base del concepto, amigo- tml, en todos sus niveles de
+                                                membres&iacute;as con una gu&iacute;a de comportamiento que es generada desde su nivel
+                                                superior por medio de su patrocinador.<br>
+
+                                                PTS, es el amigo-tml que le gu&iacute;a y le apoya cuando usted lo necesita y
+                                                es de forma gratuita y siempre que pueda estar disponible
+                                                voluntariamente.<br>
+
+                                                PTS, es el gu&iacute;a personal de cada membres&iacute;a que existe en tml4you y
+                                                siempre puede ser cambiable o reemplazada por otro amigo-tml superior a
+                                                usted, que cumpla con sus expectativas de conocimiento, apoyo y
+                                                seguimiento en TML4you.<br>
+
+                                                TODOS LOS INTEGRANTES DE LAS MEMBRECIAS DE TML4YOU, SON MIEMBROS PTS, Y
+                                                TIENEN LA OBLIGACION DE DAR APOYAR A TODOS LOS QUE LE PIDAN APOYO Y SIN
+                                                IMPORTAR SI SON O NO SOR SUS PATROCINADOS DIRECTOS.<br>
+
+                                                PTS-BASICO, es un trabajo de tiempo y dedicaci&oacute;n personal ,para apoyar y
+                                                dar seguimiento con las informaciones y procesos de tml4you y es
+                                                recompensado.</p>
+
+                                            <h3>INVITACION BASICA PERSONALIZADA</h3>
+
+                                            <p>A -Comienza cuando usted le pide mas informaci&oacute;n a su nuevo amigo miembro
+                                                tml y le interesa el negocio personalmente.<br>
+                                                B -Usted le pide la invitaci&oacute;n a su amigo miembro tml y el le da su
+                                                numero de miembro de recomendaci&oacute;n para iniciar la compra de la
+                                                membres&iacute;a- b&aacute;sica en el sitio tml4youintrnational.com.<br>
+                                                C -Usted como invitado recibe en su inscripci&oacute;n de forma autom&aacute;tica el
+                                                paquete de bonos de inicio y solamente puede recibirlo una vez por vida
+                                                en cada membres&iacute;a y no es cambiable, no es vendible, no es acumulativo,
+                                                no es dinero en efectivo, solamente es de uso interno en nuestro sistema
+                                                tml4you administrativo y manejado por TML-Transfer. </p>
+
+                                            <h3>MIEMBRO-BASICO</h3>
+
+                                            <p>A- Inscribirse en el miembro-b&aacute;sico es el primer paso y la &uacute;nica forma de
+                                                integrarse como miembro afiliado en tml4you y recibir su propio c&oacute;digo
+                                                de registro como afiliado y recibi&oacute; bajo ese c&oacute;digo todos los beneficios
+                                                b&aacute;sicos de miembro , despu&eacute;s de haber completado su transacci&oacute;n de pago.<br>
+                                                B -Usted recibe de forma r&aacute;pidamente su panel de control actualizado con
+                                                las funciones b&aacute;sicas del mimbro, para ser actualizadas por usted con su
+                                                informaci&oacute;n personal y el blog personal.
+                                            </p>
+
+                                            <h3>AGRADECIMIENTOS</h3>
+
+                                            <p>Queremos dar un especial agradecimiento a todo el equipo de CEO-TML que
+                                                han dedicado a&ntilde;os de planificaci&oacute;n, desarrollo e implementaci&oacute;n de este
+                                                proyecto que hoy esta cogiendo vida gracias a personas como USTED,
+                                                QUERIDO(A) Y ESTIMADO(A) AMIGO(A)-TML.<br>
+
+                                                AMIGO-TML, es una identificaci&oacute;n de una posici&oacute;n y no es el nombre ni el
+                                                genero de persona en particular, puede ser usado en hombres y mujeres
+                                                por igual.<br>
+
+                                                TML4you Inc., es un negocio inscrito y legalizado en el estado de
+                                                FLORIDA USA.<br>
+
+                                                TML4you Inc. y asociados, son negocios para personas mayores de 18 a&ntilde;os
+                                                de edad y no permitimos a menores de edad ser miembros y si es violada
+                                                esta condici&oacute;n por alguna persona, entonces ser&aacute; cancelada su membres&iacute;a
+                                                de inmediato y no tendr&aacute; admisi&oacute;n en el futuro.</p>
+
+                                            <h3>NOTA LEGAL</h3>
+
+                                            <p>Este curso documento es propiedad intelectual de tml4you Inc., y no es de
+                                                uso comercial ni se puede modificar, es de uso exclusivo dentro de
+                                                nuestros miembros con membres&iacute;as activas, est&aacute; destinado a dar ideas y
+                                                crear la mejor comunicaci&oacute;n posible entre las personas y promover la
+                                                paz, el respeto ,la flexibilidad y la buena fe en todos nuestros
+                                                actos. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- END PORTLET-->
+            </div>
+            <div class="col-md-4">
+                <!-- BEGIN PORTLET-->
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-edit font-dark"></i>
+                            <span class="caption-subject font-dark bold uppercase">{{ 'courses' | trans({}, 'backend') }}</span>
+                        </div>
+
+                    </div>
+                    <div class="portlet-body">
+                        <div class="blog-page blog-content-1">
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="blog-post-sm blog-container">
+                                        <div class="blog-img-thumb">
+                                            <a href="javascript:;"><img
+                                                        src="{{ asset('backend-metronic/img/curso1.png') }}"></a>
+                                        </div>
+                                        <div class="blog-post-content">
+                                            <h2 class="blog-title blog-post-title"><a
+                                                        href="javascript:;">Metronic Blog Post</a></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- END PORTLET-->
+            </div>
+        </div>
+    </div>
+{% endblock %}

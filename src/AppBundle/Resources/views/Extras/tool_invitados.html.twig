@@ -1,0 +1,27 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Mass&oacute; #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+
+{% block banner_title %}
+    <h1>Herramienta <span class="vc_main-color">Miembros Invitados Patrocinados</span></h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">Herramienta Miembros Invitados Patrocinados</li>
+    </ul>
+{% endblock %}
+
+
+{% block content %}
+    <div class="col-md-12" style="margin-bottom: 35px">
+        <p>
+
+            Los invitados patrocinados son una herramienta estrat&eacute;gica de TML, para los miembros superiores y
+            profesionales. La misma les dar&aacute; un crecimiento poderoso a su red y un incremento notable de sus comisiones,
+            porque consiste en darles un cantidad determinada de invitaciones gratis semanales a estos miembros con el
+            objetivo de aumentar de forma r&aacute;pida y progresiva los afiliados de estos miembros. Haciendo de esto un punto
+            de partida relevante para su pr&oacute;xima integraci&oacute;n al Club TML y al M&oacute;dulo de Negocio.
+        </p>
+    </div>
+{% endblock %}

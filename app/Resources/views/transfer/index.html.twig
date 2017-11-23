@@ -1,0 +1,49 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'trasnfer.list'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'transfer.list'|trans({},'backend') }}{% endblock %}
+
+
+{% block breadcrumb %}
+    <li class="active">{{ 'transfer.list'|trans({},'backend') }}</li>
+{% endblock %}
+
+{% block page_body %}
+<div class="">
+    <div class="row">
+        <div class="col-xs-12">
+            {% embed ':embed:panel-left.html.twig' %}
+                {% block box_content %}
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>{{ 'transfer.description'|trans({},'backend') }}</th>
+                                <th>{{ 'transfer.amount'|trans({},'backend') }}</th>
+                                <th>{{ 'transfer.type'|trans({},'backend') }}</th>
+                                <th>{{ 'transfer.date'|trans({},'backend') }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for transfer in lastTransfer %}
+                                <tr>
+                                    <td>{{ transfer.description }}</td>
+                                    <td>{{ transfer.amount|number_format(2,'.',',') }}</td>
+                                    <td>
+                                        {% if transfer.transferType == 1 %}
+                                            <span class="fa fa-arrow-down vd_green"></span>
+                                        {% else %}
+                                            <span class="fa fa-arrow-up vd_red"></span>
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ transfer.created.format('Y-m-d H:i:s') }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endblock box_content %}
+            {% endembed %}
+        </div>
+    </div>
+
+    </div>
+{% endblock %}

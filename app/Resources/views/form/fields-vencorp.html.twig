@@ -1,0 +1,110 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block form_row %}
+  {% spaceless %}
+    {% set size = 'col-xs-12' %}
+    {% if form.vars.attr is not empty and form.vars.attr.size is defined %}
+      {% set size = size~' '~form.vars.attr.size %}
+    {% endif %}
+    {% set label = form.vars.label|trans({}, form.vars.translation_domain) %}
+    {% if form.vars.required %}{% set label = label ~ ' *' %}{% endif %}
+    {#<div class="{{ size }}">#}
+      <div class="form-group {% if form.vars.errors|length > 0 %}has-error{% endif %}">
+          <div class="controls">
+            {#{{ form_label(form) }}#}
+            {{ form_widget(form,{'attr':{'placeholder':label}}) }}
+            {{ form_errors(form) }}
+          </div>
+      </div>
+    {#</div>#}
+  {% endspaceless %}
+{% endblock form_row %}
+
+{% block form_label -%}
+  {% if label is not same as(false) %}
+    {% set label_attr = label_attr|merge({'class': label_attr.class|default('control-label')}) %}
+    {{ parent() }}
+  {%- endif %}
+{%- endblock form_label %}
+
+{% block form_widget_simple -%}
+  {%- set type = type|default('text') -%}
+  {% set attr = attr|merge({'class': attr.class|default('')}) %}
+  {% if attr.icon is defined %}
+    <div class="input-group">
+      {% set position = attr.icon_position|default("left") %}
+      {% if position == "left" %}
+        <span class="input-group-addon"> <i class="{{ attr.icon }}"></i> </span>
+        {{ parent() }}
+      {% else %}
+        {{ parent() }}
+        <span class="input-group-addon"> <i class="{{ attr.icon }}"></i> </span>
+      {% endif %}
+    </div>
+  {% else %}
+    {{ parent() }}
+  {% endif %}
+  {% if attr.help is defined %}
+    <span class="help-inline">{{ attr.help }}</span>
+  {% endif %}
+{%- endblock form_widget_simple %}
+
+{%- block textarea_widget -%}
+  {% set attr = attr|merge({'class': attr.class|default('')}) %}
+  {% if attr.icon is defined %}
+    <div class="input-group">
+      {% set position = attr.icon_position|default("left") %}
+      {% if position == "left" %}
+        <span class="input-group-addon" style="vertical-align: top;"> <i class="{{ attr.icon }}"></i> </span>
+        {{ parent() }}
+      {% else %}
+        {{ parent() }}
+        <span class="input-group-addon" style="vertical-align: top;"> <i class="{{ attr.icon }}"></i> </span>
+      {% endif %}
+    </div>
+  {% else %}
+    {{ parent() }}
+  {% endif %}
+{%- endblock textarea_widget -%}
+
+{% block form_errors %}
+  {% spaceless %}
+    {% if errors|length > 0 %}
+      <ul class="list-unstyled marB15">
+        {% for error in errors %}
+          <li class="text-danger text-right">{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endspaceless %}
+{% endblock form_errors %}
+
+{% block choice_widget_collapsed -%}
+  {% set attr = attr|merge({'class': attr.class|default('select2-component')}) %}
+  {% if attr.icon is defined %}
+    <div class="input-group">
+      <span class="input-group-addon"> <i class="{{ attr.icon }}"></i> </span>
+      {{ parent() }}
+    </div>
+  {% else %}
+    {{ parent() }}
+  {% endif %}
+{%- endblock choice_widget_collapsed %}
+
+{%- block checkbox_widget -%}
+  <div class="checkbox">
+    {% if attr.placeholder is defined and attr.placeholder is not empty %}
+      <label>
+        <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+        {{ attr.placeholder }}
+      </label>
+    {% else %}
+      {{ parent() }}
+    {% endif %}
+  </div>
+{%- endblock checkbox_widget -%}
+
+{%- block hidden_widget -%}
+  {% set attr = attr|merge({'class': attr.class|default('hidden-element')}) %}
+  {{ parent() }}
+{%- endblock hidden_widget -%}

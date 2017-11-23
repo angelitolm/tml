@@ -1,0 +1,786 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="row">
+    <div class="col-md-12">
+
+        <!-- BEGIN PROFILE SIDEBAR -->
+        <div class="profile-sidebar">
+            <!-- PORTLET MAIN -->
+            <div class="portlet light profile-sidebar-portlet bordered">
+                <!-- SIDEBAR USERPIC -->
+                <div class="profile-userpic">
+                    {% if app.user.picture == null %}
+                        <img class="img-responsive" style="height: 149px; width: 149px" alt="personal image"
+                             src="{{ asset('backend-metronic/img/avatars/avatar.jpg') }}"/>
+                    {% else %}
+                        {% set url = constant('IMAGES_UPLOAD_DIR',app.user)~app.user.picture %}
+                        <img class="img-responsive" style="height: 149px; width: 149px" alt="personal image"
+                             src="{{ asset(url) }}">
+                    {% endif %}
+                </div>
+                <!-- END SIDEBAR USERPIC -->
+                <!-- SIDEBAR USER TITLE -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        {{ app.user.name }}
+                    </div>
+                    <div class="profile-usertitle-job">
+                        {% if app.user.hasRole('ROLE_PROFESSIONAL') %}
+                            {{ 'professional'|trans({},'backend') }}
+                        {% elseif app.user.hasRole('ROLE_SUPERIOR') %}
+                            {{ 'superior'|trans({},'backend') }}
+                        {% else %}
+                            {{ 'basic'|trans({},'backend') }}
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- END SIDEBAR USER TITLE -->
+                <!-- SIDEBAR BUTTONS -->
+                {#<div class="profile-userbuttons">#}
+                {#<button type="button" class="btn btn-circle green btn-sm">Follow</button>#}
+                {#<button type="button" class="btn btn-circle red btn-sm">Message</button>#}
+                {#</div>#}
+                <!-- END SIDEBAR BUTTONS -->
+                <!-- SIDEBAR MENU -->
+                <div class="profile-usermenu">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="{{ path('fos_user_profile_show') }}">
+                                <i class="icon-home"></i>
+                                {{ 'overview' | trans({}, 'backend') }} </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('fos_user_profile_edit') }}">
+                                <i class="icon-settings"></i>
+                                {{ 'account.seting' | trans({}, 'backend') }} </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('user_profile_other') }}">
+                                <i class="icon-info"></i>
+                                {{ 'others' | trans({}, 'backend') }} </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END MENU -->
+            </div>
+            <!-- END PORTLET MAIN -->
+
+            <!-- PORTLET MAIN -->
+            <div class="portlet light bordered">
+                <div class="list-separated profile-stat">
+                    <h4 class="profile-desc-title">{{ 'my.staff' | trans({}, 'backend') }}</h4>
+                </div>
+                <!-- STAT -->
+                <div class="row list-separated profile-stat" style="padding-bottom: 0px; border-bottom: 0px;">
+                    <div class="col-md-2 col-sm-2 col-xs-6"></div>
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="uppercase profile-stat-title">
+                            {{ app.user.getActiveProfile.getChildrenMembers|length }}
+                        </div>
+                        <div class="uppercase profile-stat-text">
+                            {{ 'affiliates' | trans({}, 'backend') }}
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="uppercase profile-stat-title">
+                            {{ app.user.getActiveProfile.getGuestChildrenMembers|length }}
+                        </div>
+                        <div class="uppercase profile-stat-text">
+                            {{ 'guests' | trans({}, 'backend') }}
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-6"></div>
+                    {#<div class="col-md-4 col-sm-4 col-xs-6">#}
+                    {#<div class="uppercase profile-stat-title">#}
+                    {#61#}
+                    {#</div>#}
+                    {#<div class="uppercase profile-stat-text">#}
+                    {#Uploads#}
+                    {#</div>#}
+                    {#</div>#}
+                </div>
+                <!-- END STAT -->
+
+            </div>
+
+            <!-- END PORTLET MAIN -->
+        </div>
+
+
+        <!-- BEGIN PROFILE CONTENT -->
+        <div class="profile-content">
+            <div class="row">
+                <div class="col-md-8 profile-info">
+                    <div class="portlet light bordered">
+                        <div class="portlet-title tabbable-line pull-left">
+                            {#<div class="caption caption-md">#}
+                            {#<i class="icon-bar-chart theme-font hide"></i>#}
+                            {#<span class="caption-subject font-blue-madison bold uppercase">Otros</span>#}
+                            {#</div>#}
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#tab_1_1" data-toggle="tab">{{ 'overview' | trans({}, 'backend') }}</a>
+                                </li>
+                                <li>
+                                    <a href="#tab_1_2" data-toggle="tab">{{ 'comember' | trans({}, 'backend') }}</a>
+                                </li>
+                                {#<li>#}
+                                {#<a href="#tab_1_3" data-toggle="tab">Garantías</a>#}
+                                {#</li>#}
+                            </ul>
+                        </div>
+
+                        <div class="portlet-body">
+
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade active in" id="tab_1_1">
+                                    <div>
+                                        <div class="tab-content">
+                                            <h3 class="font-green sbold uppercase">{{ app.user.name }}</h3><br>
+
+                                            <div class="row">
+                                                <div class="col-md-5" style="margin-bottom: 10px">
+                                                    <div class="actions">
+                                                        <a class="btn btn-circle btn-icon-only red tooltips"
+                                                           href="javascript:;"
+                                                           data-original-title="{{ 'username' | trans({}, 'backend') }}">
+                                                            <i class="icon-user"></i>
+                                                        </a> {{ app.user.username }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7" style="margin-bottom: 10px">
+                                                    <div class="actions">
+                                                        <a class="btn btn-circle btn-icon-only purple tooltips"
+                                                           href="javascript:;"
+                                                           data-original-title="{{ 'email' | trans({}, 'backend') }}">
+                                                            <i class="icon-envelope"></i>
+                                                        </a> {{ app.user.email }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5" style="margin-bottom: 10px">
+                                                    <div class="actions">
+                                                        <a class="btn btn-circle btn-icon-only green tooltips"
+                                                           href="javascript:;"
+                                                           data-original-title="{{ 'address' | trans({}, 'backend') }}">
+                                                            <i class="icon-pointer"></i>
+                                                        </a> {{ app.user.address }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6" style="margin-bottom: 10px">
+                                                    <div class="actions">
+                                                        <a class="btn btn-circle btn-icon-only green tooltips"
+                                                           href="javascript:;"
+                                                           data-original-title="{{ 'phone' | trans({}, 'backend') }}">
+                                                            <i class="icon-call-end"></i>
+                                                        </a> {{ app.user.phone }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4" style="margin-bottom: 10px">
+                                                    <div class="actions">
+                                                        <a class="btn btn-circle btn-icon-only red tooltips"
+                                                           href="javascript:;"
+                                                           data-original-title="{{ 'dni' | trans({}, 'backend') }}">
+                                                            <i class="icon-shield"></i>
+                                                        </a> {{ app.user.dni }}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h4>{{ 'biografy' | trans({}, 'backend') }}</h4>
+
+                                                    <p>{{ app.user.description }}</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="row blog-content-2">
+                                                <div class="col-md-12 blog-single-content">
+                                                    <h4>{{ 'comments' | trans({}, 'backend') }}</h4>
+
+                                                    <div class="blog-comments">
+                                                        <div class="c-comment-list scroller"
+                                                             style="height: 250px;"
+                                                             data-always-visible="1"
+                                                             data-handle-color="#D7DCE2">
+                                                            {% for message in user.getActiveProfile.messages %}
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        {% if message.profileSend.user.picture is empty %}
+                                                                            {% set url = 'backend-metronic/img/avatars/avatar.jpg' %}
+                                                                        {% else %}
+                                                                            {% set url = constant('IMAGES_UPLOAD_DIR',app.user)~message.profileSend.user.picture %}
+                                                                        {% endif %}
+                                                                        <img class="media-object" alt=""
+                                                                             src="{{ asset(url) }}">
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <h4 class="media-heading">
+                                                                            <a href="#">{{ message.profileSend.user.name }}</a> <span
+                                                                                    class="c-date">{{ message.created|date('d M Y, H:iA') }}</span>
+                                                                        </h4>
+                                                                        {{ message }}
+                                                                    </div>
+                                                                </div>
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {#<div style="background: none repeat scroll 0% 0% rgb(215, 220, 226); width: 7px; position: absolute; top: 14px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 30px;"#}
+                                        {#class="slimScrollBar"></div>#}
+                                        {#<div style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: none repeat scroll 0% 0% rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"#}
+                                        {#class="slimScrollRail"></div>#}
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane" id="tab_1_2">
+                                    <div class="row" style="margin-bottom: 10px; margin-top: 10px">
+                                        <div class="col-md-9"><h2 style="margin-top: -5px">
+                                                {#{{ 'name.comember' }}#}
+                                                {% if user.comember is not empty %}{{ user.comember.name }}{% endif %}
+                                            </h2>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a href="#comemberModal" data-toggle="modal"
+                                               class="btn btn-default">{{ 'edit' | trans({}, 'backend') }}
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6" style="margin-bottom: 10px">
+                                            <div class="actions">
+                                                <a class="btn btn-circle btn-icon-only purple tooltips"
+                                                   href="javascript:;"
+                                                   data-original-title="{{ 'email' | trans({}, 'backend') }}">
+                                                    <i class="icon-envelope"></i>
+                                                </a>
+                                                {% if user.comember is not empty %}{{ user.comember.mail }}{% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" style="margin-bottom: 10px">
+                                            <div class="actions">
+                                                <a class="btn btn-circle btn-icon-only green tooltips"
+                                                   href="javascript:;"
+                                                   data-original-title="{{ 'address' | trans({}, 'backend') }}">
+                                                    <i class="icon-pointer"></i>
+                                                </a>
+                                                {% if user.comember is not empty %}{{ user.comember.address }}{% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" style="margin-bottom: 10px">
+                                            <div class="actions">
+                                                <a class="btn btn-circle btn-icon-only green tooltips"
+                                                   href="javascript:;"
+                                                   data-original-title="{{ 'phone' | trans({}, 'backend') }}">
+                                                    <i class="icon-call-end"></i>
+                                                </a>
+                                                {% if user.comember is not empty %}{{ user.comember.phone }}{% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" style="margin-bottom: 10px">
+                                            <div class="actions">
+                                                <a class="btn btn-circle btn-icon-only red tooltips"
+                                                   href="javascript:;"
+                                                   data-original-title="{{ 'dni' | trans({}, 'backend') }}">
+                                                    <i class="icon-shield"></i>
+                                                </a>
+                                                {% if user.comember is not empty %}{{ user.comember.dni }}{% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            {#<div style="background: none repeat scroll 0% 0% rgb(215, 220, 226); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 530px;"#}
+                            {#class="slimScrollBar"></div>#}
+                            {#<div style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: none repeat scroll 0% 0% rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"#}
+                            {#class="slimScrollRail"></div>#}
+
+                        </div>
+                    </div>
+
+
+                    {#<!-- BEGIN PORTLET -->#}
+                    <div class="portlet light bordered">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase">{{ 'my.team' | trans({}, 'backend') }}</span>
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <div class="row number-stats margin-bottom-30">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="stat-left">
+                                        <div class="stat-chart">
+                                            <!-- do not line break "sparkline_bar" div. sparkline chart has an issue when the container div has line break -->
+                                            <div id="sparkline_bar"></div>
+                                        </div>
+                                        <div class="stat-number">
+                                            <div class="title">
+                                                {{ 'affiliates' | trans({}, 'backend') }}
+                                            </div>
+                                            <div class="number">
+                                                {{ app.user.getActiveProfile.getChildrenMembers|length }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="stat-right">
+                                        <div class="stat-chart">
+                                            <!-- do not line break "sparkline_bar" div. sparkline chart has an issue when the container div has line break -->
+                                            <div id="sparkline_bar2"></div>
+                                        </div>
+                                        <div class="stat-number">
+                                            <div class="title">
+                                                {{ 'guests' | trans({}, 'backend') }}
+                                            </div>
+                                            <div class="number">
+                                                {{ app.user.getActiveProfile.getGuestChildrenMembers|length }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-scrollable table-scrollable-borderless">
+                                <div class="scroller" style="height: 230px;"
+                                     data-always-visible="1"
+                                     data-handle-color="#D7DCE2">
+                                    <table class="table table-hover table-light">
+                                        <thead>
+                                        <tr class="uppercase">
+                                            <th colspan="2">
+                                                {{ 'members' | trans({}, 'backend') }}
+                                            </th>
+                                            <th>
+                                                {{ 'mail' | trans({}, 'backend') }}
+                                            </th>
+                                            <th>
+                                                {{ 'membership' | trans({}, 'backend') }}
+                                            </th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        {% for affiliate in app.user.getActiveProfile.getChildrenMembers %}
+                                            <tr>
+
+                                                <td class="fit">
+                                                    {% if affiliate.user.picture == null %}
+                                                        <img class="user-pic" alt=""
+                                                             src="{{ asset('backend-metronic/img/avatars/avatar.jpg') }}"/>
+                                                    {% elseif affiliate.user.picture is not empty %}
+                                                        {% set url = constant('IMAGES_UPLOAD_DIR',affiliate.user)~affiliate.user.picture %}
+                                                        <img class="user-pic" alt="" src="{{ asset(url) }}"/>
+                                                    {% endif %}
+                                                    {#<img class="user-pic" src="{{ affiliate.user.picture }}">#}
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:;"
+                                                       class="primary-link">{{ affiliate.user.name }}</a>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:;"
+                                                       class="primary-link">{{ affiliate.user.email }}</a>
+                                                </td>
+                                                <td>
+                                                    {% if affiliate.user == null %}
+                                                        CEO
+                                                    {% elseif affiliate.user.hasRole('ROLE_PROFESSIONAL') %}
+                                                        PROFESIONAL
+                                                    {% elseif affiliate.user.hasRole('ROLE_SUPERIOR') %}
+                                                        SUPERIOR
+                                                    {% else %}
+                                                        BASICO
+                                                    {% endif %}
+                                                </td>
+
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {#<!-- END PORTLET -->#}
+
+                </div>
+
+
+                {#<div class="col-md-8 profile-info">#}
+                {#<div class="portlet light bordered">#}
+                {#<div class="portlet-title">#}
+                {#<div class="caption caption-md">#}
+                {#<i class="icon-bar-chart theme-font hide"></i>#}
+                {#<span class="caption-subject font-blue-madison bold uppercase">{{ 'overview' | trans({}, 'backend') }}</span>#}
+                {#</div>#}
+                {#</div>#}
+
+                {#<div class="portlet-body">#}
+                {#<h3 class="font-green sbold uppercase">{{ app.user.name }}</h3><br>#}
+
+                {#<div class="row">#}
+                {#<div class="col-md-5" style="margin-bottom: 10px">#}
+                {#<div class="actions">#}
+                {#<a class="btn btn-circle btn-icon-only red tooltips" href="javascript:;"#}
+                {#data-original-title="{{ 'username' | trans({}, 'backend') }}">#}
+                {#<i class="icon-user"></i>#}
+                {#</a> {{ app.user.username }}#}
+                {#</div>#}
+                {#</div>#}
+                {#<div class="col-md-7" style="margin-bottom: 10px">#}
+                {#<div class="actions">#}
+                {#<a class="btn btn-circle btn-icon-only purple tooltips" href="javascript:;"#}
+                {#data-original-title="{{ 'email' | trans({}, 'backend') }}">#}
+                {#<i class="icon-envelope"></i>#}
+                {#</a> {{ app.user.email }}#}
+                {#</div>#}
+                {#</div>#}
+                {#<div class="col-md-5" style="margin-bottom: 10px">#}
+                {#<div class="actions">#}
+                {#<a class="btn btn-circle btn-icon-only green tooltips" href="javascript:;"#}
+                {#data-original-title="{{ 'address' | trans({}, 'backend') }}">#}
+                {#<i class="icon-pointer"></i>#}
+                {#</a> {{ app.user.address }}#}
+                {#</div>#}
+                {#</div>#}
+                {#<div class="col-md-6" style="margin-bottom: 10px">#}
+                {#<div class="actions">#}
+                {#<a class="btn btn-circle btn-icon-only green tooltips" href="javascript:;"#}
+                {#data-original-title="{{ 'phone' | trans({}, 'backend') }}">#}
+                {#<i class="icon-call-end"></i>#}
+                {#</a> {{ app.user.phone }}#}
+                {#</div>#}
+                {#</div>#}
+                {#<div class="col-md-4" style="margin-bottom: 10px">#}
+                {#<div class="actions">#}
+                {#<a class="btn btn-circle btn-icon-only red tooltips" href="javascript:;"#}
+                {#data-original-title="{{ 'dni' | trans({}, 'backend') }}">#}
+                {#<i class="icon-shield"></i>#}
+                {#</a> {{ app.user.dni }}#}
+                {#</div>#}
+                {#</div>#}
+                {#</div>#}
+
+                {#<div class="row">#}
+                {#<div class="table-scrollable table-scrollable-borderless">#}
+                {#<div#}
+                {#data-always-visible="1"#}
+                {#data-handle-color="#D7DCE2">#}
+                {#<table class="table table-hover table-light">#}
+                {#&#123;&#35;<thead>&#35;&#125;#}
+                {#&#123;&#35;<tr class="uppercase">&#35;&#125;#}
+                {#&#123;&#35;<th >&#35;&#125;#}
+                {#&#123;&#35;{{ 'members' | trans({}, 'backend') }}&#35;&#125;#}
+                {#&#123;&#35;</th>&#35;&#125;#}
+                {#&#123;&#35;<th>&#35;&#125;#}
+                {#&#123;&#35;{{ 'mail' | trans({}, 'backend') }}&#35;&#125;#}
+                {#&#123;&#35;</th>&#35;&#125;#}
+                {#&#123;&#35;<th>&#35;&#125;#}
+                {#&#123;&#35;{{ 'membership' | trans({}, 'backend') }}&#35;&#125;#}
+                {#&#123;&#35;</th>&#35;&#125;#}
+                {#&#123;&#35;</tr>&#35;&#125;#}
+                {#&#123;&#35;</thead>&#35;&#125;#}
+
+                {#<tbody>#}
+
+                {#<tr>#}
+                {#<td>#}
+                {#<a#}
+                {#class="primary-link">{{ 'comember' | trans({}, 'backend') }}</a>#}
+                {#</td>#}
+                {#<td>#}
+                {#<a#}
+                {#class="primary-link">{{ 'name' | trans({}, 'backend') }}</a>#}
+                {#</td>#}
+                {#<td>#}
+                {#Editar#}
+                {#</td>#}
+
+                {#</tr>#}
+
+                {#</tbody>#}
+
+                {#</table>#}
+                {#</div>#}
+                {#</div>#}
+                {#</div>#}
+
+                {#<div class="row">#}
+                {#<div class="col-md-12">#}
+                {#<h4>{{ 'biografy' | trans({}, 'backend') }}</h4>#}
+
+                {#<p>{{ app.user.description }}</p>#}
+                {#</div>#}
+                {#</div>#}
+
+                {#<div class="row blog-content-2">#}
+                {#<div class="col-md-12 blog-single-content">#}
+                {#<h4>{{ 'comments' | trans({}, 'backend') }}</h4>#}
+
+                {#<div class="blog-comments">#}
+                {#<div class="c-comment-list scroller" style="height: 250px;"#}
+                {#data-always-visible="1"#}
+                {#data-handle-color="#D7DCE2">#}
+                {#{% for message in user.getActiveProfile.messages %}#}
+                {#<div class="media">#}
+                {#<div class="media-left">#}
+                {#{% if message.profileSend.user.picture is empty %}#}
+                {#{% set url = 'backend-metronic/img/avatars/avatar.jpg' %}#}
+                {#{% else %}#}
+                {#{% set url = constant('IMAGES_UPLOAD_DIR',app.user)~message.profileSend.user.picture %}#}
+                {#{% endif %}#}
+                {#<img class="media-object" alt="" src="{{ asset(url) }}">#}
+                {#</div>#}
+                {#<div class="media-body">#}
+                {#<h4 class="media-heading">#}
+                {#<a href="#">{{ message.profileSend.user.name }}</a> <span#}
+                {#class="c-date">{{ message.created|date('d M Y, H:iA') }}</span>#}
+                {#</h4>#}
+                {#{{ message }}#}
+                {#</div>#}
+                {#</div>#}
+                {#{% endfor %}#}
+                {#</div>#}
+                {#</div>#}
+                {#</div>#}
+                {#</div>#}
+                {#</div>#}
+                {#</div>#}
+
+
+                {#</div>#}
+
+                <div class="col-md-4">
+                    <div class="portlet light bordered">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase">{{ 'my.finance' | trans({}, 'backend') }}</span>
+                            </div>
+                        </div>
+
+                        <div class="portlet-body">
+                            <div class="widget-thumb text-uppercase">
+                                {#<h4 class="widget-thumb-heading">{{ 'bonus' | trans({}, 'backend') }}</h4>#}
+                                <div class="widget-thumb-wrap">
+                                    <i class="widget-thumb-icon bg-green fa fa-money"></i>
+
+                                    <div class="widget-thumb-body">
+                                        <span class="widget-thumb-subtitle">{{ 'bonus' | trans({}, 'backend') }}</span>
+                                        <span class="widget-thumb-body-stat" data-counter="counterup"
+                                              data-value="{{ get_bono(app.user)|number_format(2) }}">0</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="widget-thumb text-uppercase">
+                                {#<h4 class="widget-thumb-heading">{{ 'comitions' | trans({}, 'backend') }}</h4>#}
+
+                                <div class="widget-thumb-wrap">
+                                    <i class="widget-thumb-icon bg-red fa fa-usd"></i>
+
+                                    <div class="widget-thumb-body">
+                                        <span class="widget-thumb-subtitle">{{ 'comitions' | trans({}, 'backend') }}</span>
+                                <span class="widget-thumb-body-stat" data-counter="counterup"
+                                      data-value="{{ app.user.getActiveProfile.credit|number_format(2,'.',',') }}">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- END PROFILE CONTENT -->
+
+
+    </div>
+
+    <div>
+
+
+        {#<div class="tabs widget">#}
+        {#<ul class="nav nav-tabs widget">#}
+        {#<li class="active"><a data-toggle="tab" href="#profile-tab"> {{ 'profile'|trans({},'backend') }} <span#}
+        {#class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>#}
+        {#</ul>#}
+        {#<div class="tab-content">#}
+        {#<div id="profile-tab" class="tab-pane active">#}
+        {#<div class="pd-20">#}
+        {#<div class="vd_info tr"><a class="btn vd_btn btn-xs vd_bg-yellow"#}
+        {#href="{{ path('fos_user_profile_edit') }}"> <i#}
+        {#class="fa fa-pencil append-icon"></i> {{ 'edit'|trans({},'backend') }} </a>#}
+        {#</div>#}
+        {#<h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i#}
+        {#class="icon-user mgr-10 profile-icon"></i> {{ 'about'|trans({},'backend') }}</h3>#}
+
+        {#<div class="row">#}
+        {#<div class="col-sm-6">#}
+        {#<div class="row mgbt-xs-0">#}
+        {#<label class="col-xs-5 control-label">{{ 'user.name'|trans({},'backend') }}</label>#}
+
+        {#<div class="col-xs-7 controls">{{ app.user.name }}</div>#}
+        {#<!-- col-sm-10 -->#}
+        {#</div>#}
+        {#</div>#}
+        {#<div class="col-sm-6">#}
+        {#<div class="row mgbt-xs-0">#}
+        {#<label class="col-xs-5 control-label">{{ 'user.username'|trans({},'backend') }}</label>#}
+
+        {#<div class="col-xs-7 controls">{{ app.user.username }}</div>#}
+        {#<!-- col-sm-10 -->#}
+        {#</div>#}
+        {#</div>#}
+        {#<div class="col-sm-6">#}
+        {#<div class="row mgbt-xs-0">#}
+        {#<label class="col-xs-5 control-label">{{ 'user.email'|trans({},'backend') }}</label>#}
+
+        {#<div class="col-xs-7 controls">{{ app.user.email }}</div>#}
+        {#<!-- col-sm-10 -->#}
+        {#</div>#}
+        {#</div>#}
+        {#<div class="col-sm-6">#}
+        {#<div class="row mgbt-xs-0">#}
+        {#<label class="col-xs-5 control-label">{{ 'user.address'|trans({},'backend') }}</label>#}
+
+        {#<div class="col-xs-7 controls">{{ app.user.address }}</div>#}
+        {#<!-- col-sm-10 -->#}
+        {#</div>#}
+        {#</div>#}
+        {#<div class="col-sm-6">#}
+        {#<div class="row mgbt-xs-0">#}
+        {#<label class="col-xs-5 control-label">{{ 'user.phone'|trans({},'backend') }}</label>#}
+
+        {#<div class="col-xs-7 controls">{{ app.user.phone }}</div>#}
+        {#<!-- col-sm-10 -->#}
+        {#</div>#}
+        {#</div>#}
+        {#</div>#}
+        {#</div>#}
+        {#</div>#}
+        {#</div>#}
+        {#</div>#}
+    </div>
+</div>
+{#<div class="fos_user_user_show">
+    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+</div>#}
+
+
+<!-- Modal -->
+<div class="modal fade" id="comemberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">{{ 'edit.comember' | trans({}, 'backend') }}</h4>
+            </div>
+            <div class="modal-body padT10">
+                <form class="form-horizontal" method="post" action="{{ path('app_admin_user_edit_comember') }}"
+                      id="comember">
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">{{ 'name_comembre' | trans({}, 'backend') }}</label>
+
+                        <div class="col-md-9">
+                            <div class="input-group">
+                               <span class="input-group-addon">
+                               <i class="fa fa-user"></i>
+                               </span>
+                                <input name="app_comember[name]" class="form-control" placeholder="{{ 'name_comembre' | trans({}, 'backend') }}" type="text" value="{% if user.comember is not empty %}{{ user.comember.name }}{% endif %}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">{{ 'mail_comembre' | trans({}, 'backend') }}</label>
+
+                        <div class="col-md-9">
+                            <div class="input-group">
+                               <span class="input-group-addon">
+                               <i class="fa fa-envelope"></i>
+                               </span>
+                                <input name="app_comember[mail]" class="form-control" placeholder="{{ 'mail_comembre' | trans({}, 'backend') }}" type="email" value="{% if user.comember is not empty %}{{ user.comember.mail }}{% endif %}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">{{ 'addres_comembre' | trans({}, 'backend') }}</label>
+
+                        <div class="col-md-9">
+                            <div class="input-group">
+                               <span class="input-group-addon">
+                               <i class="fa fa-map-marker"></i>
+                               </span>
+                                <input name="app_comember[address]" class="form-control" placeholder="{{ 'address_comembre' | trans({}, 'backend') }}" type="text" value="{% if user.comember is not empty %}{{ user.comember.address }}{% endif %}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">{{ 'phone_comembre' | trans({}, 'backend') }}</label>
+
+                        <div class="col-md-9">
+                            <div class="input-group">
+                               <span class="input-group-addon">
+                               <i class="fa fa-phone"></i>
+                               </span>
+                                <input name="app_comember[phone]" class="form-control" placeholder="{{ 'phone_comembre' | trans({}, 'backend') }}" type="text" value="{% if user.comember is not empty %}{{ user.comember.phone }}{% endif %}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">{{ 'dni_comembre' | trans({}, 'backend') }}</label>
+
+                        <div class="col-md-9">
+                            <div class="input-group">
+                               <span class="input-group-addon">
+                               <i class="fa fa-credit-card"></i>
+                               </span>
+                                <input name="app_comember[dni]" class="form-control" placeholder="{{ 'dni_comembre' | trans({}, 'backend') }}" type="text"  value="{% if user.comember is not empty %}{{ user.comember.dni }}{% endif %}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button-group text-right">
+                        <button type="button" class="btn black"
+                                data-dismiss="modal">{{ 'close'|trans({},'resources') }}</button>
+                        <button type="submit" class="btn green">{{ 'send'|trans({},'resources') }}</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+{#
+<script>
+    function requestComember() {
+        if ($('#comember').valid()) {
+            $("#comember").submit();
+        }
+    }
+</script>#}

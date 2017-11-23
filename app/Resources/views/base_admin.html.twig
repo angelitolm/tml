@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+{% block html_tag %}
+<!--[if IE 8]>
+<html lang="{{ app.request.locale }}" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="{{ app.request.locale }}" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+{% endblock html_tag %}
+
+    {% block head %}
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <!-- BEGIN LAYOUT FIRST STYLES -->
+            <link href="//fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css"/>
+            <!-- END LAYOUT FIRST STYLES -->
+
+
+            <!-- BEGIN GLOBAL MANDATORY STYLES -->
+            <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+
+            <link href="{{ asset('backend-metronic/global/plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('backend-metronic/global/plugins/simple-line-icons/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('backend-metronic/global/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('backend-metronic/global/plugins/uniform/css/uniform.default.min.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('backend-metronic/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css') }}" rel="stylesheet" type="text/css"/>
+            <!-- END GLOBAL MANDATORY STYLES -->
+
+            <!-- BEGIN PAGE LEVEL PLUGINS -->
+            <link href="{{ asset('backend-metronic/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('backend-metronic/global/plugins/morris/morris.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('backend-metronic/global/plugins/mapplic/mapplic/mapplic.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('backend-metronic/global/plugins/fullcalendar/fullcalendar.min.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('backend-metronic/global/plugins/jqvmap/jqvmap/jqvmap.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('backend-metronic/global/plugins/cubeportfolio/css/cubeportfolio.css') }}" rel="stylesheet" type="text/css"/>
+            <!-- END PAGE LEVEL PLUGINS -->
+
+            <!-- BEGIN THEME GLOBAL STYLES -->
+            <link href="{{ asset('backend-metronic/global/css/components-md.min.css') }}" rel="stylesheet" id="style_components" type="text/css"/>
+            <link href="{{ asset('backend-metronic/global/css/plugins-md.min.css') }}" rel="stylesheet" type="text/css"/>
+            <!-- END THEME GLOBAL STYLES -->
+
+            <!-- BEGIN PAGE LEVEL STYLES -->
+            <link href="{{ asset('backend-metronic/css/portfolio.min.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('backend-metronic/css/profile.min.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('backend-metronic/css/pricing.min.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('backend-metronic/css/blog.min.css') }}" rel="stylesheet" type="text/css"/>
+
+
+            <!-- END PAGE LEVEL STYLES -->
+
+            <!-- BEGIN THEME LAYOUT STYLES -->
+            <link href="{{ asset('backend-metronic/css/layout.min.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('backend-metronic/css/custom.min.css') }}" rel="stylesheet" type="text/css"/>
+            <!-- END THEME LAYOUT STYLES -->
+
+            {% block head_style %}{% endblock head_style %}
+
+            <!--[if lt IE 9]>
+            <script src="{{ asset('backend-metronic/global/plugins/respond.min.js') }}"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/excanvas.min.js') }}"></script>
+            <![endif]-->
+            <script src="{{ asset('components/jquery/dist/jquery.min.js') }}" type="text/javascript"></script>
+
+            {% block head_script %}{% endblock head_script %}
+
+            <title>{{ site_name }} | {% block title %}{% endblock title %}</title>
+            <link rel="shortcut icon" href="{{ asset('favicon.ico') }}"/>
+            {% block head_bottom %}{% endblock head_bottom %}
+        </head>
+    {% endblock head %}
+
+    {% block body_tag %}
+        <body>
+    {% endblock body_tag %}
+
+        {% block body_start %}
+        {% endblock body_start %}
+
+        {% block body %}
+            {% block container %}
+                {% block header_tag %}
+                    {% block header_tag_start %}<header>{% endblock header_tag_start %}
+                        {% block header_content %}{% endblock header_content %}
+                    </header>
+                {% endblock header_tag %}
+
+                {% block section_tag %}{% endblock section_tag %}
+
+                {% block footer_tag %}
+                    {% block footer_tag_start %}<footer>{% endblock footer_tag_start %}
+                        {% block footer_content %}{% endblock footer_content %}
+                    </footer>
+                {% endblock footer_tag %}
+            {% endblock container %}
+
+            {% block body_end_before_js %}
+            {% endblock body_end_before_js %}
+
+            {% block foot_script %}
+                <script src="{{ asset('backend-metronic/global/plugins/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/js.cookie.min.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/jquery.blockui.min.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/uniform/jquery.uniform.min.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}" type="text/javascript"></script>
+                <!-- END CORE PLUGINS -->
+
+                <!-- BEGIN PAGE LEVEL PLUGINS -->
+                <script src="{{ asset('backend-metronic/global/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/bootstrap-daterangepicker/moment.min.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/bootstrap-daterangepicker/daterangepicker.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/morris/morris.min.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/morris/raphael-min.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/counterup/jquery.waypoints.min.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/counterup/jquery.counterup.min.js') }}" type="text/javascript"></script>
+                {#<script src="{{ asset('backend-metronic/global/plugins/jquery.sparkline.min.js') }}" type="text/javascript"></script>#}
+            {#<script src="{{ asset('backend-metronic/global/plugins/amcharts/amcharts/amcharts.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/amcharts/amcharts/serial.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/amcharts/amcharts/pie.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/amcharts/amcharts/radar.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/amcharts/amcharts/themes/light.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/amcharts/amcharts/themes/patterns.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/amcharts/amcharts/themes/chalk.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/amcharts/ammap/ammap.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/amcharts/ammap/maps/js/worldLow.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/amcharts/amstockcharts/amstock.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/fullcalendar/fullcalendar.min.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/flot/jquery.flot.min.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/flot/jquery.flot.resize.min.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/flot/jquery.flot.categories.min.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('backend-metronic/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js') }}" type="text/javascript"></script>
+            #}
+                {#<script src="{{ asset('backend-metronic/global/plugins/jqvmap/jqvmap/jquery.vmap.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/plugins/mapplic/mapplic/mapplic.js') }}" type="text/javascript"></script>#}
+                <!-- END PAGE LEVEL PLUGINS -->
+
+                <!-- BEGIN THEME GLOBAL SCRIPTS -->
+                <script src="{{ asset('backend-metronic/global/scripts/app.min.js') }}" type="text/javascript"></script>
+                <!-- END THEME GLOBAL SCRIPTS -->
+
+                <!-- BEGIN PAGE LEVEL SCRIPTS -->
+                <script src="{{ asset('backend-metronic/scripts/dashboard.min.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/scripts/ui-buttons.min.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/scripts/portfolio-2.min.js') }}" type="text/javascript"></script>
+                <!-- END PAGE LEVEL SCRIPTS -->
+
+                <!-- BEGIN THEME LAYOUT SCRIPTS -->
+                <script src="{{ asset('backend-metronic/scripts/layout.min.js') }}" type="text/javascript"></script>
+                <script src="{{ asset('backend-metronic/global/scripts/quick-sidebar.min.js') }}" type="text/javascript"></script>
+                <!-- END THEME LAYOUT SCRIPTS -->
+
+                {% block foot_script_assetic %}{% endblock foot_script_assetic %}
+
+                <script type="text/javascript">
+
+                    {% block javascripts_functions %}{% endblock javascripts_functions %}
+                    (function ($) {
+                        "use strict";
+
+                        $(function () {
+                            //jQuery.material.init();
+                            jQuery('.alert-dismissable').delay(5000).fadeOut(1000);
+                            jQuery('[data-toggle="tooltip"]').tooltip();
+                            {% block javascripts_document_ready %}{% endblock javascripts_document_ready %}
+                        });
+                    }(jQuery));
+                </script>
+
+            {% endblock foot_script %}
+
+        {% endblock body %}
+
+        {% block body_end %}
+        {% endblock body_end %}
+    </body>
+</html>

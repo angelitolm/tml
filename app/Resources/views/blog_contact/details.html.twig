@@ -1,0 +1,35 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'user_message.details'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'user_message.details'|trans({},'backend') }}{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{{ path('app_admin_messages_index') }}">{{ 'user_message.list'|trans({},'backend') }}</a></li>
+    <li class="active">{{ 'user_message.details'|trans({},'backend') }}</li>
+{% endblock %}
+
+{% block page_body %}
+    <div class="row">
+        <div class="col-xs-12">
+            {% embed ':embed:panel.html.twig' %}
+                {% block box_title %}
+                    {{ message.subject }}
+                {% endblock box_title %}
+                {% block box_tools %}
+                    <span class="text-info">{{ message.created.format('h:iA -- d F Y') }}</span>
+                {% endblock box_tools %}
+                {% block box_content %}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4>
+                                {{ 'user_message.from'|trans({},'backend') }}
+                                {{ message.send }}
+                            </h4>
+                            <p>{{ message.message }}</p>
+                        </div>
+                    </div>
+                {% endblock box_content %}
+            {% endembed %}
+        </div>
+    </div>
+{% endblock page_body %}

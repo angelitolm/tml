@@ -1,0 +1,18 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'user.profile'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'user.profile'|trans({},'backend') }}{% endblock %}
+
+{% block page_style %}
+    {#<link href="{{ asset('backend-metronic/css/blog.min.css') }}" rel="stylesheet" type="text/css"/>#}
+{% endblock page_style %}
+
+{% block breadcrumb %}
+    <li>{{ 'user.profile'|trans({},'backend') }}</li>
+{% endblock %}
+
+{% block page_body %}
+    <div>
+    {% include "FOSUserBundle:Profile:show_content.html.twig" %}
+    </div>
+{% endblock page_body %}

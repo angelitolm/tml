@@ -1,0 +1,54 @@
+/* CSS Document */
+
+.header-3 .vc_secondary-menu{
+	
+}
+.header-3 .logo{
+	width:200px;
+	height:73px;
+}
+.header-3 .logo a{
+	background:none;
+	box-shadow:none;
+	padding-left:10px;
+	padding-right:10px;
+}
+.header-3 .logo a img{
+	margin-top:5px;
+}
+.header-3{
+	border-top:none;
+}
+.header-3 .vc_secondary-menu-wrapper{
+	background:#111111;	
+}
+.header-3 .vc_sub-menu-bg {
+	top:73px;
+	left:-50%;
+}
+.header-3 .vc_btn-navbar .btn{
+	right:10px;
+	left:auto;
+}
+.header-3 .vc_contact-top h5{
+	color:#888;
+	font-family:'opensans_regular',arial;
+	font-size:13px;
+	margin-top:9px;
+}
+body.sticky-menu-active .header-3{
+	border-top:8px solid #111;
+}
+body.sticky-menu-active .header-3 .logo{
+	top:0;
+	height:73px;	
+}
+body.sticky-menu-active .header-3 .logo img{
+	margin-top:8px;
+}
+body.sticky-menu-active .header-3 .vc_menu-bg{
+	height:73px;
+}
+body.sticky-menu-active .header-3 .vc_menu-bg .element-1{
+	display:none;
+}

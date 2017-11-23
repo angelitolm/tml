@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+
+    <parameters>
+        <parameter key="app.blog.title">Blog Default Title</parameter>
+        <parameter key="app.blog.subtitle">Blog Default Subtitle</parameter>
+        <parameter key="app.blog.slogan">Blog Default Slogan</parameter>
+    </parameters>
+    <services>
+        <service id="app.user_register" class="AppBundle\Listeners\Registration">
+            <argument type="service" id="service_container"/>
+            <argument type="collection">
+                <argument type="string" key="blog_title">%app.blog.title%</argument>
+                <argument type="string" key="blog_subtitle">%app.blog.subtitle%</argument>
+                <argument type="string" key="blog_slogan">%app.blog.slogan%</argument>
+            </argument>
+            <tag name="kernel.event_subscriber" event="fos_user.registration.initialize" method="onRegistrationInitialize" />
+            <tag name="kernel.event_subscriber" event="fos_user.registration.success" method="onRegistrationSuccess" />
+            <tag name="kernel.event_subscriber" event="fos_user.registration.completed" method="onRegistrationCompleted"/>
+        </service>
+        <service id="app.login" class="AppBundle\Listeners\Login">
+            <argument type="service" id="router"/>
+            <argument>%locale%</argument>
+            <tag name="kernel.event_listener" event="security.authentication.success" method="onAuthenticationSuccess"/>
+            <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse"/>
+        </service>
+        <service id="app.profile" class="AppBundle\Listeners\Profile">
+            <argument type="service" id="service_container"/>
+            <tag name="kernel.event_subscriber" event="fos_user.profile.edit.completed" method="onProfileEditCompleted" />
+        </service>
+        <service id="app.user_manager" class="AppBundle\Services\User">
+            <argument type="service" id="security.encoder_factory" />
+            <argument type="service" id="fos_user.util.username_canonicalizer" />
+            <argument type="service" id="fos_user.util.email_canonicalizer" />
+            <argument type="service" id="fos_user.entity_manager" />
+            <argument>%fos_user.model.user.class%</argument>
+        </service>
+        <service id="app.membership" class="AppBundle\Listeners\Membership">
+            <argument type="service" id="fos_user.user_manager"/>
+            <argument type="service" id="tml.profile"/>
+            <argument type="service" id="tml.user_message"/>
+            <argument type="service" id="tml.transfer"/>
+            <argument type="service" id="translator"/>
+            <argument type="service" id="tml.log"/>
+            <argument type="service" id="tml.guest_code"/>
+            <argument type="service" id="tml.configuration"/>
+            <argument>%app.hack_code%</argument>
+            <tag name="kernel.event_subscriber" event="app.membership.buy_valid" method="onMembershipBuyValid" />
+            <tag name="kernel.event_subscriber" event="app.membership.buy_completed" method="onMembershipBuyCompleted" />
+        </service>
+        <service id="app.transfer" class="AppBundle\Listeners\Transfer">
+            <argument type="service" id="tml.user_message"/>
+            <argument type="service" id="tml.configuration"/>
+            <argument type="service" id="tml.profile"/>
+            <argument type="service" id="translator"/>
+            <argument type="service" id="tml.transfer"/>
+            <tag name="kernel.event_subscriber" event="app.transfer.initialize" method="onTransferInitialize" />
+            <tag name="kernel.event_subscriber" event="app.transfer.completed" method="onTransferCompleted" />
+        </service>
+    </services>
+</container>

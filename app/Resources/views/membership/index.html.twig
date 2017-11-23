@@ -1,0 +1,443 @@
+{% extends '::admin.html.twig' %}
+
+{% block title %}{{ 'membership.offerts'|trans({},'backend') }}{% endblock title %}
+{% block page_title %}{{ 'membership.offerts'|trans({},'backend') }}{% endblock page_title %}
+
+{% block breadcrumb %}
+    <li class="active">{{ 'membership.offerts'|trans({},'backend') }}</li>
+{% endblock %}
+
+{% block page_body %}
+    <div class="page-content" style="padding: 0px 20px">
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="">
+                <div class="pricing-content-2 no-padding">
+                    <div class="pricing-table-container no-padding">
+                        <div class="row padding-fix">
+
+                            <div class="col-md-4 no-padding">
+                                <div class="price-column-container border-left border-top {% if app.user.isGuest() %}featured-price{% endif %}">
+                                    <div class="price-table-head price-1">
+                                        <h2 class="uppercase no-margin">{{ 'member.basic'|trans({},'backend') }}</h2>
+                                    </div>
+                                    <div class="price-table-pricing">
+                                        <h3><span class="price-sign">$</span>{{ prices.basic }}</h3>
+
+                                        <p class="uppercase">{#per month#}</p>
+                                    </div>
+                                    <div class="price-table-content">
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i class="icon-check" style="color: green;"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-left">Panel de control básico</div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i class="icon-check" style="color: green;"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-left">Certificación PTS básico
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Recompensas PTS básico
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">100 bonos de inicio básico
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">0 invitados por 15 días
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Cursos básicos con actualizaciones mensuales
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Blog personal básico
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Triple protección del costo
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">TML-social básico
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Beneficios amigo-TML
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="price-table-footer">
+                                        {% if app.user.isGuest() %}
+                                        <button type="button"
+                                                class="btn grey-salsa btn-outline sbold uppercase bold" onclick="javascript:launchModal()">
+                                            {{ 'buy.memebership'|trans({},'backend') }}
+                                        </button>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4 no-padding">
+                                <div class="price-column-container border-top border-left {% if app.user.hasRole('ROLE_BASIC') %}featured-price{% endif %}">
+
+                                    <div class="price-table-head price-2">
+                                        <h2 class="uppercase no-margin">{{ 'member.superior'|trans({},'backend') }}</h2>
+                                    </div>
+                                    <div class="price-table-pricing">
+                                        <h3><span class="price-sign">$</span>{{ prices.superior }}</h3>
+
+                                        <p class="uppercase">{#per month#}</p>
+                                    </div>
+                                    <div class="price-table-content">
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i class="icon-check" style="color: green;"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-left">Panel de control superior</div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i class="icon-check" style="color: green;"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-left">Certificación PTS superior
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Recompensas PTS superior
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">300 bonos de inicio superior
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">3 invitados por 15 días
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Cursos superiores con actualizaciones mensuales
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Blog personal superior
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Triple protección del costo
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">TML-social superior
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Beneficios b&aacute;sicos
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="price-table-footer">
+                                        {% if app.user.hasRole('ROLE_BASIC') %}
+                                        <button type="button"
+                                                class="btn green featured-price uppercase" onclick="javascript:launchModal()">{{ 'buy.memebership'|trans({},'backend') }}
+                                        </button>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 no-padding">
+                                <div class="price-column-container border-top border-left border-right {% if app.user.hasRole('ROLE_SUPERIOR') %}featured-price{% endif %}">
+
+                                    <div class="price-table-head price-2">
+                                        <h2 class="uppercase no-margin">{{ 'member.professional'|trans({},'backend') }}</h2>
+                                    </div>
+                                    <div class="price-table-pricing">
+                                        <h3><span class="price-sign">$</span>{{ prices.professional }}</h3>
+
+                                        <p class="uppercase">{#per month#}</p>
+                                    </div>
+                                    <div class="price-table-content">
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i class="icon-check" style="color: green;"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-left">Panel de control profesional</div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i class="icon-check" style="color: green;"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-left">Certificación PTS profesional
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Recompensas PTS profesional
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">700 bonos de inicio profesional
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">7 invitados por 15 días
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Cursos profesionales con actualizaciones mensuales
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Blog personal profesional
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Triple protección del costo
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">TML-social profesional
+                                            </div>
+                                        </div>
+                                        <div class="row no-margin">
+                                            <div class="col-xs-3 text-right"><i
+                                                        class="icon-check" style="color: green;"></i></div>
+                                            <div class="col-xs-9 text-left">Beneficios b&aacute;sicos y superiores
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="price-table-footer">
+                                        {% if app.user.hasRole('ROLE_SUPERIOR') %}
+                                            <button type="button"
+                                                    class="btn green featured-price uppercase" onclick="javascript:launchModal()">{{ 'buy.memebership'|trans({},'backend') }}
+                                            </button>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        {#<div class="vd_pricing-table">#}
+            {#<div class="col-sm-4 col-lg-4">#}
+                {#<div class="plan {% if app.user.isGuest() %}featured{% endif %}">#}
+                    {#<div class="plan-header text-center vd_info-parent {% if app.user.isGuest() %}vd_bg-red vd_white{% else %}vd_bg-dark-blue vd_green{% endif %}">#}
+                      {#<h3 class="pd-20 mgbt-xs-0">{{ 'member.basic'|trans({},'backend') }}</h3>#}
+                      {#<div class="price vd_bg-black-30">#}
+                        {#<span class="main"><span class="font-light">$</span><span class="font-bold">{{ prices.basic }}</span> </span>#}
+                        {#&#123;&#35;<span class="suffix">00</span> <span class="text vd_bdt-green">/month</span>&#35;&#125;#}
+                      {#</div>#}
+                      {#<i class="caret-pos fa fa-caret-up vd_white"></i>#}
+                    {#</div>#}
+                    {#<div class="features vd_bg-white font-sm content-list">#}
+                      {#<ul class="list-wrapper">#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ 'dashboard'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ 'pts.basic.sponsor'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ '%limit% guest.day'|trans({'%limit%':guests.basic},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ 'basic.courses'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ 'personal.blog'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-times"></i></strong> {{ 'unlimited.access'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-times"></i></strong> {{ 'bussines.module'|trans({},'backend') }}</li>#}
+                      {#</ul>#}
+                      {#<br/>#}
+                      {#<div class="pd-20 text-center">#}
+                          {#{% if app.user.isGuest() %}#}
+                              {#<button type="button" class="btn vd_btn vd_bg-red btn-lg" onclick="javascript:launchModal()">{{ 'buy.memebership'|trans({},'backend') }}</button>#}
+                          {#{% endif %}#}
+                      {#</div>#}
+                    {#</div>#}
+                  {#</div>#}
+                {#</div>#}
+
+            {#<div class="col-sm-4 col-lg-4">#}
+                {#<div class="plan {% if app.user.hasRole('ROLE_BASIC') %}featured{% endif %}">#}
+                    {#<div class="plan-header text-center vd_info-parent {% if app.user.hasRole('ROLE_BASIC') %}vd_bg-red vd_white{% else %}vd_bg-dark-blue vd_green{% endif %}">#}
+                      {#<h3 class="pd-20 mgbt-xs-0">{{ 'member.superior'|trans({},'backend') }}</h3>#}
+                      {#<div class="price vd_bg-black-30">#}
+                        {#<span class="main"><span class="font-light">$</span><span class="font-bold">{{ prices.superior }}</span> </span>#}
+                        {#&#123;&#35;<span class="suffix">00</span> <span class="text vd_bdt-green">/month</span>&#35;&#125;#}
+                      {#</div>#}
+                      {#<i class="caret-pos fa fa-caret-up vd_white"></i>#}
+                    {#</div>#}
+                    {#<div class="features vd_bg-white font-sm content-list">#}
+                      {#<ul class="list-wrapper">#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ 'dashboard'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ 'pts.superior.sponsor'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ '%limit% guest.day'|trans({'%limit%':guests.superior},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ 'superior.courses'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ 'personal.blog'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-times"></i></strong> {{ 'unlimited.access'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-times"></i></strong> {{ 'bussines.module'|trans({},'backend') }}</li>#}
+                      {#</ul>#}
+                      {#<br/>#}
+                      {#<div class="pd-20 text-center">#}
+                          {#{% if app.user.hasRole('ROLE_BASIC') %}#}
+                              {#<button type="button" class="btn vd_btn vd_bg-red btn-lg" onclick="javascript:launchModal()">{{ 'buy.memebership'|trans({},'backend') }}</button>#}
+                          {#{% endif %}#}
+                      {#</div>#}
+                    {#</div>#}
+                  {#</div>#}
+                {#</div>#}
+
+            {#<div class="col-sm-4 col-lg-4">#}
+                {#<div class="plan {% if app.user.hasRole('ROLE_SUPERIOR') %}featured{% endif %}">#}
+                    {#<div class="plan-header text-center vd_info-parent {% if app.user.hasRole('ROLE_SUPERIOR') %}vd_bg-red vd_white{% else %}vd_bg-dark-blue vd_green{% endif %}">#}
+                      {#<h3 class="pd-20 mgbt-xs-0">{{ 'member.professional'|trans({},'backend') }}</h3>#}
+                      {#<div class="price vd_bg-black-30">#}
+                        {#<span class="main"><span class="font-light">$</span><span class="font-bold">{{ prices.professional }}</span> </span>#}
+                        {#&#123;&#35;<span class="suffix">00</span> <span class="text vd_bdt-green">/month</span>&#35;&#125;#}
+                      {#</div>#}
+                      {#<i class="caret-pos fa fa-caret-up vd_white"></i>#}
+                    {#</div>#}
+                    {#<div class="features vd_bg-white font-sm content-list">#}
+                      {#<ul class="list-wrapper">#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ 'dashboard'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ 'pts.professional.sponsor'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ '%limit% guest.day'|trans({'%limit%':guests.professional},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ 'professional.courses'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ 'personal.blog'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ 'unlimited.access'|trans({},'backend') }}</li>#}
+                        {#<li><strong><i class="fa fa-check"></i></strong> {{ 'bussines.module'|trans({},'backend') }}</li>#}
+                      {#</ul>#}
+                      {#<br/>#}
+                      {#<div class="pd-20 text-center">#}
+                          {#{% if app.user.hasRole('ROLE_SUPERIOR') %}#}
+                              {#<button type="button" class="btn vd_btn vd_bg-red btn-lg" onclick="javascript:launchModal()">{{ 'buy.memebership'|trans({},'backend') }}</button>#}
+                          {#{% endif %}#}
+                      {#</div>#}
+                    {#</div>#}
+                  {#</div>#}
+                {#</div>#}
+
+        {#</div>#}
+    </div>
+
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body padT30">
+                    <form class="form-horizontal" action="{{ path('app_admin_membership_buy') }}" method="post" id="buyMembershipForm">
+                        {% set commition = app.user.activeProfile is not empty ? app.user.activeProfile.credit : 0 %}
+                        {% if app.user.hasRole('ROLE_BASIC') %}
+                            {% set membership = 'superior' %}
+                            {% set tml_valid = commition >= prices.superior ? 1 : 0 %}
+                        {% elseif app.user.hasRole('ROLE_SUPERIOR') %}
+                            {% set membership = 'professional' %}
+                            {% set tml_valid = commition >= prices.professional ? 1 : 0 %}
+                        {% else %}
+                            {% set membership = 'basic' %}
+                            {% set tml_valid = commition >= prices.basic ? 1 : 0 %}
+                        {% endif %}
+                        <input type="hidden" name="membership" value="{{ membership }}">
+                        <div class="form-group">
+                            <div class="col-sm-12 controls">
+                                <input class="form-control floating-label" type="text" name="code" value="{{ code }}" placeholder="{{ 'partner.code'|trans({},'backend') }}" required="required">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6" style="text-align: center">
+                                <img src="{{ asset('bundles/app/images/paypal.png') }}" />
+                                <div class="md-radio-list">
+
+                                    <label>
+                                        <input class="md-radiobtn" type="radio" name="method" value="1" checked="checked"> {{ 'pay_using_paypal'|trans({},'backend') }}
+                                    </label>
+                                </div>
+                                <p>{{ 'method_paypal_description'|trans({},'backend') }}</p>
+                            </div>
+                            <div class="col-sm-6" style="text-align: center">
+                                <img src="{{ asset('bundles/app/images/tml-transfer.png') }}" />
+                                <div class="md-radio-list">
+
+                                    <label>
+                                        <input class="md-radiobtn" type="radio" name="method" value="2" {% if not tml_valid %}disabled="disabled"{% endif %}> {{ 'pay_using_tml_transfer'|trans({},'backend') }}
+                                    </label>
+                                </div>
+                                <p>{{ 'method_tml_transfer_description'|trans({},'backend') }}</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer background-login padT10">
+                    <button type="button" class="btn vd_btn vd_bg-grey" data-dismiss="modal">{{ 'cancel'|trans({},'backend') }}</button>
+                    <button type="button" class="btn vd_btn vd_bg-green" onclick="javascript:buyMembership()">{{ 'buy'|trans({},'backend') }}</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+{% endblock page_body %}
+
+{% block page_script %}
+    {#<script type="text/javascript" src="{{ asset('backend/plugins/bootbox/bootbox.min.js') }}"></script>#}
+    <script type="text/javascript">
+        function launchModal() {
+            $("#buyModal").modal('show');
+        }
+
+        function buyMembership() {
+            if($("#buyMembershipForm").valid()) {
+                $("#buyMembershipForm").submit();
+            }
+        }
+    </script>
+{% endblock page_script %}

@@ -1,0 +1,31 @@
+{% for message in latestMessage %}
+    <div class="widget-media">
+        <div class="widget-media-elements text-center">
+            {% if message.user.picture is empty %}
+                {% set url = 'backend-metronic/img/avatars/avatar.jpg' %}
+            {% else %}
+                {% set url = constant('IMAGES_UPLOAD_DIR',app.user)~message.user.picture %}
+            {% endif %}
+            <img class="widget-media-avatar circle margin-bottom-15" src="{{ asset(url) }}" alt="">
+            {% if message.user.id is not same as(app.user.id)  %}
+                {% if app.user.userHasFollow(message.user.id) %}
+                    <a class="widget-btn-default circle" onclick="javascript:follow('{{ message.user.username }}', 0)">{{ 'unfollow'| trans({},'backend') }}</a>
+                {% else %}
+                    <a class="widget-btn-default circle" onclick="javascript:follow('{{ message.user.username }}', 1)">{{ 'follow'|trans({},'backend') }}</a>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="widget-media-body">
+            <h4 class="widget-media-body-title"><a href="#">{{ message.user.name }}</a></h4>
+
+            <p class="widget-media-body-subtitle">{{ message }}</p>
+            <a class="widget-btn-red circle" href="#">+{{ message.likes }}</a>
+            {% if message.userHasLike(userId) %}
+                <a class="widget-btn-blue circle" onclick="javascript:incrementLike({{ message.id }}, 0)">{{ 'unlike'|trans({},'backend') }}</a>
+            {% else %}
+                <a class="widget-btn-blue circle" onclick="javascript:incrementLike({{ message.id }}, 1)">{{ 'like'|trans({},'backend') }}</a>
+            {% endif %}
+            {#<a class="widget-btn-default circle pull-right" href="#"><i class="widget-btn-icon icon-share"></i></a>#}
+        </div>
+    </div>
+{% endfor %}

@@ -1,0 +1,33 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Mass&oacute; #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+
+{% block banner_title %}
+    <h1>Herramienta <span class="vc_main-color">Dashboard</span></h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">Herramienta Dashboard</li>
+    </ul>
+{% endblock %}
+
+
+{% block content %}
+    <div class="col-md-12" style="margin-bottom: 35px">
+        <p>
+
+            Es una herramienta para el Miembro TML esencial y &uacute;til. Desde el Dashborad cualquier miembro podr&aacute; gestionar
+            todo lo relacionado a su membres&iacute;a. Podr&aacute; ver sus Comisiones Recurrentes o Residuales, sus Invitados,
+            Gestionar su Blog Personal (TML te crear&aacute; de forma autom&aacute;tica un sitio para tu promoci&oacute;n q podr&aacute;s configurar
+            f&aacute;cilmente sin ser programador), sus Cursos, Reportes de todas sus Transacciones y Estad&iacute;sticas exactas de
+            toda su contabilidad, Gestionar sus membres&iacute;as para subir de nivel o categor&iacute;a, Monitorear todos los
+            Mensajes Informativos que le env&iacute;a el sistema, para mantenerlo actualizado, etc., en fin es, es una
+            herramienta primordial y necesaria para cualquier miembro afiliado a nuestra red. Puedes personalizarlo para
+            que se ajuste a tu marca, poner anuncios, y permitir que afiliados vean las comisiones que han ganado. Ellos
+            tienen acceso a tus anuncios (banners) y pueden actualizar su informaci&oacute;n personal de contacto. Los
+            afiliados pueden ver su Centro de Cuenta en su propio idioma, d&aacute;ndote el poder de administrar una red de
+            afiliados global.
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'dashboard'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'dashboard'|trans({},'backend') }}{% endblock page_title %}
+
+{% block page_body %}
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+            {% embed 'embed/panel.html.twig' %}
+                {% block box_title %}
+                    <i class="icon-share font-blue"></i>
+                    <span class="caption-subject font-blue bold uppercase">Recent Activities</span>
+                {% endblock box_title %}
+                {% block box_content %}
+                    <div class="scroller" style="height: 300px;" data-always-visible="1" data-rail-visible="0">
+                        <ul class="feeds">
+                            {% for log in latestLog %}
+                                {% if log.type is same as(4) %}
+                                    {% set label = 'danger' %}
+                                    {% set icon = 'times' %}
+                                {% elseif log.type is same as(3) %}
+                                    {% set label = 'warning' %}
+                                    {% set icon = 'bell-o' %}
+                                {% elseif log.type is same as(2) %}
+                                    {% set label = 'info' %}
+                                    {% set icon = 'comment' %}
+                                {% else %}
+                                    {% set label = 'sucess' %}
+                                    {% set icon = 'check' %}
+                                {% endif %}
+                                <li>
+                                    <div class="col1">
+                                        <div class="cont">
+                                            <div class="cont-col1">
+                                                <div class="label label-sm label-{{ label }}">
+                                                    <i class="fa fa-{{ icon }}"></i>
+                                                </div>
+                                            </div>
+                                            <div class="cont-col2">
+                                                <div class="desc">
+                                                    {{ log }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col2">
+                                        <div class="date">
+                                            {{ log.created|date('m/d H:i') }}
+                                        </div>
+                                    </div>
+                                </li>
+                            {% else %}
+                                <li>
+                                    <div class="col1">
+                                        <div class="cont">
+                                            <div class="cont-col1">
+                                                <div class="label label-sm label-danger">
+                                                    <i class="fa fa-times"></i>
+                                                </div>
+                                            </div>
+                                            <div class="cont-col2">
+                                                <div class="desc">
+                                                    No hay ning&uacute;n Log registrado
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endblock box_content %}
+            {% endembed %}
+        </div>
+
+
+        <div class="col-md-6 col-sm-6">
+            <div class="portlet light bordered">
+                <div class="portlet-title tabbable-line">
+                    <div class="caption caption-md">
+                        <i class="icon-bar-chart font-red"></i>
+                        <span class="caption-subject font-red bold uppercase">{{ 'member.activity' | trans({}, 'backend') }}</span>
+                        {#<span class="caption-helper">weekly stats...</span>#}
+                    </div>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#today_tab" data-toggle="tab">
+                                {{ 'today'|trans({},'backend') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#week_tab" data-toggle="tab">
+                                {{ 'week'|trans({},'backend') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#month_tab" data-toggle="tab">
+                                {{ 'month'|trans({},'backend') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_admin_user_index') }}">
+                                {{ 'view_all'|trans({},'backend') }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="portlet-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="today_tab">
+                            {% include 'dashboard/admin_dash_user_register.html.twig' with {'clients':clients.today.clients,'guests':clients.today.guests} %}
+                        </div>
+                        <div class="tab-pane" id="week_tab">
+                            {% include 'dashboard/admin_dash_user_register.html.twig' with {'clients':clients.week.clients,'guests':clients.week.guests} %}
+                        </div>
+                        <div class="tab-pane" id="month_tab">
+                            {% include 'dashboard/admin_dash_user_register.html.twig' with {'clients':clients.month.clients,'guests':clients.month.guests} %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

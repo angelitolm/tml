@@ -1,0 +1,56 @@
+{% macro css() %}
+  <link rel="stylesheet" href="{{ asset('components/datatables/media/css/dataTables.bootstrap.min.css') }}" />
+{% endmacro %}
+
+{% macro js() %}
+  <script type="text/javascript" src='{{ asset('components/datatables/media/js/jquery.dataTables.min.js') }}' ></script>
+  <script type="text/javascript" src='{{ asset('components/datatables/media/js/dataTables.bootstrap.min.js') }}' ></script>
+{% endmacro %}
+
+{% macro local_component(component, settings) %}
+  {% set settings = settings|default({}) %}
+  {% set component = component|default('.dtComponent') %}
+
+  var columns = new Array();
+
+  jQuery('{{ component }} > thead > tr > th').each(function(){
+    columns.push(jQuery(this).data());
+  });
+  jQuery('{{ component }}').dataTable({
+    "processing": true,
+    "deferRender": true,
+    "serverSide": false,
+    "searching": true,
+    "lengthMenu": [ 30, 50, 75, 100 ],
+    "paging": true,
+    "columns":columns
+    {% if settings is not empty %}
+      ,{{ settings|json_encode() }}
+    {% endif %}
+  });
+{% endmacro %}
+
+{% macro ajax_component(url, component, settings) %}
+  {% set url = url|default('') %}
+  {% set component = component|default('.dtComponent') %}
+  {% set settings = settings|default({}) %}
+
+    var columns = new Array();
+
+    jQuery('{{ component }} > thead > tr > th').each(function(){
+      columns.push(jQuery(this).data());
+    });
+
+    jQuery('{{ component }}').dataTable({
+      "processing": true,
+      "deferRender": true,
+      "serverSide": true,
+      "ajax": "{{ url }}",
+      "searching": true,
+      "lengthMenu": [ 30, 50, 75, 100 ],
+      "paging": true,
+      "order": [ 0, 'asc' ],
+      "columns":columns
+    });
+
+{% endmacro %}

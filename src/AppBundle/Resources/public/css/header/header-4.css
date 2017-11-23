@@ -1,0 +1,40 @@
+/* CSS Document */
+
+.header-4 .vc_secondary-menu{
+	
+}
+.header-4 .logo{
+	width:200px;
+	height:73px;
+}
+.header-4 .logo a{
+	background:none;
+	box-shadow:none;
+	padding-left:10px;
+	padding-right:10px;
+}
+.header-4 .logo a img{
+	margin-top:5px;
+}
+
+.header-4 .vc_sub-menu-bg {
+	left:-50%;
+}
+.vc_btn-navbar .btn{
+	right:10px;
+	left:auto;
+}
+
+body.sticky-menu-active .header-4{
+	border-top:8px solid #111;
+}
+body.sticky-menu-active .header-4 .logo{
+	top:0;
+	height:73px;	
+}
+body.sticky-menu-active .header-4 .logo img{
+	margin-top:8px;
+}
+body.sticky-menu-active .header-4 .vc_menu-bg{
+	height:73px;
+}

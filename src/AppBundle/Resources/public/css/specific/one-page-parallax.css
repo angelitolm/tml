@@ -1,0 +1,165 @@
+/* One Page Parallax */
+.one-page-parallax .vc_banner{
+	height:570px; 
+	background:url('../../images/parallax-img/01.jpg') no-repeat top center; 
+	box-shadow:none; 
+	border-bottom:1px solid #EEE; 
+	overflow:hidden;	
+}
+.one-page-parallax .vc_banner .wrapper{
+	position:relative;
+}
+.one-page-parallax .vc_banner .banner-text{
+	margin-top:50px;
+}
+.one-page-parallax .vc_banner .banner-text .text-1{
+	color:#AAA; letter-spacing:-.5px; font-size:20px; margin-bottom:20px;
+}
+.one-page-parallax .vc_banner .banner-image.image-1{
+	width:100%;  
+	position:absolute; 
+	z-index:9;
+}
+.one-page-parallax .vc_banner .banner-text{
+	margin-top:50px;
+}
+.one-page-parallax .vc_banner .banner-icon{
+	position:absolute;
+	width:100%;
+}
+.one-page-parallax .vc_banner .banner-icon .icon{
+	color:#FFF;
+	background:#38A5DD;
+	border-radius: 60px; 
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";	
+	filter: alpha(opacity=0);	
+	-moz-opacity:0;	
+	-khtml-opacity: 0;	
+	opacity: 0;
+
+}
+.one-page-parallax .vc_banner .banner-icon.icon-line .icon{
+	padding:2px;
+	font-size:60px;
+}
+.one-page-parallax .vc_banner .banner-icon.icon-xl .icon{
+	font-size:60px;
+	padding:30px;
+}
+.one-page-parallax .vc_banner .banner-icon.icon-lg .icon{
+	font-size:48px;
+	padding:25px;	
+}
+.one-page-parallax .vc_banner .banner-icon.icon-md .icon{
+	font-size:32px;
+	padding:20px;	
+}
+.one-page-parallax .vc_banner .banner-icon.icon-sm .icon{
+	font-size:24px;
+	padding:15px;	
+}
+
+.one-page-parallax .vc_banner .banner-icon.icon-2 .icon, .one-page-parallax .vc_banner .banner-icon.icon-5 .icon{
+	background: #D94A3A;
+}
+.one-page-parallax .vc_banner .banner-icon.icon-3 .icon, .one-page-parallax .vc_banner .banner-icon.icon-6 .icon{
+	background: #FF7B00;
+}
+.one-page-parallax .vc_banner .banner-icon.icon-4 .icon, .one-page-parallax .vc_banner .banner-icon.icon-7 .icon{
+	background: #72B458;
+}
+
+
+.one-page-parallax .vc_banner .banner-icon.icon-1{ 	
+	top:30px;
+	left:350px;	
+	z-index: 10; 
+}
+.one-page-parallax .vc_banner .banner-icon.icon-2{
+	top:30px;
+	left:160px;
+	z-index: 10; 	
+}
+.one-page-parallax .vc_banner .banner-icon.icon-3{
+	top:30px;
+	left:270px;
+	z-index: 8; 	
+}
+.one-page-parallax .vc_banner .banner-icon.icon-4{
+	top:30px;
+	left:490px;
+	z-index: 8; 	
+}
+.one-page-parallax .vc_banner .banner-icon.icon-5{ 	
+	top:130px;
+	left:700px;	
+	z-index: 10; 
+}
+.one-page-parallax .vc_banner .banner-icon.icon-6{
+	top:-70px;
+	left:860px;
+	z-index: 8; 	
+}
+.one-page-parallax .vc_banner .banner-icon.icon-7{
+	top:30px;
+	left:770px;
+	z-index: 8; 	
+}
+.one-page-parallax .vc_banner .banner-icon.icon-8{
+	top:60px;
+	left:590px;
+	z-index: 8; 	
+}
+.one-page-parallax .vc_signup{
+	padding-top:40px; padding-bottom:40px;
+}
+
+.vc_top-newsletter{
+	background:#F5F5F5; 
+	border:1px #EEE solid; 
+	padding:20px; 
+	margin-top:-66px;
+	z-index:20; 
+	position:absolute;
+	box-shadow: 0 2px 9px 2px rgba(0, 0, 0, 0.14);	
+}
+.one-page-parallax .vc_features .vc_btn{
+	background:none;
+	border:1px solid #FFF; 
+	margin-top:20px; 
+	font-weight:bold; 
+	font-size:18px;
+}
+.one-page-parallax .vc_features .vc_btn:hover{
+	background:#FFF;
+	color:#38A5DD;
+}
+.one-page-parallax .vc_testimonial-block .vc_testimonial .profile{
+	background:none;
+}
+.one-page-parallax .vc_testimonial-block .vc_testimonial .profile .name h4{
+	color:#EEE;
+}
+.one-page-parallax .vc_testimonial-block{
+	padding-top:40px; padding-bottom:60px; border-top:1px solid #EEE
+}
+.vc_features .wrapper{
+	background:url('../../images/parallax-img/02.jpg') no-repeat 0px 0px !important;
+	padding:40px 0 65px;	
+}
+.one-page-parallax .vc_testimonial-block .block-title{
+	color:#F5F5F5;
+	margin-bottom:40px;	
+}
+.one-page-parallax .vc_testimonial-block .vc_ornament{
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  -moz-opacity: 0.3;
+  -khtml-opacity: 0.3;
+  opacity: 0.3;	
+}
+
+/* Landing preparation */
+.one-page-parallax .text-col, .one-page-parallax .newsletter-col, .one-page-parallax .vc_features-block .first-row-col-1, .one-page-parallax .vc_features-block .first-row-col-2, .one-page-parallax .vc_features-block .second-row-col-1, .one-page-parallax .vc_features-block .second-row-col-2, .one-page-parallax .vc_pricing-tables h2, .one-page-parallax .vc_pricing-tables .vc_pricing-table, .one-page-parallax .vc_portfolio, .one-page-parallax .vc_client h4, .one-page-parallax .vc_client .subtitle, .one-page-parallax .vc_client .vc_carousel-wrap, .one-page-parallax .vc_testimonial-block .block-title, .one-page-parallax .vc_testimonial-block .text-1, .one-page-parallax .vc_testimonial-block .text-2, .one-page-parallax .vc_map, .one-page-parallax .vc_contact-us .text-1, .one-page-parallax .vc_contact-us .text-2{
+	opacity:0;
+}

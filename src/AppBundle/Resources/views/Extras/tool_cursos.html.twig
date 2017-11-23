@@ -1,0 +1,29 @@
+{# Twig template #}
+{# Autor y dise�ador: Angel Labrada Mass&oacute; #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+
+{% block banner_title %}
+    <h1>Herramienta <span class="vc_main-color">Cursos</span></h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">Cursos</li>
+    </ul>
+{% endblock %}
+
+
+{% block content %}
+    <div class="col-md-12" style="margin-bottom: 35px">
+        <p>
+
+            Estos cursos son el corazón del aprendizaje práctico y sencillo en todo el proceso de desarrollo de tml4you,
+            es como un maestro que usted tiene a cada momento que lo necesite y con las informaciones actualizadas de
+            forma periódica, es una forma de mantener al nuevo miembro capacitado y enfocado en el camino de su propio
+            éxito personal, con la flexibilidad de escoger los conocimientos que el mas prefiera y sin necesidad de
+            pasar pruebas de aprendizaje, aquí el miembro es el alumno y también su propio maestro personal y solo él es
+            responsable de su superación, creemos que la flexibilidad y libertad del conocimiento propio es esencial
+            para el desarrollo de nuestro propio talento personal.
+        </p>
+    </div>
+{% endblock %}

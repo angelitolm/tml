@@ -1,0 +1,30 @@
+{#{% if messages is not empty %}#}
+    <div class="btn-group-notification btn-group" id="header_notification_bar">
+        <button type="button" class="btn btn-sm dropdown-toggle tooltips" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" data-placement="bottom" data-original-title="{{ 'notifications' | trans({}, 'backend') }}">
+            <i style="margin-left: -7px" class="icon-bell"></i>
+            <span class="badge">{{ messages.count }}</span>
+        </button>
+        <ul class="dropdown-menu-v2">
+            <li class="external">
+                <h3><span class="bold">{{ messages.count }}</span> {{ 'notifications'|trans({},'backend') }}</h3>
+                <a href="{{ path('app_admin_messages_index') }}">{{ 'view_all'|trans({},'backend') }}</a>
+            </li>
+            <li>
+                <ul class="dropdown-menu-list scroller" style="height: 250px; padding: 0;" data-handle-color="#637283">
+                    {% for message in messages %}
+                        <li>
+                            <a href="javascript:;">
+                                <span class="details">
+                                    {#<span class="label label-sm label-icon label-success"><i class="fa fa-plus"></i>
+                                    </span>#}
+                                    {{ message.subject|slice(0,50) }}
+                                </span>
+                                <span class="time">{{ message.created|date('d-M H:i') }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    </div>
+{#{% endif %}#}

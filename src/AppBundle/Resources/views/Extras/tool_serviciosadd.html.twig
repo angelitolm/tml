@@ -1,0 +1,28 @@
+{# Twig template #}
+{# Autor y dise�ador: Angel Labrada Mass&oacute; #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+
+{% block banner_title %}
+    <h1>Herramienta <span class="vc_main-color">Mensajer&iacute;a y Correo</span></h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">Herramienta Mensajer&iacute;a y Correo</li>
+    </ul>
+{% endblock %}
+
+
+{% block content %}
+    <div class="col-md-12" style="margin-bottom: 35px">
+        <p>
+
+            Mant&eacute;n a tus afiliados f&aacute;cilmente al tanto con noticias, anuncios y comunicaciones por e-mail autom&aacute;ticas.
+            Maneja f&aacute;cilmente plantillas de email y listas de contactos de afiliados d&aacute;ndote el poder de automatizar tu
+            sistema de comunicaci&oacute;n con afiliados. Nuestro sistema te enviara un email cada vez que un nuevo afiliado se
+            ha inscrito para unirse a tu programa, o puedes enviar a tus afiliados un email autom&aacute;tico alentador cada
+            vez que te refieren una nueva membres&iacute;. De igual forma se te informar&aacute; a trav&eacute;s de tu e-mail las acciones que
+            acometas en nuestra red.
+        </p>
+    </div>
+{% endblock %}

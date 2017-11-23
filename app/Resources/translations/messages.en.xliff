@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2015-11-18T23:55:32Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="6ea5c26014557e4723a510af843223931bb34bd8" resname="buy a %member% plan in %site%">
+        <source>buy a %member% plan in %site%</source>
+        <target state="new">buy a %member% plan in %site%</target>
+        <jms:reference-file line="92">AppBundle/Controller/MembershipController.php</jms:reference-file>
+        <jms:reference-file line="127">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a5eba05921c11add89e9b68570149da22499c604" resname="change_password.submit">
+        <source>change_password.submit</source>
+        <target state="new">change_password.submit</target>
+        <jms:reference-file line="12">views/ChangePassword/changePassword_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f4600b3cd11907b8ad4989dcd4d1e78e59d07afa" resname="config_name_trans">
+        <source>config_name_trans</source>
+        <target state="new">config_name_trans</target>
+        <jms:reference-file line="71">views/Translate/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e5d89e88d73300f43148f859e9ab9c9998bbb707" resname="domain_name_trans">
+        <source>domain_name_trans</source>
+        <target state="new">domain_name_trans</target>
+        <jms:reference-file line="82">views/Translate/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="210f8b7cbd19367b2ca1332f3cd00b7a06f7e0a0" resname="form.new_password">
+        <source>form.new_password</source>
+        <target state="new">form.new_password</target>
+        <jms:reference-file line="35">AppBundle/Form/ChangePasswordType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9c550aa2c68f9be72e8c34c90d6c359178ab9a25" resname="form.new_password_confirmation">
+        <source>form.new_password_confirmation</source>
+        <target state="new">form.new_password_confirmation</target>
+        <jms:reference-file line="36">AppBundle/Form/ChangePasswordType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6d384fb8ef3ca9318f0f9d983868842a211770f8" resname="form.password">
+        <source>form.password</source>
+        <target state="new">form.password</target>
+        <jms:reference-file line="35">AppBundle/Form/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="30de94712c8550862006ed6a664870c398c9482d" resname="form.password_confirmation">
+        <source>form.password_confirmation</source>
+        <target state="new">form.password_confirmation</target>
+        <jms:reference-file line="36">AppBundle/Form/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="09dc89f401dab7d05f7902d0782ef764fab6de89" resname="locale_name_trans">
+        <source>locale_name_trans</source>
+        <target state="new">locale_name_trans</target>
+        <jms:reference-file line="93">views/Translate/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a3c19453efad47d465a64b9bb34af3d2400b3929" resname="message.admin">
+        <source>message.admin</source>
+        <target state="new">message.admin</target>
+        <jms:reference-file line="142">AppBundle/Controller/MembershipController.php</jms:reference-file>
+        <jms:reference-file line="190">AppBundle/Controller/MembershipController.php</jms:reference-file>
+        <jms:reference-file line="79">AppBundle/Listeners/Membership.php</jms:reference-file>
+        <jms:reference-file line="72">AppBundle/Listeners/Registration.php</jms:reference-file>
+        <jms:reference-file line="94">AppBundle/Listeners/Registration.php</jms:reference-file>
+        <jms:reference-file line="42">AppBundle/Listeners/Transfer.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="063044823c6a186864769332ace32c2805d5a078" resname="message.blog_contact.title">
+        <source>message.blog_contact.title</source>
+        <target state="new">message.blog_contact.title</target>
+        <jms:reference-file line="28">AppBundle/Controller/BlogContactController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="36e63075608f46807fdc67b270a3042a94dabdea" resname="message.membership_buy.message">
+        <source>message.membership_buy.message</source>
+        <target state="new">message.membership_buy.message</target>
+        <jms:reference-file line="144">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1425f458dddad53438efe5ff9618c5a4d6f004d6" resname="message.membership_buy.title">
+        <source>message.membership_buy.title</source>
+        <target state="new">message.membership_buy.title</target>
+        <jms:reference-file line="143">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="396585ad51e9e7bdaf3a7fe006f4891dc753d086" resname="message.membership_buy_cancel.message">
+        <source>message.membership_buy_cancel.message</source>
+        <target state="new">message.membership_buy_cancel.message</target>
+        <jms:reference-file line="192">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="62e055f7e2315d9c7479ea4f839dc133c6e32bdc" resname="message.membership_buy_cancel.title">
+        <source>message.membership_buy_cancel.title</source>
+        <target state="new">message.membership_buy_cancel.title</target>
+        <jms:reference-file line="191">AppBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a87041c134edb0020a5ef161a1ece8b676b91b96" resname="message.profile_created.message">
+        <source>message.profile_created.message</source>
+        <target state="new">message.profile_created.message</target>
+        <jms:reference-file line="81">AppBundle/Listeners/Membership.php</jms:reference-file>
+        <jms:reference-file line="96">AppBundle/Listeners/Registration.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d4c0b27cbf91d8628c63d2082449e78daeba00a7" resname="message.profile_created.title">
+        <source>message.profile_created.title</source>
+        <target state="new">message.profile_created.title</target>
+        <jms:reference-file line="80">AppBundle/Listeners/Membership.php</jms:reference-file>
+        <jms:reference-file line="95">AppBundle/Listeners/Registration.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fb6cf257b4185384d4be570c815d98e4c926072a" resname="message.transfer.message">
+        <source>message.transfer.message</source>
+        <target state="new">message.transfer.message</target>
+        <jms:reference-file line="44">AppBundle/Listeners/Transfer.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c5a85e65ff8c070f151f0578aa012a55e25b122b" resname="message.transfer.title">
+        <source>message.transfer.title</source>
+        <target state="new">message.transfer.title</target>
+        <jms:reference-file line="43">AppBundle/Listeners/Transfer.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="74299c5db27c906639c874153c8e943fbd68e9ee" resname="message.user_created.message">
+        <source>message.user_created.message</source>
+        <target state="new">message.user_created.message</target>
+        <jms:reference-file line="74">AppBundle/Listeners/Registration.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="50a6e422ec1339ae7bd366b853327aa9b1033e5e" resname="message.user_created.title">
+        <source>message.user_created.title</source>
+        <target state="new">message.user_created.title</target>
+        <jms:reference-file line="73">AppBundle/Listeners/Registration.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

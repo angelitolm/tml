@@ -1,0 +1,27 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'news_category.new'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'news_category.new'|trans({},'backend') }}{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{{ path('app_admin_news_category_index') }}">{{ 'news_category.list'|trans({},'backend') }}</a></li>
+    <li class="active">{{ 'news_category.new'|trans({},'backend') }}</li>
+{% endblock %}
+
+{% form_theme form with ':form:fields-material.html.twig' %}
+{% block page_body %}
+    <div class="row">
+        <div class="col-xs-12">
+            {% embed ":embed:form-horizontal.html.twig" %}
+                {% block form_action%}
+                    {{ path('app_admin_news_category_new') }}
+                {% endblock form_action %}
+                {% block form_buttons %}
+                    {% embed ":embed:actions-new.html.twig" %}
+                        {% block cancel_link %}{{ path('app_admin_news_category_index') }}{% endblock cancel_link %}
+                    {% endembed %}
+                {% endblock form_buttons %}
+            {% endembed %}
+        </div>
+    </div>
+{% endblock %}

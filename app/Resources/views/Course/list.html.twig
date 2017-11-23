@@ -1,0 +1,42 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'courses.list'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'courses.list'|trans({},'backend') }}{% endblock %}
+
+{% block breadcrumb %}
+    <li class="active">{{ 'courses.list'|trans({},'backend') }}</li>
+{% endblock %}
+
+{% block page_body %}
+    <div class="row">
+        <div class="col-xs-12">
+            {% embed ':embed:panel-top.html.twig' %}
+                {% block box_content %}
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>{{ 'course.name'|trans({},'backend') }}</th>
+                            <th>{{ 'course.description'|trans({},'backend') }}</th>
+                            <th>{{ 'course.file'|trans({},'backend') }}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for course in courses %}
+                            <tr>
+                                <td>{{ course }}</td>
+                                <td>{{ course.description }}</td>
+                                <td>
+                                    {% if course.file is not empty %}
+                                        {% set file_url = constant('FILE_UPLOAD_DIR',course)~course.file %}
+                                        <a href="{{ asset(file_url) }}" target="_blank"><i class="fa fa-download fa-2x"></i></a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% endblock box_content %}
+            {% endembed %}
+        </div>
+    </div>
+{% endblock %}

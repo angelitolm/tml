@@ -1,0 +1,226 @@
+{% extends '::base_admin_portfolio.html.twig' %}
+
+{% block head_style %}
+    {% block page_style %}
+    {% endblock page_style %}
+{% endblock head_style %}
+
+{% block body_tag %}
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-md">
+{% endblock body_tag %}
+
+{% block body_start %}
+<div class="wrapper">
+    {% endblock body_start %}
+
+    {% block header_tag %}
+        <header class="page-header">
+            <nav class="navbar mega-menu" role="navigation">
+                <div class="container-fluid">
+                    <div class="clearfix navbar-fixed-top">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-responsive-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="toggle-icon">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </span>
+                        </button>
+                        <!-- End Toggle Button -->
+                        <!-- BEGIN LOGO -->
+                        <a id="index" class="page-logo" href="{{ path('app_admin_dashboard') }}">
+                            <img src="{{ asset('backend/img/logo_dashboard.png') }}" alt="Logo">
+                        </a>
+                        <!-- END LOGO -->
+                        <!-- BEGIN TOPBAR ACTIONS -->
+                        <div class="topbar-actions">
+                            <!--BEGIN CODE USER-->
+                            <div class="btn-group-img btn-group user-code">
+                                <button style="margin: 0 30px 0 15px; font-size: 14px; background: #3fc9d5; color: #fff; padding: 5px 10px;"
+                                        type="button" class="btn btn-sm dropdown-toggle tooltips" data-toggle="dropdown"
+                                        data-hover="dropdown" data-close-others="true" data-placement="bottom" data-original-title="{{ 'code.member' | trans({}, 'backend') }}">
+                                    <i class="icon-magic-wand"></i>
+                                    {{ 'code.member' | trans({}, 'backend') }}: {{ app.user.code }}
+                                </button>
+                            </div>
+                            <!--END CODE USER-->
+                            <!-- BEGIN GROUP INFORMATION -->
+                            <div class="btn-group-red btn-group">
+                                <button type="button" class="btn btn-sm dropdown-toggle tooltips" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" data-placement="bottom" data-original-title="{{ 'language' | trans({}, 'backend') }}">
+                                    <i style="margin-left: -1px" class="icon-globe"></i>
+                                </button>
+                                <ul class="dropdown-menu-v2" role="menu">
+                                    {% set uri = app.request.pathInfo %}
+                                    {% set params = app.request.attributes.get('_route_params')|merge(app.request.query.all()) %}
+                                    {% for key, locale in site_locales %}
+                                        {% if key == app.request.locale %}
+                                            <li class="active">
+                                                <a>
+                                                    {{ locale }}
+                                                </a>
+                                            </li>
+                                        {% else %}
+                                            <li>
+                                                <a href="{{ path('app_switch_language',{'uri':app.request.pathInfo,'lng':key,'params':params}) }}">
+                                                    {{ locale }}
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <!-- END GROUP INFORMATION -->
+                            <!-- BEGIN GROUP NOTIFICATION -->
+                            {{ render(controller('AppBundle:Dashboard:notificationMessage')) }}
+                            <!-- END GROUP NOTIFICATION -->
+                            <!-- BEGIN GROUP INFORMATION -->
+                            <div class="btn-group-red btn-group">
+                                <button type="button" class="btn btn-sm dropdown-toggle tooltips" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" data-placement="bottom" data-original-title="{{ 'publish' | trans({}, 'backend') }}">
+                                    <i style="margin-left: -1px" class="icon-plus"></i>
+                                </button>
+                                <ul class="dropdown-menu-v2" role="menu">
+                                    <li class="active">
+                                        <a href="{{ path('app_admin_post_new') }}">{{ 'new_post'|trans({},'backend') }}</a>
+                                    </li>
+                                    {#<li>
+                                        <a href="#">New Comment</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Share</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="#">Comments <span class="badge badge-success">4</span> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Feedbacks <span class="badge badge-danger">2</span> </a>
+                                    </li>#}
+                                </ul>
+                            </div>
+                            <!-- END GROUP INFORMATION -->
+                            <!-- BEGIN USER PROFILE -->
+                            <div class="btn-group-img btn-group">
+                                <button type="button" class="btn btn-sm dropdown-toggle tooltips" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" data-placement="bottom" data-original-title="{{ 'my_profile' | trans({}, 'backend') }}">
+                                    <span>{{ 'welcome_mesage' | trans({},'backend') }}, {{ app.user.username }}</span>
+                                    {% if app.user.picture == null %}
+                                        <img alt="personal image"
+                                             src="{{ asset('backend-metronic/img/avatars/avatar.jpg') }}"/>
+                                    {% else %}
+                                        {% set url = constant('IMAGES_UPLOAD_DIR',app.user)~app.user.picture %}
+                                        <img alt="personal image" src="{{ asset(url) }}" class="">
+                                    {% endif %}
+                                </button>
+                                <ul class="dropdown-menu-v2" role="menu">
+                                    <li>
+                                        <a href="{{ path('fos_user_profile_show') }}">
+                                            <i class="icon-user"></i> {{ "my_profile" | trans({},'backend') }}
+                                        </a>
+                                    </li>
+                                    <!--<li>-->
+                                    <!--<a href="app_calendar.html">-->
+                                    <!--<i class="icon-calendar"></i> My Calendar </a>-->
+                                    <!--</li>-->
+                                    <li>
+                                        <a href="{{ path('app_admin_messages_index') }}">
+                                            <i class="icon-envelope-open"></i> {{ 'my_messages'|trans({},'backend') }}
+                                            {#<span class="badge badge-danger"> 3 </span>#}
+                                        </a>
+                                    </li>
+                                    <!--<li>-->
+                                    <!--<a href="app_todo_2.html">-->
+                                    <!--<i class="icon-rocket"></i> My Tasks <span class="badge badge-success">-->
+                                    <!--7 </span>-->
+                                    <!--</a>-->
+                                    <!--</li>-->
+                                    <li class="divider">
+                                    </li>
+                                    {#<li>#}
+                                    {#<a href="#">#}
+                                    {#<i class="icon-lock"></i> Lock Screen </a>#}
+                                    {#</li>#}
+                                    <li>
+                                        <a href="{{ path('fos_user_security_logout') }}">
+                                            <i class="icon-key"></i> {{ 'log_out'|trans({},'backend') }} </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- END USER PROFILE -->
+                            <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                            {#<button type="button" class="quick-sidebar-toggler" data-toggle="collapse">#}
+                            {#<span class="sr-only">Toggle Quick Sidebar</span>#}
+                            {#<i class="icon-logout"></i>#}
+                            {#</button>#}
+                            <!-- END QUICK SIDEBAR TOGGLER -->
+                        </div>
+                        <!-- END TOPBAR ACTIONS -->
+                    </div>
+                    <!-- BEGIN HEADER MENU -->
+                    <div class="nav-collapse collapse navbar-collapse navbar-responsive-collapse">
+                        <ul class="nav navbar-nav">
+                            {% include '::admin_menu.html.twig' %}
+                        </ul>
+                    </div>
+                    <!-- END HEADER MENU -->
+                </div>
+                <!--/container-->
+            </nav>
+        </header>
+    {% endblock header_tag %}
+
+    {% block section_tag %}
+        <div class="container-fluid">
+            <div class="page-content" style="background: #FFFFFF">
+                <div class="breadcrumbs" style="margin-bottom: 10px;">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{{ path('app_admin_dashboard') }}">{{ 'home'|trans({},'backend') }}</a>
+                        </li>
+                        {% block breadcrumb %}{% endblock %}
+                    </ol>
+                    <h1>{% block page_title %}{% endblock %}</h1>
+                    <div class="text-right">{% block page_menu %}{% endblock page_menu %}</div>
+                </div>
+                {% if app.session.flashbag.peekAll()|length > 0 %}
+                    <div class="row">
+                        <div class="col-xs-12">
+                            {% from ':macros:flash.html.twig' import flash %}
+                            {% for type, messages in app.session.flashbag.all() %}
+                                {% for message in messages %}
+                                    {{ flash(type,message) }}
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% block page_body %}{% endblock page_body %}
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="copyright">
+                        {{ 'now'|date('Y') }} &copy; <a href="{{ path('homepage') }}"
+                                                        title="{{ site_name }}">{{ site_name }}</a>
+                    </p>
+                </div>
+                <div class="col-md-6" style="text-align: right; padding-right: 35px">
+                    <p class="copyright">
+                        <a href="{{ path('privacy') }}" style="text-align: right">{{ 'privacy.police' | trans({}, 'backend') }}</a> | <a href="{{ path('terms') }}" style="text-align: right">{{ 'terms.conditions' | trans({}, 'backend') }}</a>
+                    </p>
+                </div>
+            </div>
+
+            <a href="#" class="go2top"><i class="icon-arrow-up"></i></a>
+        </div>
+    {% endblock section_tag %}
+
+    {% block body_end_before_js %}
+        <a href="javascript:;" class="page-quick-sidebar-toggler"><i class="icon-login"></i></a>
+        <!-- END QUICK SIDEBAR -->
+    {% endblock body_end_before_js %}
+
+    {% block body_end %}
+</div>
+{% endblock body_end %}

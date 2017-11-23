@@ -1,0 +1,66 @@
+/* IE8 CSS */
+.ie8 .one-page-parallax .banner-icon {
+	display:none;
+	visibility:hidden;
+}
+.ie8 .vc_menu .vc_primary-menu > ul div li:hover {
+	background: #666;
+}
+.ie8 .vc_menu .vc_primary-menu > ul > li:hover > a > i{
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2); /* IE8 */	
+}
+.ie8 .vc_menu .vc_primary-menu > ul > li .vc_menu-2-h {
+	padding:20px 0;
+}
+.ie8 .vc_menu-search .vc_menu-search-text{
+	background: url(../img/color-white-20.png);
+}
+.ie8 .vc_menu .vc_primary-menu > ul > li .vc_mega-menu .vc_btn{
+	background:url(../img/color-black-40.png);
+}
+.ie8 .vc_menu .vc_primary-menu > ul > li .vc_mega-menu .vc_btn:hover{
+	background:none;
+}
+
+.ie8 .vc_metro-slider ul li .mouse-over {
+	background:url(../img/color-black-60.png);
+}
+.ie8 .vc_metro-slider ul li a:hover .mouse-over, .ie8 .vc_metro-slider .anim-rotate a:hover .mouse-over{
+	-ms-filter: none; /*IE*/
+	filter: none; /*IE*/	
+}
+.ie8 .vc_metro-slider .anim-rotate a:hover > img{
+	-ms-filter:none;
+}
+.ie8 .vc_anim .vc_hover .vc_icon a{
+	background:url(../img/color-white-90.png);
+}
+.ie8 .vc_anim .vc_hover .vc_icon{
+	margin-right:0;
+}
+.ie8 .vc_anim .vc_hover .vc_icon:first-child{
+	margin-right:10px;
+}
+.ie8 .vc_anim .vc_hover .vc_icon a{
+	padding:10px 5px 10px 10px;
+}
+.ie8 .vc_anim .vc_hover .vc_icon a:hover{
+	background: #333;
+	color:#FFF;
+}
+.vc_newsletter-form .vc_btn{
+	margin-top:-7px;
+	line-height:19px;
+}
+.vc_menu-search .vc_menu-search-text{
+	height: 31px;
+}
+
+@media (max-width: 991px) {
+	.ie8 header .vc_menu .vc_primary-menu > ul{
+		background:url(../img/color-black-90.png);		
+	}
+}
+.one-page-parallax .text-col, .one-page-parallax .newsletter-col, .one-page-parallax .vc_features-block .first-row-col-1, .one-page-parallax .vc_features-block .first-row-col-2, .one-page-parallax .vc_features-block .second-row-col-1, .one-page-parallax .vc_features-block .second-row-col-2, .one-page-parallax .vc_pricing-tables h2, .one-page-parallax .vc_pricing-tables .vc_pricing-table, .one-page-parallax .vc_portfolio, .one-page-parallax .vc_client h4, .one-page-parallax .vc_client .subtitle, .one-page-parallax .vc_client .vc_carousel-wrap, .one-page-parallax .vc_testimonial-block .block-title, .one-page-parallax .vc_testimonial-block .text-1, .one-page-parallax .vc_testimonial-block .text-2, .one-page-parallax .vc_map, .one-page-parallax .vc_contact-us .text-1, .one-page-parallax .vc_contact-us .text-2{
+	opacity:1 !important;	
+}

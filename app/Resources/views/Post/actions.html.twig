@@ -1,0 +1,11 @@
+<div class="btn-group drop">
+    <a class="btn btn-sm btn-primary" href="{{ path('app_admin_post_edit',{'id':id}) }}"><i class="fa fa-edit"></i> {{ 'posts.edit'|trans({},'backend') }}</a>
+    <button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><a href="{{ path('app_admin_post_delete',{'id':id}) }}"><i class="fa fa-trash-o"></i> {{ 'delete'|trans({},'resources') }}</a></li>
+        <li class="divider"></li>
+        {% if hasComment %}
+            <li><a href="{{ path('app_admin_post_comments_list', {'post': id}) }}"><i class="fa fa-list"></i> {{ 'comments.list'|trans({},'backend') }}</a></li>
+        {% endif %}
+    </ul>
+</div>

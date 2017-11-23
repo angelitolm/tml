@@ -1,0 +1,14 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'user.profile_other'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'user.profile_other'|trans({},'backend') }}{% endblock %}
+
+{% block breadcrumb %}
+    <li>{{ 'user.profile_other'|trans({},'backend') }}</li>
+{% endblock %}
+
+{% block page_body %}
+    <div class="page-content" style="background: #F1F3FA">
+    {% include "FOSUserBundle:Profile:other_content.html.twig" %}
+    </div>
+{% endblock page_body %}

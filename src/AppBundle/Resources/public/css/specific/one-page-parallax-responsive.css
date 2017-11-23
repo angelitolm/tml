@@ -1,0 +1,59 @@
+@media (max-width: 991px) {
+	.one-page-parallax .vc_banner .banner-icon.icon-1{ 	
+		left:120px;	
+	}
+	.one-page-parallax .vc_banner .banner-icon.icon-2{
+		left:-70px;	
+	}
+	.one-page-parallax .vc_banner .banner-icon.icon-3{
+		left:40px;	
+	}
+	.one-page-parallax .vc_banner .banner-icon.icon-4{
+		left:260px;	
+	}
+	.one-page-parallax .vc_banner .banner-icon.icon-5{ 	
+		left:470px;	
+	}
+	.one-page-parallax .vc_banner .banner-icon.icon-6{
+		left:680px;
+	}
+	.one-page-parallax .vc_banner .banner-icon.icon-7{
+		left:540px;	
+	}
+	.one-page-parallax .vc_banner .banner-icon.icon-8{
+		left:360px;	
+	}
+	.one-page-parallax .vc_features-block .second-row-col-2{
+		margin-bottom:0;
+	}
+	.one-page-parallax .vc_top-newsletter{
+		margin-top:0; 
+		position:relative;	
+	}		
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	.one-page-parallax .vc_banner .banner-icon.icon-1{ 	
+		left:250px;	
+	}
+	.one-page-parallax .vc_banner .banner-icon.icon-2{
+		left:60px;	
+	}
+	.one-page-parallax .vc_banner .banner-icon.icon-3{
+		left:170px;	
+	}
+	.one-page-parallax .vc_banner .banner-icon.icon-4{
+		left:390px;	
+	}
+	.one-page-parallax .vc_banner .banner-icon.icon-5{ 	
+		left:600px;	
+	}
+	.one-page-parallax .vc_banner .banner-icon.icon-6{
+		left:760px;
+	}
+	.one-page-parallax .vc_banner .banner-icon.icon-7{
+		left:670px;	
+	}
+	.one-page-parallax .vc_banner .banner-icon.icon-8{
+		left:490px;	
+	}	
+}

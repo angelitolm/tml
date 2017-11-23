@@ -1,0 +1,46 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'certified'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'certified'|trans({},'backend') }}{% endblock page_title %}
+
+{% block page_body %}
+    <div class="">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                {% for i in 1..3 %}
+                    {% set img_url = 'backend-metronic/img/rotulado.png' %}
+                    {% set ptos = 0 %}
+
+                    {% if testCourses[i] is defined %}
+                        {% set ptos = testCourses[i].punctuation %}
+                        {% if i is same as(3) %}
+                            {% set img_url = 'backend-metronic/img/certified_pro.png' %}
+                        {% elseif i is same as(2) %}
+                            {% set img_url = 'backend-metronic/img/certified_superior.png' %}
+                        {% else %}
+                            {% set img_url = 'backend-metronic/img/certified_basic.png' %}
+                        {% endif %}
+                    {% endif %}
+
+                    <div class="col-md-4">
+                        <img src="{{ asset(img_url) }}">
+                        {% if ptos > 0 %}
+                            <h3>
+                                <strong>{{ 'punctuation' | trans({}, 'backend') }}:</strong>
+                                {{ ptos }}
+                            </h3>
+                            {% for y in 1..5 %}
+                                {% if ptos >= y %}
+                                    <i class="fa fa-star text-warning"></i>
+                                {% else %}
+                                    <i class="fa fa-star-o"></i>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock page_body %}

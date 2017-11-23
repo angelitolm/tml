@@ -1,0 +1,427 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Mass&oacute; #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+
+{% block banner_title %}
+    <h1>Noticias <span class="vc_main-color">TML</span>
+    </h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">Noticias TML
+        </li>
+    </ul>
+{% endblock %}
+
+
+{% block content %}
+    <div class="vc_single-blog block" style="margin-bottom: 35px">
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 single-blog">
+                        <div class="vc_blog-list">
+                            <div class="header">
+                                <div class="entry-date">
+                                    <div class="day">{{ news.created|date('d') }}</div>
+                                    <div class="month">{{ news.created|date('M') }}</div>
+                                </div>
+                                <div class="title">
+                                    <h3><a href=""> {{ news.title }} </a></h3>
+                                    <span class="year info"><i
+                                                class="glyphicon glyphicon-calendar"></i> {{ news.created|date('Y') }}</span><span
+                                            class="user info"> <i class="fa fa-user"> </i> <a
+                                                href="#"> Admin</a> </span> <span class="comments info"> <i
+                                                class="fa fa-comments"> </i> <a href="#comment-title">16</a> </span>
+                                    <span class="taxonomy info"> <i class="fa fa-tags"> </i>
+                                        {% for category in news.categories %}
+                                            <a href="#"> {{ category }} </a>
+                                        {% endfor %}
+                                    </span></div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <article class="blog-row clearfix">
+                                <div class="blog-left">
+                                    {% set url = news.image is not empty ? constant('IMAGES_UPLOAD_DIR',news)~news.image : 'backend/img/photos/news-blur.jpg' %}
+                                    <div class="vc_anim vc_anim-slide"><a href="{{ asset(url) }}" class="vc_preview">
+                                            <img alt="example image" src="{{ asset(url) }}"/> </a>
+
+                                        <div class="vc_hover">
+                                            <div class="hover-wrapper">
+                                                <div class="icon-wrapper">
+                                                    <ul>
+                                                        <li class="vc_icon"><a data-rel="prettyPhoto"
+                                                                               href="{{ asset(url) }}"> <i
+                                                                        class="fa fa-search-plus"> </i> </a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="blog-right clearfix">
+                                    <div class="description">
+                                        <p>
+                                            {{ news.body }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                            {#<div class="vc_share-post">#}
+                                {#<div class="text">#}
+                                    {#<h4 class="vc_main-color"><i class="icon-share-alt"></i></h4>#}
+                                {#</div>#}
+                                {#<div class="widget">#}
+                                    {#<!-- AddThis Button BEGIN -->#}
+                                    {#<a class="addthis_button"#}
+                                       {#href=""><img#}
+                                                {#alt="example image"#}
+                                                {#src="" width="125"#}
+                                                {#height="16" style="border:0"/></a>#}
+                                    {#<script type="text/javascript">var addthis_config = {"data_track_addressbar": true};</script>#}
+                                    {#<script type="text/javascript"#}
+                                            {#src=""></script>#}
+                                    {#<!-- AddThis Button END -->#}
+                                {#</div>#}
+                            {#</div>#}
+                            {#<div class="vc_separator comment-separator"></div>#}
+
+                        </div>
+                        {#<div class="vc_comments clearfix" id="comments">#}
+                        {#<h3 class="comments-title">Comments</h3>#}
+                        {#<ul class="commentlist clearfix">#}
+                        {#<li id="li-comment-1" class="comment">#}
+                        {#<div class="comment-wrap clearfix" id="comment-1">#}
+                        {#<div class="comment-meta">#}
+                        {#<div class="comment-author"><img alt="example image"#}
+                        {#src="">#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#<div class="comment-content clearfix">#}
+                        {#<div class="comment-author">John Doe</div>#}
+                        {#<div class="comment-date"><a title="Permalink to this comment"#}
+                        {#href="#">April 24, 2012 at 10:46 am</a></div>#}
+                        {#<div class="comment-reply"><a href="#" class="vc_btn btn-small"><i#}
+                        {#class="fa fa-reply"></i>Reply</a></div>#}
+                        {#<div class="comment-arrow"></div>#}
+                        {#<p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id#}
+                        {#dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante#}
+                        {#venenatis dapibus posuere velit aliquet.</p>#}
+                        {#</div>#}
+                        {#<div class="clear"></div>#}
+                        {#</div>#}
+                        {#<ul>#}
+                        {#<li id="li-comment-2" class="comment">#}
+                        {#<div class="comment-wrap clearfix" id="comment-2">#}
+                        {#<div class="comment-meta">#}
+                        {#<div class="comment-author"><img alt="example image"#}
+                        {#src="">#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#<div class="comment-content clearfix">#}
+                        {#<div class="comment-author">John Doe</div>#}
+                        {#<div class="comment-date"><a title="Permalink to this comment"#}
+                        {#href="#">April 24, 2012 at 10:46 am</a>#}
+                        {#</div>#}
+                        {#<div class="comment-reply"><a href="#" class="vc_btn btn-small"><i#}
+                        {#class="fa fa-reply"></i>Reply</a></div>#}
+                        {#<div class="comment-arrow"></div>#}
+                        {#<p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue.#}
+                        {#Nullam id dolor id nibh ultricies vehicula ut id elit. Integer#}
+                        {#posuere erat a ante venenatis dapibus posuere velit aliquet.</p>#}
+                        {#</div>#}
+                        {#<div class="clear"></div>#}
+                        {#</div>#}
+                        {#</li>#}
+                        {#<li id="li-comment-3" class="comment">#}
+                        {#<div class="comment-wrap clearfix" id="comment-3">#}
+                        {#<div class="comment-meta">#}
+                        {#<div class="comment-author"><img alt="example image"#}
+                        {#src="">#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#<div class="comment-content clearfix">#}
+                        {#<div class="comment-author">John Doe</div>#}
+                        {#<div class="comment-date"><a title="Permalink to this comment"#}
+                        {#href="#">April 24, 2012 at 10:46 am</a>#}
+                        {#</div>#}
+                        {#<div class="comment-reply"><a href="#" class="vc_btn btn-small"><i#}
+                        {#class="fa fa-reply"></i>Reply</a></div>#}
+                        {#<div class="comment-arrow"></div>#}
+                        {#<p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue.#}
+                        {#Nullam id dolor id nibh ultricies vehicula ut id elit. Integer#}
+                        {#posuere erat a ante venenatis dapibus posuere velit aliquet.</p>#}
+                        {#</div>#}
+                        {#<div class="clear"></div>#}
+                        {#</div>#}
+                        {#<ul>#}
+                        {#<li id="li-comment-4" class="comment">#}
+                        {#<div class="comment-wrap clearfix" id="comment-4">#}
+                        {#<div class="comment-meta">#}
+                        {#<div class="comment-author"><img alt="example image"#}
+                        {#src="">#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#<div class="comment-content clearfix">#}
+                        {#<div class="comment-author">John Doe</div>#}
+                        {#<div class="comment-date"><a#}
+                        {#title="Permalink to this comment"#}
+                        {#href="#">April 24, 2012 at 10:46 am</a></div>#}
+                        {#<div class="comment-reply"><a href="#"#}
+                        {#class="vc_btn btn-small"><i#}
+                        {#class="fa fa-reply"></i>Reply</a></div>#}
+                        {#<div class="comment-arrow"></div>#}
+                        {#<p>Donec sed odio dui. Nulla vitae elit libero, a pharetra#}
+                        {#augue. Nullam id dolor id nibh ultricies vehicula ut id#}
+                        {#elit. Integer posuere erat a ante venenatis dapibus#}
+                        {#posuere velit aliquet.</p>#}
+                        {#</div>#}
+                        {#<div class="clear"></div>#}
+                        {#</div>#}
+                        {#</li>#}
+                        {#</ul>#}
+                        {#</li>#}
+                        {#</ul>#}
+                        {#</li>#}
+                        {#<li id="li-comment-5" class="comment">#}
+                        {#<div class="comment-wrap clearfix" id="comment-5">#}
+                        {#<div class="comment-meta">#}
+                        {#<div class="comment-author"><img alt="example image"#}
+                        {#src="">#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#<div class="comment-content clearfix">#}
+                        {#<div class="comment-author">John Doe</div>#}
+                        {#<div class="comment-date"><a title="Permalink to this comment"#}
+                        {#href="#">April 24, 2012 at 10:46 am</a></div>#}
+                        {#<div class="comment-reply"><a href="#" class="vc_btn btn-small"><i#}
+                        {#class="fa fa-reply"></i>Reply</a></div>#}
+                        {#<div class="comment-arrow"></div>#}
+                        {#<p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id#}
+                        {#dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante#}
+                        {#venenatis dapibus posuere velit aliquet.</p>#}
+                        {#</div>#}
+                        {#<div class="clear"></div>#}
+                        {#</div>#}
+                        {#</li>#}
+                        {#</ul>#}
+                        {#<div class="clear"></div>#}
+                        {#<div class="vc_separator comment-separator"></div>#}
+                        {#<div class="clearfix" id="respond">#}
+                        {#<h3>Leave a <span>Comment</span></h3>#}
+
+                        {#<form id="commentform" method="post" action="#" class="clearfix">#}
+                        {#<div class="row">#}
+                        {#<div class="col-md-7">#}
+                        {#<div class="form-group">#}
+                        {#<label for="author">Name <span class="vc_red">*</span></label>#}
+
+                        {#<div class="controls">#}
+                        {#<input type="text" tabindex="1" size="22" value="" id="author"#}
+                        {#name="author">#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#<div class="row">#}
+                        {#<div class="col-md-7">#}
+                        {#<div class="form-group">#}
+                        {#<label for="author-email">Email <span class="vc_red">*</span>#}
+                        {#<small>(will not be published)</small>#}
+                        {#</label>#}
+
+                        {#<div class="controls">#}
+                        {#<input type="text" tabindex="2" size="22" value="" id="author-email"#}
+                        {#name="author-email">#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#<div class="row">#}
+                        {#<div class="col-md-7">#}
+                        {#<div class="form-group">#}
+                        {#<label for="url">Website</label>#}
+
+                        {#<div class="controls">#}
+                        {#<input type="text" tabindex="3" size="22" value="" id="url"#}
+                        {#name="url">#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#<div class="row">#}
+                        {#<div class="col-md-9">#}
+                        {#<div class="form-group">#}
+                        {#<label for="comment">Comment</label>#}
+
+                        {#<div class="controls">#}
+                        {#<textarea tabindex="4" rows="10" cols="58" name="comment"#}
+                        {#id="comment"></textarea>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#<div class="row">#}
+                        {#<div class="col-md-6">#}
+                        {#<div class="form-group">#}
+                        {#<button class="vc_btn" value="Submit" tabindex="5" id="submit-button"#}
+                        {#type="submit" name="submit">Submit Comment#}
+                        {#</button>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#</form>#}
+                        {#</div>#}
+                        {#</div>#}
+                    </div>
+                    <!-- col-md-9 -->
+                    <div class="col-md-3 sidebar">
+                        {#<div id="vc_links-widget" class="sidebar-widget widget block">#}
+                        {#<div class="vc_links-widget">#}
+                        {#<h3>Categories</h3>#}
+
+                        {#<div class="content">#}
+                        {#<ul class="vc_li">#}
+                        {#<li><a href="#">Drupal</a></li>#}
+                        {#<li><a href="#">Wordpress</a></li>#}
+                        {#<li><a href="#">HTML</a></li>#}
+                        {#<li><a href="#">CSS</a></li>#}
+                        {#<li><a href="#">Web Design</a></li>#}
+                        {#</ul>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#</div>#}
+                        <div id="vc_latest-portfolio-widget" class="sidebar-widget widget block">
+                            <div class="vc_portfolio-widget">
+                                <h3 class="pull-left">
+                                    Noticias <span class="vc_main-color"> TML </span>
+                                </h3>
+
+                                <div class="vc_carousel-control">
+                                    <a href="#"> <i class="fa fa-chevron-left"> </i> </a> <a href="#"> <i
+                                                class="fa fa-chevron-right"> </i> </a>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="vc_carousel-wrap">
+                                    <div class="vc_carousel clearfix">
+                                        {% for new1 in news1 %}
+                                            <div class="vc_carousel-column">
+                                                <div class="vc_anim vc_anim-slide"><a
+                                                            href=""
+                                                            class="vc_preview">
+                                                        {% set url = new1.image is not empty ? constant('IMAGES_UPLOAD_DIR',new1)~new1.image : 'backend/img/photos/news-blur.jpg' %}
+                                                        <img
+                                                                alt="example image"
+                                                                src="{{ asset(url) }}"/>
+                                                    </a>
+
+                                                    <div class="vc_hover">
+                                                        <div class="hover-wrapper">
+                                                            <div class="text-wrapper">
+                                                                <h4> {{ new1.title }} </h4>
+                                                            </div>
+                                                            <div class="icon-wrapper">
+                                                                <ul>
+
+                                                                    <li class="vc_icon"><a
+                                                                                data-rel="prettyPhoto[portfolio]"
+                                                                                href="{{ asset(url) }}">
+                                                                            <i
+                                                                                    class="fa fa-search-plus"> </i> </a>
+                                                                    </li>
+                                                                    <li class="vc_icon"><a
+                                                                                href="{{ path('news',{'id':new1.id}) }}">
+                                                                            <i
+                                                                                    class="fa fa-link"> </i> </a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    <!--vc_carousel -->
+                                </div>
+                                <!-- vc_carousel-wrap -->
+                                <div class="clearfix"></div>
+                            </div>
+                            <!-- vc_portfolio-widget -->
+                        </div>
+                        {#<div id="vc_tabs-widget" class="sidebar-widget widget block">#}
+                        {#<div class="vc_tabs-widget">#}
+                        {#<div class="content">#}
+                        {#<div class="tabs">#}
+                        {#<ul class="nav nav-tabs">#}
+                        {#<li class="active"><a href="#home-tab" data-toggle="tab">About</a></li>#}
+                        {#<li><a href="#posts-tab" data-toggle="tab">Popular</a></li>#}
+                        {#</ul>#}
+                        {#<div class="tab-content">#}
+                        {#<div class="tab-pane active" id="home-tab">#}
+                        {#<p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem#}
+                        {#accusantium doloremque laudantium, totam rem aperiam, eaque ipsa#}
+                        {#quae ab illo inventore veritatis et quasi architecto beatae vitae#}
+                        {#dicta sunt explicabo. </p>#}
+                        {#</div>#}
+                        {#<div class="tab-pane sidebar-widget" id="posts-tab">#}
+                        {#<div class="vc_blog-list">#}
+                        {#<article class="blog-row clearfix">#}
+                        {#<div class="blog-left">#}
+                        {#<div><a href="#" class="vc_preview"> <img#}
+                        {#alt="example image"#}
+                        {#src="img/blog/01-square.jpg"/> </a></div>#}
+                        {#</div>#}
+                        {#<div class="blog-right clearfix">#}
+                        {#<h3><a href="#"> Starting a new business </a></h3>#}
+                        {#<span class="comments"> <i class="fa fa-comments"> </i> 16 </span>#}
+                        {#</div>#}
+                        {#</article>#}
+                        {#<article class="blog-row clearfix">#}
+                        {#<div class="blog-left">#}
+                        {#<div><a href="#" class="vc_preview"> <img#}
+                        {#alt="example image"#}
+                        {#src="img/blog/02-square.jpg"/> </a></div>#}
+                        {#</div>#}
+                        {#<div class="blog-right">#}
+                        {#<h3><a href="#"> Building Up Your Portfolio </a></h3>#}
+                        {#<span class="comments"> <i class="fa fa-comments"> </i> 16 </span>#}
+                        {#</div>#}
+                        {#</article>#}
+                        {#<article class="blog-row">#}
+                        {#<div class="blog-left">#}
+                        {#<div><a href="#" class="vc_preview"> <img#}
+                        {#alt="example image"#}
+                        {#src="img/blog/03-square.jpg"/> </a></div>#}
+                        {#</div>#}
+                        {#<div class="blog-right">#}
+                        {#<h3><a href="#"> Creativity in Positivity </a></h3>#}
+                        {#<span class="comments"> <i class="fa fa-comments"> </i> 16 </span>#}
+                        {#</div>#}
+                        {#</article>#}
+                        {#</div>#}
+                        {#<div class="clearfix"></div>#}
+                        {#</div>#}
+                        {#<!-- .tab-pane-->#}
+                        {#</div>#}
+                        {#<!-- .tab-content-->#}
+                        {#</div>#}
+                        {#<!-- .tabs-->#}
+                        {#</div>#}
+                        {#<!-- .content-->#}
+                        {#</div>#}
+                        {#<!-- .vc_tabs-widget-->#}
+                        {#</div>#}
+
+
+                    </div>
+                    <!-- .sidebar .col-md-3-->
+                </div>
+                <!-- row-->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- wrapper -->
+    </div>
+    <!-- block -->
+{% endblock %}

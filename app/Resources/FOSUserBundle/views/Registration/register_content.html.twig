@@ -1,0 +1,36 @@
+{#{% trans_default_domain 'FOSUserBundle' %}
+
+{% form_theme form ':form:fields-material.html.twig' %}
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+    {{ form_widget(form) }}
+    <div class="col-xs-12">
+        <div class="togglebutton">
+            <label> <input type="checkbox" name="terms" value="1"> {{ 'agree_with_terms_and_conditions'|trans({},'FOSUserBundle') }}</label>
+        </div>
+    </div>
+    <div class="col-md-12 text-center mgbt-xs-2">
+        <button type="submit" class="btn vd_bg-green vd_white width-100">
+            {{ 'registration.submit'|trans({},'FOSUserBundle') }} <i class="fa fa-edit"></i>
+        </button>
+    </div>
+</form>#}
+
+{% trans_default_domain 'FOSUserBundle' %}
+{% form_theme form ':form:fields-vencorp.html.twig' %}
+
+<h3 style="border-left: 6px solid #38A5DD; padding-left: 20px; font-size:30px;"> C&oacute;digo de Invitaci&oacute;n </h3>
+<div class="info">
+    <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+        {{ form_row(form.code) }}
+        <h3 style="border-left: 6px solid #38A5DD; padding-left: 20px; font-size:30px;"> Datos Personales </h3>
+        {{ form_widget(form) }}
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="{{ path('fos_user_security_login') }}">
+                    {{ 'security.layout.login'|trans({},'security') }} <i class="fa fa-angle-double-right fa-fw"></i>
+                </a>
+                <button type="submit" class="vc_btn pull-right"><i class="fa fa-check"></i> Enviar </button>
+            </div>
+        </div>
+    </form>
+</div>

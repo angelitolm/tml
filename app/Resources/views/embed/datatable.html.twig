@@ -1,0 +1,17 @@
+{% extends ":embed:panel.html.twig" %}
+
+{% block box_content %}
+  <table class="table table-striped table-bordered table-hover {% block component %}dtComponent{% endblock component %}">
+    <thead>
+      {% block table_head_container %}
+      <tr>
+        {% block table_head %}{% endblock table_head %}
+        <th data-searchable="false" data-orderable="false" data-type="html" data-data="actions" data-width="200px"></th>
+      </tr>
+      {% endblock %}
+    </thead>
+    <tbody>
+      {% block table_body %}{% endblock table_body %}
+    </tbody>
+  </table>
+{% endblock box_content %}

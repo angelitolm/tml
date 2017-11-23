@@ -1,0 +1,9 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% block title %}{{ 'resetting.request.check_email'|trans({},'FOSUserBundle') }}{% endblock title %}
+{% block page_title %}{{ 'resetting.request.check_email'|trans({},'FOSUserBundle') }}{% endblock %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+  {% from ':macros:flash.html.twig' import advanced_flash %}
+  {{ advanced_flash('success','resetting.request.password_send_sucessfully'|trans({},'FOSUserBundle'),'resetting.check_email'|trans({'%email%': email},'FOSUserBundle'),'',0) }}
+{% endblock %}

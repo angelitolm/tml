@@ -1,0 +1,13 @@
+<div class="row text-right">
+  <div class="col-xs-12">
+    {#<button class="btn green" type="submit" name="new_edit"><i class="fa fa-fw fa-edit"></i> {{ 'create.and.edit'|trans({},'resources') }}</button>#}
+    <button class="btn green" type="submit" name="new_list"><i class="fa fa-fw fa-list"></i> {{ 'create.and.list'|trans({},'resources') }}</button>
+    {#<button class="btn green" type="submit" name="new_new"><i class="fa fa-fw fa-plus"></i> {{ 'create.and.new'|trans({},'resources') }}</button>#}
+    <a class="btn black" href="{% block cancel_link %}{% endblock cancel_link %}"><i class="fa fa-fw fa-times-circle"></i> {{ 'cancel'|trans({},'resources') }}</a>
+  </div>
+  <div class="col-xs-12">
+    <span class="help-inline text-info">
+      {{ 'the.field.marqued.are.required'|trans({},'resources') }}
+    </span>
+  </div>
+</div>

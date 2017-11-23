@@ -1,0 +1,206 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Massó #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+
+
+
+{% block banner_title %}
+    <h1>Preguntas <span class="vc_main-color">y Respuestas</span></h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">Preguntas y Respuestas</li>
+    </ul>
+{% endblock %}
+
+
+{% block sub_banner %}
+
+{% endblock %}
+
+
+{% block content %}
+    <div class="col-md-12" style="margin-bottom: 35px">
+
+        <h3>Preguntas y Respuestas Frecuentes – FAQ</h3>
+
+        <p>Aquí usted encontrará las preguntas y respuestas más frecuentes por cualquier usuario o miembro que visite
+            nuestro sitio o que forme parte de la oportunidad TML.</p>
+
+        <div id="vc_accordion-widget" class="accordion">
+            <div class="accordion-group">
+                <div class="accordion-heading"><a href="#collapseOne" data-parent="#vc_accordion-widget"
+                                                  data-toggle="collapse" class="accordion-toggle"> <i
+                                class="fa fa-question-circle"></i> ¿Qué es TML4you?</a></div>
+                <div class="accordion-body collapse" id="collapseOne">
+                    <div class="accordion-inner">
+                        <p>TML4you es una fórmula de negocio con el objetivo de crear el interés, la confianza, la
+                            decisión, la acción y los resultados que nosotros los emprendedores y desarrolladores de
+                            negocios independientes en las redes de mercado o MLM, soñamos con hacer realidad en cada
+                            nuevo miembro que es invitado a las oportunidades de negocios con productos de consumo
+                            personal y que todos podamos ser beneficiados de forma positiva siempre.</p>
+                        {#<ul class="vc_li">#}
+                        {#<li>nim pariatur cliche reprehenderit</li>#}
+                        {#<li>enim eiusmod high life accusamus</li>#}
+                        {#<li>3 wolf moon officia aute</li>#}
+                        {#<li>Quinoa nesciunt laborum eiusmod</li>#}
+                        {#</ul>#}
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading"><a href="#collapseTwo" data-parent="#vc_accordion-widget"
+                                                  data-toggle="collapse" class="accordion-toggle"> <i
+                                class="fa fa-question-circle"></i> ¿Qué son las Redes de Mercadeo o Network Marketing?
+                    </a></div>
+                <div class="accordion-body collapse" id="collapseTwo">
+                    <div class="accordion-inner"> Es una estrategia de marketing en la que los vendedores son
+                        retribuidos no solo por las ventas que ellos mismos generan, sino también por las ventas
+                        generadas por los vendedores que forman parte de su estructura organizativa. “Marketing” o
+                        Mercadeo es la repartición de bienes o servicios del fabricante o proveedor al consumidor.
+                        “Network Marketing” o Red de Mercadeo se refiere al sistema de compensación (sistema de
+                        retribución o pago) previsto para aquellas personas que son responsables de que el producto se
+                        comercialice o el servicio se provea.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading"><a href="#collapseThree" data-parent="#vc_accordion-widget"
+                                                  data-toggle="collapse" class="accordion-toggle"> <i
+                                class="fa fa-question-circle"></i> ¿Cómo funciona TML4you?</a></div>
+                <div class="accordion-body collapse" id="collapseThree">
+                    <div class="accordion-inner"> El funcionamiento de TML4you es simple y sencillo para que sea
+                        entendible y fácil de usar por nuestros miembros. Consiste en 3 niveles de inscripción o
+                        membresía, (Miembro Básico, Miembro Superior, Miembro Profesional), los cuales le beneficiaran
+                        de diversas formas y ganando desde el primer momento en que usted se lo decida, como
+                        compensación, por las nuevas inscripciones, que usted como miembro logre hacer. Todos están bajo
+                        “Garantías Exclusivas”, que serán aplicables por el miembro si desea retractar la compra de su
+                        membresía, siempre y cuando cumpla con las condiciones implícitas en nuestras garantías.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading"><a href="#collapseFour" data-parent="#vc_accordion-widget"
+                                                  data-toggle="collapse" class="accordion-toggle"> <i
+                                class="fa fa-question-circle"></i> ¿Cómo comenzar?</a></div>
+                <div class="accordion-body collapse" id="collapseFour">
+                    <div class="accordion-inner">
+                        <p>El comenzar en TML4you es muy sencillo también, solo está en sus manos la disponibilidad de
+                            buscar un Amigo – TML, conocido por usted, que disponga y le quiera brindar su “Invitación
+                            Personal”, para que usted a través de ésta, logre registrarse y comprar una membresía. </p>
+                        {#<ul class="vc_li">#}
+                        {#<li>nim pariatur cliche reprehenderit</li>#}
+                        {#<li>enim eiusmod high life accusamus</li>#}
+                        {#<li>3 wolf moon officia aute</li>#}
+                        {#<li>Quinoa nesciunt laborum eiusmod</li>#}
+                        {#</ul>#}
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading"><a href="#collapseFive" data-parent="#vc_accordion-widget"
+                                                  data-toggle="collapse" class="accordion-toggle"> <i
+                                class="fa fa-question-circle"></i> ¿Cómo es el proceso de Registro y Compra de
+                        Membresía? </a></div>
+                <div class="accordion-body collapse" id="collapseFive">
+                    <div class="accordion-inner"> Una vez obtenida la invitación de mi Amigo – TML, con ésta iré a la
+                        página de “Servicios”, si es mi primera membresía (Miembro Básico), seleccionare la lista de
+                        precio relacionada con la misma. Una vez en el formulario de registro deberá llenar todos sus
+                        campos, comenzado por el código que es la invitación personal de su amigo hasta la aceptación de
+                        haber leído, haber entendido y haber aceptado los Términos y Condiciones establecidos por
+                        TML4you en su sitio. De haber sido validos los datos del registro el sitio lo redirigirá a
+                        PayPal, para que usted pague el valor de la membresía. Si su proceso de compra es satisfactorio,
+                        PayPal lo redirigirá de vuelta para el Panel de Control de Miembro Básico, donde usted tendrá
+                        control total de su negocio, destinado a la membresía comprada. De haber sido insatisfactorio o
+                        incompleto el proceso de compra de la membresía, PayPal, lo redirigirá al Panel de Control de
+                        Miembro Básico, pero solo podrá tener acceso a la compra de la membresía, no a ninguna de las
+                        funcionalidades ni herramientas del sistema.<br><br>
+                        Si ya ha comprado la Membresía Básica y se decide por la Superior y Profesional, solo deberá
+                        desde su propio Panel de Control acceder a la pestaña de Membresías y comprar la deseada, solo
+                        poniendo la invitación de su amigo, para hacer valida la misma y luego proceder al pago de la
+                        misma desde PayPal o desde TML-Transfer.
+
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading"><a href="#collapseSix" data-parent="#vc_accordion-widget"
+                                                  data-toggle="collapse" class="accordion-toggle"> <i
+                                class="fa fa-question-circle"></i> ¿Qué es el Miembro Básico y cuáles son sus
+                        características?</a></div>
+                <div class="accordion-body collapse" id="collapseSix">
+                    <div class="accordion-inner"> El Miembro Básico es el primer paso o primer nivel en TML4you:<br><br>
+                        <strong>Valor:</strong> $15.00 (con bono de descuento).<br>
+                        $150.00 (valor regular).<br><br>
+                        <strong>Beneficios:</strong> En el preciso momento que usted compra la membresía ya comienza a
+                        ser beneficiado,
+                        con las herramientas (Panel del Control, Cursos, Bonos, Comisiones, Blog, Miembros afiliados con
+                        descuento, etc.).<br><br>
+                        <strong>Garantías:</strong> El Miembro Básico dispone de las garantías exclusivas, siempre y
+                        cuando cumpla con
+                        las condiciones implícitas en nuestras garantías.<br><br>
+                        <strong>Nota:</strong> Solo puede invitar Miembros Básicos.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading"><a href="#collapseSeven" data-parent="#vc_accordion-widget"
+                                                  data-toggle="collapse" class="accordion-toggle"> <i
+                                class="fa fa-question-circle"></i> ¿Qué es el Miembro Superior y cuáles son sus
+                        características?</a></div>
+                <div class="accordion-body collapse" id="collapseSeven">
+                    <div class="accordion-inner"> El Miembro Superior es el segundo paso o segundo nivel en TML4you:<br><br>
+                        <strong>Valor:</strong> $30.00 (con bono de descuento).<br>
+                        $270.00 (valor regular).<br><br>
+                        <strong>Beneficios:</strong> En el preciso momento que usted compra la membresía ya comienza a
+                        ser beneficiado, con las herramientas (Panel del Control, Cursos, Bonos, Comisiones, Blog,
+                        Miembros afiliados con descuento, Miembros invitados (3), etc.).<br><br>
+                        <strong>Garantías:</strong> El Miembro Superior dispone de las garantías exclusivas, siempre y
+                        cuando cumpla con
+                        las condiciones implícitas en nuestras garantías.<br><br>
+                        <strong>Nota:</strong> Solo puede invitar Miembros Básicos, Miembros Superiores y Miembros
+                        Invitados.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading"><a href="#collapseEight" data-parent="#vc_accordion-widget"
+                                                  data-toggle="collapse" class="accordion-toggle"> <i
+                                class="fa fa-question-circle"></i> ¿Qué es el Miembro Profesional y cuáles son sus
+                        características?</a></div>
+                <div class="accordion-body collapse" id="collapseEight">
+                    <div class="accordion-inner"> El Miembro Profesional es el tercer paso o tercer nivel en TML4you:<br><br>
+                        <strong>Valor:</strong> $250.00 (con bono de descuento).<br>
+                        $2250.00 (valor regular).<br><br>
+                        <strong>Beneficios:</strong> En el preciso momento que usted compra la membresía ya comienza a
+                        ser beneficiado, con las herramientas (Panel del Control, Cursos, Bonos, Comisiones, Blog,
+                        Miembros afiliados con descuento, Miembros invitados (7), etc.).<br><br>
+                        <strong>Garantías:</strong> El Miembro Profesional dispone de las garantías exclusivas, siempre
+                        y
+                        cuando cumpla con
+                        las condiciones implícitas en nuestras garantías.<br><br>
+                        <strong>Nota:</strong> Puede invitar Miembros Básicos, Miembros Superiores, Miembros
+                        Profesionales y Miembros Invitados.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-group">
+                <div class="accordion-heading"><a href="#collapseNine" data-parent="#vc_accordion-widget"
+                                                  data-toggle="collapse" class="accordion-toggle"> <i
+                                class="fa fa-question-circle"></i> VER TODAS LAS PREGUNTAS Y RESPUESTAS</a></div>
+                <div class="accordion-body collapse" id="collapseNine">
+                    <div class="accordion-inner"> <a href="{{ asset('backend-metronic/faq.pdf') }}"><i class="fa fa-"></i> Descargar PDF de Preguntas y Respuestas</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
+
+
+{% block another1javascripts %}{% endblock %}
+

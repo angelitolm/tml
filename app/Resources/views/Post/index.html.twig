@@ -1,0 +1,117 @@
+{% extends '::admin.html.twig' %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+
+{% block header_tag %}
+    <header class="page-header" xmlns="http://www.w3.org/1999/html">
+        <nav class="navbar mega-menu" role="navigation">
+            <div class="container-fluid">
+                <div class="clearfix navbar-fixed-top">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target=".navbar-responsive-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                            <span class="toggle-icon">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </span>
+                    </button>
+                    <!-- End Toggle Button -->
+                    <!-- BEGIN LOGO -->
+                    <a id="index" class="page-logo" href="{{ path('app_front_blog',{'username':user.username}) }}">
+                        {% if blog.picture is not defined %}
+                            <img src="{{ asset('backend/img/logo_dashboard.png') }}">
+                        {% elseif blog.picture is not empty %}
+                            {% set img_url = constant('IMAGES_UPLOAD_DIR',blog)~blog.picture %}
+                            <img src="{{ asset(img_url) }}"/>
+                        {% endif %}
+                    </a>
+                    <!-- END LOGO -->
+                    <!-- BEGIN TOPBAR ACTIONS -->
+                    <div class="topbar-actions">
+                        <!--BEGIN CODE USER-->
+                        <div class="btn-group-img btn-group">
+                            <div class="portlet-body util-btn-margin-bottom-5">
+                                <a href="http://www.facebook.com" data-original-title="facebook"
+                                   class="social-icon facebook"> </a>
+                                <a href="http://www.googleplus.com" data-original-title="Goole Plus"
+                                   class="social-icon googleplus"> </a>
+                                <a href="http://www.linkedin.com" data-original-title="linkedin"
+                                   class="social-icon linkedin"> </a>
+                                <a href="http://www.pintrest.com" data-original-title="pintrest"
+                                   class="social-icon pintrest"> </a>
+                                <a href="http://www.twitter.com" data-original-title="twitter"
+                                   class="social-icon twitter"> </a>
+                                <a href="http://www.instagram.com" data-original-title="instagram"
+                                   class="social-icon instagram"> </a>
+                            </div>
+                        </div>
+                        <!--END CODE USER-->
+                        <!-- END GROUP INFORMATION -->
+
+                    </div>
+                    <!-- END TOPBAR ACTIONS -->
+                </div>
+            </div>
+            <!--/container-->
+        </nav>
+    </header>
+{% endblock %}
+
+{% block section_tag %}
+    <div class="container-fluid">
+        <div class="page-content">
+            <div class="blog-page blog-content-2">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="blog-single-content bordered blog-container">
+                            <div class="blog-single-head">
+                                <h1 class="blog-single-head-title">{{ post.title }}</h1>
+                                <div class="blog-single-head-date">
+                                    <i class="icon-calendar font-blue"></i> <a href="javascript:;">{{ post.created|date('M d, Y') }}</a>
+                                </div>
+                            </div>
+                            {% if post.picture is not empty %}
+                            <div class="blog-single-img">
+                                {% set img_url = constant('IMAGES_UPLOAD_DIR',post)~post.picture %}
+                                <img src="{{ asset(img_url) }}"/>
+                            </div>
+                            {% endif %}
+                            <div class="blog-single-desc">
+                                <p>{{ post.description }}</p>
+                            </div>
+                            <div class="blog-comments">
+                                <h3 class="sbold blog-comments-title">{{ 'comments'|trans({},'backend') }}({{ post.comments|length }})</h3>
+                                <div class="c-comment-list">
+                                    {% for comment in post.comments %}
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <h4 class="media-heading">
+                                                    <strong>{{ comment.title }}</strong> <small class="text-info">{{ comment.name }}</small> <span class="c-date">{{ comment.created|date('d M Y, H:iA') }}</span>
+                                                </h4>
+                                                {{ comment.message }}
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+                                <h3 class="sbold blog-comments-title">{{ 'leave.comments'|trans({},'backend') }}</h3>
+                                {% form_theme form with ':form:fields-material.html.twig' %}
+                                <form method="post" action="{{ path('app_post_publish_comment',{'id':post.id}) }}" class="form-horizontal">
+                                    {{ form_widget(form) }}
+                                    <div class="form-group">
+                                        <button type="submit" class="btn blue uppercase btn-md sbold btn-block">{{ 'submit'|trans({},'backend') }}</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Mass&oacute; #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+
+{% block banner_title %}
+    <h1>Herramienta <span class="vc_main-color">Comisiones de los PTS</span></h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">Herramienta Comisiones de los PTS</li>
+    </ul>
+{% endblock %}
+
+
+{% block content %}
+    <div class="col-md-12" style="margin-bottom: 35px">
+        <p>
+
+            Tan pronto como te inscribes en TML4you, tienes la posibilidad de invitar nuevos miembros para que se
+            afilien a trav&eacute;s de tu c&oacute;digo y ganes comisiones recurrentes o residuales por ello. Nuestro sistema
+            autom&aacute;ticamente que se afilie un nuevo miembro con tu c&oacute;digo, te paga un por ciento de comisi&oacute;n, que podr&aacute;s
+            visualizar en el dashboard del miembro para cerciorarte de ello. La misma la podr&aacute;s cobrar despu&eacute;s de 10
+            d&iacute;as o mantenerlas como bono para utilizar dentro del sistema en otros productos o actividades para
+            beneficio propio. Las comisiones de tus invitados patrocinados se har&aacute;n v&aacute;lidas una vez que estos se afilien
+            a nuestra red. Este es un modelo de comisiones de afiliados atractivo, porque un afiliado tiene la
+            oportunidad de ganar a&uacute;n m&aacute;s comisiones a trav&eacute;s de una estructura de multiniveles. Los afiliados pueden
+            invitar otros afiliados, que a su vez pueden referir clientes a tu negocio. Como comerciante, puedes seguir
+            una integraci&oacute;n que a&uacute;n no se ha materializado. En este caso, tu afiliado te env&iacute;a a un cliente, pero &eacute;l a&uacute;n
+            no ha pagado por tu servicio o producto, sin embargo si este nuevo miembro paga su membres&iacute;a a trav&eacute;s de tu
+            c&oacute;digo t&uacute; si podr&aacute;s cobrar tus comisiones.
+        </p>
+    </div>
+{% endblock %}

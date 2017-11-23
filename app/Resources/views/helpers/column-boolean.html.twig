@@ -1,0 +1,5 @@
+{% if flag %}
+  <span class="badge badge-success">{{ 'yes'|trans({},'backend') }}</span>
+{% else %}
+  <span class="badge badge-danger">{{ 'no'|trans({},'backend') }}</span>
+{% endif %}

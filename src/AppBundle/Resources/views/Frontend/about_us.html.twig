@@ -1,0 +1,358 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Massó #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+
+
+
+{% block banner_title %}
+    <h1>Sobre <span class="vc_main-color">Nosotros</span></h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">Sobre Nosotros</li>
+    </ul>
+{% endblock %}
+
+
+{% block sub_banner %}
+    <p class="subtitle">Visi&oacute;n de <span class="vc_inverted">Nuestra Compa&ntilde;&iacute;a</span></p>
+    <blockquote> Llegar a cada emprendedor y desarrollador del talento propio para ofrecer todos nuestros recursos de
+        forma flexible para que pueda construir su camino al éxito con libertad de escoger su propio destino.
+    </blockquote>
+{% endblock %}
+
+
+{% block content %}
+         <div class="col-md-12">
+                        <h3>Desde 2012</h3>
+
+                        <p><img alt="TML4you" class="vc_right"  src="{{ asset('bundles/app/images/about/logo-about.jpg') }}">
+                        TML4you es una fórmula de negocio  con el objetivo de crear el interés, la confianza, la decisión, la acción y los resultados que nosotros los emprendedores y desarrolladores de negocios independientes en las redes de mercado o MLM, soñamos con hacer realidad en cada nuevo miembro que es invitado a las oportunidades de negocios con productos de consumo personal y que todos podamos ser beneficiados de forma positiva siempre.
+                        {#TML4you, es una Red de Afiliados, que le brinda todo un escenario de oportunidades, con#}
+                        {#herramientas personalizadas y apoyo de sus patrocinadores, para que usted pueda encontrar personas#}
+                        {#que compartan sus mismas afinidades de emprendedor(a) exitoso(a), con el fin de mejorar sus economías#}
+                        {#personales y ganas de triunfar. Además, cada una de las afiliaciones a nuestras membresías, disponen#}
+                        {#de un paquete de cursos, que son productos específicos de cada una, que a su vez se convierten en#}
+                        {#herramientas poderosas para cada nuevo emprendedor, por su valor instructivo. También contamos con#}
+                        {#un Club, del cual podrá formar parte una vez que obtenga la membresía que se lo permita y desde ahí,#}
+                        {#comenzar su propio negocio, como emprendedor exitoso. TML4you, es el negocio perfecto donde usted podrá#}
+                        {#tener tiempo libre para disfrutar, libertad financiera y el estilo de vida soñado. #}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="vc_separator"></div>
+{% endblock %}
+
+{% block other %}
+    <div class="vc_team-expertise block" style="margin-top: 35px">
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div id="vc_our-team-widget" class="vc_our-team col-md-8">
+                        <div class="vc_blog-list">
+                            <h2> Conoce a <span class="vc_main-color"> Nuestro Equipo </span></h2>
+
+                            <p>Somos un equipo de profesionales especialistas con una gran
+                                experiencias de redes de afiliados, donde brindamos herramientas personalizadas, para su
+                                desarrollo íntegro y donde en nuestros servicios prima el respeto, transparencia,
+                                credibilidad y buena fe.</p>
+
+                            <div class="vc_splitter"><span class="bg"> </span></div>
+                            <article class="blog-row clearfix">
+                                <div class="blog-left">
+                                    <div class="vc_row"><img alt="Presidente"
+                                                             src="{{ asset('bundles/app/images/office/luis.jpg') }}">
+                                    </div>
+                                    <div class="vc_social-share vc_tight">
+                                        <a title="Twitter" class="twitter" href="#"> <i class="fa fa-twitter"></i> </a>
+                                        <a title="Facebook" class="facebook" href="#"> <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a title="Gplus" class="gplus" href="#"> <i class=" fa fa-google-plus"></i> </a>
+                                        <a title="linkedin" class="linkedin" href="#"> <i class="fa fa-linkedin"></i>
+                                            <a title="Email" class="email" href="#"> <i class="fa fa-envelope"></i> </a>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="blog-right clearfix">
+                                    <div class="information vc_row">
+                                        <h4> Luis Calas </h4>
+                                        <span class="position vc_inverted">Presidente</span></div>
+                                    <div class="vc_address vc_row">
+                                        <div class="col-md-6"><i class="icon-phone"></i></div>
+                                        <div class="col-md-6"><i class="fa fa-envelope-alt"></i>luis@tml4youinternational.com
+                                        </div>
+                                    </div>
+                                    <div class="description vc_row">
+                                        <p> Empresario y experimentado inversionista en las redes de mercado o MLM, con
+                                            más de 15 años de experiencia en estas y un vasto conocimiento en la
+                                            industria global, es visionario de las nuevas estrategias que hoy están
+                                            naciendo con extraordinaria fuerza y que son el futuro sistema de economía
+                                            que está dando paso de gigantes en la economía del futuro. </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="blog-row clearfix">
+                                <div class="blog-left">
+                                    <div class="vc_row"><img alt="Presidenta"
+                                                             src="{{ asset('bundles/app/images/office/maggy.jpg') }}">
+                                    </div>
+                                    <div class="vc_social-share vc_tight">
+                                        <a title="Twitter" class="twitter" href="#"> <i class="fa fa-twitter"></i> </a>
+                                        <a title="Facebook" class="facebook" href="#"> <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a title="Gplus" class="gplus" href="#"> <i class=" fa fa-google-plus"></i> </a>
+                                        <a title="linkedin" class="linkedin" href="#"> <i class="fa fa-linkedin"></i>
+                                            <a title="Email" class="email" href="#"> <i class="fa fa-envelope"></i> </a>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="blog-right clearfix">
+                                    <div class="information vc_row">
+                                        <h4> Margarita Granda </h4>
+                                        <span class="position vc_inverted">Presidenta</span></div>
+                                    <div class="vc_address vc_row">
+                                        <div class="col-md-6"><i class="icon-phone"></i></div>
+                                        <div class="col-md-6"><i class="fa fa-envelope-alt"></i>margarita@tml4youinternational.com
+                                        </div>
+                                    </div>
+                                    <div class="description vc_row">
+                                        <p> Empresaria de carrera y profesional en las administraciones de negocios y
+                                            procesadora de datos por más de 20 años y con más de 15 años de experiencia
+                                            en redes de mercado o MLM, es real estate en usa, excelencia en cuidado al
+                                            cliente. </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="blog-row clearfix">
+                                <div class="blog-left">
+                                    <div class="vc_row"><img alt="example image"
+                                                             src="{{ asset('bundles/app/images/office/tiffany.jpg') }}">
+                                    </div>
+                                    <div class="vc_social-share vc_tight">
+                                        <a title="Twitter" class="twitter" href="#"> <i class="fa fa-twitter"></i> </a>
+                                        <a title="Facebook" class="facebook" href="#"> <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a title="Gplus" class="gplus" href="#"> <i class=" fa fa-google-plus"></i> </a>
+                                        <a title="linkedin" class="linkedin" href="#"> <i class="fa fa-linkedin"></i>
+                                            <a title="Email" class="email" href="#"> <i class="fa fa-envelope"></i> </a>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="blog-right clearfix">
+                                    <div class="information vc_row">
+                                        <h4> Tiffany Calas </h4>
+                                        <span class="position vc_inverted">Tesorera</span></div>
+                                    <div class="vc_address vc_row">
+                                        <div class="col-md-6"><i class="icon-phone"></i></div>
+                                        <div class="col-md-6"><i class="fa fa-envelope-alt"></i>tiffany@tml4youinternational.com
+                                        </div>
+                                    </div>
+                                    <div class="description vc_row">
+                                        <p> Ejecutiva de experiencia en administración y relaciones públicas, estudiante
+                                            universitaria de Honores en Medicina, experta en tecnología Mac, experiencia
+                                            en redes de marcado o MLM por más 5 años. </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="blog-row clearfix">
+                                <div class="blog-left">
+                                    <div class="vc_row"><img alt="example image"
+                                                             src="{{ asset('bundles/app/images/office/angelito.jpg') }}">
+                                    </div>
+                                    <div class="vc_social-share vc_tight">
+                                        <a title="Twitter" class="twitter" href="#"> <i class="fa fa-twitter"></i> </a>
+                                        <a title="Facebook" class="facebook" href="#"> <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a title="Gplus" class="gplus" href="#"> <i class=" fa fa-google-plus"></i> </a>
+                                        <a title="linkedin" class="linkedin" href="#"> <i class="fa fa-linkedin"></i>
+                                            <a title="Email" class="email" href="#"> <i class="fa fa-envelope"></i> </a>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="blog-right clearfix">
+                                    <div class="information vc_row">
+                                        <h4> Angel Labrada </h4>
+                                        <span class="position vc_inverted">CEO - Tecnolog&iacute;a</span></div>
+                                    <div class="vc_address vc_row">
+                                        <div class="col-md-6"><i class="icon-phone"></i></div>
+                                        <div class="col-md-6"><i class="fa fa-envelope-alt"></i>angel@tml4youinternational.com
+                                        </div>
+                                    </div>
+                                    <div class="description vc_row">
+                                        <p> Experimentado Director Ejecutivo e Ingeniero en Ciencias Informáticas,
+                                            amplios conocimientos en relaciones públicas y redes sociales. Dominio
+                                            excelente de desarrollo web y administración de redes. Más de 5 años de
+                                            experiencia en redes de mercado o MLM. Diseñador y desarrollador del Sistema
+                                            TML. </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="blog-row clearfix">
+                                <div class="blog-left">
+                                    <div class="vc_row"><img alt="example image"
+                                                             src="{{ asset('bundles/app/images/office/sandro.jpg') }}">
+                                    </div>
+                                    <div class="vc_social-share vc_tight">
+                                        <a title="Twitter" class="twitter" href="#"> <i class="fa fa-twitter"></i> </a>
+                                        <a title="Facebook" class="facebook" href="#"> <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a title="Gplus" class="gplus" href="#"> <i class=" fa fa-google-plus"></i> </a>
+                                        <a title="linkedin" class="linkedin" href="#"> <i class="fa fa-linkedin"></i>
+                                            <a title="Email" class="email" href="#"> <i class="fa fa-envelope"></i> </a>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="blog-right clearfix">
+                                    <div class="information vc_row">
+                                        <h4> Sandro Campos </h4>
+                                        <span class="position vc_inverted">CEO - Conocimiento</span></div>
+                                    <div class="vc_address vc_row">
+                                        <div class="col-md-6"><i class="icon-phone"></i></div>
+                                        <div class="col-md-6"><i class="fa fa-envelope-alt"></i>sandro@tml4youinternational.com
+                                        </div>
+                                    </div>
+                                    <div class="description vc_row">
+                                        <p> Experimentado Ejecutivo y Licenciado Informática. Profesor universitario,
+                                            con años de experiencia en el magisterio. Especialista en socialización en
+                                            las redes sociales. Más de 5 años de experiencia en redes de Mercado o
+                                            MLM. </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="blog-row clearfix">
+                                <div class="blog-left">
+                                    <div class="vc_row"><img alt="example image"
+                                                             src="{{ asset('bundles/app/images/office/yaima.jpg') }}">
+                                    </div>
+                                    <div class="vc_social-share vc_tight">
+                                        <a title="Twitter" class="twitter" href="#"> <i class="fa fa-twitter"></i> </a>
+                                        <a title="Facebook" class="facebook" href="#"> <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a title="Gplus" class="gplus" href="#"> <i class=" fa fa-google-plus"></i> </a>
+                                        <a title="linkedin" class="linkedin" href="#"> <i class="fa fa-linkedin"></i>
+                                            <a title="Email" class="email" href="#"> <i class="fa fa-envelope"></i> </a>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="blog-right clearfix">
+                                    <div class="information vc_row">
+                                        <h4> Yaima Hern&aacute;ndez </h4>
+                                        <span class="position vc_inverted">CEO - Desarrollo</span></div>
+                                    <div class="vc_address vc_row">
+                                        <div class="col-md-6"><i class="icon-phone"></i></div>
+                                        <div class="col-md-6"><i class="fa fa-envelope-alt"></i>yaima@tml4youinternational.com
+                                        </div>
+                                    </div>
+                                    <div class="description vc_row">
+                                        <p> Licenciada en Informática y experimentada profesora universitaria.
+                                            Especialista en Sociología y Psicopedagogía. Dominio excelente de las nuevas
+                                            tecnologías y apasionada a las redes sociales. Más de 5 años de experiencia
+                                            en redes de Mercado o MLM. </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!-- .vc_blog-list -->
+                    </div>
+                    <!-- #vc_our-team-widget .col-md-8 -->
+                    <div class="col-md-4">
+                        <div id="vc_our-expertise-about" class="widget block">
+                            <div class="vc_our-expertise">
+                                <h2> Nuestras <span class="vc_main-color"> habilidades </span></h2>
+
+                                <div class="vc_splitter"><span class="bg"> </span></div>
+                                <div class="clearfix"></div>
+                                <div>
+                                    <h5> MLM </h5>
+
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" style="width:95%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5> Redes Sociales </h5>
+
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" style="width:85%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5> Econom&iacute;a </h5>
+
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" style="width:85%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5> Inform&aacute;tica </h5>
+
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" style="width:85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- vc_our-expertise -->            </div>
+
+                        <div id="vc_testimonial-about" class="widget block">
+
+                            <div class="vc_testimonial vc_align-right">
+                                <div class="vc_pager vc_testimonial-pager clearfix"></div>
+                                <div class="clearfix"></div>
+                                <div class="vc_carousel-wrap">
+                                    <div class="vc_carousel clearfix">
+                                        {% for datos in testimonials %}
+                                            <div class="vc_carousel-column">
+                                                <div class="testimonial-box">
+                                                    <blockquote> {{ datos.message }}
+                                                    </blockquote>
+                                                </div>
+                                                <div class="caret-wrapper"><i class="fa fa-caret-down"></i></div>
+                                                <div class="clearfix"></div>
+                                                <div class="profile">
+                                                    <img class="picture" alt="example image"
+                                                         src="{{ asset('bundles/app/images/about/05.jpg') }}">
+
+                                                    <div class="info">
+                                                        <div class="name">
+                                                            <h4>{{ datos.user }}</h4>
+                                                        </div>
+                                                        <div class="position vc_inverted">
+                                                            CEO OtherCompany.com
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        {% else %}
+                                            <h2>NO HAY TESTIMONIOS A&Uacute;N...</h2>
+                                        {% endfor %}
+
+                                    </div>
+                                    <!-- .vc_carousel -->
+                                </div>
+                                <!-- .vc_carousel-wrap -->
+
+                            </div>
+                            <!-- .vc_testimonial -->            </div>
+                        <!-- widget block -->
+
+                    </div>
+                    <!--  .col-md-4  -->
+                </div>
+                <!-- .row -->
+                <div class="clearfix"></div>
+                {#<div class="vc_separator"></div>#}
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .wrapper -->
+    </div>
+    <!-- .vc_team-expertise -->
+{% endblock %}
+
+
+{% block another1javascripts %}{% endblock %}
+

@@ -1,0 +1,355 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Massó #}
+
+{% extends "AppBundle::Layout_frontend.html.twig" %}
+
+{% block body %}
+    <div class="vc_body">
+
+        <!-- Header Start -->
+        <header data-active="home" class="header-1 mode-1" id="header">
+            <div class="vc_primary-menu-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <nav class="vc_menu">
+                            <div class="logo">
+                                <a href="{{ path('homepage') }}">
+                                    <img alt="logo" src="{{ asset('bundles/app/images/logo.png') }}">
+                                </a>
+                            </div>
+                            <div class="vc_btn-navbar">
+                                <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse"
+                                        data-target=".vc_primary-menu"><span class="icon-bar"> </span> <span
+                                            class="icon-bar"> </span> <span class="icon-bar"> </span></button>
+                            </div>
+                            <div class="vc_primary-menu">
+                                <ul>
+                                    <li id="home"><a href="{{ path('homepage') }}"> Inicio <i
+                                                    class="fa fa-caret-down"> </i> </a>
+
+                                </ul>
+                                <!-- Head menu search form ends -->             </div>
+                            <div class="vc_google-search">
+                                <!--<script>-->
+                                <!--(function () {-->
+                                <!--var cx = '011282751335296868116:-r-d_lb5_5y';-->
+                                <!--var gcse = document.createElement('script');-->
+                                <!--gcse.type = 'text/javascript';-->
+                                <!--gcse.async = true;-->
+                                <!--gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +-->
+                                <!--'//www.google.com/cse/cse.js?cx=' + cx;-->
+                                <!--var s = document.getElementsByTagName('script')[0];-->
+                                <!--s.parentNode.insertBefore(gcse, s);-->
+                                <!--})();-->
+                                <!--</script>-->
+                                <!--
+                                <gcse:searchbox-only></gcse:searchbox-only>-->
+                                <div class="gcse-searchbox-only" data-resultsUrl="#" data-queryParameterName="q"></div>
+                            </div>
+
+                            {#<div class="vc_menu-search-wrapper pull-right">#}
+
+                                {#<form class="vc_menu-search">#}
+                                    {#<input type="text" name="search" class="vc_menu-search-text" required#}
+                                           {#placeholder="Search">#}
+
+                                    {#<div class="vc_menu-search-submit"></div>#}
+                                {#</form>#}
+                            {#</div>#}
+                            <!-- In menu search form ends -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="vc_secondary-menu-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="vc_secondary-menu">
+                            <div class="vc_contact-top-wrapper col-xs-12 col-sm-7 col-md-8 col-lg-9">
+                                <div class="vc_contact-top pull-right">
+                                    <div class="pull-left">
+                                        <h5><span> <i class="fa fa-envelope"> </i> info@tml4youinternational.com </span>
+                                        </h5>
+                                    </div>
+                                    {#<div class="pull-left">#}
+                                        {#<h5><span> <i class="fa fa-phone"> </i> 1-305 318-6106 </span></h5>#}
+                                    {#</div>#}
+                                </div>
+                            </div>
+                            <div class="vc_social-share-wrapper hidden-xs col-sm-5 col-md-4 col-lg-3">
+                                <div class="vc_social-share vc_tight pull-right">
+                                    <a title="Twitter" class="twitter" href="http://www.twitter.com"> <i class="fa fa-twitter"></i> </a>
+                                    <a title="Facebook" class="facebook" href="http://www.facebook.com"> <i class="fa fa-facebook"></i> </a>
+                                    <a title="Gplus" class="gplus" href="http://www.googleplus.com"> <i class=" fa fa-google-plus"></i> </a>
+                                    <a title="linkedin" class="linkedin" href="http://www.linkedin.com"> <i class="fa fa-linkedin"></i> </a>
+                                    <a title="pintrest" class="pintrest-square" href="http://www.pinterest.com"> <i class="fa fa-pinterest-square"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vc_sub-menu-bg">
+                            <div class="element-1"></div>
+                            <div class="element-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- container row -->
+            </div>
+            <div class="vc_menu-bg">
+                <div class="element-1"></div>
+                <div class="element-2"></div>
+            </div>
+        </header>
+        <!-- Header Ends -->
+
+
+        <!-- Middle Content Start -->
+        <div class="vc_banner-title background-14 block">
+            <div class="wrapper">
+                <div class="container">
+                    {% block banner_title %}
+
+                    {% endblock %}
+                </div>
+            </div>
+            <!-- wrapper -->
+        </div>
+        <!-- vc_banner -->
+
+
+        <div class="vc_vision block">
+            <div class="wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {% block sub_banner %}
+
+                            {% endblock %}
+                        </div>
+                    </div>
+                    <!-- .row -->
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .wrapper -->
+        </div>
+        <!-- .vc_vision -->
+
+        {#Para el login#}
+        <div class="vc_signup block" style="margin-bottom: 35px; margin-top: 35px;">
+            {% block login %}
+
+            {% endblock %}
+        </div>
+
+
+        <div class="vc_history block" style="margin-bottom: 0px">
+            <div class="container">
+                <div class="row">
+                    {% block content %}
+
+                </div>
+                {% endblock %}
+                <!-- .row -->
+
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .vc_history -->
+
+
+        {% block other %}
+
+        {% endblock %}
+
+
+        <!-- Footer Start -->
+        <footer class="footer-1 mode-1" id="footer">
+            <div class="vc_footer-links">
+                <div class="wrapper">
+                    <div class="container">
+                        <div class="vc_footer-line" style="margin: 0px -10px 20px -10px;"></div>
+                        <div class="row">
+                            <div id="vc_footer-about" class="footer-widget widget col-md-3">
+                                <div class="vc_about">
+                                    <h3> Sobre TML4you </h3>
+
+                                    <p> TML4you es la oportunidad para desarrollar el negocio de tus sue&ntilde;os. </p>
+
+                                    <div class="vc_address">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td class="icon"><i class="fa fa-map-marker"> </i></td>
+                                                <td>
+                                                    <address style="margin-bottom: 0px">
+                                                        PO BOX 906<br>
+                                                        Loxahatchee FL 33470
+                                                    </address>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="icon"><i class="fa fa-phone"> </i></td>
+                                                <td> 1-305 318-6106</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="icon"><i class="fa fa-envelope"> </i></td>
+                                                <td> info@tml4youinternational.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="icon"><i class="fa fa-envelope"> </i></td>
+                                                <td> servicios@tml4youinternational.com</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="vc_social-share vc_tight">
+                                        <a title="Twitter" class="twitter" href="http://www.twitter.com"> <i class="fa fa-twitter"></i> </a>
+                                        <a title="Facebook" class="facebook" href="http://www.facebook.com"> <i class="fa fa-facebook"></i> </a>
+                                        <a title="Gplus" class="gplus" href="http://www.googleplus.com"> <i class=" fa fa-google-plus"></i> </a>
+                                        <a title="linkedin" class="linkedin" href="http://www.linkedin.com"> <i class="fa fa-linkedin"></i> </a>
+                                        <a title="pintrest" class="pintrest-square" href="http://www.pinterest.com"> <i class="fa fa-pinterest-square"></i> </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="vc_footer-gallery" class="footer-widget widget col-md-3">
+                                <div class="vc_gallery">
+                                    <h3> Nuestro Equipo </h3>
+
+                                    <!--<script type="text/javascript"-->
+                                    <!--src="http://www.flickr.com/badge_code_v2.gne?count=9&amp;display=latest&amp;size=m&amp;layout=x&amp;source=user&amp;user=97929152%40N05"></script>-->
+                                    <!--  Delete this line to use own image -->
+                                    <ul>
+                                        <li><a data-rel="prettyPhoto['gallery']"
+                                               href="{{ asset('bundles/app/images/office/luis.jpg') }}"><img
+                                                        alt="Presidente"
+                                                        src="{{ asset('bundles/app/images/office/luis.jpg') }}"></a>
+                                        </li>
+                                        <li><a data-rel="prettyPhoto['gallery']"
+                                               href="{{ asset('bundles/app/images/office/maggy.jpg') }}"><img
+                                                        alt="Presidenta"
+                                                        src="{{ asset('bundles/app/images/office/maggy.jpg') }}"></a>
+                                        </li>
+                                        <li><a data-rel="prettyPhoto['gallery']"
+                                               href="{{ asset('bundles/app/images/office/tiffany.jpg') }}"><img
+                                                        alt="Tesorera"
+                                                        src="{{ asset('bundles/app/images/office/tiffany.jpg') }}"></a>
+                                        </li>
+                                        <li><a data-rel="prettyPhoto['gallery']"
+                                               href="{{ asset('bundles/app/images/office/angelito.jpg') }}"><img
+                                                        alt="CEO - Tecnolog&iacute;a"
+                                                        src="{{ asset('bundles/app/images/office/angelito.jpg') }}"></a>
+                                        </li>
+                                        {#<li><a data-rel="prettyPhoto['gallery']"#}
+                                               {#href="{{ asset('bundles/app/images/office/sandro.jpg') }}"><img#}
+                                                        {#alt="CEO - Conocimiento"#}
+                                                        {#src="{{ asset('bundles/app/images/office/sandro.jpg') }}"></a>#}
+                                        {#</li>#}
+                                        {#<li><a data-rel="prettyPhoto['gallery']"#}
+                                               {#href="{{ asset('bundles/app/images/office/yaima.jpg') }}"><img#}
+                                                        {#alt="CEO - Desarrollo"#}
+                                                        {#src="{{ asset('bundles/app/images/office/yaima.jpg') }}"></a>#}
+                                        {#</li>#}
+                                    </ul>
+                                    <!-- Delete this line to use own image  -->
+                                </div>
+                            </div>
+                            <div id="vc_footer-twitter" class="footer-widget widget col-md-3">
+                                <div class="vc_twitter-mini">
+                                    <h3> &Uacute;ltimos Tweet </h3>
+
+                                    <div class="bg">
+                                        <i class="fa fa-quote-right"></i>
+                                        <i class="fa fa-twitter"></i>
+
+                                        <div class="vc_carousel-wrapper">
+                                            <div id="twitter-feeds-mini">
+
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="vc_carousel-control">
+                                            <a href="#"> <i class="fa fa-chevron-left"> </i> </a> <a href="#"> <i
+                                                        class="fa fa-chevron-right"> </i> </a>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <h3> Destellos </h3>
+                                <p>Nosotros creemos en la extraordinaria capacidad que tenemos los seres humanos de
+                                    imaginar, planificar y desarrollar el camino más rápido, sencillo, económico, y
+                                    seguro que conduzca al éxito propio, con respeto, flexibilidad y transparencia, como
+                                    es TML4you.</p>
+                            </div>
+
+                            {#<div id="vc_footer-newsletter-form-widget" class="footer-widget widget col-md-3">#}
+                                {#<div class="vc_newsletter-form">#}
+                                    {#<h3> Suscr&iacute;bete </h3>#}
+
+                                    {#<div id="vc_newsletter-form-success" class="alert alert-success hidden"><strong>#}
+                                            {#Success! </strong> You've been added to our email list.#}
+                                    {#</div>#}
+                                    {#<div id="vc_newsletter-form-error" class="alert alert-error hidden"></div>#}
+                                    {#<div class="info">#}
+                                        {#<p> Keep up-to-date with our awesome products and news. Enter your e-mail and#}
+                                            {#subscribe to our newsletter. </p>#}
+
+                                        {#<form id="newsletter" method="" action=""#}
+                                              {#class="form-inline">#}
+                                            {#<div class="control-group row">#}
+                                                {#<div class="col-xs-7 form-input">#}
+                                                    {#<input type="email" id="email" name="email"#}
+                                                           {#placeholder="Email Address"#}
+                                                           {#required/>#}
+                                                {#</div>#}
+                                                {#<div class="col-xs-5 form-btn">#}
+                                                    {#<button type="submit" class="vc_btn"> Go !</button>#}
+                                                {#</div>#}
+                                            {#</div>#}
+                                        {#</form>#}
+                                    {#</div>#}
+                                {#</div>#}
+                            {#</div>#}
+                        </div>
+                        <!-- row -->
+                    </div>
+                    <!-- container -->
+                </div>
+                <!-- wrapper -->
+            </div>
+            <!-- vc_footer-links -->
+
+            <div class="vc_bottom">
+                <div class="wrapper">
+                    <div class="container">
+                        <div class="vc_footer-line"></div>
+                        <div class="bg">
+                            <div class="row">
+                                <div class=" col-sm-12 col-md-6">
+                                    <div class="copyright pull-left">
+                                        <h5> Copyright &copy;2015 TML4you Inc. Todos los derechos reservados. </h5>
+                                    </div>
+                                </div>
+                                <div class=" col-sm-12 col-md-6">
+                                    <div class="menu pull-right">
+                                        <a href="{{ path('faq') }}"> FAQ </a>
+                                        <a href="privacy"> Pol&iacute;tica de Privacidad </a>
+                                        <a href="terms"> T&eacute;rminos y Condiciones </a>
+                                        <a href="legal"> Nota Legal </a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer END -->
+
+    </div>
+    <!-- .vc_body END  -->
+
+
+    <a class="back-top" href="#" id="back-top"> <i class="fa fa-chevron-up icon-white"> </i> </a>
+{% endblock %}

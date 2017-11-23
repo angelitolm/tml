@@ -1,0 +1,1735 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Massó #}
+
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="vc_body">
+        <!-- Header Start -->
+        <header data-active="home" class="header-1 mode-1" id="header">
+            <div class="vc_primary-menu-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <nav class="vc_menu">
+                            <div class="logo">
+                                <a href="{{ path('homepage') }}">
+                                    <img alt="logo" src="{{ asset('bundles/app/images/logo.png') }}">
+                                </a>
+                            </div>
+                            <div class="vc_btn-navbar">
+                                <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse"
+                                        data-target=".vc_primary-menu"><span class="icon-bar"> </span> <span
+                                            class="icon-bar"> </span> <span class="icon-bar"> </span></button>
+                            </div>
+                            <div class="vc_primary-menu">
+                                <ul>
+                                    <li id="home"><a href="#home" data-waypoint="home"> Inicio <i
+                                                    class="fa fa-caret-down"> </i> </a>
+
+                                        <div class="vc_menu-open-right vc_menu-2-v">
+                                            <!--<ul class="clearfix">-->
+                                            <!--<li><a href="index.html"> Metro Slider Sketch </a></li>-->
+                                            <!--<li><a href="index-portfolio.html"> Metro Slider Portfolio </a></li>-->
+                                            <!--<li><a href="index-revolution.html"> Revolution Slider </a></li>-->
+                                            <!--<li><a href="index-one-page-parallax.html"> One Page Parallax <span-->
+                                            <!--class="vc_bg-orange vc_small-info">NEW</span></a></li>-->
+                                            <!--<li><a href="index-home-alt-1.html"> Home Alt 1 </a></li>-->
+                                            <!--</ul>-->
+                                        </div>
+                                    </li>
+                                    <li id="mega-menu"><a href="#integracion" data-waypoint="integracion"> Integraci&oacute;n
+                                            <i class="fa fa-caret-down"> </i> </a>
+
+                                        <div class="vc_menu-open-right vc_mega-menu medium-width">
+                                            <div class="child-menu">
+                                                <h3>Int&eacute;grese a nuestra red de afiliados</h3>
+
+                                                <div class="vc_line"></div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <p>Int&eacute;grese a la red de afiliados que est&aacute; dise&ntilde;ada
+                                                            para usted. Si!, para personas como usted, emprendedoras y
+                                                            con ganas de tener un negocio exitoso.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 text-center vc_column"><span class="large">
+                                                            <img src="{{ asset('bundles/app/images/home-alt/membresias_white.png') }}"> Membres&iacute;as </span>
+                                                    </div>
+                                                    <div class="col-md-4 text-center vc_column"><span class="large">
+                                                            <img src="{{ asset('bundles/app/images/home-alt/club_white.png') }}"> Club TML </span>
+                                                    </div>
+                                                    <div class="col-md-4 text-center vc_column"><span class="large">
+                                                            <img src="{{ asset('bundles/app/images/home-alt/business_white.png') }}"> M&oacute;dulo de Negocio </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 text-center"><a class="vc_btn"
+                                                                                          href="about_us">
+                                                            SOBRE NOSOTROS <i
+                                                                    class=" fa fa-angle-double-right"></i></a></div>
+                                                </div>
+                                            </div>
+                                            <!-- child-menu -->
+                                        </div>
+                                        <!-- vc_mega-menu -->
+                                    </li>
+                                    <li id="unete"><a href="#unete" data-waypoint="unete"> &Uacute;nete <i
+                                                    class="fa fa-caret-down"> </i> </a>
+
+                                    </li>
+                                    <li id="portfolios"><a href="#herramientas" data-waypoint="herramientas">
+                                            Herramientas
+                                            <i class="fa fa-caret-down"> </i> </a>
+
+                                    </li>
+                                    <li id="pages"><a href="#testimonios" data-waypoint="testimonios"> Testimonios <i
+                                                    class="fa fa-caret-down"> </i> </a>
+
+                                    </li>
+                                    <li id="blog"><a href="#contacto" data-waypoint="contacto"> Noticias y Contacto <i
+                                                    class="fa fa-caret-down"> </i>
+                                        </a>
+
+                                    </li>
+                                    <li id="cajalogin"><a href="#" data-waypoint=""> Entrar <i
+                                                    class="fa fa-caret-down"> </i>
+                                        </a>
+
+                                        <div class="vc_menu-open-left vc_mega-menu short-width">
+                                            <div class="child-menu">
+
+                                                <div id="vc_contact-form-widget" class="widget">
+
+
+                                                    <h3><i class="fa fa-unlock-alt"></i> Acceso al Dashboard</h3>
+
+                                                    <div class="vc_line"></div>
+
+                                                    <p>Solo puede acceder si es miembro.</p>
+
+                                                    <div id="invitacion-form-success"
+                                                         class="alert alert-success hidden">
+                                                        <strong>
+                                                            Success! </strong> You've been added to our email list.
+                                                    </div>
+                                                    <div id="invitacion-form-error"
+                                                         class="alert alert-error hidden"></div>
+                                                    <div class="info">
+
+                                                        <form id="code_invitacion" method="post"
+                                                              action="{{ path('fos_user_security_check') }}"
+                                                              class="form-horizontal">
+                                                            <input type="hidden" name="_csrf_token"
+                                                                   value="{{ csrf_token }}"/>
+
+                                                            <div class="control-group row">
+                                                                <div class="col-md-6 form-input">
+                                                                    <input id="usuario" name="_username"
+                                                                           placeholder="Usuario"
+                                                                           required="required" type="text">
+                                                                </div>
+                                                                <div class="col-md-6 form-input">
+                                                                    <input id="password" name="_password"
+                                                                           placeholder="Contrase&ntilde;a"
+                                                                           type="password">
+                                                                </div>
+                                                            </div>
+                                                            <br>
+
+                                                            <div class="control-group row">
+                                                                <div class="col-md-6 form-input">
+
+                                                                </div>
+                                                                <div class="col-md-6 form-btn"
+                                                                     style="text-align: right">
+                                                                    <button type="submit" class="vc_btn"><i
+                                                                                class="fa fa-check"></i> Acceder
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- child-menu -->
+                                        </div>
+                                        <!-- vc_mega-menu -->
+
+                                    </li>
+                                    <!--<li id="contact"><a href="contact.html"> Contact Us </a></li>-->
+                                </ul>
+                                <!-- Head menu search form ends -->             </div>
+                            {#<div class="vc_google-search">#}
+                            {#<!--<script>-->#}
+                            {#<!--(function () {-->#}
+                            {#<!--var cx = '011282751335296868116:-r-d_lb5_5y';-->#}
+                            {#<!--var gcse = document.createElement('script');-->#}
+                            {#<!--gcse.type = 'text/javascript';-->#}
+                            {#<!--gcse.async = true;-->#}
+                            {#<!--gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +-->#}
+                            {#<!--'//www.google.com/cse/cse.js?cx=' + cx;-->#}
+                            {#<!--var s = document.getElementsByTagName('script')[0];-->#}
+                            {#<!--s.parentNode.insertBefore(gcse, s);-->#}
+                            {#<!--})();-->#}
+                            {#<!--</script>-->#}
+                            {#<!--#}
+                            {#<gcse:searchbox-only></gcse:searchbox-only>-->#}
+                            {#<div class="gcse-searchbox-only" data-resultsUrl="#" data-queryParameterName="q"></div>#}
+                            {#</div>#}
+
+                            {#<div class="vc_menu-search-wrapper pull-right">#}
+
+                            {#<form class="vc_menu-search">#}
+                            {#<input type="text" name="search" class="vc_menu-search-text" required#}
+                            {#placeholder="Search">#}
+
+                            {#<div class="vc_menu-search-submit"></div>#}
+                            {#</form>#}
+                            {#</div>#}
+                            <!-- In menu search form ends -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="vc_secondary-menu-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="vc_secondary-menu">
+                            <div class="vc_contact-top-wrapper col-xs-12 col-sm-7 col-md-8 col-lg-9">
+                                <div class="vc_contact-top pull-right">
+                                    <div class="pull-left">
+                                        <h5><span> <i class="fa fa-envelope"> </i> info@tml4youinternational.com </span>
+                                        </h5>
+                                    </div>
+                                    {#<div class="pull-left">#}
+                                    {#<h5><span> <i class="fa fa-phone"> </i> 1-305 318-6106 </span></h5>#}
+                                    {#</div>#}
+                                </div>
+                            </div>
+                            <div class="vc_social-share-wrapper hidden-xs col-sm-5 col-md-4 col-lg-3">
+                                <div class="vc_social-share vc_tight pull-right">
+                                    <a title="Twitter" class="twitter" href="http://www.twitter.com"> <i
+                                                class="fa fa-twitter"></i> </a>
+                                    <a title="Facebook" class="facebook" href="http://www.facebook.com"> <i
+                                                class="fa fa-facebook"></i> </a>
+                                    <a title="Gplus" class="gplus" href="http://www.googleplus.com"> <i
+                                                class=" fa fa-google-plus"></i> </a>
+                                    <a title="linkedin" class="linkedin" href="http://www.linkedin.com"> <i
+                                                class="fa fa-linkedin"></i> </a>
+                                    <a title="pintrest" class="pintrest-square" href="http://www.pinterest.com"> <i
+                                                class="fa fa-pinterest-square"></i> </a>
+                                    {#<a title="Rss" class="rss" href="#"> <i class="fa fa-rss"></i> </a>#}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vc_sub-menu-bg">
+                            <div class="element-1"></div>
+                            <div class="element-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- container row -->
+            </div>
+            <div class="vc_menu-bg">
+                <div class="element-1"></div>
+                <div class="element-2"></div>
+            </div>
+        </header>
+        <!-- Header Ends -->
+
+
+        <!-- Middle Content Start -->
+        <div class="vc_banner block" data-waypoint="home">
+            <div class="wrapper">
+                <div class="vc_metro-wrapper">
+                    <div class="vc_metro-slider-outer">
+                        <div class="viewport">
+                            <div class="overview">
+                                <div class="vc_metro-slider">
+                                    <ul>
+                                        <li class="odd">
+                                            <ul>
+                                                <li class="box type-1 anim-slide-right"><a href="javascript:void(0)">
+                                                        <img alt="example image"
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_01.png') }}">
+
+                                                        <div class="mouse-over">
+                                                            <div class="content">
+                                                                <div class="text">
+                                                                    <h2> Comienza <span
+                                                                                class="vc_main-color"> ganando</span>
+                                                                    </h2>
+
+                                                                    <p> Cuando adquieres una Membresía-Básica con el
+                                                                        patrocinio y bono de un Amigo-TML de su gusto
+                                                                        recibes inmediatamente las herramientas y
+                                                                        soporte con certificación PTS, mas (100) bonos
+                                                                        de inicio mensualmente para que implementar a
+                                                                        otros invitados por usted y recibir tus
+                                                                        recompensas PTS-B calificadas. </p>
+
+                                                                    {#<div class="vc_btn"> Learn More</div>#}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="even">
+                                            <ul>
+                                                <li class="box type-2 anim-slide-left"><a href="javascript:void(0)">
+                                                        <img alt="example image"
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_02.png') }}">
+
+                                                        <div class="mouse-over bg-none">
+                                                            <div class="content">
+                                                                <div class="text">
+                                                                    <h2> INCENTIVO AL <span
+                                                                                class="vc_main-color"> M-Superior </span>
+                                                                    </h2>
+
+                                                                    <p> Es el bono de implementación que usted recibe
+                                                                        con el PTS de un M-SUPERIOR escogido por usted
+                                                                        libremente. </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a></li>
+                                                <li class="box type-3 anim-rotate"><a href="javascript:void(0)">
+                                                        <img alt="example image"
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_03.png') }}">
+
+                                                        <div class="mouse-over bg-none">
+                                                            <div class="content">
+                                                                <img alt=""
+                                                                     src="{{ asset('bundles/app/images/metro-img/web_design_hover_03.png') }}">
+                                                            </div>
+                                                        </div>
+                                                    </a></li>
+                                                <li class="box type-3 none"><a href="javascript:void(0)">
+                                                        <img alt="example image"
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_04.png') }}">
+                                                    </a></li>
+                                                <li class="box type-3 anim-rotate"><a href="javascript:void(0)">
+                                                        <img alt=""
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_05.png') }}">
+
+                                                        <div class="mouse-over bg-none">
+                                                            <div class="content">
+                                                                <img alt="example image"
+                                                                     src="{{ asset('bundles/app/images/metro-img/web_design_hover_05.png') }}">
+                                                            </div>
+                                                        </div>
+                                                    </a></li>
+                                                <li class="box type-2  anim-slide-top"><a href="javascript:void(0)">
+                                                        <img alt="example image"
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_06.png') }}">
+
+                                                        <div class="mouse-over  bg-none">
+                                                            <div class="content">
+                                                                <div class="text">
+                                                                    <h2> Puedes<span
+                                                                                class="vc_main-color"> ganar m&aacute;s</span>
+                                                                    </h2>
+
+                                                                    <p> Cuando adquiera su nueva M-Superior, aumentara
+                                                                        su poder de desarrollo con sus dos membresías
+                                                                        combinadas, m&aacute;s (3)invitaciones Básicas
+                                                                        gratis
+                                                                        cada 15 días y sus (300)bonos de inicio para que
+                                                                        los regale con su PTS-B y gane sus recompensas
+                                                                        calificadas. </p>
+
+                                                                    {#<div class="vc_btn"> Leer m&aacute;s</div>#}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a></li>
+                                                <li class="box type-3 none">
+                                                    <a href="javascript:void(0)">
+                                                        <img alt="example image"
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_07.png') }}">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="odd">
+                                            <ul>
+                                                <li class="box type-1  anim-slide-left"><a href="javascript:void(0)">
+                                                        <img alt=""
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_08.png') }}">
+
+                                                        <div class="mouse-over bg-none">
+                                                            <div class="content">
+                                                                <div class="text">
+                                                                    <h2> Llega a<span
+                                                                                class="vc_main-color"> lo m&aacute;ximo</span>
+                                                                    </h2>
+
+                                                                    <p> Cuando adquiere su M-Profesional recibe todo el
+                                                                        poder de las (3) membresías combinadas a su
+                                                                        gusto, mas (7) invitaciones Básicas gratis cada
+                                                                        15 días y 700+300+100 bonos de inicio por sus
+                                                                        tres Membresías con libertad para desarrollar
+                                                                        nuevos miembros con sus PTS y recibir sus
+                                                                        recompensas calificadas. </p>
+
+                                                                    {#<div class="vc_btn"> Learn More</div>#}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="even">
+                                            <ul>
+                                                <li class="box type-2 anim-hover"><a href="javascript:void(0)">
+                                                        <img alt="example image"
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_09.png') }}">
+
+                                                        <div class="mouse-over">
+                                                            <div class="content">
+                                                                <div class="text">
+                                                                    <h2> Dec&iacute;dete por<span
+                                                                                class="vc_main-color"> el Internacional</span>
+                                                                    </h2>
+
+                                                                    <p> Aquí tiene una invitación sellada para usted y
+                                                                        que le da al oportunidad de iniciar su propio
+                                                                        negocio internacional. </p>
+
+                                                                    {#<div class="vc_btn"> Learn More</div>#}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a></li>
+                                                <li class="box type-3 anim-rotate"><a href="javascript:void(0)">
+                                                        <img alt="example image"
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_10.png') }}">
+
+                                                        <div class="mouse-over">
+                                                            <div class="content">
+                                                                <div class="text">
+                                                                    <h2> Invitaci&oacute;n <span
+                                                                                class="vc_main-color"> M. Negocio</span>
+                                                                    </h2>
+
+                                                                    <p> Usted es invitado gratis por un desarrollador y
+                                                                        no está
+                                                                        obligado a comprar ni vender nada. </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a></li>
+                                                <li class="box type-3 none"><a href="javascript:void(0)">
+                                                        <img alt="example image"
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_11.png') }}"></a>
+                                                </li>
+                                                <li class="box type-3 none"><a href="javascript:void(0)">
+                                                        <img alt="example image"
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_12.png') }}"></a>
+                                                </li>
+                                                <li class="box type-2  anim-slide-bottom"><a href="javascript:void(0)">
+                                                        <img alt="example image"
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_13.png') }}">
+
+                                                        <div class="mouse-over">
+                                                            <div class="content">
+                                                                <div class="text">
+                                                                    <h2> CLUB-TML <span
+                                                                                class="vc_main-color"> Internacional</span>
+                                                                    </h2>
+
+                                                                    <p> Aquí hay un costo de una membresía exclusiva
+                                                                        para su desarrollo internacional con plena
+                                                                        libertad de implemntar sus ideas y experiencias
+                                                                        personales en otros negocios de redes de mercado
+                                                                        o MLM. </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a></li>
+                                                <li class="box type-3  anim-slide-left"><a href="javascript:void(0)">
+                                                        <img alt="example image"
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_14.png') }}">
+
+                                                        <div class="mouse-over bg-none">
+                                                            <div class="content">
+                                                                <img alt="example image"
+                                                                     src="{{ asset('bundles/app/images/metro-img/web_design_hover_14.png') }}">
+                                                            </div>
+                                                        </div>
+                                                    </a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="odd">
+                                            <ul>
+                                                <li class="box type-1 anim-rotate"><a href="javascript:void(0)">
+                                                        <img alt="example image"
+                                                             src="{{ asset('bundles/app/images/metro-img/web_design_15.png') }}">
+
+                                                        <div class="mouse-over">
+                                                            <div class="content">
+                                                                <div class="text">
+                                                                    <h2> Negocio<span
+                                                                                class="vc_main-color"> independiente </span>
+                                                                    </h2>
+
+                                                                    <p> Si le gusto la presentación, los productos y el
+                                                                        sistema MLM recomendado, entonces usted puede
+                                                                        adquirir su propio módulo personal independiente
+                                                                        y desarrollarlo con todos los miembros
+                                                                        necesarios y seleccionados por usted del
+                                                                        club-tmltotalmente gratis con la protección de
+                                                                        tml- garantías. </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- vc_metro-slider -->
+                            </div>
+                            <!-- overview -->
+                        </div>
+                        <!-- viewport -->
+                        <div class="scrollbar">
+                            <div class="track">
+                                <div class="thumb vc_bg-color">
+                                    <div class="btn-slide"></div>
+                                    <div class="end"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- vc_metro-slider-outer -->
+                </div>
+                <!-- vc_metro-wrapper -->
+            </div>
+            <!-- wrapper -->
+        </div>
+        <!-- vc_banner -->
+
+        <div class="vc_signup block">
+            <div class="wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-col">
+                            <h1> Bienvenidos a <span class="vc_main-color"> TML4you </span></h1>
+
+                            <p style="color: #5C6161; line-height: 35px; font-size: 1.2em;">
+                                Valoramos su preciado tiempo, interés y dedicación en conocer nuestros productos y
+                                servicios destinados a darle los recursos necesarios para que usted pueda lograr so
+                                propio crecimiento económico con la seguridad de no perder el costo pagado por usted y
+                                ser libre de tener obligación de reuniones, ventas y costos adicionales para
+                                usted.<br><br>
+
+                                CREEMOS EN EL POTENCIAL DE CADA SER HUMANO PARA DESARROLLAR EN SÍ MISMO COMO EN OTROS,
+                                LA CONFIANZA, LA DECISIÓN, LA ACCIÓN Y LOS RESULTADOS CON BENEFICIOS PARA TODOS DE FORMA
+                                SIMPLE, ECONÓMICA Y PRÁCTICA.
+
+                                {#Le ofrecemos las#}
+                                {#herramientas y el apoyo necesario para que usted pueda comenzar ganando beneficios,#}
+                                {#conocimientos y nuevos contactos de una forma <span class="vc_main-color">sencilla, rápida, económica y flexible</span>#}
+                                {#para todas las personas con deseos de emprender su propio camino del éxito personal.#}
+                            </p>
+                            <a href="{{ path('abou_us') }}"><h5><span class="vc_main-color">Saber m&aacute;s sobre TML4you</span>
+                                </h5></a>
+
+                        </div>
+                        {#<div class="col-md-4 newsletter-col">#}
+                        {#<div class="vc_top-newsletter">#}
+                        {#<div class="vc_newsletter-form">#}
+                        {#<h3 style="font-size:30px;"> Bolet&iacute;n de Noticias </h3>#}
+
+                        {#<div id="vc_newsletter-form-success1" class="alert alert-success hidden"><strong>#}
+                        {#Success! </strong> You've been added to our email list.#}
+                        {#</div>#}
+                        {#<div id="vc_newsletter-form-error1" class="alert alert-error hidden"></div>#}
+                        {#<div class="info">#}
+                        {#<p> Subscr&iacute;base a nuestros boletines de noticias, para que est&eacute;#}
+                        {#actualizado sobre nuestros servicios y produsctos.</p>#}
+
+                        {#<form id="newsletter1" method="" action=""#}
+                        {#class="form-inline">#}
+                        {#<div class="control-group row">#}
+                        {#<div class="col-xs-7 form-input">#}
+                        {#<input type="email" id="email1" name="email" placeholder="Correo"#}
+                        {#required/>#}
+                        {#</div>#}
+                        {#<div class="col-xs-5 form-btn">#}
+                        {#<button type="submit" class="vc_btn"> Enviar</button>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#</form>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#</div>#}
+                        {#</div>#}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--<div class="vc_splitter"></div>-->
+
+        <div class="vc_features-block slide-waypoint" id="integracion" style="..." data-waypoint="integracion">
+            <div class="wrapper">
+                <div class="container">
+                    <h1 STYLE="margin-top: 35px; text-align: center"> INTEGRACION. <span
+                                class="vc_main-color"> DESARROLLO. </span> &Eacute;XITO PERSONAL</h1>
+
+                    <h4 style="margin-bottom: 35px; text-align: center"> Aqu&iacute; est&aacute; la f&oacute;rmula del
+                        negocio din&aacute;mico personalizado TML4you.</h4>
+
+                    <div class="row">
+                        <div class="col-md-12 first-row-col-1">
+                            <!--<p class="vc_subtitle"><span class="vc_inverted"> We simply </span>the best ...</p>-->
+
+                            <!--<p class="vc_softtitle block">Ut sit amet dignissim libero. Integer scelerisque...</p>-->
+
+                            <div class="image-preview">
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <div class="vc_anim vc_anim-slide">
+                                            <a href="membresias" class="vc_preview">
+                                                <img alt="example image"
+                                                     src="{{ asset('bundles/app/images/home-alt/bloque_mbasic.png') }}"/>
+                                            </a>
+
+                                            <div class="vc_hover">
+                                                <div class="hover-wrapper">
+                                                    <div class="icon-wrapper">
+                                                        <ul>
+                                                            <li class="vc_icon">
+                                                                <a
+                                                                        href="servicios">
+                                                                    <i
+                                                                            class="fa fa-link"> </i> </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 animated fadeInLeft" style="text-align: left">
+                                            <br>
+
+                                            <p class="vc_list-title"><i class="fa fa-check-circle  vc_main-color"></i>
+                                                <strong>Aqu&iacute; el &eacute;xito comienza, cuando</strong></p>
+
+                                            <p class="vc_list-desc">Usas $15.00 de tu bolsillo o eres invitado básico
+                                                gratis limitado
+                                            </p>
+                                            <h5 style="text-align: center; color: green">PARA RECIBIR</h5>
+
+                                            <p class="vc_list-desc">
+                                                + Contactos gratis del marketing TML4you<br>
+                                                + Herramientas del control Básico<br>
+                                                + Herramientas del soporte Básico<br>
+                                                + Herramientas del desarrollo Básico<br>
+                                                + Triple garantías de protección TML<br>
+                                                + Certificación del PTS-Básico<br>
+                                                + Recompensas Básicas calificadas<br>
+                                                + Apoyo PTS gratis de tu patrocinador<br>
+                                                + TML-SOCIAL sin editar Y MUCHOS MAS BENEFICIOS
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <div class="vc_anim vc_anim-slide">
+                                            <a href="membresias" class="vc_preview">
+                                                <img alt="example image"
+                                                     src="{{ asset('bundles/app/images/home-alt/bloque_msuperior.png') }}"/>
+                                            </a>
+
+                                            <div class="vc_hover">
+                                                <div class="hover-wrapper">
+                                                    <div class="icon-wrapper">
+                                                        <ul>
+                                                            <li class="vc_icon">
+                                                                <a
+                                                                        href="servicios">
+                                                                    <i
+                                                                            class="fa fa-link"> </i> </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 animated fadeInLeft" style="text-align: left">
+                                            <br>
+
+                                            <p class="vc_list-title"><i class="fa fa-check-circle  vc_main-color"></i>
+                                                <strong>Aqu&iacute; aumentas tu poder, cuando</strong></p>
+
+                                            <p class="vc_list-desc">Usas un poquito de tus créditos ganados con el
+                                                PTS-Básico
+                                            </p>
+                                            <h5 style="text-align: center; color: green">PARA RECIBIR</h5>
+
+                                            <p class="vc_list-desc">
+                                                + Contactos gratis del marketing TML4you<br>
+                                                + Herramientas del control Superior<br>
+                                                + Herramientas del soporte Superior<br>
+                                                + Herramientas del desarrollo Superior<br>
+                                                + Triple garantías de protección TML<br>
+                                                + Certificación del PTS-Superior<br>
+                                                + Recompensas Básicas y superiores calificadas<br>
+                                                + (3) Invitaciones Básicas gratis para Implementar libremente<br>
+                                                + Apoyo PTS gratis de tu patrocinador<br>
+                                                + TML-SOCOAL con editor personal Y MUCHOS MAS BENEFICIOS
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <div class="vc_anim vc_anim-slide">
+                                            <a href="membresias" class="vc_preview">
+                                                <img alt="example image"
+                                                     src="{{ asset('bundles/app/images/home-alt/bloque_mprofesional.png') }}"/>
+                                            </a>
+
+                                            <div class="vc_hover">
+                                                <div class="hover-wrapper">
+                                                    <div class="icon-wrapper">
+                                                        <ul>
+                                                            <li class="vc_icon">
+                                                                <a
+                                                                        href="servicios">
+                                                                    <i
+                                                                            class="fa fa-link"> </i> </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 animated fadeInLeft" style="text-align: left">
+                                            <br>
+
+                                            <p class="vc_list-title"><i class="fa fa-check-circle  vc_main-color"></i>
+                                                <strong>Aquí llegas al máximo poder económico, cuando</strong></p>
+
+                                            <p class="vc_list-desc">Usas otro poquito de tus créditos ganados el
+                                                PTS-Básico o Superior
+                                            </p>
+                                            <h5 style="text-align: center; color: green">PARA RECIBIR</h5>
+
+                                            <p class="vc_list-desc">
+                                                + Contactos gratis del marketing TML4you<br>
+                                                + Herramientas del control Profesional<br>
+                                                + Herramientas del soporte Profesional<br>
+                                                + Herramientas del desarrollo Profesional<br>
+                                                + Triple garantías de protección TML<br>
+                                                + Certificación del PTS -Profesional<br>
+                                                + Recompensas Básicas, Superiores y profesionales calificadas<br>
+                                                + (7+3) Invitaciones Básicas gratis para implementar libremente<br>
+                                                + Apoyo PTS gratis de tu patrocinador<br>
+                                                + TML-SOCOAL con editor personal<br>
+                                                + Invitación sellada internacional
+                                                Y MUCHOS MAS BENEFICIOS
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 30px;">
+                                    <div class="col-md-4 text-center">
+                                        <div class="vc_anim vc_anim-slide">
+                                            <a href="club" class="vc_preview">
+                                                <img alt="example image"
+                                                     src="{{ asset('bundles/app/images/home-alt/club.png') }}"/>
+                                            </a>
+
+                                            <div class="vc_hover">
+                                                <div class="hover-wrapper">
+                                                    <div class="icon-wrapper">
+                                                        <ul>
+                                                            <li class="vc_icon">
+                                                                <a
+                                                                        href="club">
+                                                                    <i
+                                                                            class="fa fa-link"> </i> </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 animated fadeInLeft" style="text-align: left">
+                                            <br>
+
+                                            <p class="vc_list-title"><i class="fa fa-check-circle  vc_main-color"></i>
+                                                <strong>Socializaci&oacute;n y Preparaci&oacute;n Profesional </strong>
+                                            </p>
+
+                                            <p class="vc_list-desc">Descubre los beneficios del Club-TML cuando decides
+                                                convertirte en Miembro Internacional recibes extraordinarios beneficios
+                                                personales con herramientas de socialización y preparación profesional
+                                                para tu invitación gratis al Módulo de Negocio.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <div class="vc_anim vc_anim-slide">
+                                            <a href="negocio" class="vc_preview">
+                                                <img alt="example image"
+                                                     src="{{ asset('bundles/app/images/home-alt/business.png') }}"/>
+                                            </a>
+
+                                            <div class="vc_hover">
+                                                <div class="hover-wrapper">
+                                                    <div class="icon-wrapper">
+                                                        <ul>
+                                                            <li class="vc_icon">
+                                                                <a
+                                                                        href="negocio">
+                                                                    <i
+                                                                            class="fa fa-link"> </i> </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 animated fadeInLeft" style="text-align: left">
+                                            <br>
+
+                                            <p class="vc_list-title"><i class="fa fa-check-circle  vc_main-color"></i>
+                                                <strong>Desarrollo y Duplicaci&oacute;n Din&aacute;mica </strong></p>
+
+                                            <p class="vc_list-desc">Totalmente libre para decidir cuándo adquirir su
+                                                propio Módulo de Negocio y desarrollarlo con invitados escogidos por
+                                                usted para formar su propia red de miembros independientes consumidores
+                                                de productos personales en las redes de mercado mundial.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <div class="vc_anim vc_anim-slide">
+                                            <a href="negocio" class="vc_preview">
+                                                <img alt="example image"
+                                                     src="{{ asset('bundles/app/images/home-alt/bloque_academia.png') }}"/>
+                                            </a>
+
+                                            <div class="vc_hover">
+                                                <div class="hover-wrapper">
+                                                    <div class="icon-wrapper">
+                                                        {#<ul>#}
+                                                        {#<li class="vc_icon">#}
+                                                        {#<a#}
+                                                        {#href="negocio">#}
+                                                        {#<i#}
+                                                        {#class="fa fa-link"> </i> </a>#}
+                                                        {#</li>#}
+                                                        {#</ul>#}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 animated fadeInLeft" style="text-align: left">
+                                            <br>
+
+                                            <p class="vc_list-title"><i class="fa fa-check-circle  vc_main-color"></i>
+                                                <strong>Academia TML </strong></p>
+
+                                            <h5 style="text-align: center; color: green">OFRECEMOS APOYO TOTAL A TODOS
+                                                LOS MIEMBROS TML4YOU TOTALMENTE GRATIS</h5>
+
+                                            <p class="vc_list-desc">
+                                                + Conocimientos del desarrollo personal y práctico en TML<br>
+                                                + Plantillas de uso libre para todos los miembros TML4you<br>
+                                                + Galería de imágenes y anuncios exclusivos para uso compartido de los
+                                                miembros<br>
+                                                + Galería de textos promocionales para uso libre de los miembros y MUCHO
+                                                MAS INCLUIDO DE FORMA GRATIS SIEMPRE
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- wrapper -->
+        </div>
+        <!-- vc_features-->
+
+        <div class="vc_features block vc_pricing-tables slide-waypoint" data-waypoint="unete" id="one-page-offers">
+            <div class="wrapper" data-stellar-background-ratio="0.5" data-stellar-offset-vertical="-200">
+                <div class="container">
+
+                    <div class="row block">
+                        <div class="vc_pricing-table">
+                            <div class="col-md-12 text-center">
+
+                                <h1 style="text-align: center; color:#FFF;"> C&Oacute;MO UNIRSE <span
+                                            class="vc_main-color"> AHORA! </span>
+                                </h1>
+                                <h4 style="text-align: center; color:#FFF;"> Busca un amigo-tml cerca de usted y p&iacute;dele
+                                    amistad personal.</h4>
+
+                                <p style="color:#FFF; font-size: 24px">
+                                    <strong>"&Eacute;L o Ella te ofrecer&aacute;n informaci&oacute;n personalizada y la
+                                        invitaci&oacute;n
+                                        con un regalo de promoci&oacute;n"
+                                    </strong>
+                                </p>
+
+                                <div class="col-md-12 center-block" style="margin: 15px">
+                                    <div class="vc_social-share  vc_inverse vc_rounded">
+                                        <a title="Twitter" class="twitter" href="http://www.twitter.com"> <i class="fa fa-twitter"></i> </a>
+                                        <a title="Facebook" class="facebook" href="http://www.facebook.com"> <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a title="Gplus" class="gplus" href="http://www.plus.google.com"> <i class=" fa fa-google-plus"></i> </a>
+                                        <a title="linkedin" class="linkedin" href="http://www.linkedin.com"> <i class="fa fa-linkedin"></i>
+                                        </a>
+                                        {#<a title="email" class="email" href="#"> <i class="fa fa-envelope"></i> </a>#}
+                                        {#<a title="Rss" class="rss" href="#"> <i class="fa fa-rss"></i> </a>#}
+                                        <a title="Pin Interest" class="pininterest" href="http://www.pininterest.com"> <i
+                                                    class="fa fa-pinterest"></i> </a>
+                                        <a title="Youtube" class="youtube" href="http://www.youtube.com"> <i class="fa fa-youtube"></i> </a>
+                                        {#<a title="Vimeo" class="vimeo" href="#"> <i class="fa fa-youtube-play"></i> </a>#}
+                                        {#<a title="Dribble" class="dribble" href="#"> <i class=" fa fa-dribbble"></i>#}
+                                        {#</a>#}
+                                        {#<a title="FlickR" class="flickr" href="#"> <i class="fa fa-flickr"></i> </a>#}
+                                    </div>
+                                </div>
+
+                                <img src="{{ asset('bundles/app/images/group4.png') }}" alt="">
+
+                                <a class="vc_btn" href="servicios">H&aacute;gase miembro! &Uacute;nete ahora</a>
+
+                                <div class="content-wrapper1000 " id="ribbon-header-page">
+                                    <article id="post-36294" class="standalone-page post-36294 page type-page status-publish hentry">
+                                        <div class="entry-header">
+                                            <h1 class="entry-title">
+                                                <img src="{{ asset('bundles/app/images/Images/cert.png') }}" style="max-height: 80px; max-width: 80px">
+                                                <a id="conoce_our_member" href="{{ path('member_pts') }}">Conoce a nuestros Amigos - TML</a>
+                                                <img src="{{ asset('bundles/app/images/Images/cert.png') }}" style="max-height: 80px; max-width: 80px">
+                                            </h1>
+                                        </div>
+                                    </article>
+                                </div>
+                                {#<a href="{{ path('member_pts') }}"><h1 id="conoce_our_member" style="margin-top: 30px; text-align: center; color:#FFF; font-size: 52px;#}
+                                {#color: #FFF;#}
+                                {#background: #8AB849 none repeat scroll 0% 0%;#}
+                                {#position: relative;#}
+                                {#display: inline-block;#}
+                                {#padding: 20px 40px;#}
+                                {#font-weight: 100;#}
+                                {#text-transform: uppercase;#}
+                                {#margin-left: 35px;#}
+                                {#margin-right: 35px;">Conoce a nuestros Amigos - TML</h1></a>#}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- wrapper -->
+        </div>
+        <!-- vc_features-->
+
+
+        <div class="vc_portfolio slide-waypoint block" data-waypoint="herramientas">
+            <div class="wrapper">
+                <div class="container">
+                    <h1 class="text-center" style="margin-bottom:40px;">
+                    <span class="vc_ornament vc_mr-10">
+                    </span>Herramientas de los<span class="vc_main-color"> Miembros</span>
+                        <span class="vc_ornament vc_ml-10"></span>
+                    </h1>
+
+                    <div class="text-center" style="width:450px; margin-left:auto; margin-right:auto;">
+                        <ul id="portfolio-filter" class="nav nav-pills">
+                            <li class="active"><a href="#" data-filter="*">Todas</a></li>
+                            <li><a href="#" data-filter=".p-icons">B&aacute;sico</a></li>
+                            <li><a href="#" data-filter=".p-illustration">Superior</a></li>
+                            <li><a href="#" data-filter=".p-web">Profesional</a></li>
+                            <!--<li><a href="#" data-filter=".p-logo">Logo</a></li>-->
+                        </ul>
+                    </div>
+                    <div id="portfolio" class="vc_portfolio-page portfolio-3 row clearfix">
+                        <div class="portfolio-item p-icons p-web p-illustration col-md-4">
+                            <div class="vc_anim vc_anim-slide">
+                                <a href="" class="vc_preview">
+                                    <img alt="example image"
+                                         src="{{ asset('bundles/app/images/home-alt/herramienta-dashboard.png') }}"/>
+                                </a>
+
+                                <div class="vc_hover">
+                                    <div class="hover-wrapper">
+                                        <div class="text-wrapper">
+                                            <h4> Dashboard del Miembro </h4>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <ul>
+                                                <li class="vc_icon"><a data-rel="prettyPhoto"
+                                                                       href="{{ asset('bundles/app/images/home-alt/herramienta-dashboard.png') }}">
+                                                        <i class="fa fa-search-plus"> </i> </a></li>
+                                                <li class="vc_icon"><a href="{{ path('tool_dashboard') }}"> <i
+                                                                class="fa fa-link"> </i> </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vc_category"><i class="fa fa-wrench"></i></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item p-icons p-web p-illustration col-md-4">
+                            <div class="vc_anim vc_anim-slide">
+                                <a href="" class="vc_preview">
+                                    <img alt="example image"
+                                         src="{{ asset('bundles/app/images/home-alt/herramienta-comisiones.png') }}"/>
+                                </a>
+
+                                <div class="vc_hover">
+                                    <div class="hover-wrapper">
+                                        <div class="text-wrapper">
+                                            <h4> Comisiones de los PTS </h4>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <ul>
+                                                <li class="vc_icon"><a data-rel="prettyPhoto"
+                                                                       href="{{ asset('bundles/app/images/home-alt/herramienta-comisiones.png') }}">
+                                                        <i class="fa fa-search-plus"> </i> </a></li>
+                                                <li class="vc_icon"><a href="tool_comisiones"> <i
+                                                                class="fa fa-link"> </i> </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vc_category"><i class="fa fa-wrench"></i></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item p-web p-illustration col-md-4">
+                            <div class="vc_anim vc_anim-slide">
+                                <a href="#" class="vc_preview">
+                                    <img alt="example image"
+                                         src="{{ asset('bundles/app/images/home-alt/herramienta-invitadosP.png') }}"/>
+                                </a>
+
+                                <div class="vc_hover">
+                                    <div class="hover-wrapper">
+                                        <div class="text-wrapper">
+                                            <h4> Miembros Invitados Patrocinados </h4>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <ul>
+                                                <li class="vc_icon"><a data-rel="prettyPhoto"
+                                                                       href="{{ asset('bundles/app/images/home-alt/herramienta-invitadosP.png') }}">
+                                                        <i class="fa fa-search-plus"> </i> </a></li>
+                                                <li class="vc_icon"><a href="tool_invitados"> <i
+                                                                class="fa fa-link"> </i> </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vc_category"><i class="fa fa-wrench"></i></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item p-icons p-web p-illustration p-logo col-md-4">
+                            <div class="vc_anim vc_anim-slide">
+                                <a href="#" class="vc_preview">
+                                    <img alt="example image"
+                                         src="{{ asset('bundles/app/images/home-alt/herramienta-reportes.png') }}"/>
+                                </a>
+
+                                <div class="vc_hover">
+                                    <div class="hover-wrapper">
+                                        <div class="text-wrapper">
+                                            <h4> Reportes </h4>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <ul>
+                                                <li class="vc_icon"><a data-rel="prettyPhoto"
+                                                                       href="{{ asset('bundles/app/images/home-alt/herramienta-reportes.png') }}">
+                                                        <i class="fa fa-search-plus"> </i> </a></li>
+                                                <li class="vc_icon"><a href="tool_reportes"> <i class="fa fa-link"> </i>
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vc_category"><i class="fa fa-wrench"></i></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item p-web col-md-4">
+                            <div class="vc_anim vc_anim-slide">
+                                <a href="#" class="vc_preview">
+                                    <img alt="example image"
+                                         src="{{ asset('bundles/app/images/home-alt/herramienta-marketing.png') }}"/>
+                                </a>
+
+                                <div class="vc_hover">
+                                    <div class="hover-wrapper">
+                                        <div class="text-wrapper">
+                                            <h4> Estrateg&iacute;as de Marketing </h4>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <ul>
+                                                <li class="vc_icon"><a data-rel="prettyPhoto"
+                                                                       href="{{ asset('bundles/app/images/home-alt/herramienta-marketing.png') }}">
+                                                        <i class="fa fa-search-plus"> </i> </a></li>
+                                                <li class="vc_icon"><a href="tool_strategias_marketing"> <i
+                                                                class="fa fa-link"> </i> </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vc_category"><i class="fa fa-wrench"></i></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item p-icons p-web p-illustration p-logo col-md-4">
+                            <div class="vc_anim vc_anim-slide">
+                                <a href="#" class="vc_preview">
+                                    <img alt="example image"
+                                         src="{{ asset('bundles/app/images/home-alt/herramienta-iweb.png') }}"/>
+                                </a>
+
+                                <div class="vc_hover">
+                                    <div class="hover-wrapper">
+                                        <div class="text-wrapper">
+                                            <h4> iWeb - Blog Personal </h4>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <ul>
+                                                <li class="vc_icon"><a data-rel="prettyPhoto"
+                                                                       href="{{ asset('bundles/app/images/home-alt/herramienta-iweb.png') }}">
+                                                        <i class="fa fa-search-plus"> </i> </a></li>
+                                                <li class="vc_icon"><a href="tool_iweb"> <i class="fa fa-link"> </i>
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vc_category"><i class="fa fa-wrench"></i></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item p-icons p-web p-logo p-illustration col-md-4">
+                            <div class="vc_anim vc_anim-slide">
+                                <a href="#" class="vc_preview">
+                                    <img alt="example image"
+                                         src="{{ asset('bundles/app/images/home-alt/herramienta-administracion.png') }}"/>
+                                </a>
+
+                                <div class="vc_hover">
+                                    <div class="hover-wrapper">
+                                        <div class="text-wrapper">
+                                            <h4> Administraci&oacute;n, Gesti&oacute;n y Comunicaci&oacute;n con tus
+                                                afiliados </h4>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <ul>
+                                                <li class="vc_icon"><a data-rel="prettyPhoto"
+                                                                       href="{{ asset('bundles/app/images/home-alt/herramienta-administracion.png') }}">
+                                                        <i class="fa fa-search-plus"> </i> </a></li>
+                                                <li class="vc_icon"><a href="tool_adminafiliados"> <i
+                                                                class="fa fa-link"> </i> </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vc_category"><i class="fa fa-wrench"></i></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item p-icons p-illustration p-web col-md-4">
+                            <div class="vc_anim vc_anim-slide">
+                                <a href="#" class="vc_preview">
+                                    <img alt="example image"
+                                         src="{{ asset('bundles/app/images/home-alt/herramienta-mensajeria.png') }}"/>
+                                </a>
+
+                                <div class="vc_hover">
+                                    <div class="hover-wrapper">
+                                        <div class="text-wrapper">
+                                            <h4> Servicios Adicionales de Mensajer&iacute;a y Correo </h4>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <ul>
+                                                <li class="vc_icon"><a data-rel="prettyPhoto"
+                                                                       href="{{ asset('bundles/app/images/home-alt/herramienta-mensajeria.png') }}">
+                                                        <i class="fa fa-search-plus"> </i> </a></li>
+                                                <li class="vc_icon"><a href="tool_mensajeria"> <i
+                                                                class="fa fa-link"> </i> </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vc_category"><i class="fa fa-wrench"></i></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item p-web col-md-4">
+                            <div class="vc_anim vc_anim-slide">
+                                <a href="#" class="vc_preview">
+                                    <img alt="example image"
+                                         src="{{ asset('bundles/app/images/home-alt/herramienta-club.png') }}"/>
+                                </a>
+
+                                <div class="vc_hover">
+                                    <div class="hover-wrapper">
+                                        <div class="text-wrapper">
+                                            <h4> Acceso y Gesti&oacute;n de Membres&iacute;as en el Club </h4>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <ul>
+                                                <li class="vc_icon"><a data-rel="prettyPhoto"
+                                                                       href="{{ asset('bundles/app/images/home-alt/herramienta-club.png') }}">
+                                                        <i class="fa fa-search-plus"> </i> </a></li>
+                                                <li class="vc_icon"><a href="tool_club"> <i class="fa fa-link"> </i>
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vc_category"><i class="fa fa-wrench"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item p-icons p-web p-illustration col-md-4">
+                            <div class="vc_anim vc_anim-slide">
+                                <a href="#" class="vc_preview">
+                                    <img alt="example image"
+                                         src="{{ asset('bundles/app/images/home-alt/herramienta-cursos.png') }}"/>
+                                </a>
+
+                                <div class="vc_hover">
+                                    <div class="hover-wrapper">
+                                        <div class="text-wrapper">
+                                            <h4> Cursos </h4>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <ul>
+                                                <li class="vc_icon"><a data-rel="prettyPhoto"
+                                                                       href="{{ asset('bundles/app/images/home-alt/herramienta-cursos.png') }}">
+                                                        <i class="fa fa-search-plus"> </i> </a></li>
+                                                <li class="vc_icon"><a href="tool_cursos"> <i class="fa fa-link"> </i>
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vc_category"><i class="fa fa-wrench"></i></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- .row -->
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .wrapper -->
+        </div>
+
+
+        <div class="vc_testimonial-block slide-waypoint" data-waypoint="testimonios">
+            <div class="wrapper background-12">
+                <div class="container">
+                    <div class="row" style="margin-bottom: 50px;">
+                        <h1 class="text-center" style="margin-top: 35px; color: #fff;">
+                            <span class="vc_ornament vc_mr-10"></span>Testimonios de <span class="vc_main-color">nuestros Clientes</span>
+                            <span class="vc_ornament vc_mr-10"></span>
+                        </h1>
+
+                        <div class="col-sm-7 text-center text-1">
+                            <h1 style="color:#FFF; margin-top:70px;">"Aqu&iacute; todos ganamos..."</h1>
+                            {#<h1 style="color:#FFF; margin-top:70px;">"M&aacute;s del 99% de Miembros Ganadores"</h1>#}
+
+                            <p class="vc_grey" style="font-size:30px; letter-spacing:-.5px;">...experiencia, conocimientos, contactos y recompensas siempre</p>
+                        </div>
+                        <!-- col-sm-6 -->
+                        <div class="col-sm-5 text-2">
+                            <!--
+    Ignore or delete this code. Just for testing purpose.
+    <style>
+        .vc_testimonial .vc_carousel-column{
+            width:360px;
+        }
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .vc_testimonial .vc_carousel-column{
+                width:300px;
+            }
+        }
+        @media (max-width: 991px) {
+            .vc_testimonial .vc_carousel-column{
+                width:320px;
+            }
+        }
+    </style>-->
+                            <div class="vc_testimonial vc_align-right">
+                                <div class="vc_pager vc_testimonial-pager clearfix"></div>
+                                <div class="clearfix"></div>
+                                <div class="vc_carousel-wrap">
+                                    <div class="vc_carousel clearfix">
+                                        {% if testimonials is defined %}
+                                            {% for datos in testimonials %}
+                                                <div class="vc_carousel-column">
+
+                                                    <div class="testimonial-box">
+                                                        <blockquote> {{ datos.message }}</blockquote>
+                                                    </div>
+                                                    <div class="caret-wrapper"><i class="fa fa-caret-down"></i></div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="profile">
+                                                        <img class="picture" alt="example image"
+                                                             src="{{ asset('bundles/app/images/about/05.jpg') }}">
+
+                                                        <div class="info">
+                                                            <div class="name">
+                                                                <h4>{{ datos.user }}</h4>
+                                                            </div>
+                                                            <div class="position vc_inverted">
+                                                                CEO OtherCompany.com
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            {% endfor %}
+                                        {% else %}
+                                            <h2>NO HAY TESTIMONIOS A&Uacute;N...</h2>
+                                        {% endif %}
+
+                                    </div>
+                                    <!-- .vc_carousel -->
+                                </div>
+                                <!-- .vc_carousel-wrap -->
+
+                            </div>
+                            <!-- .vc_testimonial -->                    </div>
+                        <!-- col-sm-6 -->
+
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- wrapper -->
+        </div>
+        <!-- vc_features-->
+
+        <!--<div class="vc_map slide-waypoint block" data-waypoint="contact"-->
+        <!--style="margin-top:0; border-top:4px solid #CCCCCC;">-->
+        <!--<div class="wrapper">-->
+        <!--<div id="map" class="map"></div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; .wrapper &ndash;&gt;-->
+        <!--</div>-->
+        <!-- .vc_map -->
+
+        <div class="vc_blog-contact block slide-waypoint" data-waypoint="contacto"
+             style="margin-bottom: 0px !important;">
+            <div class="wrapper">
+                <div class="container">
+                    <div class="row" style="margin-top: 35px">
+                        <div id="vc_blog-list-widget" class="widget col-md-8">
+                            <div class="vc_blog-list">
+                                <h1> Noticias <span class="vc_main-color"> TML </span></h1>
+
+                                <div class="vc_splitter"><span class="bg"> </span></div>
+                                {% for new in news %}
+                                    <article class="blog-row clearfix">
+                                        <div class="blog-left">
+                                            {% set url = new.image is not empty ? constant('IMAGES_UPLOAD_DIR',new)~new.image : 'backend/img/photos/news-blur.jpg' %}
+                                            <div class="vc_anim vc_anim-slide"><a href="portfolio-single-project.html"
+                                                                                  class="vc_preview"> <img
+                                                            alt="example image"
+                                                            src="{{ asset(url) }}"/>
+                                                </a>
+
+                                                <div class="vc_hover">
+                                                    <div class="hover-wrapper">
+                                                        <div class="icon-wrapper">
+                                                            <ul>
+                                                                <li class="vc_icon"><a
+                                                                            href="{{ path('news',{'id':new.id}) }}"> <i
+                                                                                class="fa fa-link"> </i> </a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="blog-right clearfix">
+                                            <h3><a href=""> {{ new.title }} </a></h3>
+                                            <span class="date"> {{ new.created|date('d F Y') }} </span> {#<span class="comments"> <i
+                                                        class="fa fa-comments"> </i> 16 </span>#} <span
+                                                    class="taxonomy"> <i
+                                                        class="fa fa-tags"> </i>
+                                                {% for category in new.categories %}
+                                                    <a href="#"> {{ category }} </a>
+                                                {% endfor %}
+                                                {#<a href="#"> Design </a>, <a href="#">
+                                                Creative </a> #}
+                                               </span>
+
+                                            <div class="description">
+                                                <p> {{ new.body|slice(0,200) }}...
+                                                    <a href="{{ path('news',{'id':new.id}) }}"
+                                                       class="vc_read-more"> read more
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                {% else %}
+                                {% endfor %}
+
+                                {#<article class="blog-row clearfix">#}
+                                {#<div class="blog-left">#}
+                                {#<div class="vc_anim vc_anim-slide"><a href=""#}
+                                {#class="vc_preview">#}
+                                {#<img alt="example image"#}
+                                {#src="{{ asset('bundles/app/images/blog/02.jpg') }}"/> </a>#}
+
+                                {#<div class="vc_hover">#}
+                                {#<div class="hover-wrapper">#}
+                                {#<div class="icon-wrapper">#}
+                                {#<ul>#}
+                                {#<li class="vc_icon"><a href="news"> <i#}
+                                {#class="fa fa-link"> </i> </a></li>#}
+                                {#</ul>#}
+                                {#</div>#}
+                                {#</div>#}
+                                {#</div>#}
+                                {#</div>#}
+                                {#</div>#}
+                                {#<div class="blog-right clearfix">#}
+                                {#<h3><a href="#"> Building Up Your Portfolio </a></h3>#}
+                                {#<span class="date"> 14 February 2013 </span> <span class="comments"> <i#}
+                                {#class="fa fa-comments"> </i> 16 </span> <span class="taxonomy"> <i#}
+                                {#class="fa fa-tags"> </i> <a href="#"> Design </a>, <a href="#">#}
+                                {#Creative </a> </span>#}
+
+                                {#<div class="description">#}
+                                {#<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod#}
+                                {#tempor incidtation ullamco... <a href=""#}
+                                {#class="vc_read-more"> read more </a>#}
+                                {#</p>#}
+                                {#</div>#}
+                                {#</div>#}
+                                {#</article>#}
+                                {#<article class="blog-row">#}
+                                {#<div class="blog-left">#}
+                                {#<div class="vc_anim vc_anim-slide"><a href=""#}
+                                {#class="vc_preview">#}
+                                {#<img alt="example image"#}
+                                {#src="{{ asset('bundles/app/images/blog/03.jpg') }}"/> </a>#}
+
+                                {#<div class="vc_hover">#}
+                                {#<div class="hover-wrapper">#}
+                                {#<div class="icon-wrapper">#}
+                                {#<ul>#}
+                                {#<li class="vc_icon"><a href=""> <i#}
+                                {#class="fa fa-link"> </i> </a></li>#}
+                                {#</ul>#}
+                                {#</div>#}
+                                {#</div>#}
+                                {#</div>#}
+                                {#</div>#}
+                                {#</div>#}
+                                {#<div class="blog-right clearfix">#}
+                                {#<h3><a href=""> Creativity in Positivity </a></h3>#}
+                                {#<span class="date"> 14 February 2013 </span> <span class="comments"> <i#}
+                                {#class="fa fa-comments"> </i> 16 </span> <span class="taxonomy"> <i#}
+                                {#class="fa fa-tags"> </i> <a href="#"> Design </a>, <a href="#">#}
+                                {#Creative </a> </span>#}
+
+                                {#<div class="description">#}
+                                {#<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod#}
+                                {#tempor incidtation ullamco laboris nisi ut aliquip ex... <a#}
+                                {#href="" class="vc_read-more"> read more </a></p>#}
+                                {#</div>#}
+                                {#</div>#}
+                                {#</article>#}
+                                <div class="clearfix"></div>
+                            </div>
+                            <!-- .vc_blog-list -->           </div>
+                        <!-- #vc_blog-list-widget .col-md-8 -->
+                        <div id="vc_contact-form-widget" class="widget col-md-4">
+                            <div class="vc_contact-form">
+                                <h1> Contacto <span class="vc_main-color"> </span></h1>
+
+                                <h3>Busca un amigo en las Redes Sociales y solic&iacute;tale su informaci&oacute;n personal acerca de TML4you...</h3>
+                                {#<div class="vc_splitter"><span class="bg"> </span></div>#}
+                                {#<div id="contact-form-result">#}
+                                    {#<div id="success" class="alert alert-success hidden">#}
+                                        {#<button type="button" class="close" data-dismiss="alert">&times;</button>#}
+                                        {#We have <strong>successfully</strong> received your Message and will get Back to#}
+                                        {#you#}
+                                        {#as soon as possible.#}
+                                    {#</div>#}
+                                    {#<div id="error" class="alert alert-danger hidden">#}
+                                        {#<button type="button" class="close" data-dismiss="alert">&times;</button>#}
+                                    {#</div>#}
+                                    {#<div id="empty" class="alert alert-danger hidden">#}
+                                        {#<button type="button" class="close" data-dismiss="alert">&times;</button>#}
+                                        {#Please <strong>Fill up</strong> all the Fields and Try Again.#}
+                                    {#</div>#}
+                                    {#<div id="unexpected" class="alert alert-danger hidden">#}
+                                        {#<button type="button" class="close" data-dismiss="alert">&times;</button>#}
+                                        {#An <strong>unexpected error</strong> occured. Please Try Again later.#}
+                                    {#</div>#}
+                                {#</div>#}
+                                {#<form action="" method="" id="contact-form-widget"#}
+                                      {#name="contact-form-widget" role="form">#}
+                                    {#<input type="hidden" value="info@tml4youinternational.com" name="admin-email"#}
+                                           {#id="admin-email">#}
+                                    {#<input type="hidden" value="TML4you, Inc." name="admin-name" id="admin-name">#}
+
+                                    {#<div class="form-group">#}
+                                        {#<input type="text" onfocus="if(this.value=='Name:') this.value='';"#}
+                                               {#onblur="if(this.value=='') this.value='Name:';" value="Nombre:" size="35"#}
+                                               {#class="required" id="contact-form-name" name="contact-form-name">#}
+                                    {#</div>#}
+                                    {#<div class="form-group">#}
+                                        {#<input type="email" onfocus="if(this.value=='E-mail:') this.value='';"#}
+                                               {#onblur="if(this.value=='') this.value='E-mail:';" value="Correo:"#}
+                                               {#size="35"#}
+                                               {#class="required email" id="contact-form-email" name="contact-form-email">#}
+                                    {#</div>#}
+                                    {#<div class="form-group">#}
+                                    {#<textarea onfocus="if(this.value=='Message:') this.value='';"#}
+                                              {#onblur="if(this.value=='') this.value='Message:';" class="required"#}
+                                              {#id="contact-form-message" name="contact-form-message" cols="32" rows="10">Mensaje:</textarea>#}
+                                    {#</div>#}
+                                    {#<div class="form-group">#}
+                                        {#<input type="submit" value="Enviar mensaje" class="vc_btn"#}
+                                               {#id="contact-form-submit"#}
+                                               {#name="contact-form-submit">#}
+
+                                        {#<div id="contact-form-loader"></div>#}
+                                    {#</div>#}
+
+                                {#</form>#}
+                            </div>
+                        </div>
+                        <!--  #vc_blog-list-widget .col-md-4 -->
+                    </div>
+                    <!-- .row -->
+                    <div class="clearfix"></div>
+                    <!--<div class="vc_line-splitter"><span class="bg"> </span></div>-->
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .wrapper -->
+        </div>
+        <!-- .vc_blog-contact -->
+
+        <!-- Middle Content End -->
+
+
+        <!-- Footer Start -->
+        <footer class="footer-1 mode-1" id="footer">
+            <div class="vc_footer-links">
+                <div class="wrapper">
+                    <div class="container">
+                        <div class="vc_footer-line" style="margin: 0px -10px 20px -10px;"></div>
+                        <div class="row">
+                            <div id="vc_footer-about" class="footer-widget widget col-md-3">
+                                <div class="vc_about">
+                                    <h3> Sobre TML4you </h3>
+
+                                    <p> TML4you es la oportunidad para desarrollar el negocio de tus sue&ntilde;os. </p>
+
+                                    <div class="vc_address">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td class="icon"><i class="fa fa-map-marker"> </i></td>
+                                                <td>
+                                                    <address style="margin-bottom: 0px">
+                                                        PO BOX 906<br>
+                                                        Loxahatchee FL 33470
+                                                    </address>
+                                                </td>
+                                            </tr>
+                                            {#<tr>#}
+                                            {#<td class="icon"><i class="fa fa-phone"> </i></td>#}
+                                            {#<td> 1-305 318-6106</td>#}
+                                            {#</tr>#}
+                                            <tr>
+                                                <td class="icon"><i class="fa fa-envelope"> </i></td>
+                                                <td> info@tml4youinternational.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="icon"><i class="fa fa-envelope"> </i></td>
+                                                <td> servicios@tml4youinternational.com</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="vc_social-share vc_tight">
+                                        <a title="Twitter" class="twitter" href="http://www.twitter.com"> <i
+                                                    class="fa fa-twitter"></i> </a>
+                                        <a title="Facebook" class="facebook" href="http://www.facebook.com"> <i
+                                                    class="fa fa-facebook"></i> </a>
+                                        <a title="Gplus" class="gplus" href="http://www.googleplus.com"> <i
+                                                    class=" fa fa-google-plus"></i> </a>
+                                        <a title="linkedin" class="linkedin" href="http://www.linkedin.com"> <i
+                                                    class="fa fa-linkedin"></i> </a>
+                                        <a title="pintrest" class="pintrest-square" href="http://www.pinterest.com"> <i
+                                                    class="fa fa-pinterest-square"></i> </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="vc_footer-gallery" class="footer-widget widget col-md-3">
+                                <div class="vc_gallery">
+                                    <h3> Nuestro Equipo </h3>
+
+                                    <!--  Delete this line to use own image -->
+                                    <ul>
+                                        <li><a data-rel="prettyPhoto['gallery']"
+                                               href="{{ asset('bundles/app/images/office/luis.jpg') }}"><img
+                                                        alt="Presidente"
+                                                        src="{{ asset('bundles/app/images/office/luis.jpg') }}"></a>
+                                        </li>
+                                        <li><a data-rel="prettyPhoto['gallery']"
+                                               href="{{ asset('bundles/app/images/office/maggy.jpg') }}"><img
+                                                        alt="Presidenta"
+                                                        src="{{ asset('bundles/app/images/office/maggy.jpg') }}"></a>
+                                        </li>
+                                        <li><a data-rel="prettyPhoto['gallery']"
+                                               href="{{ asset('bundles/app/images/office/tiffany.jpg') }}"><img
+                                                        alt="Tesorera"
+                                                        src="{{ asset('bundles/app/images/office/tiffany.jpg') }}"></a>
+                                        </li>
+                                        <li><a data-rel="prettyPhoto['gallery']"
+                                               href="{{ asset('bundles/app/images/office/angelito.jpg') }}"><img
+                                                        alt="CEO - Tecnolog&iacute;a"
+                                                        src="{{ asset('bundles/app/images/office/angelito.jpg') }}"></a>
+                                        </li>
+                                        {#<li><a data-rel="prettyPhoto['gallery']"#}
+                                        {#href="{{ asset('bundles/app/images/office/sandro.jpg') }}"><img#}
+                                        {#alt="CEO - Conocimiento"#}
+                                        {#src="{{ asset('bundles/app/images/office/sandro.jpg') }}"></a>#}
+                                        {#</li>#}
+                                        {#<li><a data-rel="prettyPhoto['gallery']"#}
+                                        {#href="{{ asset('bundles/app/images/office/yaima.jpg') }}"><img#}
+                                        {#alt="CEO - Desarrollo"#}
+                                        {#src="{{ asset('bundles/app/images/office/yaima.jpg') }}"></a>#}
+                                        {#</li>#}
+                                    </ul>
+                                    <!-- Delete this line to use own image  -->
+                                </div>
+                            </div>
+                            <div id="vc_footer-twitter" class="footer-widget widget col-md-3">
+                                <div class="vc_twitter-mini">
+                                    <h3> &Uacute;ltimos Tweet </h3>
+
+                                    <div class="bg">
+                                        <i class="fa fa-quote-right"></i>
+                                        <i class="fa fa-twitter"></i>
+
+                                        <div class="vc_carousel-wrapper">
+                                            <div id="twitter-feeds-mini">
+
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="vc_carousel-control">
+                                            <a href="#"> <i class="fa fa-chevron-left"> </i> </a> <a href="#"> <i
+                                                        class="fa fa-chevron-right"> </i> </a>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <h3> Destellos </h3>
+
+                                <p>Nosotros creemos en la extraordinaria capacidad que tenemos los seres humanos de
+                                    imaginar, planificar y desarrollar el camino más rápido, sencillo, económico, y
+                                    seguro que conduzca al éxito propio, con respeto, flexibilidad y transparencia, como
+                                    es TML4you.</p>
+                            </div>
+
+                            {#<div id="vc_footer-newsletter-form-widget" class="footer-widget widget col-md-3">#}
+                            {#<div class="vc_newsletter-form">#}
+                            {#<h3> Suscr&iacute;bete </h3>#}
+
+                            {#<div id="vc_newsletter-form-success" class="alert alert-success hidden"><strong>#}
+                            {#Success! </strong> You've been added to our email list.#}
+                            {#</div>#}
+                            {#<div id="vc_newsletter-form-error" class="alert alert-error hidden"></div>#}
+                            {#<div class="info">#}
+                            {#<p> Keep up-to-date with our awesome products and news. Enter your e-mail and#}
+                            {#subscribe to our newsletter. </p>#}
+
+                            {#<form id="newsletter" method="" action=""#}
+                            {#class="form-inline">#}
+                            {#<div class="control-group row">#}
+                            {#<div class="col-xs-7 form-input">#}
+                            {#<input type="email" id="email" name="email"#}
+                            {#placeholder="Email Address"#}
+                            {#required/>#}
+                            {#</div>#}
+                            {#<div class="col-xs-5 form-btn">#}
+                            {#<button type="submit" class="vc_btn"> Go !</button>#}
+                            {#</div>#}
+                            {#</div>#}
+                            {#</form>#}
+                            {#</div>#}
+                            {#</div>#}
+                            {#</div>#}
+                        </div>
+                        <!-- row -->
+                    </div>
+                    <!-- container -->
+                </div>
+                <!-- wrapper -->
+            </div>
+            <!-- vc_footer-links -->
+
+            <div class="vc_bottom">
+                <div class="wrapper">
+                    <div class="container">
+                        <div class="vc_footer-line"></div>
+                        <div class="bg">
+                            <div class="row">
+                                <div class=" col-sm-12 col-md-6">
+                                    <div class="copyright pull-left">
+                                        <h5> Copyright &copy;2015 TML4you Inc. Todos los derechos reservados. </h5>
+                                    </div>
+                                </div>
+                                <div class=" col-sm-12 col-md-6">
+                                    <div class="menu pull-right">
+                                        <a href="{{ path('faq') }}"> FAQ </a>
+                                        <a href="{{ path('privacy') }}"> Privacy Policy </a>
+                                        <a href="{{ path('terms') }}"> Terms and Conditions</a>
+                                        <a href="{{ path('legal') }}"> Legal Notice </a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer END -->
+
+    </div>
+    <!-- .vc_body END  -->
+
+
+    <a class="back-top" href="#" id="back-top"> <i class="fa fa-chevron-up icon-white"> </i> </a>
+{% endblock %}

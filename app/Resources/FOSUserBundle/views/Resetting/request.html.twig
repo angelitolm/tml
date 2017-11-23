@@ -1,0 +1,15 @@
+{% extends 'FOSUserBundle::layout.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}{{ 'resetting.request.password_form'|trans({},'FOSUserBundle') }}{% endblock title %}
+{% block page_title %}{{ 'resetting.request.password_form'|trans({},'FOSUserBundle') }}{% endblock %}
+
+{% block fos_user_content %}
+    {#<p class="text-center marB30"><strong>{{ 'resetting.request.password_form_info'|trans({},'FOSUserBundle') }}</strong> </p>#}
+    {% include "FOSUserBundle:Resetting:request_content.html.twig" %}
+{% endblock %}
+
+{% block page_action %}
+    <a href="{{ path('fos_user_security_login') }}">{{ 'security.layout.login'|trans({},'security') }}</a> <span class="mgr-10 mgl-10">|</span>
+    <a href="{{ path('fos_user_registration_register') }}">{{ 'security.layout.register'|trans({},'security') }}</a>
+{% endblock %}

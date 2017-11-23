@@ -1,0 +1,37 @@
+<div class="panel panel-info marB10">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <i class="fa fa-fw fa-user"></i> {{ user.name }}
+            <span class="subtitle pull-right">
+                <span class="item">
+                    <strong>
+                        {% if user.getActiveProfile.getType is same as(3)%}
+                            PROFESIONAL
+                        {% elseif user.getActiveProfile.getType is same as(2) %}
+                            SUPERIOR
+                        {% else %}
+                            BASICO
+                        {% endif %}
+                    </strong>
+                </span>
+            </span>
+        </h4>
+    </div>
+    <div class="panel-body">
+        <div class="col-md-4">
+            {% set background = {1:'backend-metronic/img/certified_basic.png',2:'backend-metronic/img/certified_superior.png',3:'backend-metronic/img/certified_pro.png'} %}
+            <div class="row">
+                {% for i in 1..3 %}
+                    {% set img_url = 'backend-metronic/img/rotulado.png' %}
+                    {% if user.courseHasCompleted(i) %}
+                        {% set img_url = background[i] %}
+                    {% endif %}
+
+                    <div class="col-md-4">
+                        <img src="{{ asset(img_url) }}" class="img-responsive">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

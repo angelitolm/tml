@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>El usuario {{ name }}, ha solicitado un pr&eacute;stamo a TML-Creidt</p>
+<table>
+    <tr>
+        <th>Corro</th>
+        <td>{{ mail }}</td>
+    </tr>
+    <tr>
+        <th>Patrocinador</th>
+        <td>{{ sponsor }}</td>
+    </tr>
+    <tr>
+        <th>C&oacute;digo</th>
+        <td>{{ code }}</td>
+    </tr>
+    <tr>
+        <th>Comentario</th>
+        <td>{{ comment }}</td>
+    </tr>
+    <tr>
+        <th>Fecha de creaci&oacute;n</th>
+        <td>{{ user.created.format('Y-m-d H:i:s') }}</td>
+    </tr>
+</table>
+</body>
+</html>

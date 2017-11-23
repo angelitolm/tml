@@ -1,0 +1,7 @@
+<a class="btn btn-sm btn-primary" href="{{ path('app_admin_user_switch_status',{'username':username}) }}">
+    {% if enabled %}
+        <i class="fa fa-lock"></i> {{ 'user.disabled'|trans({},'backend') }}
+    {% else %}
+        <i class="fa fa-unlock"></i> {{ 'user.enabled'|trans({},'backend') }}
+    {% endif %}
+</a>

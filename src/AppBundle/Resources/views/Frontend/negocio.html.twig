@@ -1,0 +1,372 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Massó #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+
+
+
+{% block banner_title %}
+    <h1>M&oacute;dulo de <span class="vc_main-color">Negocio</span></h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">M&oacute;dulo de Negocio</li>
+    </ul>
+{% endblock %}
+
+
+{% block sub_banner %}
+
+{% endblock %}
+
+
+{% block content %}
+    <div class="vc_team-members" style="margin-bottom: 35px">
+        <div class="wrapper">
+            <div class="container">
+                <div class="row block">
+                    <div class="col-md-12">
+                        <h3>Lidera tu propio negocio</h3>
+
+                        <p>Una vez adquirido el M&oacute;dulo de Negocio, tienes en tu poder la llave para un &eacute;xito rotundo.  </p>
+
+                        <div class="vc_splitter"></div>
+                        <div class="row text-center">
+                            <div class="col-md-4">
+                                <div class="vc_icon-round vc_center">
+                                    <div class="bg-wrapper">
+                                        <div class="bg" style="color: #fff">
+                                            <img alt="example image" src="{{ asset('bundles/app/images/about/bnegocio.png') }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vc_splitter"></div>
+                                <h3 style="margin-bottom:0;">BASE DE SU NEGOCIO</h3>
+
+                                <p><em></em></p>
+                                {#<a class="vc_btn btn-small" href="#">About</a>#}
+                                <ul>
+                                    <li> Socialización global TML</li>
+                                    <li> Perfil internacional personal</li>
+                                    <li> Recursos de negocio TML</li>
+                                    <li> Plan de desarrollo</li>
+                                    <li> Invitación al módulo gratis</li>
+                                    <li> Bono de descuento</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="vc_icon-round vc_center">
+                                    <div class="bg-wrapper">
+                                        <div class="bg" style="color: #fff">
+                                            <img alt="example image" src="{{ asset('bundles/app/images/about/desarrollo.png') }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vc_splitter"></div>
+                                <h3 style="margin-bottom:0;">PRUEBA Y ADQUISICION </h3>
+
+                                <p><em></em></p>
+                                {#<a class="vc_btn btn-small" href="#">About</a>#}
+                                <ul>
+                                    <li> Presentación gratis</li>
+                                    <li> Recomendación MLM gratis</li>
+                                    <li> Inscripción gratis</li>
+                                    <li> Puntos de inicio gratis</li>
+                                    <li> Apoyo y seguimiento gratis</li>
+                                    <li> Actualización gratis</li>
+                                    <li> Decisión de adquirir libremente su Módulo de Negocio TML</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="vc_icon-round vc_center">
+                                    <div class="bg-wrapper">
+                                        <div class="bg" style="color: #fff">
+                                            <img alt="example image" src="{{ asset('bundles/app/images/about/indepmlm.png') }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="vc_splitter"></div>
+                                <h3 style="margin-bottom:0;">DUPLICACION E INDEPENDENCIA</h3>
+
+                                <p><em></em></p>
+                                {#<a class="vc_btn btn-small" href="#">About</a>#}
+                                <ul>
+                                    <li> Plan de desarrollo especifico</li>
+                                    <li> Recursos necesarios incluidos</li>
+                                    <li> Prospectos para seleccionar</li>
+                                    <li> Recomendación de productos de consumo personal y patentado</li>
+                                    <li> El momento perfecto para su desarrollo</li>
+                                    <li> Garantías de satisfacción completa TML</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <div class="vc_separator"></div>
+                        <h3>La informaci&oacute;n del M&oacute;dulo de Negocio, solo est&aacute; disponible para los miembros...</h3>
+
+                        <div class="vc_splitter"></div>
+
+                        {#<div class="row text-center worker">#}
+                            {#<div class="col-md-3"><img alt="example image" src="{{ asset('bundles/app/images/about/04.jpg') }}">#}
+                                {#<h4 class="name">Goerge Lucas</h4>#}
+
+                                {#<p class="job"> Head Developer </p>#}
+                            {#</div>#}
+                            {#<div class="col-md-3"><img alt="example image" src="{{ asset('bundles/app/images/about/05.jpg') }}">#}
+                                {#<h4 class="name">Michael Codney</h4>#}
+
+                                {#<p class="job"> Head Designer </p>#}
+                            {#</div>#}
+                            {#<div class="col-md-3"><img alt="example image" src="{{ asset('bundles/app/images/about/06.jpg') }}">#}
+                                {#<h4 class="name">Rebecca S.</h4>#}
+
+                                {#<p class="job"> Head Analyst </p>#}
+                            {#</div>#}
+                            {#<div class="col-md-3"><img alt="example image" src="{{ asset('bundles/app/images/about/07.jpg') }}">#}
+                                {#<h4 class="name">Bradley R.</h4>#}
+
+                                {#<p class="job"> Senior Developer </p>#}
+                            {#</div>#}
+                        {#</div>#}
+                        {#<div class="row text-center worker">#}
+                            {#<div class="col-md-3"><img alt="example image" src="{{ asset('bundles/app/images/about/08.jpg') }}">#}
+                                {#<h4 class="name">Goerge Lucas</h4>#}
+
+                                {#<p class="job"> Head Developer </p>#}
+                            {#</div>#}
+                            {#<div class="col-md-3"><img alt="example image" src="{{ asset('bundles/app/images/about/09.jpg') }}">#}
+                                {#<h4 class="name">Michael Codney</h4>#}
+
+                                {#<p class="job"> Head Designer </p>#}
+                            {#</div>#}
+                            {#<div class="col-md-3"><img alt="example image" src="{{ asset('bundles/app/images/about/10.jpg') }}">#}
+                                {#<h4 class="name">Rebecca S.</h4>#}
+
+                                {#<p class="job"> Head Analyst </p>#}
+                            {#</div>#}
+                            {#<div class="col-md-3"><img alt="example image" src="{{ asset('bundles/app/images/about/01.jpg') }}">#}
+                                {#<h4 class="name">Bradley R.</h4>#}
+
+                                {#<p class="job"> Senior Developer </p>#}
+                            {#</div>#}
+                        {#</div>#}
+                    </div>
+                    <!-- .col-md-9 -->
+                    {#<div class="col-md-3 sidebar">#}
+                        {#<div id="vc_links-widget" class="sidebar-widget widget block">#}
+                            {#<div class="vc_links-widget">#}
+                                {#<h3>Categories</h3>#}
+
+                                {#<div class="content">#}
+                                    {#<ul class="vc_li">#}
+                                        {#<li><a href="#">Drupal</a></li>#}
+                                        {#<li><a href="#">Wordpress</a></li>#}
+                                        {#<li><a href="#">HTML</a></li>#}
+                                        {#<li><a href="#">CSS</a></li>#}
+                                        {#<li><a href="#">Web Design</a></li>#}
+                                    {#</ul>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                        {#<div id="vc_latest-portfolio-widget" class="sidebar-widget widget block">#}
+                            {#<div class="vc_portfolio-widget">#}
+                                {#<h3 class="pull-left">#}
+                                    {#Portfolio <span class="vc_main-color"> Widget </span>#}
+                                {#</h3>#}
+
+                                {#<div class="vc_carousel-control">#}
+                                    {#<a href="#"> <i class="fa fa-chevron-left"> </i> </a> <a href="#"> <i#}
+                                                {#class="fa fa-chevron-right"> </i> </a>#}
+                                {#</div>#}
+                                {#<div class="clearfix"></div>#}
+                                {#<div class="vc_carousel-wrap">#}
+                                    {#<div class="vc_carousel clearfix">#}
+                                        {#<div class="vc_carousel-column">#}
+                                            {#<div class="vc_anim vc_anim-slide"><a href=""#}
+                                                                                  {#class="vc_preview"> <img#}
+                                                            {#alt="example image" src="{{ asset('bundles/app/images/portfolio/01.jpg') }}"/> </a>#}
+
+                                                {#<div class="vc_hover">#}
+                                                    {#<div class="hover-wrapper">#}
+                                                        {#<div class="text-wrapper">#}
+                                                            {#<h4> Example 1 </h4>#}
+                                                        {#</div>#}
+                                                        {#<div class="icon-wrapper">#}
+                                                            {#<ul>#}
+                                                                {#<li class="vc_icon"><a data-rel="prettyPhoto[portfolio]"#}
+                                                                                       {#href="{{ asset('bundles/app/images/portfolio/01.jpg') }}"> <i#}
+                                                                                {#class="fa fa-search-plus"> </i> </a>#}
+                                                                {#</li>#}
+                                                                {#<li class="vc_icon"><a#}
+                                                                            {#href=""> <i#}
+                                                                                {#class="fa fa-link"> </i> </a></li>#}
+                                                            {#</ul>#}
+                                                        {#</div>#}
+                                                    {#</div>#}
+                                                {#</div>#}
+                                            {#</div>#}
+                                        {#</div>#}
+                                        {#<div class="vc_carousel-column">#}
+                                            {#<div class="vc_anim vc_anim-slide"><a href=""#}
+                                                                                  {#class="vc_preview"> <img#}
+                                                            {#alt="example image" src="{{ asset('bundles/app/images/portfolio/02.jpg') }}"/> </a>#}
+
+                                                {#<div class="vc_hover">#}
+                                                    {#<div class="hover-wrapper">#}
+                                                        {#<div class="text-wrapper">#}
+                                                            {#<h4> Example 2 </h4>#}
+                                                        {#</div>#}
+                                                        {#<div class="icon-wrapper">#}
+                                                            {#<ul>#}
+                                                                {#<li class="vc_icon"><a data-rel="prettyPhoto[portfolio]"#}
+                                                                                       {#href="{{ asset('bundles/app/images/portfolio/02.jpg') }}"> <i#}
+                                                                                {#class="fa fa-search-plus"> </i> </a>#}
+                                                                {#</li>#}
+                                                                {#<li class="vc_icon"><a#}
+                                                                            {#href=""> <i#}
+                                                                                {#class="fa fa-link"> </i> </a></li>#}
+                                                            {#</ul>#}
+                                                        {#</div>#}
+                                                    {#</div>#}
+                                                {#</div>#}
+                                            {#</div>#}
+                                        {#</div>#}
+                                        {#<div class="vc_carousel-column">#}
+                                            {#<div class="vc_anim vc_anim-slide"><a href=""#}
+                                                                                  {#class="vc_preview"> <img#}
+                                                            {#alt="example image" src="{{ asset('bundles/app/images/portfolio/03.jpg') }}"/> </a>#}
+
+                                                {#<div class="vc_hover">#}
+                                                    {#<div class="hover-wrapper">#}
+                                                        {#<div class="text-wrapper">#}
+                                                            {#<h4> Example 3 </h4>#}
+                                                        {#</div>#}
+                                                        {#<div class="icon-wrapper">#}
+                                                            {#<ul>#}
+                                                                {#<li class="vc_icon"><a data-rel="prettyPhoto[portfolio]"#}
+                                                                                       {#href="{{ asset('bundles/app/images/portfolio/03.jpg') }}"> <i#}
+                                                                                {#class="fa fa-search-plus"> </i> </a>#}
+                                                                {#</li>#}
+                                                                {#<li class="vc_icon"><a#}
+                                                                            {#href=""> <i#}
+                                                                                {#class="fa fa-link"> </i> </a></li>#}
+                                                            {#</ul>#}
+                                                        {#</div>#}
+                                                    {#</div>#}
+                                                {#</div>#}
+                                            {#</div>#}
+                                        {#</div>#}
+                                        {#<div class="vc_carousel-column">#}
+                                            {#<div class="vc_anim vc_anim-slide"><a href=""#}
+                                                                                  {#class="vc_preview"> <img#}
+                                                            {#alt="example image" src="{{ asset('bundles/app/images/portfolio/04.jpg') }}"/> </a>#}
+
+                                                {#<div class="vc_hover">#}
+                                                    {#<div class="hover-wrapper">#}
+                                                        {#<div class="text-wrapper">#}
+                                                            {#<h4> Example 4 </h4>#}
+                                                        {#</div>#}
+                                                        {#<div class="icon-wrapper">#}
+                                                            {#<ul>#}
+                                                                {#<li class="vc_icon"><a data-rel="prettyPhoto[portfolio]"#}
+                                                                                       {#href="{{ asset('bundles/app/images/portfolio/04.jpg') }}"> <i#}
+                                                                                {#class="fa fa-search-plus"> </i> </a>#}
+                                                                {#</li>#}
+                                                                {#<li class="vc_icon"><a#}
+                                                                            {#href=""> <i#}
+                                                                                {#class="fa fa-link"> </i> </a></li>#}
+                                                            {#</ul>#}
+                                                        {#</div>#}
+                                                    {#</div>#}
+                                                {#</div>#}
+                                            {#</div>#}
+                                        {#</div>#}
+                                    {#</div>#}
+                                    {#<!--vc_carousel -->#}
+                                {#</div>#}
+                                {#<!-- vc_carousel-wrap -->#}
+                                {#<div class="clearfix"></div>#}
+                            {#</div>#}
+                            {#<!-- vc_portfolio-widget -->#}
+                        {#</div>#}
+                        {#<div id="vc_tabs-widget" class="sidebar-widget widget block">#}
+                            {#<div class="vc_tabs-widget">#}
+                                {#<div class="content">#}
+                                    {#<div class="tabs">#}
+                                        {#<ul class="nav nav-tabs">#}
+                                            {#<li class="active"><a href="#home-tab" data-toggle="tab">About</a></li>#}
+                                            {#<li><a href="#posts-tab" data-toggle="tab">Popular</a></li>#}
+                                        {#</ul>#}
+                                        {#<div class="tab-content">#}
+                                            {#<div class="tab-pane active" id="home-tab">#}
+                                                {#<p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem#}
+                                                    {#accusantium doloremque laudantium, totam rem aperiam, eaque ipsa#}
+                                                    {#quae ab illo inventore veritatis et quasi architecto beatae vitae#}
+                                                    {#dicta sunt explicabo. </p>#}
+                                            {#</div>#}
+                                            {#<div class="tab-pane sidebar-widget" id="posts-tab">#}
+                                                {#<div class="vc_blog-list">#}
+                                                    {#<article class="blog-row clearfix">#}
+                                                        {#<div class="blog-left">#}
+                                                            {#<div><a href="#" class="vc_preview"> <img#}
+                                                                            {#alt="example image"#}
+                                                                            {#src="{{ asset('bundles/app/images/blog/01-square.jpg') }}"/> </a></div>#}
+                                                        {#</div>#}
+                                                        {#<div class="blog-right clearfix">#}
+                                                            {#<h3><a href="#"> Starting a new business </a></h3>#}
+                                                            {#<span class="comments"> <i class="fa fa-comments"> </i> 16 </span>#}
+                                                        {#</div>#}
+                                                    {#</article>#}
+                                                    {#<article class="blog-row clearfix">#}
+                                                        {#<div class="blog-left">#}
+                                                            {#<div><a href="#" class="vc_preview"> <img#}
+                                                                            {#alt="example image"#}
+                                                                            {#src="{{ asset('bundles/app/images/blog/02-square.jpg') }}"/> </a></div>#}
+                                                        {#</div>#}
+                                                        {#<div class="blog-right">#}
+                                                            {#<h3><a href="#"> Building Up Your Portfolio </a></h3>#}
+                                                            {#<span class="comments"> <i class="fa fa-comments"> </i> 16 </span>#}
+                                                        {#</div>#}
+                                                    {#</article>#}
+                                                    {#<article class="blog-row">#}
+                                                        {#<div class="blog-left">#}
+                                                            {#<div><a href="#" class="vc_preview"> <img#}
+                                                                            {#alt="example image"#}
+                                                                            {#src="{{ asset('bundles/app/images/blog/03-square.jpg') }}"/> </a></div>#}
+                                                        {#</div>#}
+                                                        {#<div class="blog-right">#}
+                                                            {#<h3><a href="#"> Creativity in Positivity </a></h3>#}
+                                                            {#<span class="comments"> <i class="fa fa-comments"> </i> 16 </span>#}
+                                                        {#</div>#}
+                                                    {#</article>#}
+                                                {#</div>#}
+                                                {#<div class="clearfix"></div>#}
+                                            {#</div>#}
+                                            {#<!-- .tab-pane-->#}
+                                        {#</div>#}
+                                        {#<!-- .tab-content-->#}
+                                    {#</div>#}
+                                    {#<!-- .tabs-->#}
+                                {#</div>#}
+                                {#<!-- .content-->#}
+                            {#</div>#}
+                            {#<!-- .vc_tabs-widget-->#}
+                        {#</div>#}
+
+                    {#</div>#}
+                    <!-- .sidebar .col-md-3-->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .wrapper -->
+    </div>
+    <!-- .vc_team-members -->
+{% endblock %}
+
+{% block other %}{% endblock %}
+
+{% block another1javascripts %}{% endblock %}
+

@@ -1,0 +1,10 @@
+/* CSS Document */
+@media (max-width: 991px) {
+	.header-2 .vc_contact-top{ margin-left:0;}
+	.header-2 .logo{top:0;}
+	.header-2 .logo a{background:none; box-shadow:none;}
+
+}
+@media (max-width: 480px){
+	.header-2 .vc_sub-menu-bg{ display:block;}
+}

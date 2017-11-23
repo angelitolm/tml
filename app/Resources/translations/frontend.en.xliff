@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2015-11-18T23:55:32Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="b3195b36b4d1eedb916e7ebe91c3bca62f9b286b" resname="ACCOUNT_CREATE_TEXT!">
+        <source>ACCOUNT_CREATE_TEXT!</source>
+        <target state="new">ACCOUNT_CREATE_TEXT!</target>
+        <jms:reference-file line="12">views/Registration/checkEmail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="99f01669118689544cb4d2ddc2e7a6632b47e8df" resname="ACCOUNT_SUCCESSFULLY!">
+        <source>ACCOUNT_SUCCESSFULLY!</source>
+        <target state="new">ACCOUNT_SUCCESSFULLY!</target>
+        <jms:reference-file line="12">views/Registration/checkEmail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="596a001e77516792ff0766165246fb8f362b4e8c" resname="PASSWORD_ALREADY_REQUEST">
+        <source>PASSWORD_ALREADY_REQUEST</source>
+        <target state="new">PASSWORD_ALREADY_REQUEST</target>
+        <jms:reference-file line="3">views/Resetting/passwordAlreadyRequested.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/Resetting/passwordAlreadyRequested.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e841a91edb4e982f861b76c59875a0abae31426f" resname="REGISTER_TEXTF">
+        <source>REGISTER_TEXTF</source>
+        <target state="new">REGISTER_TEXTF</target>
+        <jms:reference-file line="16">views/Registration/checkEmail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5a21420d342f2ee9a8246643bd7123a019e046af" resname="REGISTER_TEXTS">
+        <source>REGISTER_TEXTS</source>
+        <target state="new">REGISTER_TEXTS</target>
+        <jms:reference-file line="16">views/Registration/checkEmail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8341f9420b69737b88b99646b3262563a66dac94" resname="REGISTRATION_COMPLETE">
+        <source>REGISTRATION_COMPLETE</source>
+        <target state="new">REGISTRATION_COMPLETE</target>
+        <jms:reference-file line="8">views/Registration/confirmed.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

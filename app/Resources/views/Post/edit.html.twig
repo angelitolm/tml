@@ -1,0 +1,30 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'posts.edit'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'posts.edit'|trans({},'backend') }}{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{{ path('app_admin_blog_details') }}">{{ 'blog.details'|trans({},'backend') }}</a></li>
+    <li><a href="{{ path('app_admin_post_list') }}">{{ 'posts.list'|trans({},'backend') }}</a></li>
+    <li class="active">{{ 'posts.edit'|trans({},'backend') }}</li>
+{% endblock %}
+
+{% form_theme form with ':form:fields-material.html.twig' %}
+{% block page_body %}
+    <div class="row">
+        <div class="col-xs-12">
+            {% embed ":embed:form-horizontal.html.twig" %}
+                {% block form_action%}
+                    {{ path('app_admin_post_edit',{'id':entity.id}) }}
+                {% endblock form_action %}
+                {% block form_attr %}enctype="multipart/form-data"{% endblock form_attr %}
+                {% block form_buttons %}
+                    {% embed ":embed:actions-edit.html.twig" %}
+                        {% block delete_link %}{{ path('app_admin_post_delete',{'id':entity.id}) }}{% endblock delete_link %}
+                        {% block cancel_link %}{{ path('app_admin_post_list') }}{% endblock cancel_link %}
+                    {% endembed %}
+                {% endblock form_buttons %}
+            {% endembed %}
+        </div>
+    </div>
+{% endblock %}

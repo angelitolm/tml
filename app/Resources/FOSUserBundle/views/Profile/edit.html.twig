@@ -1,0 +1,13 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'user.profile_edit'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'user.profile_edit'|trans({},'backend') }}{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{{ path('fos_user_profile_show') }}">{{ 'user.profile'|trans({},'backend') }}</a></li>
+    <li>{{ 'user.profile_edit'|trans({},'backend') }}</li>
+{% endblock %}
+
+{% block page_body %}
+    {% include "FOSUserBundle:Profile:edit_content.html.twig" %}
+{% endblock page_body %}

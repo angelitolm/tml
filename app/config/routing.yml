@@ -1,0 +1,24 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}
+    requirements:
+        _locale: "%routes.locales%"
+
+fos_routing:
+    resource: fos/routing.yml
+    prefix:   /{_locale}
+    requirements:
+        _locale: "%routes.locales%"
+
+JMSTranslationBundle_ui:
+    resource: @JMSTranslationBundle/Controller/
+    type:     annotation
+    prefix:   /{_locale}/admin/trans
+
+_site_homepage:
+    pattern: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /%locale%
+        permanent: true

@@ -1,0 +1,23 @@
+{% if url is not defined or url == null %}
+    {% set url = app.request.uri %}
+{% endif %}
+
+{#{% spaceless %}#}
+ {#&#123;&#35; initialize facebook SDK &#35;&#125;#}
+ {#<div id="fb-root"></div>#}
+ {#<script>(function(d, s, id) {#}
+   {#var js, fjs = d.getElementsByTagName(s)[0];#}
+   {#if (d.getElementById(id)) return;#}
+   {#js = d.createElement(s); js.id = id;#}
+   {#js.src = "//connect.facebook.net/{{locale}}/all.js#xfbml=1";#}
+   {#fjs.parentNode.insertBefore(js, fjs);#}
+ {#}(document, 'script', 'facebook-jssdk'));</script>#}
+
+ {#<div class="fb-like" data-href="{{url}}" data-send="{{send}}" data-layout="{{layout}}" data-width="{{width}}" data-show-faces="{{showFaces}}" data-share="{{share}}"></div>#}
+{#{% endspaceless %}#}
+
+{% spaceless %}
+    <a href="//facebook.com/tml4you" data-pin-do="buttonBookmark"  data-pin-color="red"><img src="{{ asset('bundles/nomayasocial/images/default/facebook.png') }}" /></a>
+    <!-- Please call pinit.js only once per page -->
+    <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
+{% endspaceless %}

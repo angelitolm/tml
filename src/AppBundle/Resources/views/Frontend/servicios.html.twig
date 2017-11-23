@@ -1,0 +1,650 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Massó #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+
+
+
+{% block banner_title %}
+    <h1>Nuestros <span class="vc_main-color">Productos y Servicios</span></h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">Nuestros Productos y Servicios</li>
+    </ul>
+{% endblock %}
+
+
+{% block content %}
+    <div class="vc_signup block">
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 text-col">
+                        <br>
+                        <br>
+
+
+                    </div>
+                    <div class="col-md-4 newsletter-col">
+
+                        <div class="vc_top-newsletter"
+                             style="margin-top: -200px">
+                            <div class="vc_newsletter-form" style="width: 100% !important;">
+                                <h3 style="border-left: 6px solid #38A5DD; padding-left: 20px; font-size:30px;"> Acceso
+                                    al Dashboard </h3>
+
+                                <p>Solo puede acceder si es miembro.</p>
+
+                                <div id="invitacion-form-success" class="alert alert-success hidden"><strong>
+                                        Success! </strong> You've been added to our email list.
+                                </div>
+                                <div id="invitacion-form-error" class="alert alert-error hidden"></div>
+                                <div class="info">
+
+                                    <form id="code_invitacion" method="post"
+                                          action="{{ path('fos_user_security_check') }}" class="form-horizontal">
+                                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+
+                                        <div class="control-group row">
+                                            <div class="col-md-6 form-input">
+                                                <input id="usuario" name="_username" placeholder="Usuario"
+                                                       required="required" type="text">
+                                            </div>
+                                            <div class="col-md-6 form-input">
+                                                <input id="password" name="_password" placeholder="Contrase&ntilde;a"
+                                                       type="password">
+                                            </div>
+                                        </div>
+                                        <br>
+
+                                        <div class="control-group row">
+                                            <div class="col-md-6 form-input">
+
+                                            </div>
+                                            <div class="col-md-6 form-btn" style="text-align: right">
+                                                <button type="submit" class="vc_btn"><i class="fa fa-check"></i> Acceder
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="vc_full-layout">
+        <div class="wrapper">
+            <div class="container">
+
+                <div class="vc_service-banner">
+                    <h2>Aquí es donde<span class="vc_black"></span>, <span
+                                class="vc_black">comenzamos a dar los primeros pasos, </span> para
+                        <span class="vc_black"> construir la base,</span><br/>
+                        de nuestro futuro económico.</h2>
+
+
+                    <div class="vc_separator" style="width:200px; margin:20px auto 40px;"></div>
+
+
+                    <div class="row">
+                        <p style="padding: 0px 35px;text-align: center"> Nuestros productos y servicios tienen objetivos
+                            muy bien definidos para cumplir con el compromiso de Tiempo libre, Libertad financiera y
+                            Sueños cumplidos.</p>
+
+                        <div class="col-md-8">
+                            <ul>
+                                <li><i class=" fa fa-check-square vc_main-color"></i><span class="vc_main-color">CONFIANZA Y SEGURIDAD,</span>
+                                    para todos los miembros.
+                                </li>
+                                <li><i class=" fa fa-check-square vc_main-color"></i> <span class="vc_main-color">APOYO Y SEGUIMIENTO,</span>
+                                    para usted, personalizado.
+                                </li>
+                                <li><i class=" fa fa-check-square vc_main-color"></i><span
+                                            class="vc_main-color">HERRAMIENTAS, PLANES Y CONTACTOS,</span> necesarios.
+                                </li>
+                                <li><i class=" fa fa-check-square vc_main-color"></i><span
+                                            class="vc_main-color">FLEXIBILIDAD, TRANSPARENCIA Y RESPETO,</span> para
+                                    todos.
+                                </li>
+                                <li><i class=" fa fa-check-square vc_main-color"></i><span
+                                            class="vc_main-color">TRIPLE GARANT&Iacute;AS DIN&Aacute;MICAS,</span> para
+                                    todos.
+                                </li>
+                            </ul>
+                            {#<a class="vc_btn">Learn More</a>#}</div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="vc_pricing-tables block slide-waypoint" data-waypoint="offers" id="one-page-offers">
+                    <div class="wrapper">
+                        <div class="container">
+                            <h2 class="text-center block"><span class="vc_ornament vc_mr-10"></span>Nuestros <span
+                                        class="vc_main-color"> Productos y Servicios</span><span
+                                        class="vc_ornament vc_ml-10"></span>
+                            </h2>
+                            <section>
+                                <div class="row block">
+                                    <div class="vc_pricing-table">
+
+                                        {#<div class="col-md-3">#}
+                                        {#<div class="plan">#}
+                                        {#<h3>Miembro Invitado</h3>#}
+
+                                        {#<div class="price"><span class="main">GRATIS</span> <span#}
+                                        {#class="suffix">&#123;&#35;00&#35;&#125;</span> <span#}
+                                        {#class="text">&#123;&#35;Per Month&#35;&#125;</span>#}
+                                        {#</div>#}
+                                        {#<div class="features">#}
+                                        {#<form action="{{ path('fos_user_registration_register') }}"#}
+                                        {#method="post">#}
+                                        {#<input type="hidden" name="membership" value="basic"/>#}
+                                        {#<ul>#}
+                                        {#<li><b><i class="fa fa-check" style="color: green"></i></b>#}
+                                        {#Dashboard#}
+                                        {#</li>#}
+                                        {#<li><b><i class="fa fa-check" style="color: green"></i></b>#}
+                                        {#Certificación Básica#}
+                                        {#</li>#}
+                                        {#<li><b><i class="fa fa-times" style="color: red"></i></b>#}
+                                        {#Bono de inicio B&aacute;sico#}
+                                        {#una vez $135.00#}
+                                        {#</li>#}
+                                        {#<li><b><i class="fa fa-times" style="color: red"></i></b> 25#}
+                                        {#Invitados#}
+                                        {#semanales#}
+                                        {#</li>#}
+                                        {#<li><b><i class="fa fa-times" style="color: red"></i></b>#}
+                                        {#Cursos B&aacute;sicos#}
+                                        {#</li>#}
+                                        {#<li><b><i class="fa fa-times" style="color: red"></i></b>#}
+                                        {#Blog Personal#}
+                                        {#</li>#}
+                                        {#<li><b><i class="fa fa-times" style="color: red"></i></b>#}
+                                        {#Acceso Limitado#}
+                                        {#</li>#}
+                                        {#<li><b><i class="fa fa-times" style="color: red"></i></b> M&oacute;dulo#}
+                                        {#de#}
+                                        {#Negocio#}
+                                        {#</li>#}
+                                        {#</ul>#}
+                                        {#<button type="submit" class="vc_btn btn-large">Integrarse#}
+                                        {#</button>#}
+                                        {#</form>#}
+                                        {#</div>#}
+                                        {#</div>#}
+                                        {#</div>#}
+                                        <div class="col-md-4">
+                                            <div class="plan">
+                                                <h3>Miembro B&aacute;sico</h3>
+
+                                                <div class="price"><span class="main">$15</span> <span
+                                                            class="suffix">00</span> <span
+                                                            class="text">{#Per Month#}</span>
+                                                </div>
+                                                <div class="features">
+                                                    <form action="{{ path('fos_user_registration_register') }}"
+                                                          method="post">
+                                                        <input type="hidden" name="membership" value="basic"/>
+                                                        <ul>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Panel de Control Básico
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Certificación PTS Básico
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Recompensas PTS Básico
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                100 bonos de inicio básico
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                0 invitados por 15 días
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Cursos básicos con actualizaciones mensuales
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Blog Personal Básico
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Triple protección del costo
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                TML-Social Básico
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Beneficios Amigo-TML
+                                                            </li>
+                                                            {#<li><b><i class="fa fa-times" style="color: red"></i></b>#}
+                                                            {#Acceso Ilimitado#}
+                                                            {#</li>#}
+                                                            {#<li><b><i class="fa fa-times" style="color: red"></i></b>#}
+                                                            {#Correo Privado de TML#}
+                                                            {#</li>#}
+                                                            {#<li><b><i class="fa fa-times" style="color: red"></i></b> M&oacute;dulo#}
+                                                            {#de#}
+                                                            {#Negocio#}
+                                                            {#</li>#}
+                                                        </ul>
+                                                        <button type="submit" class="vc_btn btn-large">Integrarse
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="plan featured">
+                                                <div class="tag"><span class="text"> La mejor </span></div>
+                                                <h3>Miembro Superior </h3>
+
+                                                <div class="price"><span class="main">Especial</span> <span
+                                                            class="suffix">{#00#}</span> <span
+                                                            class="text">{#Per Month#}</span>
+                                                </div>
+                                                <div class="features">
+                                                    <form>
+                                                        <ul>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Panel de Control Superior
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Certificación PTS Superior
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Recompensas PTS Superior
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                300 bonos de inicio superior
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                3 invitados por 15 días
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Cursos superiores con actualizaciones mensuales
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Blog Personal Superior
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Triple protección del costo
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                TML-Social Superior
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Beneficios básicos
+                                                            </li>
+                                                            {#<li><b><i class="fa fa-times" style="color: red"></i></b> M&oacute;dulo#}
+                                                            {#de#}
+                                                            {#Negocio#}
+                                                            {#</li>#}
+                                                        </ul>
+                                                        <button disabled="" class="vc_btn btn-large">Integrarse</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="plan">
+                                                <h3>Miembro Profesional</h3>
+
+                                                <div class="price"><span class="main">Especial</span> <span
+                                                            class="suffix">{#00#}</span> <span
+                                                            class="text">{#Per Month#}</span>
+                                                </div>
+                                                <div class="features">
+                                                    <form>
+                                                        <ul>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Panel de Control Profesional
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Certificación PTS Profesional
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Recompensas PTS Profesional
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                700 bonos de inicio profesional
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                7 invitados por 15 días
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Cursos profesionales con actualizaciones mensuales
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Blog Personal Profesional
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Triple protección del costo
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                TML-Social Profesional
+                                                            </li>
+                                                            <li><b><i class="fa fa-check" style="color: green"></i></b>
+                                                                Beneficios básicos y superiores
+                                                            </li>
+                                                            {#<li><b><i class="fa fa-check" style="color: green"></i></b>#}
+                                                            {#M&oacute;dulo de#}
+                                                            {#Negocio#}
+                                                            {#</li>#}
+                                                        </ul>
+                                                        <button disabled="" class="vc_btn btn-large">Integrarse</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12" style="margin-top: 35px; margin-bottom: 35px">
+
+                                            <h2>INT&Eacute;GRATE YA!!! <span class="vc_main-color">SIN PAGAR UN SOLO PESO DE TU BOLSILLO, solo con la ayuda de tu patrocinador...</span>
+                                            </h2>
+                                        </div>
+
+                                        </h2><BR>
+
+                                        <div class="col-md-6" style="text-align: center">
+                                            <script type="text/javascript" data-pp-pubid="1c5c655c48"
+                                                    data-pp-placementtype="300x50"> (function (d, t) {
+                                                    "use strict";
+                                                    var s = d.getElementsByTagName(t)[0], n = d.createElement(t);
+                                                    n.src = "//paypal.adtag.where.com/merchant.js";
+                                                    s.parentNode.insertBefore(n, s);
+                                                }(document, "script"));
+                                            </script>
+                                            <a href="https://www.google.com/url?q=https%3A%2F%2Ffinancing.paypal.com%2Fppfinportal%2FadGenerator%2FwebCopy%3Fsize%3D300x50%23&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFOAawGKgqnbLj73_B0bPcyE_g-Fw"
+                                               target="_blank" rel="noreferrer">
+                                                <img src="{{ asset('bundles/app/images/paypal.png') }}"/>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6" style="text-align: center">
+                                            <a href="#TMLCreditModal" data-toggle="modal">
+                                                <img src="{{ asset('bundles/app/images/tml-credit.png') }}"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- vc_features-->
+
+
+                <div class="row block" style="padding-top:60px; margin-bottom: 35px">
+                    <div class="col-md-8 vc_services-features">
+
+
+                        <h2>NUESTRAS <span class="vc_main-color">GARANTIAS EXCLUSIVAS</span></h2>
+                        <ul>
+                            <li><i class=" fa fa-check-square vc_main-color"></i><span
+                                        class="vc_main-color">GARANTÍA DE SATISFACCIÓN COMPLETA DE SU MEMBRESÍA ACTUAL ACTIVA: </span>
+                                Garantía de satisfacción completa de su membresía actual activa o la devolución del
+                                costo pagado por su membresía actual activa.
+                                <span class="vc_main-color">
+                                    <ul style="margin-top: 25px">
+                                        <li style="margin: 10px">10 días MIEMBRO-BASICO.</li>
+                                        <li style="margin: 10px">20 días MIEMBRO-SUPERIOR.</li>
+                                        <li style="margin: 10px">30 días MIEMBRO-PROFESIONAL.</li>
+                                    </ul>
+                                </span>
+                                <br>
+                                Usted es libre para solicitar la devolución directa a nuestro procesador del pago
+                                directamente en su Dashboard (panel de control) SIN PREGUNTAS.
+                            </li>
+                            <li><i class=" fa fa-check-square vc_main-color"></i>
+                                <span class="vc_main-color">GARANTÍA 90 DE DÍAS EXTRAS DE SATISFACCIÓN LIMITADA DE SUS RECOMPENSAS GANADAS: </span>
+                                90 días extras de satisfacción limitada de sus recompensas ganadas, cuando no superan el
+                                costo pagado por su membresía
+                                Actual o la devolución del costo pagado en un periodo de
+                                (15 días) DESPUES DE LOS (3 meses del periodo de garantía).
+                            </li>
+                            <li><i class=" fa fa-check-square vc_main-color"></i>
+                                <span class="vc_main-color">GARANT&Iacute;A DE 365 DÍAS DE  SATISFACCIÓN  LIMITADA DE SUS RECOMPENSAS GANADAS: </span>
+                                365 días de satisfacción limitada de sus recompensas ganadas, cuando no superan el costo
+                                pagado por su membresía actual o la devolución del costo pagado en un periodo de (15
+                                días) después de los (12 meses), más un bono de agradecimiento TML4you.
+                            </li>
+
+                            <li><span class="vc_main-color">NOTA:</span> TML4YOU INC., no esta asociada ni es endorsado
+                                por ningún sistema de pagos por
+                                internet y nuestras devoluciones son procesadas de la misma forma y lugar donde fueron
+                                hachas originalmente por su solicitante y miembro original, usamos nombres de
+                                procesadores de pagos los cuales nos prestan servicios de pagos, para mas información
+                                diríjase a info@tml4youinternational.com
+                            </li>
+
+                            <li><span class="vc_main-color">CREDIBILIDAD:</span> es nuestro compromiso en todo momento
+                                porque nuestra inversión y
+                                reputación vale mas que el costo de una membrecía y por esa razón jamás nos quedaremos
+                                con su dinero si usted no ha quedado satisfecho/a o a ganado por encima de su pago.
+                            </li>
+                        </ul>
+                        <br>
+
+                        <h2>REQUISITOS DE LOS<span
+                                    class="vc_main-color"> MIEMBROS TML:</span></h2>
+                        <ul>
+                            <li><i class=" fa fa-check-square vc_main-color"></i><span
+                                        class="vc_main-color">Usted tiene que leer, entender y estar de acuerdo con todos nuestros requisitos en el sitio tml4youinternational.com</span>,
+                                o de lo contrario no puede usar nuestro sitio, productos y servicios en ningún momento.
+                            </li>
+                            <li><i class=" fa fa-check-square vc_main-color"></i><span
+                                        class="vc_main-color">Usted tiene que cumplir con todos nuestros requisitos de ética y buena conducta en todo momento</span>,
+                                o de lo contario dejara de usar nuestro sitio, productos y servicios para pedir su
+                                devolución del costo pagado por su membresía actual.
+                            </li>
+                            <li><i class=" fa fa-check-square vc_main-color"></i><span
+                                        class="vc_main-color">Usted está de acuerdo y autoriza a tml4youinternational.com para cancelar su membresía con los productos y servicios, que usted está usando</span>,
+                                si usted el miembro incumple alguno o todos los requisitos, términos, condiciones
+                                compromisos, conductas y ética establecidos y escritos en el sitio y sus páginas.
+                            </li>
+                            <li><i class=" fa fa-check-square vc_main-color"></i><span
+                                        class="vc_main-color">Usted no puede usar nuestro sitio y sus herramientas para mandar correos y otras formas de comunicación, que resulten en molestias a otras personas</span>,
+                                o de lo contrario le sancionaremos con suspensión o cancelación de su membresía, según
+                                decida la administración tml4youinternational.com
+                            </li>
+                            <li><i class=" fa fa-check-square vc_main-color"></i><span
+                                        class="vc_main-color">Usted tiene que cuidar nuestro proceso de membresía, información, capacitación, invitación, desarrollo y duplicación en todo momento</span>,
+                                y dejarnos saber a tml4youinternational.com de irregularidades y violaciones dentro de
+                                nuestro sistema y será compensado con bonos de amigo fiel por tml4you.
+                            </li>
+                            <li><i class=" fa fa-check-square vc_main-color"></i><span
+                                        class="vc_main-color">Usted no puede usar nuestro sitio con fines ilegales o trasmitir informaciones confidenciales sin autorización</span>,
+                                ni tampoco nacer divulgación de información para adultos, ni tampoco hacer propagandas a
+                                otros negocios de forma masiva, o de lo contrario le cancelaremos su membresía en
+                                cualquier momento.
+                            </li>
+                        </ul>
+                        <br>
+
+                        <h2>NUESTRO CONCEPTO DE <span
+                                    class="vc_main-color">TRANSPARENCIA, RESPETO Y CREDIBILIDAD:</span></h2>
+                        <ul>
+                            <li><i class=" fa fa-check-square vc_main-color"></i><span
+                                        class="vc_main-color">Si usted no logra ganar con su inversión (membresía) ultima activa en TML4you y superar el costo pagado</span>,
+                                entonces nosotros consideramos que TML4you, no es para usted y le retornamos su costo
+                                pagado, sin preguntar ni penalidades.
+                            </li>
+                        </ul>
+                        <br>
+
+                        {#<h2 style="text-align: center"><span class="vc_main-color">CREEMOS EN EL TALENTO HUMANO Y SU EXTRAORDINARIA CAPACIDAD DE PRODUCIR MAYORES BENEFICOS, CUANDO LO DESARROLLAMOS EN EQUIPOS.</span>#}
+                        {#</h2>#}
+                    </div>
+                    <div class="col-md-4">
+                        <div id="vc_accordion-widget" class="panel-group">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href="#collapseOne" data-parent="#vc_accordion-widget" data-toggle="collapse"
+                                           class="accordion-toggle"> <i class="fa fa-thumbs-up  fa-fw"></i> Cosas que
+                                            usted
+                                            deber&iacute;a saber </a>
+                                    </h4>
+                                </div>
+                                <div class="panel-collapse collapse in" id="collapseOne">
+                                    <div class="panel-body">
+                                        <p>Si usted es una persona emprendedora, con nuestras herramientas y con el
+                                            apoyo de sus patrocinadores, tendr&aacute;: </p>
+                                        <ul class="vc_li">
+                                            <li>Tiempo libre para disfrutar</li>
+                                            <li>Dinero para alcanzar su libertad financiera</li>
+                                            <li>El estilo de vida so&ntilde;ado</li>
+                                            {#<li>Quinoa nesciunt laborum eiusmod</li>#}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href="#collapseTwo" data-parent="#vc_accordion-widget" data-toggle="collapse"
+                                           class="accordion-toggle"> <i class="fa fa-bolt fa-fw"></i> &iquest;Por qu&eacute;,
+                                            nosotros? </a>
+                                    </h4>
+                                </div>
+                                <div class="panel-collapse collapse" id="collapseTwo">
+                                    <div class="panel-body"> Pues, porque somos la oportunidad perfecta para que usted
+                                        sea un emprendedor exitoso.
+                                        Para que logre desarrollar un negocio pr&oacute;spero y al m&aacute;s alto
+                                        nivel, que le permita crecer
+                                        tanto en el &aacute;mbito profesional y econ&oacute;mico, como en el personal.
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href="#collapseThree" data-parent="#vc_accordion-widget"
+                                           data-toggle="collapse" class="accordion-toggle"> <i
+                                                    class="fa fa-star fa-fw"></i> Servicios Completos </a>
+                                    </h4>
+                                </div>
+                                <div class="panel-collapse collapse" id="collapseThree">
+                                    <div class="panel-body"> Todos nuestros servicios gozan de todas las herramientas,
+                                        que complementan el &eacute;xito de su trabajo en TML4you.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col-md-4 -->
+
+                </div>
+                <!-- block -->
+
+
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .wrapper -->
+    </div><!--.vc_full-layout-->
+
+    {#<div class="vc_separator"></div>#}
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="TMLCreditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">{{ 'tml.credit' | trans({}, 'frontend') }}</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="modal-body padT10">
+                        <h4 style="text-align: center;"><span
+                                    class="vc_inverted"> {{ 'new.posibility.of.money.never.touch.your.money' | trans({}, 'frontend') }}</span>
+                        </h4>
+                        <br>
+
+                        <div style="text-align: center"><img
+                                    src="{{ asset('bundles/app/images/tml-credit.png') }}"/></div>
+                        <br>
+
+                        <h5 style="text-align: center">{{ 'opening.posibilities.of.develope.to.the need.it.witch.cero.interes' | trans({}, 'frontend') }}</h5>
+
+                        <div class="row" style="text-align: center">
+                            <div class="col-md-6">{{ 'gana.y.despues.amortigua.tu.compromiso.o.deuda' | trans({}, 'frontend') }}</div>
+                            <div class="col-md-6">{{ 'recibe.todas.las.garantias.y.posibilidades.del.invitado' | trans({}, 'frontend') }}</div>
+                        </div>
+                        <br>
+
+                        <h6 style="text-align: center">{{ 'realiza.todos.tus.planes.de.forma.sencilla.rapida.segura.y.economica.siempre' | trans({}, 'frontend') }}</h6>
+                        <br><br>
+
+                        <h4>{{ 'conditions.tml-credit' | trans({}, 'frontend') }}</h4><br>
+
+                        <p>
+                            1- Debe ser referido por un patrocinador superior o profesional directamente con su
+                            código de invitado.<br>
+                            2- Debe ser mayor de edad y tener una identidad más un correo personal, preferiblemente
+                            gmail.<br>
+                            3- Debe tener por lo menos tres páginas de Social Media combinadas y estar activas con
+                            informaciones personales y en interacción con otros usuarios.<br>
+                            4- Debe saber que el cr&eacute;dito es por tiempo limitado y existen restricciones
+                            adicionales.<br>
+                            5- Debe saber que este programa solamente acumula créditos y no podrá cobrarlos hasta
+                            que se convierta en miembro oficial y complete su proceso de membresías.<br>
+                            6- Debe tener conocimiento de todos nuestros términos, condiciones, ética, y otras
+                            reglas que gobiernan el sistema tml4you inc.<br>
+                            7- Debe saber que el per&iacute;odo de beneficio es de 15 d&iacute;as y no puede aplicar dos
+                            veces
+                            la, misma persona.<br>
+                            8- Debe saber que su aplicaci&oacute;n puede tomarse hasta 30 d&iacute;as en ser
+                            aprobada, de procesamiento y respuesta al aplicante..<br>
+                            9- Usted debe estar de acuerdo con estos requisitos y todos los t&eacute;rminos y
+                            condiciones del
+                            sito para ser beneficiado por el cr&eacute;dito.<br>
+                            10- Usted debe saber que podemos negarle su solicitud de cr&eacute;dito a nuestra propia
+                            discreci&oacute;n.
+
+                        </p>
+
+
+                        <a class="vc_btn" href="{{ path('solicitud_credit') }}">Solicitar un Pr&eacute;stamo a
+                            TML-Credit</a>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer background-login">
+                    <button type="button" class="btn black"
+                            data-dismiss="modal">{{ 'close'|trans({},'resources') }}</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+
+{% endblock %}
+
+{% block another1javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/app/js/jquery.stellar.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/app/js/waypoints.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/app/js/jquery.easing.1.3.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/app/js/specific/one-page-parallax.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/app/js/specific/portfolio.js') }}"></script>
+{% endblock %}
+

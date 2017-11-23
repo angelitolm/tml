@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="portlet light bordered">
+      {% block panel_heading %}
+        <div class="portlet-title">
+          <h3 class="caption">{% block box_title %}{% endblock box_title %}</h3>
+          <div class="actions">
+            {% block box_tools %}{% endblock box_tools %}
+          </div>
+          <!-- vd_panel-menu -->
+        </div>
+      {% endblock %}
+      {% block panel_body %}
+        <div class="portlet-body">
+          {% block box_content %}{% endblock box_content %}
+        </div>
+      {% endblock %}
+    </div>
+  </div>
+</div>

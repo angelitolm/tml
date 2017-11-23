@@ -1,0 +1,159 @@
+{% if app.user.hasRole('ROLE_ADMIN') %}
+    <li class="dropdown dropdown-fw {% if in_str(app.request.attributes.get('_route'), 'app_admin_dashboard') %}active open selected{% endif %}">
+        <a href="{{ path('app_admin_dashboard') }}" class="text-uppercase">
+            <i class="fa fa-dashboard"></i>
+            {{ 'dashboard'|trans({},'backend') }}
+        </a>
+    </li>
+
+
+    <li class="dropdown dropdown-fw {% if in_str(app.request.attributes.get('_route'), 'app_admin_user') %}active open selected{% endif %}">
+        <a href="{{ path('app_admin_user_index') }}" class="text-uppercase">
+            <i class="fa fa-users"></i>
+            {{ 'users'|trans({},'backend') }}
+        </a>
+    </li>
+
+
+    <li  class="dropdown dropdown-fw {% if in_str(app.request.attributes.get('_route'), 'app_admin_news') %}active open selected{% endif %}">
+        <a href="{{ path('app_admin_news_index') }}">
+            <i class="fa fa-leaf"> </i>
+            {{ 'news'|trans({},'backend') }}
+        </a>
+        <ul class="dropdown-menu dropdown-menu-fw">
+            <li>
+                <a href="{{ path('app_admin_news_new') }}">
+                    <i class="fa fa-plus" style="color: #ADDB2C;"></i> {{ 'news.new'|trans({},'backend') }}
+                </a>
+            </li><li>
+                <a href="{{ path('app_admin_news_index') }}">
+                    <i class="fa fa-list"></i> <span class="menu-text">{{ 'news.list'|trans({},'backend') }}</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('app_admin_news_category_new') }}">
+                    <i class="fa fa-plus" style="color: #ADDB2C;"></i> {{ 'news_category.new'|trans({},'backend') }}
+                </a>
+            </li><li>
+                <a href="{{ path('app_admin_news_category_index') }}">
+                    <i class="fa fa-list"></i> <span class="menu-text">{{ 'news.categories'|trans({},'backend') }}</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="dropdown dropdown-fw {% if in_str(app.request.attributes.get('_route'), 'jms_translation') %}active open selected{% endif %}">
+        <a href="{{ path('jms_translation_index') }}" class="text-uppercase">
+            <i class="fa fa-globe"></i>
+            {{ 'translations'|trans({},'backend') }}
+        </a>
+    </li>
+
+    <li class="dropdown dropdown-fw {% if in_str(app.request.attributes.get('_route'), 'app_admin_courses') %}active open selected{% endif %}">
+        <a href="{{ path('app_admin_courses_index') }}" class="text-uppercase">
+            <i class="fa fa-mortar-board"></i>
+            {{ 'courses'|trans({},'backend') }}
+        </a>
+    </li>
+
+    <li class="dropdown dropdown-fw {% if in_str(app.request.attributes.get('_route'), 'app_admin_configuration') %}active open selected{% endif %}">
+        <a href="{{ path('app_admin_configuration_index') }}" class="text-uppercase">
+            <i class="fa fa-cogs"></i>
+            {{ 'configuration'|trans({},'backend') }}
+        </a>
+    </li>
+{% else %}
+    <li class="dropdown dropdown-fw {% if in_str(app.request.attributes.get('_route'), 'app_admin_dashboard') %}active open selected{% endif %}">
+        <a href="{{ path('app_admin_dashboard') }}" class="text-uppercase">
+            <i class="icon-home"></i>
+            {{ 'dashboard'|trans({},'backend') }}
+        </a>
+    </li>
+
+    {% if app.user.hasRole('ROLE_BASIC') or app.user.hasRole('ROLE_SUPERIOR') or app.user.hasRole('ROLE_PROFESSIONAL') %}
+        <li class="dropdown dropdown-fw {% if in_str(app.request.attributes.get('_route'), 'app_admin_messages') %}active open selected{% endif %}">
+            <a href="{{ path('app_admin_messages_index') }}" class="text-uppercase">
+                <i class="icon-envelope-open"></i>
+                {{ 'inbox'|trans({},'backend') }}
+            </a>
+        </li>
+
+        <li class="dropdown dropdown-fw {% if in_str(app.request.attributes.get('_route'), 'app_admin_membership') %}active open selected{% endif %}">
+            <a href="{{ path('app_admin_membership_index') }}" class="text-uppercase">
+                <i class="icon-users"></i>
+                {{ 'memebership'|trans({},'backend') }}
+            </a>
+        </li>
+
+
+        <li class="dropdown dropdown-fw {% if in_str(app.request.attributes.get('_route'), 'app_admin_blog') or in_str(app.request.attributes.get('_route'), 'app_admin_post') %}active open selected{% endif %}">
+            <a href="{{ path('app_admin_blog_details') }}" class="text-uppercase">
+                <i class="fa fa-comment"> </i>
+                {{ 'blog'|trans({},'backend') }}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-fw" style="box-shadow: 0px 4px 5px rgba(102, 102, 102, 0.1) !important;">
+                <li>
+                    <a href="{{ path('app_admin_blog_details') }}">
+                        <span class="menu-text">{{ 'blog.details'|trans({},'backend') }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('app_admin_post_list') }}">
+                        <span class="menu-text">{{ 'posts.list'|trans({},'backend') }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('app_admin_post_new') }}">
+                        <span class="menu-text">{{ 'posts.new'|trans({},'backend') }}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="dropdown more-dropdown {% if in_str(app.request.attributes.get('_route'), 'app_admin_transfer') or in_str(app.request.attributes.get('_route'), 'certified') %}active open selected{% endif %}">
+            <a href="javascript:;" class="text-uppercase">
+                {{ 'more'|trans({},'backend') }}
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="{{ path('app_admin_transfer_index') }}" class="text-uppercase">
+                        <i class="icon-bar-chart"></i>
+                        {{ 'reports'|trans({},'backend') }}
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ path('certified') }}" class="text-uppercase">
+                        <i class="icon-badge"></i>
+                        {{ 'certified'|trans({},'backend') }}
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ path('portafolio') }}" class="text-uppercase">
+                        <i class="icon-briefcase"></i>
+                        {{ 'portafolio'|trans({},'backend') }}
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+
+        {#<li class="dropdown dropdown-fw &#123;&#35; active open selected&#35;&#125;">
+            <a href="{{ path('app_admin_courses_list') }}" class="text-uppercase">
+                <i class="fa fa-graduation-cap"></i>
+                {{ 'courses'|trans({},'backend') }}
+            </a>
+        </li>#}
+
+    {% else %}
+        <li class="dropdown dropdown-fw {% if in_str(app.request.attributes.get('_route'), 'app_admin_membership') %}active open selected{% endif %}">
+            <a href="{{ path('app_admin_membership_index') }}" class="text-uppercase">
+                <i class="icon-users"></i>
+                {{ 'memebership'|trans({},'backend') }}
+            </a>
+        </li>
+    {% endif %}
+
+{% endif %}

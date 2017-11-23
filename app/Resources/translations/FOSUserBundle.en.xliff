@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2015-11-18T23:55:32Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="3960c41b6924750586f8f94ce26b700d35a74a20" resname="form.address">
+        <source>form.address</source>
+        <target state="new">form.address</target>
+        <jms:reference-file line="33">AppBundle/Form/ProfileFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bd2099d11db02cb9a66e374e1c44f656538d2c5e" resname="form.code">
+        <source>form.code</source>
+        <target state="new">form.code</target>
+        <jms:reference-file line="18">AppBundle/Form/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1388ed24b682f8d7500fbec20ac5824f26cc834f" resname="form.current_password">
+        <source>form.current_password</source>
+        <target state="new">form.current_password</target>
+        <jms:reference-file line="26">AppBundle/Form/ChangePasswordType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="752b77da22d1abe11e724ff55fcfd050cb6f30f2" resname="form.description">
+        <source>form.description</source>
+        <target state="new">form.description</target>
+        <jms:reference-file line="41">AppBundle/Form/ProfileFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="55596606dc9a0ebab5f430a4b0e694fea3ac4073" resname="form.dni">
+        <source>form.dni</source>
+        <target state="new">form.dni</target>
+        <jms:reference-file line="31">AppBundle/Form/ProfileFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7e6b12a7deb5f7315f025b8c49121130cd7798ad" resname="form.email">
+        <source>form.email</source>
+        <target state="new">form.email</target>
+        <jms:reference-file line="29">AppBundle/Form/ProfileFormType.php</jms:reference-file>
+        <jms:reference-file line="29">AppBundle/Form/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2b24e8a77a5856e68018ff59e13bd319e400c546" resname="form.name">
+        <source>form.name</source>
+        <target state="new">form.name</target>
+        <jms:reference-file line="23">AppBundle/Form/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="37235e2e8981fa0045e4eae0c39e85c01b3a4e3f" resname="form.phone">
+        <source>form.phone</source>
+        <target state="new">form.phone</target>
+        <jms:reference-file line="32">AppBundle/Form/ProfileFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5c6f4f5b616f1ffd5593a0d80c02481a9443685c" resname="form.picture">
+        <source>form.picture</source>
+        <target state="new">form.picture</target>
+        <jms:reference-file line="34">AppBundle/Form/ProfileFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7e02c4ce36d896ee7207b293557b0545df940718" resname="form.title">
+        <source>form.title</source>
+        <target state="new">form.title</target>
+        <jms:reference-file line="30">AppBundle/Form/ProfileFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dff086700fdd62e031af5de308be31fcada4d7c7" resname="form.username">
+        <source>form.username</source>
+        <target state="new">form.username</target>
+        <jms:reference-file line="28">AppBundle/Form/ProfileFormType.php</jms:reference-file>
+        <jms:reference-file line="26">AppBundle/Form/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1fa5b2873fe30be026b854f6a51503b86c6ac81a" resname="registration.back">
+        <source>registration.back</source>
+        <target state="new">registration.back</target>
+        <jms:reference-file line="12">views/Registration/confirmed.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7a0a8fbc70fe82997f8a2ff89090f523ee63f72a" resname="registration.confirmed">
+        <source>registration.confirmed</source>
+        <target state="new">registration.confirmed</target>
+        <jms:reference-file line="8">views/Registration/confirmed.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6362bc7b7a8f72b782ffd590744ab069327bbe4a" resname="registration.email.message">
+        <source>registration.email.message</source>
+        <target state="new">registration.email.message</target>
+        <jms:reference-file line="8">views/Registration/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="10df4e23ec43b671aafea0a3a9ebc8dcc92b1bd0" resname="registration.email.subject">
+        <source>registration.email.subject</source>
+        <target state="new">registration.email.subject</target>
+        <jms:reference-file line="3">views/Registration/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="40c1a483571045e24d606bf00361cfd4d021ba05" resname="resetting.check_email">
+        <source>resetting.check_email</source>
+        <target state="new">resetting.check_email</target>
+        <jms:reference-file line="9">views/Resetting/checkEmail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="70c8836a0e3b8dadb494b8de56ebed18939359b5" resname="resetting.email.message">
+        <source>resetting.email.message</source>
+        <target state="new">resetting.email.message</target>
+        <jms:reference-file line="9">views/Resetting/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="126cf13058808d8948cc673c7933c6c1ce27841d" resname="resetting.email.subject">
+        <source>resetting.email.subject</source>
+        <target state="new">resetting.email.subject</target>
+        <jms:reference-file line="4">views/Resetting/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f0b3476bec045fac67c256d17a54e4f8a8d05335" resname="resetting.password_already_requested">
+        <source>resetting.password_already_requested</source>
+        <target state="new">resetting.password_already_requested</target>
+        <jms:reference-file line="12">views/Resetting/passwordAlreadyRequested.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3724c2cd22fc8b4652b4d9d3cfbdee05900cc8ac" resname="resetting.request.check_email">
+        <source>resetting.request.check_email</source>
+        <target state="new">resetting.request.check_email</target>
+        <jms:reference-file line="2">views/Resetting/checkEmail.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Resetting/checkEmail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c3474ad1b73a0d0db019eec986ee675e8afaf640" resname="resetting.request.invalid_username">
+        <source>resetting.request.invalid_username</source>
+        <target state="new">resetting.request.invalid_username</target>
+        <jms:reference-file line="6">views/Resetting/request_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4e2afa5e660d955a0478b341c670444faa3270df" resname="resetting.request.password_form">
+        <source>resetting.request.password_form</source>
+        <target state="new">resetting.request.password_form</target>
+        <jms:reference-file line="4">views/Resetting/request.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Resetting/request.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="278618d0e3da534f1b4f83ed82422fbabf1a8f36" resname="resetting.request.password_form_info">
+        <source>resetting.request.password_form_info</source>
+        <target state="new">resetting.request.password_form_info</target>
+        <jms:reference-file line="9">views/Resetting/request.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a3f5ca30ef4d810a7b9b910b632c8a24b94be6f1" resname="resetting.request.password_send_sucessfully">
+        <source>resetting.request.password_send_sucessfully</source>
+        <target state="new">resetting.request.password_send_sucessfully</target>
+        <jms:reference-file line="9">views/Resetting/checkEmail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7ad41bf8fb30013eb0f31ca027ca8d1dc7a3d96f" resname="resetting.request.username">
+        <source>resetting.request.username</source>
+        <target state="new">resetting.request.username</target>
+        <jms:reference-file line="11">views/Resetting/request_content.html.twig</jms:reference-file>
+        <jms:reference-file line="17">views/Resetting/request_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="921fd7a5cc7f9e46eab31822855a22d9808b0477" resname="resetting.reset.submit">
+        <source>resetting.reset.submit</source>
+        <target state="new">resetting.reset.submit</target>
+        <jms:reference-file line="8">views/Resetting/reset_content.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

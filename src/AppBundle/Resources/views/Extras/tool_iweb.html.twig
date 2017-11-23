@@ -1,0 +1,28 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Mass&oacute; #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+
+{% block banner_title %}
+    <h1>Herramienta <span class="vc_main-color">iWeb - Blog Personal</span></h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">Herramienta iWeb - Blog Personal</li>
+    </ul>
+{% endblock %}
+
+
+{% block content %}
+    <div class="col-md-12" style="margin-bottom: 35px">
+        <p>
+            He aqu&iacute; una singular y exclusiva herramienta de TML puesta en sus manos, para su uso personal y beneficio
+            propio. Este Blog, no es m&aacute;s que un sencillo y moderno sitio, que le permitir&aacute; adem&aacute;s de promocionarse en
+            TML, publicar lo que usted desee, para sacarle provecho y partida a su negocio. Es muy sencillo de
+            administrar y gestionar, no necesita ser usted programador web, ni tener muchos conocimientos de inform&aacute;tica
+            para poder configurar sus opciones y hacer de este una herramienta &uacute;nica. En este blog tus visitantes
+            tambi&eacute;n entre otras cosas, podr&aacute;n ver tus n&uacute;meros de afiliados y saber c&oacute;mo est&aacute; el staff de su futuro o ya
+            patrocinador.
+        </p>
+    </div>
+{% endblock %}

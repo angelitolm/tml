@@ -1,0 +1,539 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}{{ 'portafolio'|trans({},'backend') }}{% endblock %}
+{% block page_title %}{{ 'portafolio'|trans({},'backend') }}{% endblock page_title %}
+
+{% block head_style %}
+    {% block page_style %}
+    {% endblock page_style %}
+{% endblock head_style %}
+
+{% block page_body %}
+    <!-- BEGIN PAGE BASE CONTENT -->
+    <div class="portfolio-content portfolio-2">
+
+	<div id="js-filters-mosaic" class="cbp-l-filters-button">
+        <div data-filter="*" class="cbp-filter-item-active cbp-filter-item btn green btn-outline uppercase">
+            {{ 'all' | trans({}, 'backend') }} <div class="cbp-filter-counter"></div>
+        </div>
+        <div data-filter=".print" class="cbp-filter-item btn green btn-outline uppercase">
+            {{ 'benefits' | trans({}, 'backend') }} <div class="cbp-filter-counter"></div>
+        </div>
+        <div data-filter=".web-design" class="cbp-filter-item btn green btn-outline uppercase">
+            {{ 'guaranties' | trans({}, 'backend') }} <div class="cbp-filter-counter"></div>
+        </div>
+        <div data-filter=".motion" class="cbp-filter-item btn green btn-outline uppercase">
+            {{ 'marketing' | trans({}, 'backend') }} <div class="cbp-filter-counter"></div>
+        </div>
+        <div data-filter=".graphic" class="cbp-filter-item btn green btn-outline uppercase">
+            {{ 'tools' | trans({}, 'backend') }} <div class="cbp-filter-counter"></div>
+        </div>
+    </div>
+
+    <div id="js-grid-mosaic" class="cbp cbp-l-grid-mosaic">
+        <div class="cbp-item print">
+            <a href="{{ asset('backend-metronic/global/img/portfolio/1200x900/banner_facebook.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#World Clock Widget<br>by Paul Flavius Nechita#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('backend-metronic/global/img/portfolio/600x600/tds.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{{ 'goodtime_in_tml_of' | trans({}, 'backend') }}</div>
+                            <div class="cbp-l-caption-desc">{{ 'time.money.lifestyle' | trans({}, 'backend') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {#{{ socialButtons( ) }}#}
+        </div>
+
+        <div class="cbp-item web-design graphic">
+            <a href="{{ asset('backend-metronic/global/img/portfolio/1200x900/triple-proteccion.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Bolt UI<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('backend-metronic/global/img/portfolio/600x600/triple-proteccion.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{{ 'triple.protection' | trans({}, 'backend') }}</div>
+                            <div class="cbp-l-caption-desc">{{ 'to.your.money' | trans({}, 'backend') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {#{{ socialButtons( ) }}#}
+        </div>
+        <div class="cbp-item print">
+            <a href="{{ asset('bundles/app/images/home-alt/bloque_mbasic.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('bundles/app/images/home-alt/bloque_mbasic.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{{ 'member.basic' | trans({}, 'backend') }}</div>
+                            <div class="cbp-l-caption-desc">{{ 'begin.winning' | trans({}, 'backend') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        {#<div class="cbp-item print">#}
+            {#<a href="{{ asset('backend-metronic/global/img/portfolio/1200x900/plegable.png') }}" class="cbp-caption cbp-lightbox"#}
+               {#data-title="WhereTO App<br>by Tiberiu Neamu">#}
+                {#<div class="cbp-caption-defaultWrap">#}
+                    {#<img src="{{ asset('backend-metronic/global/img/portfolio/1200x900/plegable-m.png') }}" alt="">#}
+                {#</div>#}
+                {#<div class="cbp-caption-activeWrap">#}
+                    {#<div class="cbp-l-caption-alignCenter">#}
+                        {#<div class="cbp-l-caption-body">#}
+                            {#<div class="cbp-l-caption-title">{{ 'benefit.TML' | trans({}, 'backend') }}</div>#}
+                            {#<div class="cbp-l-caption-desc"></div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</a>#}
+        {#</div>#}
+        {#<div class="cbp-item motion">#}
+            {#<a href="{{ asset('backend-metronic/global/img/portfolio/1200x900/modulo.png') }}" class="cbp-caption cbp-lightbox"#}
+               {#data-title="iDevices<br>by Tiberiu Neamu">#}
+                {#<div class="cbp-caption-defaultWrap">#}
+                    {#<img src="{{ asset('backend-metronic/global/img/portfolio/1200x900/modulo.png') }}" alt="">#}
+                {#</div>#}
+                {#<div class="cbp-caption-activeWrap">#}
+                    {#<div class="cbp-l-caption-alignCenter">#}
+                        {#<div class="cbp-l-caption-body">#}
+                            {#<div class="cbp-l-caption-title">{{ 'module.business' | trans({}, 'backend') }}</div>#}
+                            {#<div class="cbp-l-caption-desc">{{ 'tml' | trans({}, 'backend') }}</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</a>#}
+        {#</div>#}
+        {#<div class="cbp-item motion graphic">#}
+            {#<a href="{{ asset('backend-metronic/global/img/portfolio/1200x900/plegable-pequeño.png') }}" class="cbp-caption cbp-lightbox"#}
+               {#data-title="Seemple* Music for iPad<br>by Tiberiu Neamu">#}
+                {#<div class="cbp-caption-defaultWrap">#}
+                    {#<img src="{{ asset('backend-metronic/global/img/portfolio/600x600/plegable-pequeño.png') }}" alt="">#}
+                {#</div>#}
+                {#<div class="cbp-caption-activeWrap">#}
+                    {#<div class="cbp-l-caption-alignCenter">#}
+                        {#<div class="cbp-l-caption-body">#}
+                            {#<div class="cbp-l-caption-title">{{ 'put_money_in_your_pocket' | trans({}, 'backend') }}</div>#}
+                            {#<div class="cbp-l-caption-desc">{{ 'so_ready_decide' | trans({}, 'backend') }}</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</a>#}
+        {#</div>#}
+        <div class="cbp-item print">
+            <a href="{{ asset('backend-metronic/global/img/portfolio/1200x900/cursos_varios.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('backend-metronic/global/img/portfolio/600x600/cursos.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{{ 'courses.tml' | trans({}, 'backend') }}</div>
+                            <div class="cbp-l-caption-desc">{{ 'the_base_of_the_knowledge' | trans({}, 'backend') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="cbp-item print">
+            <a href="{{ asset('bundles/app/images/home-alt/bloque_msuperior.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('bundles/app/images/home-alt/bloque_msuperior.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{{ 'member.superior' | trans({}, 'backend') }}</div>
+                            <div class="cbp-l-caption-desc">{{ 'winne.more' | trans({}, 'backend') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="cbp-item print">
+            <a href="{{ asset('bundles/app/images/home-alt/bloque_mprofesional.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('bundles/app/images/home-alt/bloque_mprofesional.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{{ 'member.professional' | trans({}, 'backend') }}</div>
+                            <div class="cbp-l-caption-desc">{{ 'go.to.all' | trans({}, 'backend') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {#<div class="cbp-item motion">#}
+            {#<a href="{{ asset('backend-metronic/global/img/portfolio/1200x900/camp-6.png') }}" class="cbp-caption cbp-lightbox"#}
+               {#data-title="Remind~Me Widget<br>by Tiberiu Neamu">#}
+                {#<div class="cbp-caption-defaultWrap">#}
+                    {#<img src="{{ asset('backend-metronic/global/img/portfolio/400x300/camp-6.png') }}" alt="">#}
+                {#</div>#}
+                {#<div class="cbp-caption-activeWrap">#}
+                    {#<div class="cbp-l-caption-alignCenter">#}
+                        {#<div class="cbp-l-caption-body">#}
+                            {#<div class="cbp-l-caption-title">&#123;&#35;{{ 'tool' | trans({}, 'backend') }}&#35;&#125;</div>#}
+                            {#<div class="cbp-l-caption-desc">&#123;&#35;{{ 'of.message' | trans({}, 'backend') }}&#35;&#125;</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</a>#}
+        {#</div>#}
+        <div class="cbp-item graphic">
+            <a href="{{ asset('bundles/app/images/home-alt/herramienta-administracion.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('bundles/app/images/home-alt/herramienta-administracion.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{{ 'tool' | trans({}, 'backend') }}</div>
+                            <div class="cbp-l-caption-desc">{{ 'of.admin.gestion.and.comunication.width.your.affiliates' | trans({}, 'backend') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="cbp-item motion">
+            <a href="{{ asset('backend-metronic/global/img/portfolio/1200x900/publicidad.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('backend-metronic/global/img/portfolio/1200x900/publicidad.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{{ 'tml_is_the_oportunity_to' | trans({}, 'backend') }}</div>
+                            <div class="cbp-l-caption-desc">{{ 'every_all_the_enterpriser' | trans({}, 'backend') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="cbp-item graphic">
+            <a href="{{ asset('bundles/app/images/home-alt/herramienta-invitadosP.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('bundles/app/images/home-alt/herramienta-invitadosP.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{{ 'tool' | trans({}, 'backend') }}</div>
+                            <div class="cbp-l-caption-desc">{{ 'of.guest.sponsored' | trans({}, 'backend') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="cbp-item motion">
+            <a href="{{ asset('backend-metronic/global/img/portfolio/600x600/camp-2.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('backend-metronic/global/img/portfolio/600x600/camp-2.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{#{{ 'tool' | trans({}, 'backend') }}#}</div>
+                            <div class="cbp-l-caption-desc">{#{{ 'of.message' | trans({}, 'backend') }}#}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="cbp-item graphic">
+            <a href="{{ asset('bundles/app/images/home-alt/herramienta-comisiones.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('bundles/app/images/home-alt/herramienta-comisiones.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{{ 'tool' | trans({}, 'backend') }}</div>
+                            <div class="cbp-l-caption-desc">{{ 'of.comition.of.pts' | trans({}, 'backend') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="cbp-item graphic">
+            <a href="{{ asset('bundles/app/images/home-alt/herramienta-mensajeria.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('bundles/app/images/home-alt/herramienta-mensajeria.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{{ 'tool' | trans({}, 'backend') }}</div>
+                            <div class="cbp-l-caption-desc">{{ 'of.message' | trans({}, 'backend') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="cbp-item motion">
+            <a href="{{ asset('backend-metronic/global/img/portfolio/600x600/camp-1.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('backend-metronic/global/img/portfolio/600x600/camp-1.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{#{{ 'tool' | trans({}, 'backend') }}#}</div>
+                            <div class="cbp-l-caption-desc">{#{{ 'of.message' | trans({}, 'backend') }}#}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="cbp-item motion">
+            <a href="{{ asset('backend-metronic/global/img/portfolio/600x600/camp-3.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('backend-metronic/global/img/portfolio/600x600/camp-3.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{#{{ 'tool' | trans({}, 'backend') }}#}</div>
+                            <div class="cbp-l-caption-desc">{#{{ 'of.message' | trans({}, 'backend') }}#}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="cbp-item motion">
+            <a href="{{ asset('backend-metronic/global/img/portfolio/600x600/camp-4.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('backend-metronic/global/img/portfolio/600x600/camp-4.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{#{{ 'tool' | trans({}, 'backend') }}#}</div>
+                            <div class="cbp-l-caption-desc">{#{{ 'of.message' | trans({}, 'backend') }}#}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="cbp-item motion">
+            <a href="{{ asset('backend-metronic/global/img/portfolio/600x600/camp-5.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('backend-metronic/global/img/portfolio/600x600/camp-5.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{#{{ 'tool' | trans({}, 'backend') }}#}</div>
+                            <div class="cbp-l-caption-desc">{#{{ 'of.message' | trans({}, 'backend') }}#}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="cbp-item motion">
+            <a href="{{ asset('backend-metronic/global/img/portfolio/600x600/camp-7.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('backend-metronic/global/img/portfolio/600x600/camp-7.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{#{{ 'tool' | trans({}, 'backend') }}#}</div>
+                            <div class="cbp-l-caption-desc">{#{{ 'of.message' | trans({}, 'backend') }}#}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="cbp-item motion">
+            <a href="{{ asset('backend-metronic/global/img/portfolio/1200x900/camp-8.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('backend-metronic/global/img/portfolio/400x300/camp-8.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{#{{ 'tool' | trans({}, 'backend') }}#}</div>
+                            <div class="cbp-l-caption-desc">{#{{ 'of.message' | trans({}, 'backend') }}#}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="cbp-item motion">
+            <a href="{{ asset('backend-metronic/global/img/portfolio/1200x900/camp-9.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('backend-metronic/global/img/portfolio/400x300/camp-9.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{#{{ 'tool' | trans({}, 'backend') }}#}</div>
+                            <div class="cbp-l-caption-desc">{#{{ 'of.message' | trans({}, 'backend') }}#}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="cbp-item motion">
+            <a href="{{ asset('backend-metronic/global/img/portfolio/1200x900/camp-10.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('backend-metronic/global/img/portfolio/400x300/camp-10.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{#{{ 'tool' | trans({}, 'backend') }}#}</div>
+                            <div class="cbp-l-caption-desc">{#{{ 'of.message' | trans({}, 'backend') }}#}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="cbp-item motion">
+            <a href="{{ asset('backend-metronic/global/img/portfolio/1200x900/camp-11.png') }}" class="cbp-caption cbp-lightbox"
+               data-title="{#Remind~Me Widget<br>by Tiberiu Neamu#}">
+                <div class="cbp-caption-defaultWrap">
+                    <img src="{{ asset('backend-metronic/global/img/portfolio/400x300/camp-11.png') }}" alt="">
+                </div>
+                <div class="cbp-caption-activeWrap">
+                    <div class="cbp-l-caption-alignCenter">
+                        <div class="cbp-l-caption-body">
+                            <div class="cbp-l-caption-title">{#{{ 'tool' | trans({}, 'backend') }}#}</div>
+                            <div class="cbp-l-caption-desc">{#{{ 'of.message' | trans({}, 'backend') }}#}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {#<div class="cbp-item web-design graphic print">#}
+            {#<a href="{{ asset('backend-metronic/global/img/portfolio/600x600/2.jpg') }}" class="cbp-caption cbp-lightbox"#}
+               {#data-title="Workout Buddy<br>by Tiberiu Neamu">#}
+                {#<div class="cbp-caption-defaultWrap">#}
+                    {#<img src="{{ asset('backend-metronic/global/img/portfolio/600x600/58.jpg') }}" alt="">#}
+                {#</div>#}
+                {#<div class="cbp-caption-activeWrap">#}
+                    {#<div class="cbp-l-caption-alignCenter">#}
+                        {#<div class="cbp-l-caption-body">#}
+                            {#<div class="cbp-l-caption-title">Workout Buddy</div>#}
+                            {#<div class="cbp-l-caption-desc">by Tiberiu Neamu</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</a>#}
+        {#</div>#}
+        {#<div class="cbp-item print graphic">#}
+            {#<a href="{{ asset('backend-metronic/global/img/portfolio/600x600/2.jpg') }}" class="cbp-caption cbp-lightbox"#}
+               {#data-title="Digital Menu<br>by Cosmin Capitanu">#}
+                {#<div class="cbp-caption-defaultWrap">#}
+                    {#<img src="{{ asset('backend-metronic/global/img/portfolio/1200x900/40.jpg') }}" alt="">#}
+                {#</div>#}
+                {#<div class="cbp-caption-activeWrap">#}
+                    {#<div class="cbp-l-caption-alignCenter">#}
+                        {#<div class="cbp-l-caption-body">#}
+                            {#<div class="cbp-l-caption-title">Digital Menu</div>#}
+                            {#<div class="cbp-l-caption-desc">by Cosmin Capitanu</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</a>#}
+        {#</div>#}
+        {#<div class="cbp-item motion web-design">#}
+            {#<a href="{{ asset('backend-metronic/global/img/portfolio/600x600/2.jpg') }}" class="cbp-caption cbp-lightbox"#}
+               {#data-title="Holiday Selector<br>by Cosmin Capitanu">#}
+                {#<div class="cbp-caption-defaultWrap">#}
+                    {#<img src="{{ asset('backend-metronic/global/img/portfolio/600x600/94.jpg') }}" alt="">#}
+                {#</div>#}
+                {#<div class="cbp-caption-activeWrap">#}
+                    {#<div class="cbp-l-caption-alignCenter">#}
+                        {#<div class="cbp-l-caption-body">#}
+                            {#<div class="cbp-l-caption-title">Holiday Selector</div>#}
+                            {#<div class="cbp-l-caption-desc">by Cosmin Capitanu</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</a>#}
+        {#</div>#}
+        {#<div class="cbp-item motion">#}
+            {#<a href="{{ asset('backend-metronic/global/img/portfolio/600x600/2.jpg') }}" class="cbp-caption cbp-lightbox"#}
+               {#data-title="Holiday Selector<br>by Cosmin Capitanu">#}
+                {#<div class="cbp-caption-defaultWrap">#}
+                    {#<img src="{{ asset('backend-metronic/global/img/portfolio/600x600/62.jpg') }}" alt="">#}
+                {#</div>#}
+                {#<div class="cbp-caption-activeWrap">#}
+                    {#<div class="cbp-l-caption-alignCenter">#}
+                        {#<div class="cbp-l-caption-body">#}
+                            {#<div class="cbp-l-caption-title">Holiday Selector</div>#}
+                            {#<div class="cbp-l-caption-desc">by Cosmin Capitanu</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</a>#}
+        {#</div>#}
+        {#<div class="cbp-item graphic web-design">#}
+            {#<a href="{{ asset('backend-metronic/global/img/portfolio/600x600/2.jpg') }}" class="cbp-caption cbp-lightbox"#}
+               {#data-title="Holiday Selector<br>by Cosmin Capitanu">#}
+                {#<div class="cbp-caption-defaultWrap">#}
+                    {#<img src="{{ asset('backend-metronic/global/img/portfolio/600x600/65.jpg') }}" alt="">#}
+                {#</div>#}
+                {#<div class="cbp-caption-activeWrap">#}
+                    {#<div class="cbp-l-caption-alignCenter">#}
+                        {#<div class="cbp-l-caption-body">#}
+                            {#<div class="cbp-l-caption-title">Holiday Selector</div>#}
+                            {#<div class="cbp-l-caption-desc">by Cosmin Capitanu</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</a>#}
+        {#</div>#}
+    </div>
+
+    <div id="js-loadMore-mosaic" class="cbp-l-loadMore-button">
+        <a href="#" class="cbp-l-loadMore-link btn grey-mint btn-outline" rel="nofollow">
+            <span class="cbp-l-loadMore-defaultText">LOAD MORE</span>
+            <span class="cbp-l-loadMore-loadingText">LOADING...</span>
+            <span class="cbp-l-loadMore-noMoreLoading">NO MORE WORKS</span>
+        </a>
+    </div>
+</div>
+    <!-- END PAGE BASE CONTENT -->
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Gracias por registrarse en nuestro sitio, estos son sus datos de registro, para acceder al dashboard de Miembro TML</p>
+<table>
+    <tr>
+        <th>Nombre</th>
+        <td>{{ user.name }}</td>
+    </tr>
+    <tr>
+        <th>Correo</th>
+        <td>{{ user.email }}</td>
+    </tr>
+    <tr>
+        <th>Usuario</th>
+        <td>{{ user.username }}</td>
+    </tr>
+    <tr>
+        <th>Fecha de creaci&oacute;n</th>
+        <td>{{ user.created.format('Y-m-d H:i:s') }}</td>
+    </tr>
+</table>
+</body>
+</html>

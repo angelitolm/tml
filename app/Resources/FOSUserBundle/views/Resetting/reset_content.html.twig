@@ -1,0 +1,10 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% form_theme form '::form:fields-material.html.twig' %}
+
+  <form action="{{ path('fos_user_resetting_reset', {'token': token}) }}" {{ form_enctype(form) }} method="POST" class="fos_user_resetting_reset">
+    {{ form_widget(form) }}
+    <div class="col-md-12 text-right mgbt-xs-2">
+      <button type="submit" class="btn green">{{ 'resetting.reset.submit'|trans({},'FOSUserBundle') }}</button>
+    </div>
+  </form>

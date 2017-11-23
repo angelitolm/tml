@@ -1,0 +1,115 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{%- block form_widget_compound -%}
+  <div {{ block('widget_container_attributes') }} class="form-body">
+    {%- if form.parent is empty -%}
+      {{ form_errors(form) }}
+    {%- endif -%}
+    {{- block('form_rows') -}}
+    {{- form_rest(form) -}}
+  </div>
+{%- endblock form_widget_compound -%}
+
+{% block form_row %}
+  {% spaceless %}
+    {#{% set size = 'col-xs-12' %}
+    {% if form.vars.attr is not empty and form.vars.attr.size is defined %}
+      {% set size = size~' '~form.vars.attr.size %}
+    {% endif %}#}
+    {#{% set label = form.vars.label|trans({}, form.vars.translation_domain) %}#}
+    {% if form.vars.required %}{% set label = label ~ ' *' %}{% endif %}
+   {# <div class="{{ size }}">#}
+      <div class="form-group form-md-line-input {% if form.vars.errors|length > 0 %}has-error{% endif %}">
+        {{ form_label(form) }}
+        <div class="col-md-10">
+          {{ form_widget(form) }}
+          {{ form_errors(form) }}
+        </div>
+      </div>
+    {#</div>#}
+  {% endspaceless %}
+{% endblock form_row %}
+
+{% block form_label -%}
+  {% if label is not same as(false) %}
+    {% set label_attr = label_attr|merge({'class': label_attr.class|default('col-md-2 control-label')}) %}
+    {{ parent() }}
+  {%- endif %}
+{%- endblock form_label %}
+
+{% block form_widget_simple -%}
+  {%- set type = type|default('text') -%}
+  {% set attr = attr|merge({'class': attr.class|default('form-control')}) %}
+  {% if attr.icon is defined %}
+    {% set position = attr.icon_position|default("left") %}
+    <div class="input-icon {{ position }}">
+      {{ parent() }}
+      <div class="form-control-focus"></div>
+      <i class="{{ attr.icon }}"></i>
+    </div>
+  {% else %}
+    {{ parent() }}
+  {% endif %}
+{%- endblock form_widget_simple %}
+
+{%- block textarea_widget -%}
+  {% set attr = attr|merge({'class': attr.class|default('form-control')}) %}
+  {% if attr.icon is defined %}
+    {% set position = attr.icon_position|default("left") %}
+    <div class="input-icon {{ position }}">
+      {{ parent() }}
+      <div class="form-control-focus"></div>
+      <i class="{{ attr.icon }}"></i>
+    </div>
+  {% else %}
+    {{ parent() }}
+  {% endif %}
+{%- endblock textarea_widget -%}
+
+{% block form_errors %}
+  {% spaceless %}
+    {% if errors|length > 0 %}
+      <ul class="list-unstyled marB15">
+        {% for error in errors %}
+          <li class="text-danger text-right">{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endspaceless %}
+{% endblock form_errors %}
+
+{% block choice_widget_collapsed -%}
+  {% set attr = attr|merge({'class': attr.class|default('select2-component')}) %}
+  {% if attr.icon is defined %}
+    <div class="input-group">
+      <span class="input-group-addon"> <i class="{{ attr.icon }}"></i> </span>
+      {{ parent() }}
+    </div>
+  {% else %}
+    {{ parent() }}
+  {% endif %}
+{%- endblock choice_widget_collapsed %}
+
+{% block money_widget -%}
+  {% set attr = attr|merge({'class': attr.class|default('form-control floating-label')}) %}
+  {#{{ money_pattern|replace({ '{{ widget }}': block('form_widget_simple') })|raw }}#}
+  {{ block('form_widget_simple') }}
+{%- endblock money_widget %}
+
+{%- block checkbox_widget -%}
+  <div class="md-checkbox">
+    {% if attr.placeholder is defined and attr.placeholder is not empty %}
+      <label>
+        <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+        {{ attr.placeholder }}
+      </label>
+    {% else %}
+      {{ parent() }}
+    {% endif %}
+  </div>
+{%- endblock checkbox_widget -%}
+
+{%- block hidden_widget -%}
+  {% set attr = attr|merge({'class': attr.class|default('hidden-element')}) %}
+  {{ parent() }}
+{%- endblock hidden_widget -%}

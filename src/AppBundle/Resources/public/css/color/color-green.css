@@ -1,0 +1,39 @@
+a, .vc_main-color, .vc_menu .vc_primary-menu > ul > li > a > i,.vc_contact-top i, .vc_address i, .vc_testimonial .icon-caret-down, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .vc_anim .vc_category, .vc_blog-list .blog-row .blog-right h3 a:hover, .vc_pricing-table .price, .vc_twitter-mini .vc_carousel-control a:hover, .vc_twitter-mini .bg .icon-twitter, .nav-tabs > li > a:hover, .nav-tabs > li > a:focus,.vc_google-result .gsc-results .gsc-cursor-box .gsc-cursor > .gsc-cursor-page{
+	color:#26c45e;
+}
+button, .vc_btn, .vc_bg-color, .vc_inverted, .vc_read-more, .navbar-inverse .btn-navbar, .vc_testimonial .testimonial-box,.input-append .add-on, .input-prepend .add-on, #vc_login-widget h3,.vc_single-portfolio .vc_carousel-control a,.vc_menu .vc_primary-menu > ul > li div.vc_menu-2-v, .vc_menu .vc_primary-menu > ul > li div.vc_menu-2-h, .vc_menu .vc_primary-menu > ul > li div.vc_mega-menu, .vc_anim .vc_hover a:hover, .tp-bannertimer, .vc_menu-search-wrapper, .vc_login-widget h3, .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus, .vc_social-share.vc_one-main-color a:hover, .header-1 .logo a, .header-2 .logo a, header .vc_btn-navbar .btn{
+	background-color:#26c45e;
+}
+header .vc_menu div.vc_primary-menu > ul, .vc_history h3,.accordion-heading, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus, .nav-pills > li > a:hover, .vc_anim .vc_category, .vc_history h3, .vc_pager a.selected, .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus, .vc_social-share.vc_one-main-color a{
+	border-color:#26c45e;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus,.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus,.nav-tabs > li > a:hover, .nav-tabs > li > a:focus,  a.back-top, .vc_blog-list .entry-date,.vc_comments .comment-content, .vc_pricing-table h3, .vc_menu .vc_primary-menu > ul > li.active,  .vc_menu .vc_primary-menu > ul > li.active:hover{
+	border-top-color:#26c45e;
+}
+header .vc_menu div.vc_primary-menu:before, .vc_table thead tr th{
+	border-bottom-color: #26c45e;
+}
+header .vc_primary-menu-wrapper{
+	background-color:#1d231f;
+	border-top-color: #242a27;
+}
+.vc_menu-search .vc_menu-search-text{
+	border-top-color:#20a54f;
+	border-right-color:#20a54f;	
+}
+.vc_sub-menu-bg{
+	border-top-color:#1d231f;
+}
+header.mode-3 .vc_primary-menu-wrapper{
+	background :#F7F7F7;
+	box-shadow: 0 1px 0 #FFF inset;
+	border-bottom:1px solid #F6F6F6;
+}
+.vc_google-result .gsc-webResult.gsc-result:hover, .vc_google-result .gsc-results .gsc-imageResult:hover{
+	border-left-color: #26c45e;	
+}
+.vc_google-result .gsc-results .gsc-cursor-box .gsc-cursor > .gsc-cursor-page.gsc-cursor-current-page{
+    background-color: #26c45e;
+    border-color: #26c45e;
+}
+

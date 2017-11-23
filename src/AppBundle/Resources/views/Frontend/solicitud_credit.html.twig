@@ -1,0 +1,76 @@
+{# Twig template #}
+{# Autor y diseñador: Angel Labrada Massó #}
+
+{% extends "AppBundle::Layout_frontend_statics.html.twig" %}
+
+
+
+
+{% block banner_title %}
+    <h1>Solicitud de<span class="vc_main-color"> Cr&eacute;dito</span></h1>
+    <ul class="breadcrumb">
+        <li><a href="{{ path('homepage') }}">Inicio</a></li>
+        <li class="active">Solicitud de Cr&eacute;dito</li>
+    </ul>
+{% endblock %}
+
+
+{% block sub_banner %}
+
+{% endblock %}
+
+
+{% block content %}
+    <div class="col-md-6" style="text-align: center;">
+        <img style="margin-top: 50px" src="{{ asset('bundles/app/images/home-alt/images_045.jpeg') }}" alt="" />
+    </div>
+    <div class="col-md-6" style="margin-bottom: 35px">
+        <h3>Solicitud de Membres&iacute;a Cr&eacute;dito</h3>
+        <form class="form-horizontal" method="POST" action="{{ path('enviar solicitud_credit') }}" role="form">
+            <div class="form-group">
+                <label class="col-md-4 control-label">Nombre</label>
+                <div class="col-md-7 controls">
+                    <input placeholder="" type="text" name="name_to_credit">
+                    <span class="help-inline">Escriba su nombre completo</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Correo</label>
+                <div class="col-md-7 controls">
+                    <div class="input-group">
+                        <span class="input-group-addon">@</span>
+                        <input placeholder="" type="email" name="mail_to_credit">
+                        {#<span class="help-inline">D&eacute;jenos su correo para enviarle la respuesta...</span>#}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Patrocinador</label>
+                <div class="col-md-7 controls">
+                    <input placeholder="" type="text" name="sponsor_to_credit">
+                    <span class="help-inline">Nombre del Miembro Patrocinador que lo invit&oacute;</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">C&oacute;digo</label>
+                <div class="col-md-7 controls">
+                    <input placeholder="" type="text" name="code_to_credit">
+                    <span class="help-inline">C&oacute;digo del Miembro Patrocinador que lo invit&oacute;</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Comentario</label>
+                <div class="col-md-8 controls">
+                    <textarea rows="3" class="vc_input-lg" name="comment_to_credit" placeholder="Comparta 2 p&aacute;ginas sociales. NO ES OBLIGATORIO."></textarea>
+                </div>
+            </div>
+
+            <button style="float: right" class="vc_btn" type="submit"><i class="icon-ok"></i> Enviar Solicitud</button>
+
+        </form>
+    </div>
+{% endblock %}
+
+
+{% block another1javascripts %}{% endblock %}
+

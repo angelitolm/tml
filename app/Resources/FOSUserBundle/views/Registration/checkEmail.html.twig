@@ -1,0 +1,23 @@
+{% extends 'FOSUserBundle::layout.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body_section_register %}
+  <div class="modal fade" id="modal-sign-up-success">
+    <div class="modal-dialog modal-dialog-dimensions">
+      <div id="modal-register-confirm" class="modal-content">
+
+        <div class="modal-body marT30">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              <p class="text-center clearsans-medium fs-16 marB25"><span>{{ 'ACCOUNT_CREATE_TEXT!'|trans({},'frontend') }}</span><span class="tc-fec107"> {{ 'ACCOUNT_SUCCESSFULLY!'|trans({},'frontend') }}</span></p>
+            </div>
+
+            <div class="col-sm-10 col-sm-offset-1 text-center fs-10 tc-808080">
+              <p>{{ 'REGISTER_TEXTF'|trans({},'frontend') }}<span class="tc-45b3ef"> {{ user.email }} </span>{{ 'REGISTER_TEXTS'|trans({},'frontend') }}</p>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+{% endblock body_section_register %}

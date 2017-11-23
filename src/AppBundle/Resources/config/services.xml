@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="app.omnipay_username">xeroz.pglez-facilitator_api1.gmail.com</parameter>
+        <parameter key="app.omnipay_password">DJTDXPLK8QNKJYNM</parameter>
+        <parameter key="app.omnipay_signature">AJgS0tKpBrICWadNTapBza7mzv7DAFOqjwvQExsm8npdr4N2MLkr6n-x</parameter>
+        <parameter key="app.omnipay_test">1</parameter>
+
+        <parameter key="app.transfer.buy_membership_msg">Buy a Membership: </parameter>
+        <parameter key="app.transfer.client_buy_membership_msg">A client buy a Membership</parameter>
+    </parameters>
+
+    <services>
+        <service id="tml.utils" class="AppBundle\Services\Utiles">
+        </service>
+        <service id="tml.blog" class="AppBundle\Services\Blog">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.blog_contact" class="AppBundle\Services\BlogContact">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.post" class="AppBundle\Services\Post">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.post_comment" class="AppBundle\Services\PostComment">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.profile" class="AppBundle\Services\Profile">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.transfer" class="AppBundle\Services\Transfer">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.configuration" class="AppBundle\Services\Configuration">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.guest_code" class="AppBundle\Services\GuestCode">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+            <call method="setUserManager">
+                <argument type="service" id="fos_user.user_manager"/>
+            </call>
+            <call method="setConfigurationManager">
+                <argument type="service" id="tml.configuration"/>
+            </call>
+            <call method="setProfileManager">
+                <argument type="service" id="tml.profile"/>
+            </call>
+        </service>
+        <service id="tml.testimonials" class="AppBundle\Services\Testimonials">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.news" class="AppBundle\Services\News">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.news_category" class="AppBundle\Services\NewsCategory">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.user_message" class="AppBundle\Services\UserMessage">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.course" class="AppBundle\Services\Course">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.social_message" class="AppBundle\Services\SocialMessage">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.profile_message" class="AppBundle\Services\ProfileMessage">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.test_courses" class="AppBundle\Services\TestCourses">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.comember" class="AppBundle\Services\Comember">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <service id="tml.log" class="AppBundle\Services\Log">
+            <argument type="service" id="epic_services_injection.entities_repository"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+    </services>
+
+</container>

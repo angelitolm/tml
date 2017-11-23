@@ -1,0 +1,34 @@
+@media (max-width: 320px){
+
+}
+@media (max-width: 480px){
+
+}
+@media (max-width: 991px){	
+	.vc_menu .vc_primary-menu > ul > li > a{
+		color:#FFF;
+		font-size:13px;
+		text-transform:uppercase;
+	}
+	
+	.vc_menu .vc_primary-menu > ul > li.active, .vc_menu .vc_primary-menu > ul > li:hover, .vc_menu .vc_primary-menu > ul > li.active:hover{
+		border-top:none;
+	}
+		
+	.vc_menu .vc_primary-menu > ul > li:hover > a, .vc_menu .vc_primary-menu > ul > li.active > a{
+		margin-top:0;
+		background:none;
+	}
+	.vc_menu .vc_primary-menu > ul > li:hover > a,  .vc_menu .vc_primary-menu > ul > li > a:hover{
+		color: #FFF;	
+	}
+	.vc_secondary-menu-wrapper{
+		background:url(../../img/shadow-1.png) no-repeat center top;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {	
+
+}
+
+
+
